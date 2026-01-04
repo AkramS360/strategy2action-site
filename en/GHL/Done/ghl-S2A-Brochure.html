@@ -1,0 +1,667 @@
+<!-- S2A Brochure - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --phase-know: #1a5f7a;
+    --phase-show: #2d7a4f;
+    --phase-grow: #b84a3c;
+    --model-business: #1976d2;
+    --model-operating: #f57c00;
+    --model-people: #7b1fa2;
+    --model-financial: #388e3c;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(4rem, 8vw, 6rem);
+}
+
+.s2a-br * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-br { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); }
+.s2a-br a { text-decoration: none; color: inherit; }
+.s2a-br ul { list-style: none; }
+.s2a-br h1, .s2a-br h2, .s2a-br h3, .s2a-br h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-br h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.s2a-br h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+.s2a-br h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
+.s2a-br h1 em, .s2a-br h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+.s2a-br .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+.s2a-br .eyebrow { display: inline-block; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem; }
+.s2a-br .text-lead { font-size: 1rem; color: var(--steel); }
+.s2a-br .section-header { margin-bottom: 2rem; }
+
+/* Cover Section */
+.s2a-br-cover { padding: 5rem 0; background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%); color: var(--cream); position: relative; overflow: hidden; }
+.s2a-br-cover::before { content: ''; position: absolute; top: -30%; right: -20%; width: 80%; height: 120%; background: radial-gradient(ellipse, rgba(201, 169, 97, 0.15) 0%, transparent 60%); pointer-events: none; }
+.s2a-br-cover-content { position: relative; z-index: 1; }
+.s2a-br-cover h1 { color: var(--cream); margin-bottom: 1rem; font-size: clamp(2.25rem, 6vw, 3.5rem); line-height: 1.1; }
+.s2a-br-cover h1 em { color: var(--gold); display: block; }
+.s2a-br-cover-subtitle { font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); max-width: 450px; line-height: 1.7; margin-bottom: 1.5rem; }
+.s2a-br-tagline { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--gold); margin-bottom: 2rem; }
+.s2a-br-stats { display: flex; gap: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(250, 248, 245, 0.2); flex-wrap: wrap; }
+.s2a-br-stat-number { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.s2a-br-stat-label { font-size: 0.75rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.25rem; }
+
+/* Problem Section */
+.s2a-br-problem { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-br-problem-list { display: grid; gap: 1rem; margin-bottom: 2rem; }
+.s2a-br-problem-item { padding: 1.25rem; border-bottom: 1px solid var(--sand); }
+.s2a-br-problem-item:last-child { border-bottom: none; }
+.s2a-br-problem-item h4 { color: var(--navy); margin-bottom: 0.375rem; font-size: 1rem; }
+.s2a-br-problem-item p { font-size: 0.9375rem; color: var(--steel); line-height: 1.6; }
+.s2a-br-problem-item strong { color: var(--navy); }
+.s2a-br-triggers { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--sand); }
+.s2a-br-triggers h3 { font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+.s2a-br-trigger-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+@media (max-width: 600px) { .s2a-br-trigger-list { grid-template-columns: 1fr; } }
+.s2a-br-trigger-list li { font-size: 0.875rem; color: var(--steel); padding: 0.375rem 0; padding-left: 1rem; position: relative; }
+.s2a-br-trigger-list li::before { content: '>'; position: absolute; left: 0; color: var(--gold-dark); font-weight: bold; }
+.s2a-br-trigger-cta { font-family: var(--font-accent); font-size: 1rem; font-style: italic; color: var(--gold-dark); margin-top: 1rem; }
+
+/* Reframe Section */
+.s2a-br-reframe { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-br-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 700px) { .s2a-br-comparison { grid-template-columns: 1fr; } }
+.s2a-br-comp-col h3 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid; }
+.s2a-br-comp-wrong h3 { color: #c96b6b; border-color: #c96b6b; }
+.s2a-br-comp-right h3 { color: #2d8a6e; border-color: #2d8a6e; }
+.s2a-br-comp-col li { font-size: 0.9375rem; padding: 0.75rem 0; padding-left: 1.5rem; position: relative; color: var(--navy); border-bottom: 1px solid rgba(0,0,0,0.06); }
+.s2a-br-comp-col li:last-child { border-bottom: none; }
+.s2a-br-comp-wrong li::before { content: 'X'; position: absolute; left: 0; color: #c96b6b; font-weight: bold; }
+.s2a-br-comp-right li::before { content: '+'; position: absolute; left: 0; color: #2d8a6e; font-weight: bold; }
+.s2a-br-conclusion { background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%); border-radius: 12px; padding: 1.5rem; text-align: center; }
+.s2a-br-conclusion p { font-size: 0.9375rem; color: var(--cream); line-height: 1.6; }
+.s2a-br-conclusion strong { color: var(--gold); }
+
+/* Framework Section */
+.s2a-br-framework { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-br-phases { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.s2a-br-phase { flex: 1; min-width: 150px; text-align: center; }
+.s2a-br-phase-circle { width: 80px; height: 80px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 0.75rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12); }
+.s2a-br-phase:nth-child(1) .s2a-br-phase-circle { background: var(--phase-know); }
+.s2a-br-phase:nth-child(2) .s2a-br-phase-circle { background: var(--phase-show); }
+.s2a-br-phase:nth-child(3) .s2a-br-phase-circle { background: var(--phase-grow); }
+.s2a-br-phase-num { font-family: var(--font-accent); font-size: 1.25rem; font-weight: 600; line-height: 1; color: white; }
+.s2a-br-phase-title { font-family: var(--font-display); font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; color: rgba(255,255,255,0.9); }
+.s2a-br-phase-subtitle { font-family: var(--font-display); font-size: 0.875rem; font-weight: 600; color: var(--midnight); margin-bottom: 0.25rem; }
+.s2a-br-phase-desc { font-size: 0.75rem; color: var(--steel); line-height: 1.5; }
+
+/* Matrix */
+.s2a-br-matrix { padding-top: 2rem; border-top: 2px solid var(--sand); }
+.s2a-br-matrix-header { text-align: center; margin-bottom: 1.5rem; }
+.s2a-br-matrix-header h3 { font-size: 1.125rem; color: var(--midnight); margin-bottom: 0.375rem; }
+.s2a-br-matrix-header p { font-size: 0.875rem; color: var(--steel); }
+.s2a-br-matrix-content { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+@media (max-width: 700px) { .s2a-br-matrix-content { grid-template-columns: 1fr; } }
+.s2a-br-matrix-questions li { font-size: 0.875rem; color: var(--navy); padding: 0.5rem 0; padding-left: 1.25rem; position: relative; border-bottom: 1px solid var(--sand); }
+.s2a-br-matrix-questions li:last-child { border-bottom: none; }
+.s2a-br-matrix-questions li::before { content: '?'; position: absolute; left: 0; color: var(--gold-dark); font-weight: bold; }
+.s2a-br-matrix-grid-wrap { position: relative; width: 180px; height: 180px; margin: 0 auto; }
+.s2a-br-matrix-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; width: 100%; height: 100%; border: 2px solid var(--navy); border-radius: 8px; overflow: hidden; }
+.s2a-br-matrix-quad { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.6875rem; font-weight: 600; text-align: center; padding: 0.5rem; }
+.s2a-br-matrix-quad.q1 { background: rgba(107, 156, 201, 0.3); color: #1a5f7a; border-right: 1px solid var(--navy); border-bottom: 1px solid var(--navy); }
+.s2a-br-matrix-quad.q2 { background: rgba(61, 166, 126, 0.3); color: #2d7a4f; border-bottom: 1px solid var(--navy); }
+.s2a-br-matrix-quad.q3 { background: rgba(201, 150, 107, 0.3); color: #b84a3c; border-right: 1px solid var(--navy); }
+.s2a-br-matrix-quad.q4 { background: rgba(201, 107, 107, 0.3); color: #c96b6b; }
+.s2a-br-axis { position: absolute; font-family: var(--font-display); font-size: 0.5625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.s2a-br-axis.y { left: -20px; top: 50%; transform: translateY(-50%) rotate(-90deg); color: var(--phase-know); }
+.s2a-br-axis.x { bottom: -15px; left: 50%; transform: translateX(-50%); color: var(--phase-grow); }
+
+/* Mirror Section */
+.s2a-br-mirror { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-br-mirror-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+@media (max-width: 600px) { .s2a-br-mirror-grid { grid-template-columns: 1fr; } }
+.s2a-br-mirror-item { padding: 1.25rem 0; border-bottom: 1px solid var(--sand); }
+.s2a-br-mirror-item:nth-child(odd) { padding-right: 1rem; border-right: 1px solid var(--sand); }
+@media (max-width: 600px) { .s2a-br-mirror-item:nth-child(odd) { padding-right: 0; border-right: none; } }
+.s2a-br-mirror-item:nth-child(even) { padding-left: 1rem; }
+@media (max-width: 600px) { .s2a-br-mirror-item:nth-child(even) { padding-left: 0; } }
+.s2a-br-mirror-item:nth-last-child(-n+2) { border-bottom: none; }
+.s2a-br-mirror-header { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.5rem; }
+.s2a-br-mirror-icon { font-size: 1.25rem; }
+.s2a-br-mirror-item h4 { color: var(--navy); font-size: 1rem; }
+.s2a-br-mirror-item > p { font-size: 0.8125rem; color: var(--steel); margin-bottom: 0.5rem; line-height: 1.5; }
+.s2a-br-mirror-deliverables { font-size: 0.75rem; color: var(--steel); line-height: 1.6; }
+.s2a-br-mirror-deliverables span { display: inline; }
+.s2a-br-mirror-deliverables span::after { content: ' - '; color: var(--gold); }
+.s2a-br-mirror-deliverables span:last-child::after { content: ''; }
+.s2a-br-process-note { padding: 1.25rem; background: var(--navy); border-radius: 10px; color: var(--cream); }
+.s2a-br-process-note h4 { font-size: 0.8125rem; color: var(--gold); margin-bottom: 0.375rem; }
+.s2a-br-process-note p { font-size: 0.8125rem; color: rgba(250, 248, 245, 0.9); line-height: 1.6; }
+
+/* Pricing Section */
+.s2a-br-pricing { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-br-pricing-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.25rem; border-bottom: 2px solid var(--sand); margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.s2a-br-pricing-header h2 { margin-bottom: 0.375rem; }
+.s2a-br-pricing-header .lead { font-size: 0.8125rem; color: var(--steel); max-width: 350px; }
+.s2a-br-pricing-amount { text-align: right; }
+.s2a-br-pricing-amount .original { font-size: 0.8125rem; color: var(--fog); text-decoration: line-through; }
+.s2a-br-pricing-amount .price { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; color: var(--gold-dark); line-height: 1; }
+.s2a-br-pricing-amount .save { font-size: 0.6875rem; color: var(--success); font-weight: 500; }
+.s2a-br-features-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--sand); flex-wrap: wrap; }
+.s2a-br-features-row span { font-size: 0.8125rem; color: var(--navy); position: relative; padding-left: 1rem; }
+.s2a-br-features-row span::before { content: '+'; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+.s2a-br-module-flow { display: flex; align-items: center; justify-content: center; gap: 0.625rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.s2a-br-flow-pill { font-size: 0.6875rem; font-weight: 600; padding: 0.375rem 0.875rem; border-radius: 20px; }
+.s2a-br-flow-pill.business { background: #e3f2fd; color: #1976d2; }
+.s2a-br-flow-pill.operating { background: #fff3e0; color: #f57c00; }
+.s2a-br-flow-pill.people { background: #f3e5f5; color: #7b1fa2; }
+.s2a-br-flow-pill.financial { background: #e8f5e9; color: #388e3c; }
+.s2a-br-flow-arrow { color: var(--fog); font-size: 0.75rem; }
+.s2a-br-module-list { margin-bottom: 1.5rem; }
+.s2a-br-module-row { display: grid; grid-template-columns: 70px 1fr auto; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--sand); align-items: center; }
+@media (max-width: 500px) { .s2a-br-module-row { grid-template-columns: 1fr; gap: 0.5rem; } }
+.s2a-br-module-row:last-child { border-bottom: none; }
+.s2a-br-module-label { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.s2a-br-module-row.business .s2a-br-module-label { color: var(--model-business); }
+.s2a-br-module-row.operating .s2a-br-module-label { color: var(--model-operating); }
+.s2a-br-module-row.people .s2a-br-module-label { color: var(--model-people); }
+.s2a-br-module-row.financial .s2a-br-module-label { color: var(--model-financial); }
+.s2a-br-module-content h4 { font-size: 0.9375rem; margin-bottom: 0.125rem; }
+.s2a-br-module-content p { font-size: 0.6875rem; color: var(--steel); margin: 0; }
+.s2a-br-module-price { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; }
+.s2a-br-module-row.business .s2a-br-module-price { color: var(--model-business); }
+.s2a-br-module-row.operating .s2a-br-module-price { color: var(--model-operating); }
+.s2a-br-module-row.people .s2a-br-module-price { color: var(--model-people); }
+.s2a-br-module-row.financial .s2a-br-module-price { color: var(--model-financial); }
+.s2a-br-sequence-box { padding: 1.25rem; background: var(--navy); border-radius: 10px; color: var(--cream); }
+.s2a-br-sequence-box h4 { font-size: 0.75rem; color: var(--gold); margin-bottom: 0.375rem; }
+.s2a-br-sequence-box p { font-size: 0.6875rem; color: rgba(250, 248, 245, 0.85); line-height: 1.5; margin-bottom: 0.5rem; }
+.s2a-br-sequence-box .flow { font-size: 0.75rem; color: var(--gold); font-weight: 500; }
+
+/* Case Studies */
+.s2a-br-cases { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-br-case { padding: 1.25rem 0; border-bottom: 1px solid var(--sand); }
+.s2a-br-case:last-of-type { border-bottom: none; }
+.s2a-br-case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+.s2a-br-case-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--navy); }
+.s2a-br-case-industry { font-size: 0.5625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); padding: 0.25rem 0.5rem; background: rgba(201, 169, 97, 0.15); border-radius: 4px; }
+.s2a-br-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+@media (max-width: 600px) { .s2a-br-case-grid { grid-template-columns: 1fr; } }
+.s2a-br-case-section h5 { font-size: 0.5625rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem; }
+.s2a-br-case-section.before h5 { color: #c96b6b; }
+.s2a-br-case-section.transformation h5 { color: var(--gold-dark); }
+.s2a-br-case-section.impact h5 { color: var(--success); }
+.s2a-br-case-section p { font-size: 0.75rem; color: var(--steel); line-height: 1.5; }
+.s2a-br-case-section.impact p { color: var(--navy); font-weight: 500; }
+
+/* CTA Section */
+.s2a-br-cta { padding: var(--section-padding) 0; background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
+.s2a-br-cta::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(201, 169, 97, 0.15) 0%, transparent 60%); pointer-events: none; }
+.s2a-br-cta-content { position: relative; z-index: 1; text-align: center; }
+.s2a-br-cta h2 { color: var(--cream); font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.5rem; }
+.s2a-br-cta h2 em { color: var(--gold); }
+.s2a-br-cta-text { font-size: 0.875rem; color: rgba(250, 248, 245, 0.85); margin-bottom: 0.75rem; }
+.s2a-br-cta-tagline { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem; }
+.s2a-br .btn { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; font-family: var(--font-display); font-size: 0.875rem; font-weight: 600; padding: 0.75rem 1.75rem; border-radius: 8px; }
+
+/* Contact Section */
+.s2a-br-contact { padding: 3rem 0; background: var(--navy); color: var(--cream); text-align: center; }
+.s2a-br-contact-tagline { font-family: var(--font-accent); font-size: 1.25rem; color: var(--cream); margin-bottom: 2rem; }
+.s2a-br-contact-tagline strong { color: var(--gold); font-style: normal; }
+.s2a-br-contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+@media (max-width: 600px) { .s2a-br-contact-grid { grid-template-columns: 1fr; } }
+.s2a-br-contact-item h4 { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.375rem; }
+.s2a-br-contact-item p { font-size: 0.875rem; color: rgba(250, 248, 245, 0.9); }
+.s2a-br-contact-item a { color: rgba(250, 248, 245, 0.9); }
+.s2a-br-contact-footer { font-size: 0.6875rem; color: rgba(250, 248, 245, 0.5); }
+</style>
+
+<div class="s2a-br">
+    <!-- Cover Section -->
+    <section class="s2a-br-cover">
+        <div class="container">
+            <div class="s2a-br-cover-content">
+                <h1>Strategy's Not Missing.<br><em>Visibility Is.</em></h1>
+                <p class="s2a-br-cover-subtitle">At 2am, when you can't sleep, you KNOW exactly where your business should go. The problem? No one else can see it. We don't give you strategy. We show you yours.</p>
+                <p class="s2a-br-tagline">Know. Show. Grow.</p>
+
+                <div class="s2a-br-stats">
+                    <div class="s2a-br-stat">
+                        <div class="s2a-br-stat-number">400+</div>
+                        <div class="s2a-br-stat-label">Strategies Made Visible</div>
+                    </div>
+                    <div class="s2a-br-stat">
+                        <div class="s2a-br-stat-number">15+</div>
+                        <div class="s2a-br-stat-label">Years of Pattern Recognition</div>
+                    </div>
+                    <div class="s2a-br-stat">
+                        <div class="s2a-br-stat-number">4</div>
+                        <div class="s2a-br-stat-label">Mirror Models</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="s2a-br-problem">
+        <div class="container">
+            <span class="eyebrow">The Real Challenge</span>
+            <div class="section-header">
+                <h2>You've Been Here Before.<br><em>Same Wall, Different Year.</em></h2>
+                <p class="text-lead">Build. Hit a ceiling. Explain yourself. Repeat.</p>
+            </div>
+
+            <div class="s2a-br-problem-list">
+                <div class="s2a-br-problem-item">
+                    <h4>The Expression Gap</h4>
+                    <p><strong>You know it, but can't say it.</strong> When someone asks "What do you do?" - you ramble. The complete strategy exists in your head. The words don't come out right.</p>
+                </div>
+
+                <div class="s2a-br-problem-item">
+                    <h4>The Translation Gap</h4>
+                    <p><strong>You say it, but they don't get it.</strong> Blank stares after your pitch. "Can you repeat that?" You've tried seventeen different ways. The message dies in the room.</p>
+                </div>
+
+                <div class="s2a-br-problem-item">
+                    <h4>The Projection Gap</h4>
+                    <p><strong>They get it, but can't repeat it.</strong> Your team nods in meetings - then executes the opposite. No word-of-mouth. No referrals. Your brilliance has no broadcast.</p>
+                </div>
+
+                <div class="s2a-br-problem-item">
+                    <h4>The Consultant Trap</h4>
+                    <p><strong>You've hired experts who imposed THEIR frameworks on YOUR business.</strong> The last time you trusted "experts," you got a 50-page deck that sat in a drawer.</p>
+                </div>
+            </div>
+
+            <div class="s2a-br-triggers">
+                <h3>Sound Familiar?</h3>
+                <ul class="s2a-br-trigger-list">
+                    <li>Lost a deal because you couldn't articulate the value</li>
+                    <li>Key employee left citing "unclear direction"</li>
+                    <li>Investor said "I don't see the vision"</li>
+                    <li>New hires take 6 months to "get it"</li>
+                    <li>Hit a revenue ceiling you can't explain</li>
+                    <li>Tired of being the only one who sees it</li>
+                </ul>
+                <p class="s2a-br-trigger-cta">These aren't strategy problems. They're visibility problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reframe Section -->
+    <section class="s2a-br-reframe">
+        <div class="container">
+            <span class="eyebrow">The Uncomfortable Truth</span>
+            <div class="section-header">
+                <h2>You Don't Need a Mentor.<br><em>You Need a Mirror.</em></h2>
+            </div>
+
+            <div class="s2a-br-comparison">
+                <div class="s2a-br-comp-col s2a-br-comp-wrong">
+                    <h3>The Mentor Approach</h3>
+                    <ul>
+                        <li>"Let me tell you what to do"</li>
+                        <li>Imports external frameworks</li>
+                        <li>Makes you dependent on their expertise</li>
+                        <li>Translates your thinking into their language</li>
+                        <li>Feels foreign - never quite "sticks"</li>
+                    </ul>
+                </div>
+
+                <div class="s2a-br-comp-col s2a-br-comp-right">
+                    <h3>The Mirror Approach</h3>
+                    <ul>
+                        <li>"Let me show YOU to everyone else"</li>
+                        <li>Reflects your existing clarity</li>
+                        <li>Makes you self-reliant</li>
+                        <li>Uses YOUR words, YOUR metaphors</li>
+                        <li>Feels like "That's exactly what I meant!"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="s2a-br-conclusion">
+                <p><strong>Consultants impose their thinking on your business.</strong> The Business Mirror reflects YOUR business through YOUR thinking. Brilliance needs a mirror, not a mentor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section class="s2a-br-framework">
+        <div class="container">
+            <span class="eyebrow">The Architecture</span>
+            <div class="section-header">
+                <h2>Energy Flows from Soul to Market.<br><em>If Any Zone Is Blocked, Everything Stops.</em></h2>
+            </div>
+
+            <div class="s2a-br-phases">
+                <div class="s2a-br-phase">
+                    <div class="s2a-br-phase-circle">
+                        <span class="s2a-br-phase-num">01</span>
+                        <span class="s2a-br-phase-title">KNOW</span>
+                    </div>
+                    <h4 class="s2a-br-phase-subtitle">Soul Alignment</h4>
+                    <p class="s2a-br-phase-desc">Who are you truly? Identity, Strategic Spine, Core Purpose.</p>
+                </div>
+
+                <div class="s2a-br-phase">
+                    <div class="s2a-br-phase-circle">
+                        <span class="s2a-br-phase-num">02</span>
+                        <span class="s2a-br-phase-title">SHOW</span>
+                    </div>
+                    <h4 class="s2a-br-phase-subtitle">System Architecture</h4>
+                    <p class="s2a-br-phase-desc">How do you deliver? Business, Operating, People, Financial Models.</p>
+                </div>
+
+                <div class="s2a-br-phase">
+                    <div class="s2a-br-phase-circle">
+                        <span class="s2a-br-phase-num">03</span>
+                        <span class="s2a-br-phase-title">GROW</span>
+                    </div>
+                    <h4 class="s2a-br-phase-subtitle">External World</h4>
+                    <p class="s2a-br-phase-desc">Who are you for? Clients, team, investors, market position.</p>
+                </div>
+            </div>
+
+            <!-- Matrix -->
+            <div class="s2a-br-matrix">
+                <div class="s2a-br-matrix-header">
+                    <h3>Where Are You Stuck?</h3>
+                    <p>Three traps. Most founders are in one. Which is yours?</p>
+                </div>
+
+                <div class="s2a-br-matrix-content">
+                    <div>
+                        <ul class="s2a-br-matrix-questions">
+                            <li><strong>Know-Stuck:</strong> Endless contemplation, zero execution. Vision decks on version 7+.</li>
+                            <li><strong>Show-Stuck:</strong> Beautiful systems disconnected from identity. "The system is great; people are the problem."</li>
+                            <li><strong>Grow-Stuck:</strong> Scaling chaos without foundation. Revenue growing, profits declining.</li>
+                        </ul>
+                        <p style="font-size: 0.8125rem; color: var(--steel); margin-top: 0.75rem; font-style: italic;">Your zone reveals your intervention.</p>
+                    </div>
+
+                    <div class="s2a-br-matrix-grid-wrap">
+                        <span class="s2a-br-axis y">KNOW</span>
+                        <span class="s2a-br-axis x">GROW</span>
+                        <div class="s2a-br-matrix-grid">
+                            <div class="s2a-br-matrix-quad q1">Know-Stuck</div>
+                            <div class="s2a-br-matrix-quad q2">Healthy</div>
+                            <div class="s2a-br-matrix-quad q3">Foundation Crisis</div>
+                            <div class="s2a-br-matrix-quad q4">Grow-Stuck</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mirror Section -->
+    <section class="s2a-br-mirror">
+        <div class="container">
+            <span class="eyebrow">The Four Models</span>
+            <div class="section-header">
+                <h2>Not Another Framework.<br><em>A Mirror for What You've Already Built.</em></h2>
+                <p class="text-lead">Walk away with four communication-ready models. Each one reflects YOUR thinking - not ours.</p>
+            </div>
+
+            <div class="s2a-br-mirror-grid">
+                <div class="s2a-br-mirror-item">
+                    <div class="s2a-br-mirror-header">
+                        <span class="s2a-br-mirror-icon" style="color: var(--model-business);">B</span>
+                        <h4>Business Model</h4>
+                    </div>
+                    <p>What you sell and why it wins.</p>
+                    <div class="s2a-br-mirror-deliverables">
+                        <span>Value Proposition</span>
+                        <span>Strategic Pricing</span>
+                        <span>Market Segmentation</span>
+                        <span>Competitive Moat</span>
+                    </div>
+                </div>
+
+                <div class="s2a-br-mirror-item">
+                    <div class="s2a-br-mirror-header">
+                        <span class="s2a-br-mirror-icon" style="color: var(--model-operating);">O</span>
+                        <h4>Operating Model</h4>
+                    </div>
+                    <p>How you deliver value at scale.</p>
+                    <div class="s2a-br-mirror-deliverables">
+                        <span>Key Processes</span>
+                        <span>Org Structure</span>
+                        <span>Strategic Initiatives</span>
+                        <span>12-Month Roadmap</span>
+                    </div>
+                </div>
+
+                <div class="s2a-br-mirror-item">
+                    <div class="s2a-br-mirror-header">
+                        <span class="s2a-br-mirror-icon" style="color: var(--model-financial);">F</span>
+                        <h4>Financial Model</h4>
+                    </div>
+                    <p>The numbers that tell your story.</p>
+                    <div class="s2a-br-mirror-deliverables">
+                        <span>Revenue Projections</span>
+                        <span>Unit Economics</span>
+                        <span>Cash Flow Framework</span>
+                        <span>Investor Readiness</span>
+                    </div>
+                </div>
+
+                <div class="s2a-br-mirror-item">
+                    <div class="s2a-br-mirror-header">
+                        <span class="s2a-br-mirror-icon" style="color: var(--model-people);">P</span>
+                        <h4>People Model</h4>
+                    </div>
+                    <p>The team that makes it happen.</p>
+                    <div class="s2a-br-mirror-deliverables">
+                        <span>Role Definitions</span>
+                        <span>Accountability Matrix</span>
+                        <span>Hiring Roadmap</span>
+                        <span>Culture Framework</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-br-process-note">
+                <h4>THE MIRROR QUALITY TEST</h4>
+                <p>When you see your mirror, you should immediately recognize yourself. No "translation" needed - it's already your language. You can present it without rehearsal. Your team will say: "That's what they always say."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="s2a-br-pricing">
+        <div class="container">
+            <span class="eyebrow">Tier 2: Builder Modules</span>
+
+            <div class="s2a-br-pricing-header">
+                <div>
+                    <h2>Build Your Business Mirror <em>Self-Paced</em></h2>
+                    <p class="lead">AI-guided process with 24/7 access to Strategy360 agents. Build one module or get the complete bundle.</p>
+                </div>
+                <div class="s2a-br-pricing-amount">
+                    <div class="original">$1,896 separately</div>
+                    <div class="price">$999</div>
+                    <div class="save">Save 47% with bundle</div>
+                </div>
+            </div>
+
+            <div class="s2a-br-features-row">
+                <span>Strategy360 AI Agents (24/7)</span>
+                <span>Weekly Q&A Sessions</span>
+                <span>Progress Dashboard</span>
+                <span>Sequential module unlocking</span>
+            </div>
+
+            <!-- Module Flow -->
+            <div class="s2a-br-module-flow">
+                <span class="s2a-br-flow-pill business">1. Business</span>
+                <span class="s2a-br-flow-arrow">></span>
+                <span class="s2a-br-flow-pill operating">2. Operating</span>
+                <span class="s2a-br-flow-arrow">></span>
+                <span class="s2a-br-flow-pill people">3. People</span>
+                <span class="s2a-br-flow-arrow">></span>
+                <span class="s2a-br-flow-pill financial">4. Financial</span>
+            </div>
+
+            <!-- Module List -->
+            <div class="s2a-br-module-list">
+                <div class="s2a-br-module-row business">
+                    <div class="s2a-br-module-label">Step 1</div>
+                    <div class="s2a-br-module-content">
+                        <h4>Business Model</h4>
+                        <p>WHAT you deliver. Value proposition, pricing strategy, competitive positioning, market segmentation.</p>
+                    </div>
+                    <div class="s2a-br-module-price">$499</div>
+                </div>
+
+                <div class="s2a-br-module-row operating">
+                    <div class="s2a-br-module-label">Step 2</div>
+                    <div class="s2a-br-module-content">
+                        <h4>Operating Model</h4>
+                        <p>HOW you deliver. Process architecture, system design, engagement model, integration layer.</p>
+                    </div>
+                    <div class="s2a-br-module-price">$499</div>
+                </div>
+
+                <div class="s2a-br-module-row people">
+                    <div class="s2a-br-module-label">Step 3</div>
+                    <div class="s2a-br-module-content">
+                        <h4>People Model</h4>
+                        <p>WHO delivers. Organizational structure, role definitions, capabilities, initiative ownership.</p>
+                    </div>
+                    <div class="s2a-br-module-price">$399</div>
+                </div>
+
+                <div class="s2a-br-module-row financial">
+                    <div class="s2a-br-module-label">Step 4</div>
+                    <div class="s2a-br-module-content">
+                        <h4>Financial Model</h4>
+                        <p>What it COSTS and EARNS. Income statement, cash flow, key assumptions, revenue model.</p>
+                    </div>
+                    <div class="s2a-br-module-price">$499</div>
+                </div>
+            </div>
+
+            <div class="s2a-br-sequence-box">
+                <h4>Why This Sequence Matters</h4>
+                <p>Each model builds on the one before. You can't design HOW to deliver without knowing WHAT. You can't design WHO delivers without knowing HOW. And you can't project financial outcomes without all three inputs.</p>
+                <div class="flow">WHAT > HOW > WHO > WHAT IT COSTS</div>
+            </div>
+
+            <p style="text-align: center; font-size: 0.6875rem; color: var(--fog); margin-top: 1rem;">Requires completed Strategic Diagnosis ($133)</p>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="s2a-br-cases">
+        <div class="container">
+            <span class="eyebrow">Strategies Made Visible</span>
+            <div class="section-header">
+                <h2>Real Transformations. <em>Real Results.</em></h2>
+            </div>
+
+            <div class="s2a-br-case">
+                <div class="s2a-br-case-header">
+                    <span class="s2a-br-case-title">Real Estate Marketplace Platform</span>
+                    <span class="s2a-br-case-industry">PropTech</span>
+                </div>
+                <div class="s2a-br-case-grid">
+                    <div class="s2a-br-case-section before">
+                        <h5>Before</h5>
+                        <p>Strategy trapped in founder's head. Investors couldn't see the vision. Multiple pitch attempts failed.</p>
+                    </div>
+                    <div class="s2a-br-case-section transformation">
+                        <h5>Transformation</h5>
+                        <p>Built complete Business Model and Financial Model. Created investor-ready pitch with clear unit economics.</p>
+                    </div>
+                    <div class="s2a-br-case-section impact">
+                        <h5>Impact</h5>
+                        <p>Investment thesis visible. SAR 8M funding secured within 3 months.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-br-case">
+                <div class="s2a-br-case-header">
+                    <span class="s2a-br-case-title">Industrial Services Company</span>
+                    <span class="s2a-br-case-industry">B2B Services</span>
+                </div>
+                <div class="s2a-br-case-grid">
+                    <div class="s2a-br-case-section before">
+                        <h5>Before</h5>
+                        <p>Three partners, three different mental models, zero alignment. Constant friction on direction.</p>
+                    </div>
+                    <div class="s2a-br-case-section transformation">
+                        <h5>Transformation</h5>
+                        <p>All four models built together. Governance charter established. Weekly strategic rhythm.</p>
+                    </div>
+                    <div class="s2a-br-case-section impact">
+                        <h5>Impact</h5>
+                        <p>Unified roadmap. Partner alignment. 40% revenue growth in 12 months.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-br-case">
+                <div class="s2a-br-case-header">
+                    <span class="s2a-br-case-title">Food Business Leader</span>
+                    <span class="s2a-br-case-industry">F&B / Retail</span>
+                </div>
+                <div class="s2a-br-case-grid">
+                    <div class="s2a-br-case-section before">
+                        <h5>Before</h5>
+                        <p>Growing fast but team couldn't see strategic direction. Key hires leaving. Execution scattered.</p>
+                    </div>
+                    <div class="s2a-br-case-section transformation">
+                        <h5>Transformation</h5>
+                        <p>Operating Model and People Model built. Clear accountability matrix. Hiring roadmap.</p>
+                    </div>
+                    <div class="s2a-br-case-section impact">
+                        <h5>Impact</h5>
+                        <p>Team fully aligned. Scaled 2x without external capital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="s2a-br-cta">
+        <div class="container">
+            <div class="s2a-br-cta-content">
+                <h2>Ready to See What You Already Know?</h2>
+                <p class="s2a-br-cta-text">If you passed the 2am test - if you KNOW what this business should do - let's make that visible. Start with the Strategic Diagnosis.</p>
+                <p class="s2a-br-cta-tagline">Know it. Show it. Grow it.</p>
+                <a href="#" class="btn">Start the Diagnosis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="s2a-br-contact">
+        <div class="container">
+            <p class="s2a-br-contact-tagline">"We don't give you strategy.<br><strong>We show you yours.</strong>"</p>
+
+            <div class="s2a-br-contact-grid">
+                <div class="s2a-br-contact-item">
+                    <h4>Website</h4>
+                    <p><a href="#">strategy2action.com</a></p>
+                </div>
+                <div class="s2a-br-contact-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:akram@strategy360.ai">akram@strategy360.ai</a></p>
+                </div>
+                <div class="s2a-br-contact-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+966509993384">+966 509993384</a></p>
+                </div>
+            </div>
+
+            <p class="s2a-br-contact-footer">2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </section>
+</div>

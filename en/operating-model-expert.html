@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Model Expert | Strategy2Action</title>
+    <meta name="description" content="Build your Operating Model with expert guidance. 2-hour 1:1 session with Akram, personally reviewed deliverables, and async support throughout.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            color: var(--cream);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at right top, rgba(245, 124, 0, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f57c00;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: rgba(250, 248, 245, 0.05);
+            border: 1px solid rgba(250, 248, 245, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--cream);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: var(--gold);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        .leader-card {
+            display: flex;
+            gap: 2rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav" style="background: rgba(10, 22, 40, 0.95);">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action" style="filter: brightness(0) invert(1);"></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="strategic-diagnosis.html">Diagnosis</a>
+                    <a href="builder-bundle.html">Builder</a>
+                    <a href="expert-led-bundle.html">Expert-Led</a>
+                    <a href="about.html">About</a>
+                    <a href="../ar/operating-model-expert.html" class="lang-toggle lang-ar">ع</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Apply Now <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()" style="color: var(--cream);"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" onclick="toggleMobileNav()">Home</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">Diagnosis</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">Builder</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">Expert-Led</a>
+        <a href="about.html" onclick="toggleMobileNav()">About</a>
+        <a href="../ar/operating-model-expert.html" class="lang-toggle lang-ar" onclick="toggleMobileNav()">عربي</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="settings" style="width: 16px; height: 16px;"></i> Module 2: Expert-Led</div>
+                    <h1 style="color: var(--cream);">Operating Model <em>Expert</em></h1>
+                    <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">Define HOW you deliver with direct expert guidance. 2-hour 1:1 session with Akram, personally reviewed deliverables, and async support throughout.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> 2-hour 1:1 Session with Akram</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Akram-Reviewed Deliverables</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Async Messaging Support</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Strategy360 AI Agent (24/7)</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$1,499 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem;">Expert-Led Module</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> 2-hour 1:1 Session with Akram</li>
+                        <li><i data-lucide="check"></i> Process System Architecture</li>
+                        <li><i data-lucide="check"></i> People & Program Systems</li>
+                        <li><i data-lucide="check"></i> Engagement Model Design</li>
+                        <li><i data-lucide="check"></i> Integration Layer</li>
+                        <li><i data-lucide="check"></i> Async Support Throughout</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">Start Operating Model Expert — $1,499 <i data-lucide="arrow-right"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); text-align: center; margin-top: 1rem;">Prerequisite: Business Model completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Guide -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Expert Guide</span>
+                <h2>Direct Work With <em>Akram</em></h2>
+            </div>
+
+            <div class="leader-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="leader-avatar">
+                    <img src="images/akram-profile (2).png" alt="Akram AlQadasi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="leader-info">
+                    <h3>Akram AlQadasi</h3>
+                    <p class="leader-role">Founder & Principal Advisor</p>
+                    <p style="font-size: 0.9375rem; color: var(--steel);">Strategy architect who has guided 400+ founders through transformations. Your Operating Model Expert module includes a 2-hour 1:1 session and personal review of all deliverables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You'll Build</span>
+                <h2>Your Complete <em>Operating Model</em></h2>
+                <p class="text-lead">With expert guidance and personal review at every step.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="workflow" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>Process System</h4>
+                    <p>Map and optimize core processes with expert guidance on flow and efficiency.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="users" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>People System</h4>
+                    <p>Design accountability structures with expert input on decision rights.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="layers" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>Program System</h4>
+                    <p>Structure initiatives with expert prioritization and resource allocation.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="handshake" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>Engagement Model</h4>
+                    <p>Define collaboration patterns with expert organizational design guidance.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="plug" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>Integration Layer</h4>
+                    <p>Connect systems and data flows with expert technology alignment.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(245, 124, 0, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="scale" style="color: #f57c00; width: 20px; height: 20px;"></i></div>
+                    <h4>Decision Rights</h4>
+                    <p>Clarify authority with expert governance framework design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">What You Walk Away With</span>
+                <h2 style="color: var(--cream);">Not Advice. <em style="color: var(--gold);">Architecture.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">Expert-Led means your operating system was stress-tested by someone who's fixed broken ones for 15 years.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>The Artifact</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can hold</p>
+
+                    <p class="deliverable-main">
+                        <strong>Your Expert-Validated Operating Model</strong>: personally reviewed by Akram, ready to implement without second-guessing.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Process architecture reviewed for gaps you couldn't see alone.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Decision rights validated against real-world bottlenecks.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Initiative roadmap prioritized by someone who's led transformations.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Engagement model designed to prevent the conflicts you haven't had yet.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>The Capability</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can do now</p>
+
+                    <p class="deliverable-main">
+                        <strong>Hand off operations with confidence.</strong> Because you built the system with someone who knows what breaks.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Delegate entire functions, not just tasks.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Resolve org conflicts by pointing at the model, not playing referee.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Onboard a COO or GM with a system they can run.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Scale without the chaos scaling usually brings.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>The Shift</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What changes forever</p>
+
+                    <p class="deliverable-main">
+                        <strong>You stop being the operating system.</strong> An expert helped you build one that runs without you.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "I have to be in every meeting" to decisions happening without you
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From constant firefighting to prevention by design
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From hoping the system works to knowing it was validated
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From founder-dependent to scalable
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                This isn't documentation you built alone. It's your <strong>operating model validated by an expert</strong>, designed to run without you in every loop.
+            </p>
+        </div>
+    </section>
+
+    <!-- Builder Option -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Alternative Option</span>
+                <h2>Prefer <em>Self-Paced?</em></h2>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; background: var(--cream); border: 2px solid #f57c00; border-radius: 16px; padding: 2rem; text-align: center;">
+                <div style="background: #f57c00; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">Self-Paced</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Operating Model Builder</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #f57c00; margin-bottom: 1rem;">$499</div>
+                <p style="font-size: 0.9375rem; color: var(--steel); margin-bottom: 1.5rem;">Build your Operating Model with AI agents at your own pace. Weekly group Q&A support included.</p>
+                <a href="operating-model-builder.html" class="btn btn-secondary btn-block">View Builder Option</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready for Expert Guidance?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Build Your Operating Model <em>With Akram</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">2-hour 1:1 session, personally reviewed deliverables, and async support throughout.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">Start Operating Model Expert — $1,499 <i data-lucide="arrow-right"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Prerequisite: Business Model completed • Save with <a href="expert-led-bundle.html" style="color: var(--gold);">Full Bundle $3,999</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
+                    <a href="builder-bundle.html">Builder Modules</a>
+                    <a href="expert-led-bundle.html">Expert-Led Modules</a>
+                    <a href="executive-partnership.html">Executive Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="about.html">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 22, 40, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 22, 40, 0.95)';
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

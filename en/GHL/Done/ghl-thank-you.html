@@ -1,0 +1,117 @@
+<!-- S2A Thank You Page - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+}
+
+.s2a-ty * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-ty { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); min-height: 100vh; padding: 5rem 0; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); display: flex; align-items: center; justify-content: center; }
+.s2a-ty a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+.s2a-ty h1, .s2a-ty h2, .s2a-ty h3, .s2a-ty h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-ty h1 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; }
+.s2a-ty h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+
+.s2a-ty-container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+
+.s2a-ty-success-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--success) 0%, #27ae60 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2.5rem; font-weight: 700; }
+
+.s2a-ty-lead { font-size: 1.125rem; color: var(--steel); margin-bottom: 2.5rem; }
+
+.s2a-ty-steps { background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 2rem; text-align: left; margin-bottom: 2rem; }
+.s2a-ty-steps h3 { font-size: 1.125rem; margin-bottom: 1.5rem; text-align: center; }
+.s2a-ty-step { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--sand); }
+.s2a-ty-step:last-child { border-bottom: none; }
+.s2a-ty-step-num { width: 32px; height: 32px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.875rem; font-weight: 700; color: white; flex-shrink: 0; }
+.s2a-ty-step-content h4 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.s2a-ty-step-content p { font-size: 0.9375rem; color: var(--steel); margin: 0; }
+
+.s2a-ty-support { background: var(--ivory); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.s2a-ty-support h4 { font-size: 0.9375rem; margin-bottom: 0.5rem; }
+.s2a-ty-support p { font-size: 0.875rem; color: var(--steel); margin-bottom: 0.5rem; }
+.s2a-ty-support a { color: var(--gold-dark); font-weight: 500; }
+
+.s2a-ty .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 1rem 2rem; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); transition: all 0.3s ease; }
+.s2a-ty .btn:hover { transform: translateY(-2px); }
+
+.s2a-ty-social { padding-top: 1.5rem; border-top: 1px solid var(--sand); margin-top: 2rem; }
+.s2a-ty-social p { font-size: 0.875rem; color: var(--fog); margin-bottom: 1rem; }
+.s2a-ty-social-btns { display: flex; justify-content: center; gap: 0.75rem; }
+.s2a-ty-social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1rem; background: var(--ivory); border: 1px solid var(--sand); border-radius: 8px; font-size: 0.8125rem; font-weight: 500; color: var(--navy); }
+.s2a-ty-social-btn:hover { background: var(--sand); }
+</style>
+
+<div class="s2a-ty">
+    <div class="s2a-ty-container">
+        <div class="s2a-ty-success-icon">OK</div>
+
+        <h1>You're In. <em>Let's Begin.</em></h1>
+        <p class="s2a-ty-lead">Your purchase is confirmed. Check your email for access details and next steps.</p>
+
+        <div class="s2a-ty-steps">
+            <h3>What Happens Next</h3>
+
+            <div class="s2a-ty-step">
+                <div class="s2a-ty-step-num">1</div>
+                <div class="s2a-ty-step-content">
+                    <h4>Check Your Email</h4>
+                    <p>You'll receive a confirmation email with your receipt and access link within 5 minutes.</p>
+                </div>
+            </div>
+
+            <div class="s2a-ty-step">
+                <div class="s2a-ty-step-num">2</div>
+                <div class="s2a-ty-step-content">
+                    <h4>Access the Platform</h4>
+                    <p>Log in to platform.strategy2action.com to start your diagnostic conversation.</p>
+                </div>
+            </div>
+
+            <div class="s2a-ty-step">
+                <div class="s2a-ty-step-num">3</div>
+                <div class="s2a-ty-step-content">
+                    <h4>Begin Your Diagnosis</h4>
+                    <p>Our AI agent will guide you through a deep diagnostic conversation. Allow 60-90 minutes.</p>
+                </div>
+            </div>
+
+            <div class="s2a-ty-step">
+                <div class="s2a-ty-step-num">4</div>
+                <div class="s2a-ty-step-content">
+                    <h4>Receive Your Report</h4>
+                    <p>Your Strategic Readiness Report will be delivered via email within 24 hours of completion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="s2a-ty-support">
+            <h4>Need Help?</h4>
+            <p>If you don't receive your email within 15 minutes, check your spam folder.</p>
+            <p>Still having issues? Contact us at <a href="mailto:support@strategy2action.com">support@strategy2action.com</a></p>
+        </div>
+
+        <a href="https://platform.strategy2action.com" class="btn">Go to Platform -></a>
+
+        <div class="s2a-ty-social">
+            <p>Tell others about your commitment to clarity</p>
+            <div class="s2a-ty-social-btns">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://strategy2action.com" class="s2a-ty-social-btn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/intent/tweet?text=Just%20started%20my%20Strategic%20Diagnosis%20with%20@Strategy2Action%20—%20making%20my%20strategy%20visible.&url=https://strategy2action.com" class="s2a-ty-social-btn" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </div>
+</div>

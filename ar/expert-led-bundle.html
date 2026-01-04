@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وحدات مع خبير | Strategy2Action</title>
+    <meta name="description" content="وحدات مع خبير تتضمن جلسات فردية مباشرة. حوّل عملك مع إرشاد استراتيجي مخصص، ومخرجات مراجعة من أكرم، ودعم في التنفيذ.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .intensive-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intensive-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -20%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .intensive-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .intensive-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .intensive-hero h1 {
+            color: var(--cream);
+        }
+
+        .intensive-price-card {
+            background: rgba(250, 248, 245, 0.05);
+            border: 1px solid rgba(250, 248, 245, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .intensive-price-card .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .intensive-price-card .price-original {
+            font-size: 0.9375rem;
+            color: rgba(250, 248, 245, 0.5);
+            text-decoration: line-through;
+            margin-bottom: 0.25rem;
+        }
+
+        .intensive-price-card .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .intensive-price-card .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        .intensive-price-card .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--cream);
+            padding: 0.5rem 0;
+        }
+
+        .intensive-price-card .price-features li svg {
+            color: var(--gold);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Module Cards */
+        .mirror-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mirror-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .mirror-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .mirror-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .mirror-includes {
+            background: var(--ivory);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        .mirror-includes h5 {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mirror-includes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mirror-includes li {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            padding: 0.25rem 0;
+            padding-right: 1rem;
+            position: relative;
+        }
+
+        .mirror-includes li::before {
+            content: '←';
+            position: absolute;
+            right: 0;
+            color: var(--gold);
+        }
+
+        /* Leader Card */
+        .leader-card {
+            display: flex;
+            gap: 2rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--navy);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .leader-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .credential-tag {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.375rem 0.75rem;
+            background: var(--ivory);
+            border-radius: 4px;
+            color: var(--steel);
+        }
+
+        .leader-bio {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        /* Intervention Cards */
+        .intervention-component {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .intervention-component:last-child {
+            border-bottom: none;
+        }
+
+        .intervention-letter {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .intervention-content h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .intervention-subtitle {
+            font-size: 0.875rem;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .intervention-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav" style="background: rgba(10, 22, 40, 0.95);">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action" style="filter: brightness(0) invert(1);"></a>
+                <div class="nav-links" style="color: var(--cream);">
+                    <a href="about.html" style="color: rgba(250, 248, 245, 0.7);">من نحن</a>
+                    <a href="expert-led-bundle.html" style="color: rgba(250, 248, 245, 0.7);">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html" style="color: rgba(250, 248, 245, 0.7);">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html" style="color: rgba(250, 248, 245, 0.7);">التشخيص</a>
+                    <a href="index.html" style="color: rgba(250, 248, 245, 0.7);">الرئيسية</a>
+                    <a href="../en/expert-led-bundle.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">قدّم الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()" style="color: var(--cream);"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/expert-led-bundle.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="intensive-hero">
+        <div class="container">
+            <div class="intensive-hero-grid">
+                <div>
+                    <span class="section-eyebrow" style="color: var(--gold);">المستوى الثالث: وحدات مع خبير</span>
+                    <h1>ابنِ مرآة عملك <em>مع إرشاد خبير</em></h1>
+                    <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">أبعد من الوتيرة الذاتية. تتضمن كل وحدة جلسة فردية مباشرة لمدة ساعتين مع أكرم، ومخرجات مراجعة شخصياً، ودعم غير متزامن. للمؤسسين الجاهزين للتحرك بسرعة مع مساءلة عالية الجودة.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> جلسة فردية لمدة ساعتين لكل وحدة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> مخرجات مراجعة من أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> دعم غير متزامن طوال الفترة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> فتح الوحدات بشكل تسلسلي</li>
+                    </ul>
+                </div>
+
+                <div class="intensive-price-card">
+                    <span style="position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--navy); font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; padding: 0.375rem 1rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em;">أفضل قيمة</span>
+                    <div class="price-display">
+                        <div class="price-original">$6,296 (عند الشراء بشكل منفصل)</div>
+                        <div class="price-amount">$3,999 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem;">الحزمة الكاملة مع خبير — وفّر 36%</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> نموذج الأعمال مع خبير (قيمة $1,499)</li>
+                        <li><i data-lucide="check"></i> نموذج التشغيل مع خبير (قيمة $1,499)</li>
+                        <li><i data-lucide="check"></i> نموذج الفريق مع خبير (قيمة $1,299)</li>
+                        <li><i data-lucide="check"></i> النموذج المالي مع خبير (قيمة $1,999)</li>
+                        <li><i data-lucide="check"></i> 4 جلسات فردية لمدة ساعتين (8 ساعات إجمالاً)</li>
+                        <li><i data-lucide="check"></i> جميع المخرجات مراجعة من أكرم</li>
+                        <li><i data-lucide="check"></i> حقيبة التدخل الاستراتيجي</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">احصل على الحزمة الكاملة — $3,999 <i data-lucide="arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Module Pricing Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">الوحدات الفردية</span>
+                <h2>إرشاد خبير. <em>وحدة واحدة في كل مرة.</em></h2>
+                <p class="text-lead">يمكن شراء كل وحدة بشكل فردي مع دعم خبير كامل. تنطبق المتطلبات المسبقة — يجب إكمالها بشكل تسلسلي.</p>
+            </div>
+
+            <div class="grid grid-4" style="gap: 1.5rem;">
+                <div class="mirror-card" style="border: 2px solid #1976d2;">
+                    <div style="background: #1976d2; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">نقطة الدخول</div>
+                    <div class="mirror-icon" style="background: rgba(25, 118, 210, 0.1);"><i data-lucide="target" style="color: #1976d2;"></i></div>
+                    <h3>نموذج الأعمال</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #1976d2; margin: 0.5rem 0;">$1,499</div>
+                    <p>ماذا تقدم ولمن. عرض القيمة، التسعير، تحديد الموقع.</p>
+                    <div class="mirror-includes">
+                        <h5>ما يشمله</h5>
+                        <ul>
+                            <li>جلسة فردية لمدة ساعتين مع أكرم</li>
+                            <li>نموذج أعمال مراجع من أكرم</li>
+                            <li>التحقق من DSI وعرض القيمة</li>
+                            <li>دعم غير متزامن طوال الفترة</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--fog); margin-top: 1rem;">المتطلب المسبق: التشخيص فقط</p>
+                    <a href="business-model-expert.html" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">اعرف المزيد</a>
+                </div>
+
+                <div class="mirror-card" style="border: 2px solid #f57c00;">
+                    <div style="background: #f57c00; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">الخطوة 2</div>
+                    <div class="mirror-icon" style="background: rgba(245, 124, 0, 0.1);"><i data-lucide="settings" style="color: #f57c00;"></i></div>
+                    <h3>نموذج التشغيل</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #f57c00; margin: 0.5rem 0;">$1,499</div>
+                    <p>كيف تقدم. العمليات، الأنظمة، التكامل.</p>
+                    <div class="mirror-includes">
+                        <h5>ما يشمله</h5>
+                        <ul>
+                            <li>جلسة فردية لمدة ساعتين مع أكرم</li>
+                            <li>نموذج تشغيل مراجع من أكرم</li>
+                            <li>بنية العمليات والأنظمة</li>
+                            <li>دعم غير متزامن طوال الفترة</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--fog); margin-top: 1rem;">المتطلب المسبق: نموذج الأعمال</p>
+                    <a href="operating-model-expert.html" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">اعرف المزيد</a>
+                </div>
+
+                <div class="mirror-card" style="border: 2px solid #7b1fa2;">
+                    <div style="background: #7b1fa2; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">الخطوة 3</div>
+                    <div class="mirror-icon" style="background: rgba(123, 31, 162, 0.1);"><i data-lucide="users" style="color: #7b1fa2;"></i></div>
+                    <h3>نموذج الفريق</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #7b1fa2; margin: 0.5rem 0;">$1,299</div>
+                    <p>من يقدم. الهيكل التنظيمي، الأدوار، القدرات.</p>
+                    <div class="mirror-includes">
+                        <h5>ما يشمله</h5>
+                        <ul>
+                            <li>جلسة فردية لمدة ساعتين مع أكرم</li>
+                            <li>نموذج فريق مراجع من أكرم</li>
+                            <li>بنية التنظيم والأدوار</li>
+                            <li>دعم غير متزامن طوال الفترة</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--fog); margin-top: 1rem;">المتطلب المسبق: نموذج الأعمال + التشغيل</p>
+                    <a href="people-model-expert.html" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">اعرف المزيد</a>
+                </div>
+
+                <div class="mirror-card" style="border: 2px solid #388e3c;">
+                    <div style="background: #388e3c; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">الخطوة 4</div>
+                    <div class="mirror-icon" style="background: rgba(56, 142, 60, 0.1);"><i data-lucide="trending-up" style="color: #388e3c;"></i></div>
+                    <h3>النموذج المالي</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #388e3c; margin: 0.5rem 0;">$1,999</div>
+                    <p>كم تكلف وكم تربح. الإطار المالي الاستراتيجي.</p>
+                    <div class="mirror-includes">
+                        <h5>ما يشمله</h5>
+                        <ul>
+                            <li>جلسة فردية لمدة ساعتين مع أكرم</li>
+                            <li>نموذج مالي مراجع من أكرم</li>
+                            <li>التوقعات واقتصاديات الوحدة</li>
+                            <li>دعم غير متزامن طوال الفترة</li>
+                        </ul>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--fog); margin-top: 1rem;">المتطلب المسبق: جميع النماذج الثلاثة السابقة</p>
+                    <a href="financial-model-expert.html" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- Prerequisites Explanation -->
+            <div style="max-width: 800px; margin: 3rem auto 0; padding: 2rem; background: var(--cream); border-radius: 12px; border-right: 4px solid var(--gold);">
+                <h4 style="margin-bottom: 1rem;">لماذا متطلبات مسبقة تسلسلية؟</h4>
+                <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin-bottom: 1rem;">لا يمكنك تصميم كيف تقدم دون معرفة ماذا تقدم. ولا يمكنك تصميم من يقدم دون معرفة كيف. ولا يمكنك توقع النتائج المالية دون المدخلات الثلاثة.</p>
+                <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin: 0;"><strong>التسلسل:</strong> نموذج الأعمال ← نموذج التشغيل ← نموذج الفريق ← النموذج المالي</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Guide Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">مرشدك الخبير</span>
+                <h2>العمل المباشر مع <em>أكرم</em></h2>
+            </div>
+
+            <div class="leader-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="leader-avatar" style="background: none; overflow: hidden;">
+                    <img src="images/akram-profile (2).png" alt="Akram AlQadasi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="leader-info">
+                    <h3>أكرم القدسي</h3>
+                    <p class="leader-role">المؤسس والمستشار الرئيسي</p>
+                    <div class="leader-credentials">
+                        <span class="credential-tag">IE Business School</span>
+                        <span class="credential-tag">MIT Sloan</span>
+                        <span class="credential-tag">INSEAD</span>
+                        <span class="credential-tag">+15 عاماً في الاستراتيجية</span>
+                    </div>
+                    <p class="leader-bio">مهندس استراتيجيات أرشد +400 مؤسس عبر التحولات. مبتكر إطار Know-Show-Grow ومنهجية التدخل الاستراتيجي. تتضمن وحداتك مع خبير المراجعة الشخصية لجميع المخرجات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Intervention Toolkit -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">منهجية الاختراق</span>
+                <h2>حقيبة <em>التدخل الاستراتيجي</em></h2>
+                <p class="text-lead">12 استراتيجية مثبتة عبر 4 مستويات. الناس لا يتغيرون من المعلومات — بل يتغيرون من التجارب.</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="intervention-component">
+                    <div class="intervention-letter">1</div>
+                    <div class="intervention-content">
+                        <h4>تدخلات الحالة</h4>
+                        <p class="intervention-subtitle">غيّر كيف تشعر</p>
+                        <p>استراتيجية الارتقاء، إيجاد الشرارة، والنية الإيجابية. حوّل الحالة العاطفية لفتح إمكانيات جديدة.</p>
+                    </div>
+                </div>
+
+                <div class="intervention-component">
+                    <div class="intervention-letter">2</div>
+                    <div class="intervention-content">
+                        <h4>تدخلات المعتقد</h4>
+                        <p class="intervention-subtitle">غيّر كيف تفكر</p>
+                        <p>الاختلاف التمكيني، الأمثلة المضادة، والتدخل الاستعاري. أعد توصيل المعتقدات المقيّدة التي تعيقك.</p>
+                    </div>
+                </div>
+
+                <div class="intervention-component">
+                    <div class="intervention-letter">3</div>
+                    <div class="intervention-content">
+                        <h4>تدخلات النظام</h4>
+                        <p class="intervention-subtitle">غيّر سياقك</p>
+                        <p>توسيع الوحدة، اختر ثلاث قضايا، واستراتيجية التظاهر. عدّل البيئة لتمكين السلوك الجديد.</p>
+                    </div>
+                </div>
+
+                <div class="intervention-component">
+                    <div class="intervention-letter">4</div>
+                    <div class="intervention-content">
+                        <h4>تدخلات التطوير</h4>
+                        <p class="intervention-subtitle">غيّر مستواك</p>
+                        <p>أربعة مستويات التطوير، ستة احتياجات إنسانية، والمستقبل المقنع. ارتقِ إلى مرحلة النمو التالية.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width: 700px; margin: 2rem auto 0; text-align: center; padding: 2rem; background: var(--ivory); border-radius: 12px;">
+                <p style="font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem;">"التدخل الصحيح في اللحظة الصحيحة يخلق تغييراً اختراقياً"</p>
+                <p style="font-size: 0.875rem; color: var(--fog);">مبدأ التدخل الاستراتيجي</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">ما ستحصل عليه</span>
+                <h2 style="color: var(--cream);">ليس نصائح. <em style="color: var(--gold);">بنية.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">مع خبير يعني أن كل نموذج بُني مع شخص فعلها 400 مرة. إليك ما ستحصل عليه.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>المنتج</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك الاحتفاظ به</p>
+
+                    <p class="deliverable-main">
+                        <strong>مرآة عملك المصادق عليها من خبير</strong>: أربعة نماذج مراجعة شخصياً من أكرم، جاهزة للمستثمرين، مجلس الإدارة، والفريق.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            نموذج الأعمال: عرض قيمة اختُبِر إجهاده من شخص رأى ما ينجح.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            نموذج التشغيل: بنية عمليات راجعت للثغرات التي لم تستطع رؤيتها وحدك.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            نموذج الفريق: هيكل تنظيمي مصادق عليه مقابل أنماط توسع تنجح.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            النموذج المالي: توقعات اختُبِر إجهادها مقابل أنماط الواقع.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>القدرة</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك فعله الآن</p>
+
+                    <p class="deliverable-main">
+                        <strong>ادخل أي غرفة بثقة.</strong> لأن خبيراً سبق وطرح الأسئلة الصعبة.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            قدّم للمستثمرين. أنت دافعت عن منطقك بالفعل.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            استقدم توظيفات كبار بنماذج تصمد أمام التدقيق.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            نفّذ تحولات استراتيجية بتحديث النموذج، وليس البدء من جديد.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            فوّض وظائف كاملة، وليس مجرد مهام.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>التحول</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
+
+                    <p class="deliverable-main">
+                        <strong>تتوقف عن التساؤل إذا أصبت.</strong> خبير صادق عليه. أنت تعرف.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الأمل بأن الاستراتيجية تنجح إلى المعرفة بأنها اختُبِر إجهادها
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من البناء وحدك إلى البناء مع مرشد
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الشك الذاتي إلى اليقين
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الاعتماد على المؤسس إلى القابلية للتوسع
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                هذا ليس عرض تقديمي بنيته وحدك. إنها <strong>مرآة عملك الكاملة المصادق عليها من خبير</strong>، مبنية في شراكة، محسّنة من التحدي، جاهزة للدفاع في أي مكان.
+            </p>
+        </div>
+    </section>
+
+    <!-- Comparison: Builder vs Expert -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">اختر مسارك</span>
+                <h2>الباني مقابل <em>مع خبير</em></h2>
+                <p class="text-lead">نفس النماذج الأربعة. مستويات دعم مختلفة.</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div style="background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">وحدات الباني</h3>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold-dark); margin-bottom: 1rem;">$999 <span style="font-size: 0.875rem; font-weight: 400; color: var(--fog);">الحزمة</span></div>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--success); width: 18px; height: 18px;"></i> إكمال ذاتي السرعة</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--success); width: 18px; height: 18px;"></i> وكلاء Strategy360 الذكية (24/7)</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--success); width: 18px; height: 18px;"></i> أسئلة وأجوبة جماعية أسبوعياً</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--success); width: 18px; height: 18px;"></i> لوحة تحكم التقدم</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem; color: var(--fog);"><i data-lucide="x" style="color: var(--fog); width: 18px; height: 18px;"></i> بدون جلسات فردية</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem; color: var(--fog);"><i data-lucide="x" style="color: var(--fog); width: 18px; height: 18px;"></i> بدون مراجعة من أكرم</li>
+                        </ul>
+                        <a href="builder-bundle.html" class="btn btn-secondary btn-block" style="margin-top: 1.5rem;">شاهد وحدات الباني</a>
+                    </div>
+
+                    <div style="background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--cream);">وحدات مع خبير</h3>
+                            <span style="background: var(--gold); color: var(--navy); font-size: 0.6875rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 100px; text-transform: uppercase;">موصى به</span>
+                        </div>
+                        <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$3,999 <span style="font-size: 0.875rem; font-weight: 400; color: rgba(250,248,245,0.6);">الحزمة</span></div>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> جلسة فردية لساعتين لكل وحدة (8 ساعات إجمالاً)</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> وكلاء Strategy360 الذكية (24/7)</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> مخرجات مراجعة من أكرم</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> دعم رسائل غير متزامنة</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> حقيبة التدخل الاستراتيجي</li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.9375rem;"><i data-lucide="check" style="color: var(--gold); width: 18px; height: 18px;"></i> مقاطعة التخريب الذاتي</li>
+                        </ul>
+                        <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">احصل على الحزمة مع خبير — $3,999</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">الحزمة الكاملة</span>
+                <h2>كل شيء <em>مشمول</em></h2>
+            </div>
+
+            <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="message-circle"></i></div>
+                    <h3>8 ساعات فردية</h3>
+                    <p>جلسة لمدة ساعتين لكل وحدة. عمل عميق، وليس استشارة سطحية.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="file-check"></i></div>
+                    <h3>مراجعة أكرم</h3>
+                    <p>جميع المخرجات مراجعة شخصياً ومحسّنة من أكرم.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="zap"></i></div>
+                    <h3>دعم غير متزامن</h3>
+                    <p>الوصول إلى الرسائل طوال الفترة للأسئلة السريعة والإرشاد.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="compass"></i></div>
+                    <h3>حقيبة التدخل</h3>
+                    <p>12 استراتيجية اختراقية عبر 4 مستويات للتغيير الدائم.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="layers"></i></div>
+                    <h3>مرآة الأعمال الكاملة</h3>
+                    <p>جميع النماذج الأربعة: الأعمال، التشغيل، الفريق، المالي.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="bot"></i></div>
+                    <h3>وكلاء ذكية 24/7</h3>
+                    <p>وكلاء Strategy360 الذكية متاحة على مدار الساعة للدعم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">مستعد للتحول؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">إرشاد خبير. <em>نتائج حقيقية.</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">8 ساعات من الجلسات الفردية، مخرجات مراجعة من أكرم، وإكمال مرآة الأعمال الكاملة.</p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">احصل على الحزمة الكاملة — $3,999 <i data-lucide="arrow-left"></i></a>
+                    <a href="business-model-expert.html" class="btn btn-secondary btn-large" style="background: transparent; border: 2px solid var(--cream); color: var(--cream);">ابدأ بنموذج الأعمال — $1,499</a>
+                </div>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">يتطلب إكمال التشخيص الاستراتيجي ($133) • تريد وتيرة ذاتية؟ شاهد <a href="builder-bundle.html" style="color: var(--gold);">وحدات الباني</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">الشراكة التنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>المصادر</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 22, 40, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 22, 40, 0.95)';
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

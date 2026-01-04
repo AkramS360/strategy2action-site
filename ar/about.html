@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | Strategy2Action</title>
+    <meta name="description" content="تعرّف على أكرم القدسي ومنهجية Strategy2Action. أكثر من 15 عاماً من خبرة التحول الاستراتيجي مُقطّرة في مناهج عملية.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .about-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .founder-image {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: var(--navy);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 6rem;
+            font-weight: 700;
+        }
+
+        .credentials-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .credential-badge {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.5rem 0.875rem;
+            background: var(--ivory);
+            border: 1px solid var(--sand);
+            border-radius: 4px;
+            color: var(--steel);
+        }
+
+        /* Philosophy Section */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .philosophy-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .philosophy-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-dark);
+            margin: 0 auto 1rem;
+        }
+
+        .philosophy-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.5;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .philosophy-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        /* Timeline */
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-item {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .journey-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            right: 23px;
+            top: 48px;
+            bottom: 0;
+            width: 2px;
+            background: var(--sand);
+        }
+
+        .journey-item:last-child::before {
+            display: none;
+        }
+
+        .journey-year {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .journey-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-item .number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Frameworks */
+        .framework-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .framework-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .framework-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+        }
+
+        .framework-item .number {
+            width: 28px;
+            height: 28px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .framework-item h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .framework-item p {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../en/about.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/about.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="founder-image" style="background: none; display: block;">
+                    <img src="images/about-pic-akram.png" alt="أكرم القدسي" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div>
+                    <span class="section-eyebrow">المؤسس</span>
+                    <h1>أكرم <em>القدسي</em></h1>
+                    <p class="text-lead mb-3">مهندس استراتيجيات بخبرة تزيد عن 15 عاماً في حوكمة الاستثمار والاستراتيجية المؤسسية وتحول الأعمال. مبتكر منهج اعرف-أظهر-انمُ ومنهجية التدخل الاستراتيجي.</p>
+
+                    <div class="credentials-list">
+                        <span class="credential-badge">IE Business School EMBA 2023</span>
+                        <span class="credential-badge">MIT Professional Ed 2024</span>
+                        <span class="credential-badge">INSEAD 2024</span>
+                        <span class="credential-badge">+15 عاماً في الاستراتيجية</span>
+                        <span class="credential-badge">CFA Charterholder</span>
+                    </div>
+
+                    <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.8;">بعد سنوات من العمل الاستشاري في منطقة الشرق الأوسط وشمال أفريقيا مع كبرى الشركات القابضة والعائلية، لاحظت نمطاً متكرراً: المؤسسون لا يفتقرون للاستراتيجية—بل يفتقرون لرؤية استراتيجيتهم الخاصة. الخبرة محبوسة في عقولهم. Strategy2Action موجودة لحل هذه المشكلة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">فلسفتنا</span>
+                <h2>ما <em>نؤمن به</em></h2>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="eye"></i></div>
+                    <h3>الاستراتيجية موجودة</h3>
+                    <p>لديك استراتيجية بالفعل. إنها في قراراتك، في حدسك، في أنماطك. نحن لا نمنحك استراتيجية—نحن نجعل استراتيجيتك مرئية.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="mirror"></i></div>
+                    <h3>المرآة أفضل من النصيحة</h3>
+                    <p>لسنا استشاريين نخبرك بما تفعل. نحن مرايا نُريك ما تعرفه بالفعل لكن لا تراه بوضوح بعد.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="compass"></i></div>
+                    <h3>الروح قبل الأنظمة</h3>
+                    <p>الأنظمة بلا روح تفشل. نبدأ بمواءمة الهوية (اعرف) قبل الهيكلة (أظهر) قبل السوق (انمُ).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="number">+400</div>
+                    <div class="label">استراتيجية تم إظهارها</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">+15</div>
+                    <div class="label">سنة من الوضوح</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">52</div>
+                    <div class="label">منهج تم تطويره</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">4</div>
+                    <div class="label">نماذج مرآة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frameworks Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">المنهجية</span>
+                <h2>المناهج <em>الأساسية</em></h2>
+                <p class="text-lead">مُقطّرة من أكثر من 15 عاماً من أعمال التحول إلى أنظمة عملية قابلة للتطبيق.</p>
+            </div>
+
+            <div class="framework-list">
+                <div class="framework-item">
+                    <div class="number">1</div>
+                    <div>
+                        <h4>منهج اعرف-أظهر-انمُ</h4>
+                        <p>نموذج تحول من أربع مراحل: الروح ← الأنظمة ← المالية ← السوق. أين تعثرت؟</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">2</div>
+                    <div>
+                        <h4>أدوات التدخل الاستراتيجي</h4>
+                        <p>12 استراتيجية اختراقية عبر 4 مستويات: تدخلات الحالة، المعتقد، النظام، والتطوير.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">3</div>
+                    <div>
+                        <h4>مقاطعة تسلسل التخريب الذاتي</h4>
+                        <p>نظام إدراك من ست مراحل: المحفز ← الأفكار ← الجسدي ← السلوك ← التبرير ← المكاسب الخفية.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">4</div>
+                    <div>
+                        <h4>مرشحات DSI (SIBMO)</h4>
+                        <p>خمس مرشحات للتمايز الحقيقي: متفوق، مهم، مصدق، قابل للقياس، قابل للامتلاك.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">5</div>
+                    <div>
+                        <h4>نظام النمو من 9 محركات</h4>
+                        <p>نمو مركب عبر تسعة روافع: الاستحواذ، القيمة، الكفاءة. 10% × 9 = 60%.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">6</div>
+                    <div>
+                        <h4>مرآة الأعمال</h4>
+                        <p>أربعة نماذج متكاملة: نموذج العمل، النموذج التشغيلي، النموذج المالي، نموذج الأفراد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">الرحلة</span>
+                <h2>كيف <em>وصلنا إلى هنا</em></h2>
+            </div>
+
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>أرقام: أبحاث الأسواق المالية</h4>
+                        <p>قدت قسم أبحاث السوق في أبرز منصة مالية بمنطقة الشرق الأوسط وشمال أفريقيا. بدأت ببناء الأسس التحليلية للعمل الاستراتيجي.</p>
+                    </div>
+                    <div class="journey-year">2009</div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>البنك العربي الوطني: حوكمة الاستثمار</h4>
+                        <p>محلل أول في الخدمات المصرفية الاستثمارية وإدارة الصناديق. طورت أطر تقييم وحوكمة الاستثمار.</p>
+                    </div>
+                    <div class="journey-year">2012</div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>BIHG: قيادة التخطيط الاستراتيجي</h4>
+                        <p>مدير الاستراتيجية والتخطيط في مجموعة حاضنات الأعمال والقابضة. قدت مبادرات كبرى بما فيها برنامج إعادة إعمار اليمن وحوكمة SAFF.</p>
+                    </div>
+                    <div class="journey-year">2016</div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>مجموعة المطلق: الاستراتيجية التنفيذية</h4>
+                        <p>مدير الاستراتيجية والحوكمة في تكتل سعودي كبير. صممت حوكمة الاستثمار، إدارة المحفظة، وبرامج التحول.</p>
+                    </div>
+                    <div class="journey-year">2022</div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>IE Business School EMBA</h4>
+                        <p>ماجستير إدارة الأعمال التنفيذي من IE Business School، مدريد. تابعت مع MIT Professional Education وINSEAD في 2024.</p>
+                    </div>
+                    <div class="journey-year">2023</div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-content">
+                        <h4>إطلاق Strategy2Action</h4>
+                        <p>منصة مدعومة بالذكاء الاصطناعي لتوسيع نطاق أكثر من 15 عاماً من عمل التحول. جعل الوضوح الاستراتيجي متاحاً للمؤسسين في كل مكان.</p>
+                    </div>
+                    <div class="journey-year">2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">مستعد للرؤية بوضوح؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">استراتيجيتك موجودة بالفعل. <em>لنجعلها مرئية.</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">ابدأ بالتشخيص الاستراتيجي واكتشف بالضبط أين تعثرت.</p>
+
+                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">ابدأ تشخيصي — $133 <i data-lucide="arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">الشراكة التنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>المصادر</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Strategy2Action</title>
+    <meta name="description" content="Meet Akram AlQadasi and learn about the Strategy2Action methodology. 15+ years of strategic transformation experience distilled into frameworks that work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .about-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .founder-image {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: var(--navy);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 6rem;
+            font-weight: 700;
+        }
+
+        .credentials-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .credential-badge {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.5rem 0.875rem;
+            background: var(--ivory);
+            border: 1px solid var(--sand);
+            border-radius: 4px;
+            color: var(--steel);
+        }
+
+        /* Philosophy Section */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .philosophy-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .philosophy-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-dark);
+            margin: 0 auto 1rem;
+        }
+
+        .philosophy-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.5;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .philosophy-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        /* Timeline */
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-item {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .journey-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: 0;
+            width: 2px;
+            background: var(--sand);
+        }
+
+        .journey-item:last-child::before {
+            display: none;
+        }
+
+        .journey-year {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .journey-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-item .number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Frameworks */
+        .framework-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .framework-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .framework-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+        }
+
+        .framework-item .number {
+            width: 28px;
+            height: 28px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .framework-item h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .framework-item p {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="strategic-diagnosis.html">Diagnosis</a>
+                    <a href="builder-bundle.html">Builder</a>
+                    <a href="expert-led-bundle.html">Expert-Led</a>
+                    <a href="about.html">About</a>
+                    <a href="../ar/about.html" class="lang-toggle lang-ar">ع</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Get Started <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" onclick="toggleMobileNav()">Home</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">Diagnosis</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">Builder</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">Expert-Led</a>
+        <a href="about.html" onclick="toggleMobileNav()">About</a>
+        <a href="../ar/about.html" class="lang-toggle lang-ar" onclick="toggleMobileNav()">عربي</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="founder-image" style="background: none; display: block;">
+                    <img src="images/about-pic-akram.png" alt="Akram AlQadasi" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div>
+                    <span class="section-eyebrow">The Founder</span>
+                    <h1>Akram <em>AlQadasi</em></h1>
+                    <p class="text-lead mb-3">Strategy architect with 15+ years across investment governance, corporate strategy, and business transformation. Creator of the Know-Show-Grow framework and Strategic Intervention methodology.</p>
+
+                    <div class="credentials-list">
+                        <span class="credential-badge">IE Business School EMBA 2023</span>
+                        <span class="credential-badge">MIT Professional Ed 2024</span>
+                        <span class="credential-badge">INSEAD 2024</span>
+                        <span class="credential-badge">15+ Years Strategy</span>
+                        <span class="credential-badge">CFA Charterholder</span>
+                    </div>
+
+                    <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.8;">After years of consulting work across MENA with major holding companies and family businesses, I noticed a pattern: founders didn't lack strategy—they lacked visibility into their own strategy. The expertise was trapped in their heads. Strategy2Action exists to solve that problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Philosophy</span>
+                <h2>What We <em>Believe</em></h2>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="eye"></i></div>
+                    <h3>Strategy Exists</h3>
+                    <p>You already have a strategy. It's in your decisions, your instincts, your patterns. We don't give you strategy—we make yours visible.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="mirror"></i></div>
+                    <h3>Mirrors Beat Advice</h3>
+                    <p>We're not consultants who tell you what to do. We're mirrors that show you what you already know but can't yet see clearly.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><i data-lucide="compass"></i></div>
+                    <h3>Soul Before Systems</h3>
+                    <p>Systems without soul fail. We start with identity alignment (KNOW) before architecture (SHOW) before market (GROW).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="number">400+</div>
+                    <div class="label">Strategies Revealed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">15+</div>
+                    <div class="label">Years of Clarity</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">52</div>
+                    <div class="label">Frameworks Developed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">4</div>
+                    <div class="label">Mirror Models</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frameworks Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Methodology</span>
+                <h2>Core <em>Frameworks</em></h2>
+                <p class="text-lead">Distilled from 15+ years of transformation work into actionable systems.</p>
+            </div>
+
+            <div class="framework-list">
+                <div class="framework-item">
+                    <div class="number">1</div>
+                    <div>
+                        <h4>Know-Show-Grow Framework</h4>
+                        <p>Four-phase transformation model: Soul → Systems → Finance → Market. Where are you stuck?</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">2</div>
+                    <div>
+                        <h4>Strategic Intervention Toolkit</h4>
+                        <p>12 breakthrough strategies across 4 tiers: State, Belief, System, and Development interventions.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">3</div>
+                    <div>
+                        <h4>Self-Sabotage Sequence Interrupt</h4>
+                        <p>Six-stage recognition system: Trigger → Thoughts → Somatic → Behavior → Justify → Hidden Gains.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">4</div>
+                    <div>
+                        <h4>DSI Filters (SIBMO)</h4>
+                        <p>Five filters for true differentiation: Superlative, Important, Believable, Measurable, Ownable.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">5</div>
+                    <div>
+                        <h4>9-Driver Growth System</h4>
+                        <p>Compound growth through nine levers: Acquisition, Value, Efficiency. 10% × 9 = 60%.</p>
+                    </div>
+                </div>
+
+                <div class="framework-item">
+                    <div class="number">6</div>
+                    <div>
+                        <h4>The Business Mirror</h4>
+                        <p>Four integrated models: Business Model, Operating Model, Financial Model, People Model.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Journey</span>
+                <h2>How We <em>Got Here</em></h2>
+            </div>
+
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-year">2009</div>
+                    <div class="journey-content">
+                        <h4>Argaam: Financial Markets Research</h4>
+                        <p>Led Market Research at MENA's premier financial platform. Started building the analytical foundations for strategy work.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2012</div>
+                    <div class="journey-content">
+                        <h4>Arab National Bank: Investment Governance</h4>
+                        <p>Senior Analyst in Investment Banking & Fund Management. Developed investment evaluation and governance frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2016</div>
+                    <div class="journey-content">
+                        <h4>BIHG: Strategic Planning Leadership</h4>
+                        <p>Director of Strategy & Planning at Business Incubators & Holding Group. Led major initiatives including Yemen Reconstruction Program and SAFF governance.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2022</div>
+                    <div class="journey-content">
+                        <h4>Almutlaq Group: Executive Strategy</h4>
+                        <p>Director of Strategy & Governance at major Saudi conglomerate. Designed investment governance, portfolio management, and transformation programs.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2023</div>
+                    <div class="journey-content">
+                        <h4>IE Business School EMBA</h4>
+                        <p>Executive MBA from IE Business School, Madrid. Continued with MIT Professional Education and INSEAD in 2024.</p>
+                    </div>
+                </div>
+
+                <div class="journey-item">
+                    <div class="journey-year">2024</div>
+                    <div class="journey-content">
+                        <h4>Strategy2Action Launch</h4>
+                        <p>AI-powered platform to scale 15+ years of transformation work. Making strategic clarity accessible to founders everywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready to See Clearly?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Your Strategy Already Exists. <em>Let's Make It Visible.</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">Start with the Strategic Diagnosis and discover exactly where you're stuck.</p>
+
+                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">Start My Diagnosis — $133 <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
+                    <a href="builder-bundle.html">Builder Modules</a>
+                    <a href="expert-led-bundle.html">Expert-Led Modules</a>
+                    <a href="executive-partnership.html">Executive Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="about.html">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

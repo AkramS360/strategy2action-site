@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy2Action | What You Walk Away With - Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        :root {
+            --navy: #1a2332;
+            --navy-deep: #141b27;
+            --cream: #faf8f5;
+            --gold: #c6a97d;
+            --gold-hover: #d4bc94;
+            --sage: #2d8a6e;
+            --text-dark: #1a2332;
+            --text-light: #5a6a7a;
+            --section-padding: 5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h2 em {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        .section-dark {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+            color: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-eyebrow--light {
+            color: var(--gold);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .text-lead {
+            font-size: 1.0625rem;
+            color: var(--text-light);
+        }
+
+        /* Context Banner */
+        .context-banner {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Simulated Mirror Section (before) */
+        .mirror-preview {
+            background: var(--cream);
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(26, 35, 50, 0.1);
+        }
+
+        .mirror-preview h3 {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .mirror-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mirror-card {
+            background: white;
+            border: 1px solid rgba(26, 35, 50, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .mirror-card h4 {
+            font-size: 0.9375rem;
+            margin-top: 0.75rem;
+        }
+
+        .mirror-card p {
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background: rgba(198, 169, 125, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .icon-box i {
+            width: 24px;
+            height: 24px;
+            color: var(--gold);
+        }
+
+        /* Main New Section Styling */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .deliverable-card {
+            background: rgba(250, 248, 245, 0.03);
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .deliverable-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .deliverable-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(198, 169, 125, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .deliverable-icon i {
+            width: 20px;
+            height: 20px;
+            color: var(--gold);
+        }
+
+        .deliverable-header h3 {
+            color: var(--gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0;
+        }
+
+        .deliverable-subtitle {
+            color: rgba(250, 248, 245, 0.7);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 1.25rem;
+        }
+
+        .deliverable-main {
+            font-size: 1.0625rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .deliverable-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9375rem;
+            color: rgba(250, 248, 245, 0.8);
+        }
+
+        .deliverable-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .deliverable-list li:last-child {
+            border-bottom: none;
+        }
+
+        .deliverable-list i {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .bridge-statement {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            text-align: center;
+            color: rgba(250, 248, 245, 0.7);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .bridge-statement strong {
+            color: var(--cream);
+        }
+
+        /* Simulated Programs Section (after) */
+        .programs-preview {
+            background: #f5f3f0;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(26, 35, 50, 0.1);
+        }
+
+        .programs-preview h3 {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            
+            .mirror-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .mirror-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Context Banner -->
+    <div class="context-banner">
+        <strong>PREVIEW:</strong> New "What You Walk Away With" section — sits between The Mirror and Programs
+    </div>
+
+    <!-- Simulated Mirror Section (before) -->
+    <div class="mirror-preview">
+        <div class="container">
+            <h3>↑ THE MIRROR SECTION (existing) ↑</h3>
+            <div class="mirror-grid">
+                <div class="mirror-card">
+                    <div class="icon-box"><i data-lucide="target"></i></div>
+                    <h4>Business Model</h4>
+                    <p>How you create and capture value.</p>
+                </div>
+                <div class="mirror-card">
+                    <div class="icon-box"><i data-lucide="settings"></i></div>
+                    <h4>Operating Model</h4>
+                    <p>How the organization works.</p>
+                </div>
+                <div class="mirror-card">
+                    <div class="icon-box"><i data-lucide="trending-up"></i></div>
+                    <h4>Financial Model</h4>
+                    <p>The numbers that tell the truth.</p>
+                </div>
+                <div class="mirror-card">
+                    <div class="icon-box"><i data-lucide="users"></i></div>
+                    <h4>People Model</h4>
+                    <p>Who does what and how they grow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW SECTION: What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">What You Walk Away With</span>
+                <h2 style="color: var(--cream);">Not Advice. <em style="color: var(--gold);">Architecture.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">Every engagement produces three layers of value. Here's what emerges when your strategy becomes visible.</p>
+            </div>
+
+            <div class="deliverables-grid">
+                
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>The Artifact</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can hold</p>
+                    
+                    <p class="deliverable-main">
+                        <strong>Your Complete Business Mirror</strong>—four documented models ready to share with investors, board, and team without another hour of explanation.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Strategic readiness assessment with gap scoring
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Process blueprints with ownership & SLAs
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            3-statement financial model with scenarios
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            90-day implementation roadmap
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>The Capability</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can do now</p>
+                    
+                    <p class="deliverable-main">
+                        <strong>Present your strategy without rehearsal</strong>—in language that's already yours, to anyone who needs to understand it.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Walk investors through your business logic cold
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Onboard new hires with documented clarity
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Make decisions against a visible framework
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Delegate without losing strategic coherence
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>The Shift</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What changes forever</p>
+                    
+                    <p class="deliverable-main">
+                        <strong>Your team stops asking "what's the strategy?"</strong>—because they can see it. And so can you.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "carrying it alone" to shared ownership
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "repeating yourself" to pointing at the mirror
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "chaos perception" to visible architecture
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "founder bottleneck" to scalable clarity
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                This isn't a deck that collects dust. It's a <strong>living system</strong> built from what's already in your head—structured, documented, and ready to communicate at any scale.
+            </p>
+        </div>
+    </section>
+
+    <!-- Simulated Programs Section (after) -->
+    <div class="programs-preview">
+        <div class="container">
+            <h3>↓ PROGRAMS / PRICING SECTION (existing) ↓</h3>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

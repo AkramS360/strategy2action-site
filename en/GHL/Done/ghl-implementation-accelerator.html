@@ -1,0 +1,425 @@
+<!-- S2A Implementation Accelerator - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(4rem, 8vw, 6rem);
+}
+
+.s2a-ia * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-ia { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); }
+.s2a-ia a { text-decoration: none; color: inherit; }
+.s2a-ia ul { list-style: none; }
+.s2a-ia h1, .s2a-ia h2, .s2a-ia h3, .s2a-ia h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-ia h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.s2a-ia h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.s2a-ia h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+.s2a-ia h1 em, .s2a-ia h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+.s2a-ia .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.s2a-ia .section-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; }
+.s2a-ia .text-lead { font-size: 1.125rem; color: var(--steel); max-width: 700px; margin: 0 auto; }
+.s2a-ia .section-header { text-align: center; margin-bottom: 3rem; }
+
+/* Hero */
+.s2a-ia-hero { padding: 6rem 0 4rem; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); }
+.s2a-ia-hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
+@media (max-width: 900px) { .s2a-ia-hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.s2a-ia-hero h1 { margin-bottom: 1rem; }
+.s2a-ia-hero-text { font-size: 1.125rem; color: var(--steel); line-height: 1.8; margin-bottom: 1.5rem; }
+.s2a-ia-hero-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy); position: relative; padding-left: 2rem; }
+.s2a-ia-hero-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background: var(--success); border-radius: 50%; }
+
+/* Price Card */
+.s2a-ia-price-card { background: white; border: 2px solid var(--gold); border-radius: 16px; padding: 2rem; box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08); position: relative; }
+.s2a-ia-price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.375rem 1rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+.s2a-ia-price-display { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--sand); }
+.s2a-ia-price-original { font-size: 1rem; color: var(--fog); text-decoration: line-through; margin-bottom: 0.25rem; }
+.s2a-ia-price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--midnight); }
+.s2a-ia-price-amount span { font-size: 1.25rem; font-weight: 400; color: var(--fog); }
+.s2a-ia-price-note { font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem; }
+.s2a-ia-price-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9375rem; color: var(--navy); padding: 0.5rem 0; position: relative; padding-left: 1.75rem; }
+.s2a-ia-price-features li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 12px; height: 12px; background: var(--success); border-radius: 50%; }
+.s2a-ia .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 1rem 2rem; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: none; }
+.s2a-ia .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); }
+.s2a-ia .btn-large { padding: 1.125rem 2.5rem; font-size: 1.0625rem; }
+.s2a-ia .btn-block { width: 100%; }
+.s2a-ia-price-limit { font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem; }
+
+/* Mirror Section */
+.s2a-ia-mirror { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-ia-mirror-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .s2a-ia-mirror-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .s2a-ia-mirror-grid { grid-template-columns: 1fr; } }
+.s2a-ia-mirror-card { background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 1.5rem; text-align: center; }
+.s2a-ia-mirror-icon { width: 64px; height: 64px; margin: 0 auto 1rem; background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-dark); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; }
+.s2a-ia-mirror-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+.s2a-ia-mirror-card > p { font-size: 0.9375rem; color: var(--steel); margin-bottom: 1rem; }
+.s2a-ia-mirror-includes { text-align: left; background: rgba(45, 138, 110, 0.05); border-radius: 8px; padding: 1rem; }
+.s2a-ia-mirror-includes h5 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--success); margin-bottom: 0.5rem; }
+.s2a-ia-mirror-includes li { font-size: 0.8125rem; color: var(--steel); padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+.s2a-ia-mirror-includes li::before { content: '-'; position: absolute; left: 0; color: var(--success); }
+
+/* Drivers Section */
+.s2a-ia-drivers { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-ia-drivers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 768px) { .s2a-ia-drivers-grid { grid-template-columns: 1fr; } }
+.s2a-ia-driver-category { background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 1.5rem; }
+.s2a-ia-driver-title { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--sand); }
+.s2a-ia-driver-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.5rem 0; }
+.s2a-ia-driver-num { width: 22px; height: 22px; background: var(--ivory); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; color: var(--navy); flex-shrink: 0; }
+.s2a-ia-driver-item span { font-size: 0.875rem; color: var(--steel); }
+.s2a-ia-drivers-quote { max-width: 700px; margin: 2rem auto 0; text-align: center; }
+.s2a-ia-drivers-quote p { font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--navy); }
+
+/* Timeline Section */
+.s2a-ia-timeline { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-ia-timeline-list { max-width: 800px; margin: 0 auto; }
+.s2a-ia-timeline-item { display: flex; gap: 2rem; padding-bottom: 2rem; position: relative; }
+.s2a-ia-timeline-item:last-child { padding-bottom: 0; }
+.s2a-ia-timeline-item::before { content: ''; position: absolute; left: 23px; top: 48px; bottom: 0; width: 2px; background: var(--sand); }
+.s2a-ia-timeline-item:last-child::before { display: none; }
+.s2a-ia-timeline-week { width: 48px; height: 48px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; flex-shrink: 0; position: relative; z-index: 1; }
+.s2a-ia-timeline-content h4 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+.s2a-ia-timeline-content p { font-size: 0.9375rem; color: var(--steel); margin-bottom: 0; }
+
+/* Comparison Section */
+.s2a-ia-comparison { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-ia-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+@media (max-width: 768px) { .s2a-ia-comparison-grid { grid-template-columns: 1fr; } }
+.s2a-ia-comparison-col { background: white; border-radius: 12px; padding: 2rem; }
+.s2a-ia-comparison-col.negative { border: 1px solid #e8c4c4; }
+.s2a-ia-comparison-col.positive { border: 2px solid var(--success); }
+.s2a-ia-comparison-col h3 { font-size: 1.125rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--sand); }
+.s2a-ia-comparison-col.negative h3 { color: #c96b6b; }
+.s2a-ia-comparison-col.positive h3 { color: var(--success); }
+.s2a-ia-comparison-item { margin-bottom: 1rem; }
+.s2a-ia-comparison-item:last-child { margin-bottom: 0; }
+.s2a-ia-comparison-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem; }
+.s2a-ia-comparison-value { font-size: 0.9375rem; color: var(--navy); }
+
+/* CTA Section */
+.s2a-ia-cta { padding: var(--section-padding) 0; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%); }
+.s2a-ia-cta-content { max-width: 700px; margin: 0 auto; text-align: center; }
+.s2a-ia-cta .section-eyebrow { color: var(--gold); }
+.s2a-ia-cta h2 { color: var(--cream); margin-bottom: 1rem; }
+.s2a-ia-cta h2 em { color: var(--gold); }
+.s2a-ia-cta-text { color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem; }
+.s2a-ia-cta-note { color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem; }
+</style>
+
+<div class="s2a-ia">
+    <!-- Hero Section -->
+    <section class="s2a-ia-hero">
+        <div class="container">
+            <div class="s2a-ia-hero-grid">
+                <div>
+                    <span class="section-eyebrow">Tier 2: Implementation Accelerator</span>
+                    <h1>Turn Your Diagnosis Into a <em>90-Day Action Plan</em></h1>
+                    <p class="s2a-ia-hero-text">Your Strategic Diagnosis revealed where you're stuck. Now let's build the mirror - Business Model, Operating Model, Financial Model - and a concrete implementation roadmap.</p>
+
+                    <ul class="s2a-ia-hero-list">
+                        <li>Complete Business Mirror (all 4 models)</li>
+                        <li>9-Driver Growth Diagnostic</li>
+                        <li>90-Day Implementation Roadmap</li>
+                        <li>2x AI-Guided Working Sessions</li>
+                    </ul>
+                </div>
+
+                <div class="s2a-ia-price-card">
+                    <span class="s2a-ia-price-badge">Most Popular</span>
+                    <div class="s2a-ia-price-display">
+                        <div class="s2a-ia-price-original">$1,497</div>
+                        <div class="s2a-ia-price-amount">$997 <span>USD</span></div>
+                        <p class="s2a-ia-price-note">One-time investment</p>
+                    </div>
+
+                    <ul class="s2a-ia-price-features" style="margin-bottom: 1.5rem;">
+                        <li>Everything in Strategic Diagnosis</li>
+                        <li>Business Model Canvas (complete)</li>
+                        <li>Operating Model Framework</li>
+                        <li>Financial Model Template</li>
+                        <li>People Model Architecture</li>
+                        <li>9-Driver Growth Analysis</li>
+                        <li>90-Day Implementation Roadmap</li>
+                        <li>2x AI-Guided Working Sessions</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary btn-large btn-block">Start Implementation Accelerator</a>
+
+                    <p class="s2a-ia-price-limit">Requires completed Strategic Diagnosis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Mirrors Section -->
+    <section class="s2a-ia-mirror">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Business Mirror</span>
+                <h2>Four Models. <em>One Integrated System.</em></h2>
+                <p class="text-lead">Your strategy becomes visible when translated into four interconnected models. We build all four.</p>
+            </div>
+
+            <div class="s2a-ia-mirror-grid">
+                <div class="s2a-ia-mirror-card">
+                    <div class="s2a-ia-mirror-icon">B</div>
+                    <h3>Business Model</h3>
+                    <p>How you create, deliver, and capture value.</p>
+                    <div class="s2a-ia-mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Value proposition design</li>
+                            <li>Customer segments</li>
+                            <li>Revenue streams</li>
+                            <li>Pricing architecture</li>
+                            <li>DSI validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-mirror-card">
+                    <div class="s2a-ia-mirror-icon">O</div>
+                    <h3>Operating Model</h3>
+                    <p>How the organization actually works.</p>
+                    <div class="s2a-ia-mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Process architecture</li>
+                            <li>Decision rights</li>
+                            <li>Accountability structure</li>
+                            <li>Operating rhythms</li>
+                            <li>System dependencies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-mirror-card">
+                    <div class="s2a-ia-mirror-icon">F</div>
+                    <h3>Financial Model</h3>
+                    <p>The numbers that tell the truth.</p>
+                    <div class="s2a-ia-mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Revenue projections</li>
+                            <li>Unit economics</li>
+                            <li>Cash flow modeling</li>
+                            <li>Break-even analysis</li>
+                            <li>Investor readiness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-mirror-card">
+                    <div class="s2a-ia-mirror-icon">P</div>
+                    <h3>People Model</h3>
+                    <p>Who does what and how they grow.</p>
+                    <div class="s2a-ia-mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Role definitions</li>
+                            <li>Hiring roadmap</li>
+                            <li>Accountability matrix</li>
+                            <li>Culture architecture</li>
+                            <li>Leadership pipeline</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 Growth Drivers Section -->
+    <section class="s2a-ia-drivers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Growth Engine</span>
+                <h2>Nine Drivers. <em>Compound Effect.</em></h2>
+                <p class="text-lead">10% improvement across nine drivers compounds to 60% growth. We diagnose all nine and prioritize interventions.</p>
+            </div>
+
+            <div class="s2a-ia-drivers-grid">
+                <div class="s2a-ia-driver-category">
+                    <div class="s2a-ia-driver-title">Acquisition</div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">1</span>
+                        <span>Lead Generation</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">2</span>
+                        <span>Conversion Rate</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">3</span>
+                        <span>Acquisition Cost</span>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-driver-category">
+                    <div class="s2a-ia-driver-title">Value</div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">4</span>
+                        <span>Transaction Value</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">5</span>
+                        <span>Transaction Frequency</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">6</span>
+                        <span>Customer Retention</span>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-driver-category">
+                    <div class="s2a-ia-driver-title">Efficiency</div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">7</span>
+                        <span>Profit Margin</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">8</span>
+                        <span>Referral Rate</span>
+                    </div>
+                    <div class="s2a-ia-driver-item">
+                        <span class="s2a-ia-driver-num">9</span>
+                        <span>Strategic Leverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-ia-drivers-quote">
+                <p>"Most businesses over-invest in 1-2 drivers while ignoring others with 10x more potential."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 90-Day Timeline -->
+    <section class="s2a-ia-timeline">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Roadmap</span>
+                <h2>90 Days to <em>Systematic Execution</em></h2>
+            </div>
+
+            <div class="s2a-ia-timeline-list">
+                <div class="s2a-ia-timeline-item">
+                    <div class="s2a-ia-timeline-week">W1-2</div>
+                    <div class="s2a-ia-timeline-content">
+                        <h4>Foundation & Business Model</h4>
+                        <p>Review Strategic Diagnosis, validate KNOW alignment, complete Business Model Canvas with DSI validation and value proposition design.</p>
+                    </div>
+                </div>
+                <div class="s2a-ia-timeline-item">
+                    <div class="s2a-ia-timeline-week">W3-4</div>
+                    <div class="s2a-ia-timeline-content">
+                        <h4>Operating Model Architecture</h4>
+                        <p>Map current processes, identify founder dependencies, design accountability structure, establish operating rhythms and decision rights.</p>
+                    </div>
+                </div>
+                <div class="s2a-ia-timeline-item">
+                    <div class="s2a-ia-timeline-week">W5-6</div>
+                    <div class="s2a-ia-timeline-content">
+                        <h4>Financial Model & People Model</h4>
+                        <p>Build revenue projections, unit economics, cash flow model. Define role architecture, hiring priorities, and accountability matrix.</p>
+                    </div>
+                </div>
+                <div class="s2a-ia-timeline-item">
+                    <div class="s2a-ia-timeline-week">W7-8</div>
+                    <div class="s2a-ia-timeline-content">
+                        <h4>9-Driver Growth Analysis</h4>
+                        <p>Score all nine growth drivers, identify leverage points, design quick wins, medium-term, and transformational interventions.</p>
+                    </div>
+                </div>
+                <div class="s2a-ia-timeline-item">
+                    <div class="s2a-ia-timeline-week">W9-12</div>
+                    <div class="s2a-ia-timeline-content">
+                        <h4>Integration & Implementation Launch</h4>
+                        <p>Integrate all four models, validate coherence, create 90-day action plan with weekly milestones, metrics, and accountability structures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="s2a-ia-comparison">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Why This Approach</span>
+                <h2>Not Consulting. <em>Mirror Building.</em></h2>
+            </div>
+
+            <div class="s2a-ia-comparison-grid">
+                <div class="s2a-ia-comparison-col negative">
+                    <h3>Traditional Consulting</h3>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Approach</div>
+                        <div class="s2a-ia-comparison-value">We tell you what to do based on our frameworks</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Deliverable</div>
+                        <div class="s2a-ia-comparison-value">Generic strategy deck with borrowed ideas</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Timeline</div>
+                        <div class="s2a-ia-comparison-value">6-12 month engagements, billable hours</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Outcome</div>
+                        <div class="s2a-ia-comparison-value">Slides gather dust, nothing changes</div>
+                    </div>
+                </div>
+
+                <div class="s2a-ia-comparison-col positive">
+                    <h3>Implementation Accelerator</h3>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Approach</div>
+                        <div class="s2a-ia-comparison-value">We extract YOUR strategy and make it visible</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Deliverable</div>
+                        <div class="s2a-ia-comparison-value">Four integrated models built from your reality</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Timeline</div>
+                        <div class="s2a-ia-comparison-value">90 days, fixed investment, clear milestones</div>
+                    </div>
+                    <div class="s2a-ia-comparison-item">
+                        <div class="s2a-ia-comparison-label">Outcome</div>
+                        <div class="s2a-ia-comparison-value">Actionable roadmap with weekly execution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="s2a-ia-cta">
+        <div class="container">
+            <div class="s2a-ia-cta-content">
+                <span class="section-eyebrow">Ready to Build Your Mirror?</span>
+                <h2>From Diagnosis to <em>Implementation</em></h2>
+                <p class="s2a-ia-cta-text">Transform your Strategic Diagnosis into four integrated models and a 90-day action plan.</p>
+
+                <a href="#" class="btn btn-primary btn-large">Start Implementation Accelerator - $997</a>
+
+                <p class="s2a-ia-cta-note">Includes everything in Strategic Diagnosis + complete Business Mirror</p>
+            </div>
+        </div>
+    </section>
+</div>

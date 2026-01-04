@@ -1,0 +1,90 @@
+/* ============================================
+   LANGUAGE SWITCHER - NAV INTEGRATION
+   ============================================
+
+   Language toggle integrated into the navigation bar
+   Works for both English (LTR) and Arabic (RTL) sites
+
+   ============================================ */
+
+/* Hide old floating switcher */
+.language-switcher {
+    display: none !important;
+}
+
+/* Language Toggle Button in Nav - Matches nav-links styling */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.625rem;
+    margin-left: 0.5rem;
+    background: transparent;
+    color: var(--steel, #4a5568);
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--stone, #d4cfc5);
+    letter-spacing: 0.02em;
+}
+
+.lang-toggle:hover {
+    background: var(--gold, #c9a961);
+    color: white;
+    border-color: var(--gold, #c9a961);
+}
+
+/* Arabic toggle styling - same size as nav links */
+.lang-toggle.lang-ar {
+    font-family: 'Dubai', 'Masmak', sans-serif;
+    font-size: 0.875rem;
+    padding: 0.2rem 0.5rem;
+}
+
+/* English toggle styling */
+.lang-toggle.lang-en {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+/* RTL adjustments */
+html[dir="rtl"] .lang-toggle {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+/* Mobile nav language toggle */
+.mobile-nav .lang-toggle {
+    display: block;
+    margin: 1.5rem 0 0 0;
+    padding: 0.875rem 1.5rem;
+    text-align: center;
+    background: var(--gold, #c9a961);
+    color: var(--midnight, #0a1628);
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+}
+
+html[dir="rtl"] .mobile-nav .lang-toggle {
+    margin: 1.5rem 0 0 0;
+}
+
+.mobile-nav .lang-toggle:hover {
+    background: var(--gold-dark, #9d7f3a);
+    color: white;
+}
+
+/* Hide desktop lang toggle on mobile, show in mobile nav */
+@media (max-width: 968px) {
+    .nav-links .lang-toggle {
+        display: none;
+    }
+
+    .mobile-nav .lang-toggle {
+        display: block;
+    }
+}

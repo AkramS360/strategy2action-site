@@ -1,0 +1,698 @@
+<!-- S2A Executive Partnership - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --slate: #2d3a52;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --stone: #d4cfc5;
+    --gold: #c9a961;
+    --gold-light: #e0c97f;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --error: #c96b6b;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(5rem, 10vw, 7rem);
+}
+
+.s2a-exec * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-exec { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); background: var(--cream); }
+.s2a-exec img { max-width: 100%; display: block; }
+.s2a-exec a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+.s2a-exec ul { list-style: none; }
+
+.s2a-exec .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2.5rem); }
+
+.s2a-exec h1, .s2a-exec h2, .s2a-exec h3, .s2a-exec h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--midnight);
+}
+.s2a-exec h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 700; line-height: 1.1; }
+.s2a-exec h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.s2a-exec h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+.s2a-exec h1 em, .s2a-exec h2 em, .s2a-exec h3 em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-dark);
+}
+.s2a-exec p { margin-bottom: 1rem; }
+.s2a-exec .text-lead { font-size: 1.125rem; color: var(--steel); line-height: 1.8; }
+
+.s2a-exec .section { padding: var(--section-padding) 0; }
+.s2a-exec .section--ivory { background: var(--ivory); }
+.s2a-exec .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+.s2a-exec .section-header h2 { margin-bottom: 0.75rem; }
+.s2a-exec .section-header p { color: var(--steel); }
+.s2a-exec .section-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.s2a-exec .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+.s2a-exec .btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
+}
+.s2a-exec .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4); color: white; }
+.s2a-exec .btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--sand);
+}
+.s2a-exec .btn-secondary:hover { border-color: var(--gold); color: var(--gold-dark); }
+.s2a-exec .btn-large { font-size: 1rem; padding: 1rem 2rem; }
+.s2a-exec .btn-block { width: 100%; }
+
+/* Grids */
+.s2a-exec .grid { display: grid; gap: 1.25rem; }
+.s2a-exec .grid-2 { grid-template-columns: repeat(2, 1fr); }
+.s2a-exec .grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+    .s2a-exec .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .s2a-exec .grid-2, .s2a-exec .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.s2a-exec .card {
+    padding: 1.75rem;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.s2a-exec .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(10, 22, 40, 0.1); }
+.s2a-exec .card h3 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+.s2a-exec .card p { font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin-bottom: 0; }
+
+/* Bullet List */
+.s2a-exec .bullet-list li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.875rem;
+    color: var(--steel);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.s2a-exec .bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.625rem;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+/* Executive Hero */
+.s2a-exec-hero {
+    padding: 6rem 0 5rem;
+    background: linear-gradient(135deg, var(--midnight) 0%, #0d1f35 50%, var(--navy) 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+.s2a-exec-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+.s2a-exec-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 50%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+.s2a-exec-hero-content { max-width: 800px; position: relative; z-index: 1; }
+.s2a-exec-hero h1 { color: var(--cream); margin-bottom: 1.5rem; }
+.s2a-exec-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(201, 169, 97, 0.15);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+}
+.s2a-exec-price-range {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+.s2a-exec-price-range .amount {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+.s2a-exec-price-range .period { font-size: 1rem; color: rgba(250, 248, 245, 0.6); }
+
+/* Tier Cards */
+.s2a-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .s2a-tier-grid { grid-template-columns: 1fr; }
+}
+.s2a-tier-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+}
+.s2a-tier-card--featured { border: 2px solid var(--gold); }
+.s2a-tier-card--featured::before {
+    content: 'Most Chosen';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.s2a-tier-name {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+}
+.s2a-tier-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+.s2a-tier-price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--midnight);
+    margin-bottom: 0.25rem;
+}
+.s2a-tier-price span { font-size: 1rem; font-weight: 400; color: var(--fog); }
+.s2a-tier-desc {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.s2a-tier-features { margin-bottom: 1.5rem; }
+.s2a-tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--navy);
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.75rem;
+}
+.s2a-tier-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 14px;
+    height: 14px;
+    background: var(--success);
+    border-radius: 50%;
+}
+
+/* Engagement Cards */
+.s2a-engagement-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+.s2a-engagement-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.s2a-engagement-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+.s2a-engagement-card p {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    margin-bottom: 0;
+}
+
+/* Application Form */
+.s2a-application-section {
+    background: var(--ivory);
+    padding: var(--section-padding) 0;
+}
+.s2a-application-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+.s2a-form-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.s2a-form-subtitle {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.s2a-form-group { margin-bottom: 1.25rem; }
+.s2a-form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+.s2a-form-input, .s2a-form-textarea, .s2a-form-select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--navy);
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.s2a-form-input:focus, .s2a-form-textarea:focus, .s2a-form-select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
+}
+.s2a-form-textarea { min-height: 120px; resize: vertical; }
+
+/* Footer */
+.s2a-footer {
+    padding: 3rem 0 1.5rem;
+    background: var(--midnight);
+    color: rgba(250, 248, 245, 0.7);
+}
+.s2a-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+    .s2a-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+    .s2a-footer-grid { grid-template-columns: 1fr; }
+}
+.s2a-footer-brand p { font-size: 0.875rem; line-height: 1.7; max-width: 260px; color: rgba(250, 248, 245, 0.7); }
+.s2a-footer-column h4 {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+.s2a-footer-column a {
+    display: block;
+    font-size: 0.8125rem;
+    color: rgba(250, 248, 245, 0.6);
+    padding: 0.25rem 0;
+}
+.s2a-footer-column a:hover { color: var(--cream); }
+.s2a-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 248, 245, 0.1);
+    font-size: 0.75rem;
+}
+@media (max-width: 480px) {
+    .s2a-footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
+
+<div class="s2a-exec">
+    <!-- Hero Section -->
+    <section class="s2a-exec-hero">
+        <div class="container">
+            <div class="s2a-exec-hero-content">
+                <div class="s2a-exec-badge">Tier 4: Executive Partnership</div>
+                <h1>Strategic Partnership for <em>Transformational Growth</em></h1>
+                <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">Not a project. A partnership. Ongoing strategic advisory, monthly deep-dive sessions, and continuous access for founders navigating critical growth phases or complex transformations.</p>
+
+                <div class="s2a-exec-price-range">
+                    <span class="amount">$25,000 - $50,000+</span>
+                    <span class="period">/ quarter (3-month minimum)</span>
+                </div>
+
+                <a href="#apply" class="btn btn-primary btn-large">Apply for Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Tiers -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Partnership Options</span>
+                <h2>Two Engagement <em>Models</em></h2>
+                <p class="text-lead">Choose the level of engagement that matches your growth phase and transformation needs.</p>
+            </div>
+
+            <div class="s2a-tier-grid">
+                <div class="s2a-tier-card">
+                    <div class="s2a-tier-name">Strategic Advisory</div>
+                    <h3 class="s2a-tier-title">Growth Partner</h3>
+                    <div class="s2a-tier-price">$25,000 <span>/ quarter</span></div>
+                    <p class="s2a-tier-desc">Monthly strategic sessions with ongoing advisory access. Ideal for founders who need consistent guidance without full-time engagement.</p>
+
+                    <ul class="s2a-tier-features">
+                        <li>2x 90-minute sessions per month</li>
+                        <li>Async messaging access (48hr response)</li>
+                        <li>Quarterly strategy reviews</li>
+                        <li>KSG position monitoring</li>
+                        <li>Board/investor presentation support</li>
+                        <li>Priority access to new frameworks</li>
+                    </ul>
+
+                    <a href="#apply" class="btn btn-secondary btn-block">Apply for Growth Partner</a>
+                </div>
+
+                <div class="s2a-tier-card s2a-tier-card--featured">
+                    <div class="s2a-tier-name">Full Transformation</div>
+                    <h3 class="s2a-tier-title">Transformation Partner</h3>
+                    <div class="s2a-tier-price">$50,000+ <span>/ quarter</span></div>
+                    <p class="s2a-tier-desc">Intensive partnership for major transformations - scaling, restructuring, pivots, or funding rounds. Full strategic integration.</p>
+
+                    <ul class="s2a-tier-features">
+                        <li>4x 90-minute sessions per month</li>
+                        <li>Same-day messaging access</li>
+                        <li>Monthly deep-dive reviews</li>
+                        <li>Leadership team sessions (2/quarter)</li>
+                        <li>Investor/board meeting prep and support</li>
+                        <li>Full Business Mirror updates</li>
+                        <li>On-call for critical decisions</li>
+                    </ul>
+
+                    <a href="#apply" class="btn btn-primary btn-block">Apply for Transformation Partner</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Partnership</span>
+                <h2>What <em>Partnership</em> Means</h2>
+            </div>
+
+            <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">S</div>
+                    <h4>Strategic Sessions</h4>
+                    <p>Regular 90-minute deep-dives on current challenges, opportunities, and strategic decisions. Not status updates - real work.</p>
+                </div>
+
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">C</div>
+                    <h4>Continuous Access</h4>
+                    <p>Async messaging for quick questions, decision checks, and thought partnership. You're never alone in critical moments.</p>
+                </div>
+
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">R</div>
+                    <h4>Strategic Reviews</h4>
+                    <p>Quarterly deep-dives on KSG position, Business Mirror updates, and strategic trajectory calibration.</p>
+                </div>
+
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">L</div>
+                    <h4>Leadership Integration</h4>
+                    <p>Sessions with your leadership team to align strategy across the organization. Not just you - your whole team.</p>
+                </div>
+
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">I</div>
+                    <h4>Investor and Board Support</h4>
+                    <p>Preparation for investor meetings, board presentations, and strategic communications. Your story, told clearly.</p>
+                </div>
+
+                <div class="s2a-engagement-card">
+                    <div class="s2a-engagement-icon">D</div>
+                    <h4>Critical Decision Support</h4>
+                    <p>On-call availability for major decisions - acquisitions, pivots, hiring, firing. The calls that can't wait.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal For -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Is This Right For You?</span>
+                <h2>Ideal For <em>Founders Who</em></h2>
+            </div>
+
+            <div class="grid grid-2" style="max-width: 900px; margin: 0 auto; gap: 2rem;">
+                <div class="card">
+                    <h3>Growth Phase Transitions</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>Scaling from founder-led to team-led</li>
+                        <li>Preparing for Series A/B/C</li>
+                        <li>Expanding to new markets</li>
+                        <li>Building leadership team</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Complex Transformations</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>Strategic pivots or repositioning</li>
+                        <li>M&A integration</li>
+                        <li>Organizational restructuring</li>
+                        <li>Founder succession planning</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Ongoing Strategic Needs</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>Regular strategic thought partnership</li>
+                        <li>Board and investor management</li>
+                        <li>Decision-making support</li>
+                        <li>Continuous alignment calibration</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Value Alignment</h3>
+                    <ul class="bullet-list" style="margin-top: 1rem;">
+                        <li>Building ethical, sustainable businesses</li>
+                        <li>Long-term thinking over quick exits</li>
+                        <li>Purpose-driven growth</li>
+                        <li>Values-aligned value creation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="s2a-application-section" id="apply">
+        <div class="container">
+            <div class="s2a-application-form">
+                <h2 class="s2a-form-title">Apply for Partnership</h2>
+                <p class="s2a-form-subtitle">Tell us about your situation. We'll schedule a call to discuss fit.</p>
+
+                <form action="https://platform.strategy2action.com/partnership-apply" method="POST">
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Full Name *</label>
+                        <input type="text" name="name" class="s2a-form-input" required>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Email *</label>
+                        <input type="email" name="email" class="s2a-form-input" required>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Company Name *</label>
+                        <input type="text" name="company" class="s2a-form-input" required>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Company Website</label>
+                        <input type="url" name="website" class="s2a-form-input">
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Annual Revenue Range *</label>
+                        <select name="revenue" class="s2a-form-select" required>
+                            <option value="">Select range</option>
+                            <option value="pre-revenue">Pre-revenue</option>
+                            <option value="0-500k">$0 - $500K</option>
+                            <option value="500k-2m">$500K - $2M</option>
+                            <option value="2m-10m">$2M - $10M</option>
+                            <option value="10m-50m">$10M - $50M</option>
+                            <option value="50m+">$50M+</option>
+                        </select>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Which Partnership Level? *</label>
+                        <select name="tier" class="s2a-form-select" required>
+                            <option value="">Select level</option>
+                            <option value="growth">Growth Partner ($25K/quarter)</option>
+                            <option value="transformation">Transformation Partner ($50K+/quarter)</option>
+                            <option value="unsure">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">What's your primary challenge or opportunity right now? *</label>
+                        <textarea name="challenge" class="s2a-form-textarea" rows="4" required placeholder="Describe your current situation and what you're hoping to achieve..."></textarea>
+                    </div>
+
+                    <div class="s2a-form-group">
+                        <label class="s2a-form-label">Have you completed any S2A programs? *</label>
+                        <select name="prior_engagement" class="s2a-form-select" required>
+                            <option value="">Select</option>
+                            <option value="diagnosis">Strategic Diagnosis</option>
+                            <option value="builder">Builder Modules</option>
+                            <option value="expert">Expert-Led Modules</option>
+                            <option value="none">None yet</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-block">Submit Application</button>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">We review applications within 48 hours and will reach out to schedule a call.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="s2a-footer">
+        <div class="container">
+            <div class="s2a-footer-grid">
+                <div class="s2a-footer-brand">
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem;">Strategy2Action</p>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-footer-bottom">
+                <span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

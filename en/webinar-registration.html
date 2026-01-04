@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Webinar: Stop Explaining Yourself | Strategy2Action</title>
+    <meta name="description" content="Discover why brilliant founders stay stuck and the 3-phase Know-Show-Grow cycle that makes your strategy visible. Free live training with Akram AlQadasi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GHL Tracking Script -->
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+    <!-- Facebook Pixel - ADD YOUR PIXEL ID -->
+    <!--
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    -->
+
+    <style>
+        /* Webinar Registration Page Specific Styles */
+        .webinar-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .webinar-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at right center, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .webinar-hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .webinar-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .webinar-hero {
+                padding: 7rem 0 3rem;
+            }
+        }
+
+        .webinar-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .webinar-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .webinar-subtitle {
+            font-size: 1.125rem;
+            color: var(--steel);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .webinar-bullets {
+            margin-bottom: 2rem;
+        }
+
+        .webinar-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.625rem 0;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .webinar-bullets li svg {
+            color: var(--success);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .webinar-social-proof {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--fog);
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .webinar-social-proof svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+        }
+
+        /* Registration Card */
+        .registration-card {
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+            position: relative;
+        }
+
+        .registration-card-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .registration-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .registration-header h3 {
+            font-size: 1.25rem;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .registration-date {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        .registration-date strong {
+            color: var(--navy);
+        }
+
+        /* GHL Form Container */
+        .ghl-form-container {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ghl-form-placeholder {
+            text-align: center;
+            padding: 2rem;
+            background: var(--ivory);
+            border: 2px dashed var(--sand);
+            border-radius: 8px;
+        }
+
+        .ghl-form-placeholder p {
+            font-size: 0.875rem;
+            color: var(--fog);
+            margin-bottom: 0.5rem;
+        }
+
+        .ghl-form-placeholder code {
+            font-size: 0.75rem;
+            background: var(--cream);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* What You'll Learn Section */
+        .learn-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .learn-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .learn-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .learn-card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .learn-card-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--gold-dark);
+            stroke-width: 1.5;
+        }
+
+        .learn-card h3 {
+            font-size: 1.125rem;
+            color: var(--midnight);
+            margin-bottom: 0.75rem;
+        }
+
+        .learn-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.7;
+        }
+
+        /* Who This Is For Section */
+        .audience-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .audience-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .audience-item:last-child {
+            border-bottom: none;
+        }
+
+        .audience-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .audience-item p {
+            font-size: 1rem;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        /* Host Section */
+        .host-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .host-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .host-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .host-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .host-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .host-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 0.25rem;
+        }
+
+        .host-title {
+            font-size: 0.9375rem;
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .host-bio {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .host-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .host-credentials {
+                justify-content: center;
+            }
+        }
+
+        .credential-tag {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.4rem 0.75rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 4px;
+            color: var(--steel);
+        }
+
+        /* Free Gift Section */
+        .gift-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .gift-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(45, 138, 110, 0.08) 0%, rgba(45, 138, 110, 0.02) 100%);
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .gift-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .gift-box h3 {
+            font-size: 1.5rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .gift-box p {
+            font-size: 1rem;
+            color: var(--steel);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+
+        .gift-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .gift-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--navy);
+        }
+
+        .gift-feature svg {
+            width: 16px;
+            height: 16px;
+            color: var(--success);
+        }
+
+        /* Urgency Section */
+        .urgency-section {
+            padding: 2.5rem 0;
+            background: var(--navy);
+        }
+
+        .urgency-box {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .urgency-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .urgency-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(201, 169, 97, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .urgency-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gold);
+        }
+
+        .urgency-content h4 {
+            color: var(--cream);
+            font-size: 1.125rem;
+            margin-bottom: 0.375rem;
+        }
+
+        .urgency-content p {
+            color: rgba(250, 248, 245, 0.8);
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: rgba(250, 248, 245, 0.85);
+            font-size: 1.0625rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .final-cta-details {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.6);
+            margin-top: 1.5rem;
+        }
+
+        /* Minimal nav for landing page */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(26, 42, 71, 0.08);
+        }
+
+        .nav-minimal .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-minimal .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Minimal footer for landing page */
+        .footer-minimal {
+            padding: 1.5rem 0;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .footer-minimal p {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="nav-minimal">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo_s2a.png" alt="Strategy2Action">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="webinar-hero">
+        <div class="container">
+            <div class="webinar-hero-grid">
+                <!-- Left Column: Content -->
+                <div>
+                    <span class="webinar-badge">Free Live Training</span>
+                    <h1>Stop Explaining Yourself: <em>The 3-Phase Cycle That Makes Your Strategy Visible</em></h1>
+                    <p class="webinar-subtitle">Discover why brilliant founders stay stuck — and the simple framework that lets your team, investors, and customers finally see what you see.</p>
+
+                    <ul class="webinar-bullets">
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>Why adding more knowledge keeps you stuck (and what to do instead)</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>The Know-Show-Grow Cycle: where YOUR business is breaking</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>The 4-model system that makes strategy visible in weeks, not months</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span><strong>FREE:</strong> Everyone gets the $133 Strategic Diagnosis</span>
+                        </li>
+                    </ul>
+
+                    <div class="webinar-social-proof">
+                        <i data-lucide="users"></i>
+                        <span>Join 400+ founders who've made their strategy visible</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Registration Card -->
+                <div class="registration-card">
+                    <span class="registration-card-badge">Reserve Your Free Seat</span>
+
+                    <div class="registration-header">
+                        <h3>Stop Explaining Yourself</h3>
+                        <p class="registration-date">
+                            <strong>[DATE]</strong> at <strong>[TIME]</strong><br>
+                            60 Minutes + Live Q&A
+                        </p>
+                    </div>
+
+                    <!-- GHL FORM EMBED -->
+                    <div class="ghl-form-container">
+                        <iframe src="https://api.leadconnectorhq.com/widget/form/T9PmZMOX9lTTTEyuFRZh" style="width:100%;height:100%;border:none;border-radius:3px" id="inline-T9PmZMOX9lTTTEyuFRZh" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Form 5" data-height="undefined" data-layout-iframe-id="inline-T9PmZMOX9lTTTEyuFRZh" data-form-id="T9PmZMOX9lTTTEyuFRZh" title="Form 5"></iframe>
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                    </div>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">
+                        Can't make it live? Register anyway for the replay.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn Section -->
+    <section class="learn-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You'll Discover</span>
+                <h2>In 60 Minutes, <em>You'll Learn:</em></h2>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-card-icon">
+                        <i data-lucide="lock"></i>
+                    </div>
+                    <h3>The Problem</h3>
+                    <p>Why brilliant founders stay stuck. You don't lack strategy — you lack visibility. Learn why adding more knowledge keeps you in an endless loop.</p>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-card-icon">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <h3>The Framework</h3>
+                    <p>The Know-Show-Grow Cycle. Three words that explain where your business is breaking: Over-Learner, Ghost, or Reckless Scaler.</p>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-card-icon">
+                        <i data-lucide="layout-grid"></i>
+                    </div>
+                    <h3>The Solution</h3>
+                    <p>The Business Mirror. Four integrated models that make your strategy visible to team, investors, and customers — built from YOUR reality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="audience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Is This For You?</span>
+                <h2>This Training Is <em>For You</em> If:</h2>
+            </div>
+
+            <div class="audience-list">
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>You've built something real, but feel like you're carrying it alone</p>
+                </div>
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>Your team keeps asking "what's the strategy?" — and you're tired of explaining</p>
+                </div>
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>You've read the books, taken the courses, hired the consultants — still stuck</p>
+                </div>
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>You know your strategy in your head, but can't seem to make others see it</p>
+                </div>
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>You're scaling but worried the foundation might crack</p>
+                </div>
+                <div class="audience-item">
+                    <i data-lucide="check-circle-2"></i>
+                    <p>You need to present to investors or board, but the story isn't clear</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Host Section -->
+    <section class="host-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Host</span>
+                <h2>Meet <em>Akram AlQadasi</em></h2>
+            </div>
+
+            <div class="host-grid">
+                <div class="host-image">
+                    <img src="images/about-pic-akram.png" alt="Akram AlQadasi">
+                </div>
+                <div>
+                    <div class="host-name">Akram AlQadasi</div>
+                    <div class="host-title">Strategy Architect | 15+ Years | 400+ Strategies Revealed</div>
+                    <p class="host-bio">
+                        After leading strategy at major MENA holding companies and family businesses — including Almutlaq Group, BIHG, and Arab National Bank — Akram noticed a pattern:
+                    </p>
+                    <p class="host-bio" style="font-style: italic; color: var(--gold-dark);">
+                        "Founders didn't lack strategy. They lacked visibility into their own strategy. The brilliance was trapped."
+                    </p>
+                    <p class="host-bio">
+                        Strategy2Action exists to solve that problem.
+                    </p>
+                    <div class="host-credentials">
+                        <span class="credential-tag">IE Business School EMBA</span>
+                        <span class="credential-tag">MIT Professional Ed</span>
+                        <span class="credential-tag">INSEAD</span>
+                        <span class="credential-tag">CFA Charterholder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Gift Section -->
+    <section class="gift-section">
+        <div class="container">
+            <div class="gift-box">
+                <span class="gift-badge">Free for All Attendees</span>
+                <h3>Everyone Gets the Strategic Diagnosis — Free ($133 Value)</h3>
+                <p>
+                    Stay until the end and you'll receive free access to our Strategic Diagnosis tool. In 20 minutes, discover exactly where your Know-Show-Grow cycle is breaking.
+                </p>
+                <div class="gift-features">
+                    <div class="gift-feature">
+                        <i data-lucide="check"></i>
+                        <span>Your KNOW-SHOW-GROW scores</span>
+                    </div>
+                    <div class="gift-feature">
+                        <i data-lucide="check"></i>
+                        <span>Which trap you're stuck in</span>
+                    </div>
+                    <div class="gift-feature">
+                        <i data-lucide="check"></i>
+                        <span>Your specific intervention path</span>
+                    </div>
+                    <div class="gift-feature">
+                        <i data-lucide="check"></i>
+                        <span>Exactly where to focus first</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="urgency-section">
+        <div class="container">
+            <div class="urgency-box">
+                <div class="urgency-icon">
+                    <i data-lucide="radio"></i>
+                </div>
+                <div class="urgency-content">
+                    <h4>Live Session — Limited Replay</h4>
+                    <p>This is a live training with Q&A. We record it, but the energy and interaction happen live. Plus, only live attendees get direct access to the follow-up Q&A session where Akram discusses your diagnosis results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <span class="section-eyebrow" style="color: var(--gold);">Ready to See Clearly?</span>
+            <h2>Your Strategy Already Exists. <em>Let's Make It Visible.</em></h2>
+            <p>Reserve your free seat now and discover where your Know-Show-Grow cycle is breaking.</p>
+
+            <a href="#" class="btn btn-primary btn-large" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                Reserve My Seat — It's Free <i data-lucide="arrow-up"></i>
+            </a>
+
+            <p class="final-cta-details">
+                [DATE] at [TIME] | 60 Minutes + Live Q&A<br>
+                Can't make it live? Register anyway for the replay.
+            </p>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

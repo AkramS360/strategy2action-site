@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باني نموذج الأعمال | Strategy2Action</title>
+    <meta name="description" content="ابنِ نموذج أعمالك بتوجيه مدعوم بالذكاء الاصطناعي. حدد ماذا تقدم، ولمن، وكيف تخلق القيمة. وحدة ذاتية السرعة مع دعم وكيل الذكاء الاصطناعي على مدار الساعة.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, #e3f2fd 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at left top, rgba(25, 118, 210, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1976d2;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #1976d2;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(25, 118, 210, 0.15);
+            position: relative;
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1976d2;
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: #1976d2;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .timeline-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1976d2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../en/business-model-builder.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/business-model-builder.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="target" style="width: 16px; height: 16px;"></i> الوحدة 1: نقطة الدخول</div>
+                    <h1>باني <em>نموذج الأعمال</em></h1>
+                    <p class="text-lead mb-4">حدد ماذا تقدم ولمن. ابنِ عرض القيمة واستراتيجية التسعير والتموضع التنافسي مع توجيه مدعوم بالذكاء الاصطناعي متاح على مدار الساعة.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #1976d2; width: 20px; height: 20px;"></i> وكيل Strategy360 الذكي (24/7)</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #1976d2; width: 20px; height: 20px;"></i> جلسات أسئلة وأجوبة جماعية أسبوعية</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #1976d2; width: 20px; height: 20px;"></i> إنجاز ذاتي السرعة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #1976d2; width: 20px; height: 20px;"></i> لوحة تحكم التقدم</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$499 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">وحدة ذاتية السرعة</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> مخطط نموذج الأعمال الكامل</li>
+                        <li><i data-lucide="check"></i> التحقق من الفكرة البيعية المهيمنة (DSI)</li>
+                        <li><i data-lucide="check"></i> تصميم عرض القيمة</li>
+                        <li><i data-lucide="check"></i> استراتيجية التسعير والعروض</li>
+                        <li><i data-lucide="check"></i> إطار التموضع التنافسي</li>
+                        <li><i data-lucide="check"></i> إطار التسويق والمبيعات</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block" style="background: #1976d2;">ابدأ باني نموذج الأعمال — $499 <i data-lucide="arrow-left"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">يتطلب إتمام التشخيص الاستراتيجي ($133)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">ماذا ستبني</span>
+                <h2><em>نموذج أعمالك</em> الكامل</h2>
+                <p class="text-lead">حدد أساس مرآة عملك—ماذا تقدم ولمن.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="compass" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>التعريف الأساسي</h4>
+                    <p>صِغ عمودك الاستراتيجي—الجوهر الأساسي لما يجعل عملك ذا قيمة فريدة.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="heart" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>عرض القيمة</h4>
+                    <p>صمم فكرتك البيعية المهيمنة (DSI) التي تجتاز مرشح SIBMO وتلقى صدى لدى العملاء المثاليين.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="users" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>شرائح العملاء</h4>
+                    <p>حدد وأعط الأولوية لشرائح العملاء المثاليين مع خريطة الألم إلى الربح.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="dollar-sign" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>استراتيجية التسعير</h4>
+                    <p>حدد هيكل التسعير ومستويات العروض المتوافقة مع تصور قيمة العميل.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="target" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>التموضع التنافسي</h4>
+                    <p>حدد موقعك في السوق—هل أنت الوحيد أو الأفضل أو الأول في شيء محدد؟</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(25, 118, 210, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="megaphone" style="color: #1976d2; width: 20px; height: 20px;"></i></div>
+                    <h4>التسويق والمبيعات</h4>
+                    <p>صمم إطار دخول السوق بما في ذلك القنوات والرسائل وعملية البيع.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">كيف يعمل</span>
+                <h2">ابنِ <em>بوتيرتك</em></h2>
+                <p class="text-lead">إنجاز ذاتي السرعة مع دعم ذكاء اصطناعي على مدار الساعة وجلسات أسئلة وأجوبة جماعية أسبوعية.</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="timeline-step">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h4>الوصول إلى وحدتك</h4>
+                        <p>بعد إتمام التشخيص الاستراتيجي، ادخل إلى وحدة باني نموذج الأعمال في منصة Strategy360.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h4>العمل مع الوكيل الذكي</h4>
+                        <p>يرشدك وكيل نموذج الأعمال الذكي عبر كل مكون بأسئلة استقصائية وأطر عمل وتعليقات فورية.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h4>بناء مخططك</h4>
+                        <p>أكمل مخطط نموذج أعمالك مع عرض القيمة وشرائح العملاء والتسعير والتموضع.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">4</div>
+                    <div class="step-content">
+                        <h4>حضور الأسئلة والأجوبة الأسبوعية</h4>
+                        <p>انضم إلى جلسات الأسئلة والأجوبة الجماعية المباشرة للحصول على إجابات ومشاركة الأفكار وتحسين عملك مع تعليقات الأقران.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">5</div>
+                    <div class="step-content">
+                        <h4>فتح الوحدة التالية</h4>
+                        <p>عند الإتمام، افتح باني نموذج التشغيل لمواصلة بناء مرآة عملك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">ما الذي تحصل عليه</span>
+                <h2 style="color: var(--cream);">ليست نصيحة. <em style="color: var(--gold);">بل معمارية.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">كل تفاعل مع باني نموذج الأعمال ينتج ثلاث طبقات من القيمة.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>المنتج</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك حمله</p>
+
+                    <p class="deliverable-main">
+                        <strong>مخطط نموذج أعمالك الكامل</strong>: نموذج موثق يمكنك مشاركته مع المستثمرين أو فريقك دون ساعة إضافية من الشرح.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            عرض قيمتك مكتوب بلغة العميل، وليس لغة الشركات.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            هيكل تسعير يوضح لماذا تفرض ما تفرضه.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            شرائح العملاء المرسومة لنقاط الألم الفعلية.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            التموضع التنافسي: ما أنت الوحيد أو الأفضل أو الأول فيه.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>القدرة</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك فعله الآن</p>
+
+                    <p class="deliverable-main">
+                        <strong>عرّف عن عملك في 60 ثانية</strong>: بلغة هي لك بالفعل، دون حفظ نص.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            أجب عن "ماذا تفعل شركتك؟" دون تشتت.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            اشرح تسعيرك دون اعتذار.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            درّب مندوب مبيعات جديد على تموضعك في اجتماع واحد.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            قل لا للعملاء غير المناسبين بوضوح، وليس بشعور بالذنب.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>التحول</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
+
+                    <p class="deliverable-main">
+                        <strong>تتوقف عن التشكيك في عرضك.</strong> لأنك وثقت لماذا يعمل.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            من "أعتقد أننا مختلفون" إلى معرفة كيف بالضبط
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الرسائل المتناثرة إلى قصة واحدة واضحة
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من التنافس على السعر إلى التنافس على القيمة
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الأمل في أن "يفهموا" إلى عرض النموذج لهم
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                هذا ليس عرضًا يجمع الغبار. إنه <strong>نموذج أعمالك مرئيًا</strong>، مبني مما هو موجود بالفعل في رأسك، جاهز للتواصل مع أي شخص يحتاج لفهمه.
+            </p>
+        </div>
+    </section>
+
+    <!-- Upgrade Option -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">تريد المزيد من الدعم؟</span>
+                <h2>ترقية إلى <em>مع خبير</em></h2>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div style="background: var(--cream); border: 2px solid #1976d2; border-radius: 16px; padding: 2rem; opacity: 0.7;">
+                    <div style="background: #1976d2; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">الاختيار الحالي</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">باني نموذج الأعمال</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #1976d2; margin-bottom: 1rem;">$499</div>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: #1976d2; width: 16px; height: 16px;"></i> وكيل ذكي (24/7)</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: #1976d2; width: 16px; height: 16px;"></i> أسئلة وأجوبة أسبوعية</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; color: var(--fog);"><i data-lucide="x" style="color: var(--fog); width: 16px; height: 16px;"></i> لا جلسة 1:1</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; color: var(--fog);"><i data-lucide="x" style="color: var(--fog); width: 16px; height: 16px;"></i> لا مراجعة من أكرم</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">ترقية</div>
+                        <span style="background: rgba(250,248,245,0.15); color: var(--cream); font-size: 0.6875rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px;">موصى به</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">خبير نموذج الأعمال</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,499</div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> ساعتان 1:1 مع أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> منتج مراجع من أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> دعم غير متزامن</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> وكيل ذكي (24/7)</li>
+                    </ul>
+                    <a href="business-model-expert.html" class="btn btn-primary btn-block">اطلع على الخيار مع خبير</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">الرحلة</span>
+                <h2">ماذا يأتي <em>تاليًا</em></h2>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+                <div style="background: #1976d2; color: white; padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.25rem;">الخطوة 1</div>
+                    <div style="font-weight: 600;">نموذج الأعمال</div>
+                    <div style="font-size: 0.75rem; opacity: 0.8;">أنت هنا</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 2</div>
+                    <div style="font-weight: 600; color: #f57c00;">نموذج التشغيل</div>
+                    <div style="font-size: 0.75rem; color: var(--fog);">$499</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 3</div>
+                    <div style="font-weight: 600; color: #7b1fa2;">نموذج الأفراد</div>
+                    <div style="font-size: 0.75rem; color: var(--fog);">$399</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 4</div>
+                    <div style="font-weight: 600; color: #388e3c;">النموذج المالي</div>
+                    <div style="font-size: 0.75rem; color: var(--fog);">$499</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 0.9375rem; color: var(--steel);">وفّر 47% مع <a href="builder-bundle.html" style="color: var(--gold-dark); font-weight: 600;">حزمة الباني الكاملة — $999</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">مستعد لتحديد نموذج أعمالك؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">ابنِ أساس <em>مرآة عملك</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">حدد ماذا تقدم، ولمن، وكيف تخلق قيمة فريدة في سوقك.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ باني نموذج الأعمال — $499 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">يتطلب إتمام التشخيص الاستراتيجي ($133)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">شراكة تنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>الموارد</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>التواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

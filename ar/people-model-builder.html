@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الفريق الباني | Strategy2Action</title>
+    <meta name="description" content="ابنِ نموذج الفريق الخاص بك بتوجيه مدعوم بالذكاء الاصطناعي. حدد من يقدم - الهيكل التنظيمي، الأدوار، والقدرات. وحدة ذاتية السرعة مع دعم وكيل AI على مدار الساعة.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, #f3e5f5 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at left top, rgba(123, 31, 162, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #7b1fa2;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #7b1fa2;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(123, 31, 162, 0.15);
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7b1fa2;
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: #7b1fa2;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../en/people-model-builder.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/people-model-builder.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="users" style="width: 16px; height: 16px;"></i> الوحدة 3: الخطوة 3</div>
+                    <h1>نموذج الفريق <em>الباني</em></h1>
+                    <p class="text-lead mb-4">حدد من يقدم. ابنِ هيكلك التنظيمي، تعريفات الأدوار، ومتطلبات القدرات بتوجيه مدعوم بالذكاء الاصطناعي متاح على مدار الساعة.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> وكيل Strategy360 AI (على مدار الساعة)</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> جلسات أسئلة وأجوبة جماعية أسبوعية</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> إكمال ذاتي السرعة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> لوحة متابعة التقدم</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$399 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">وحدة ذاتية السرعة</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> تصميم الهيكل التنظيمي</li>
+                        <li><i data-lucide="check"></i> تعريفات الأدوار وهندسة الوظائف</li>
+                        <li><i data-lucide="check"></i> إطار سياسات الموارد البشرية</li>
+                        <li><i data-lucide="check"></i> متطلبات القدرات</li>
+                        <li><i data-lucide="check"></i> مصفوفة ملكية المبادرات</li>
+                        <li><i data-lucide="check"></i> إطار أولويات التوظيف</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block" style="background: #7b1fa2;">ابدأ نموذج الفريق الباني — $399 <i data-lucide="arrow-left"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">المتطلب الأساسي: إكمال نموذج الأعمال ونموذج التشغيل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">ما ستبنيه</span>
+                <h2><em>نموذج الفريق</em> الكامل الخاص بك</h2>
+                <p class="text-lead">حدد من يقدم ما يتطلبه نموذج التشغيل الخاص بك.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="network" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>الهيكل التنظيمي</h4>
+                    <p>صمم بنيتك التنظيمية التي تدعم نموذج التشغيل الخاص بك.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-check" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>تعريفات الأدوار</h4>
+                    <p>أنشئ هندسة وظائف واضحة مع المسؤوليات والمساءلات.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="file-text" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>سياسات الموارد البشرية</h4>
+                    <p>ضع إطار السياسات للتوظيف والأداء والتطوير.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="brain" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>مصفوفة القدرات</h4>
+                    <p>اربط القدرات المطلوبة بالأدوار وحدد احتياجات التطوير.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="clipboard-list" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>ملكية المبادرات</h4>
+                    <p>عيّن ملكية واضحة للمبادرات والمشاريع الاستراتيجية.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-plus" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>أولويات التوظيف</h4>
+                    <p>حدد وأعط الأولوية لتوظيفاتك الأساسية القادمة بناءً على فجوات القدرات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">ما ستحصل عليه</span>
+                <h2 style="color: var(--cream);">ليس نصائح. <em style="color: var(--gold);">بل بنية.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">كل تعامل مع نموذج الفريق الباني ينتج ثلاث طبقات من القيمة.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>المنتج</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك الاحتفاظ به</p>
+
+                    <p class="deliverable-main">
+                        <strong>نموذج الفريق الكامل الخاص بك</strong>: تصميم تنظيمي موثق يجيب على "من يفعل ماذا ولماذا."
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            مخطط تنظيمي يعكس الاستراتيجية، وليس التاريخ.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            تعريفات أدوار مع ملكية واضحة. لا مزيد من "اعتقدت أن هذه وظيفتك."
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            خريطة طريق التوظيف: من توظف، ومتى، ولماذا.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            فجوات القدرات مرئية، وليست مخمنة.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>القدرة</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك فعله الآن</p>
+
+                    <p class="deliverable-main">
+                        <strong>وظّف بثقة.</strong> لأنك تعرف ما توظف من أجله ولماذا.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            اكتب وصفاً وظيفياً في دقائق، وليس ساعات.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            أدمج الموظفين الجدد بإظهار الهيكل التنظيمي لهم، وليس شرحه.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            قل "لا" للأدوار التي لا تتناسب مع النموذج.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            رقّ بالإشارة إلى فجوات القدرات، وليس السياسات.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>التحول</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
+
+                    <p class="deliverable-main">
+                        <strong>فريقك يتوقف عن السؤال "من يتعامل مع هذا؟"</strong> لأن الإجابة في النموذج.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            من "نحتاج إلى شخص ما" إلى معرفة من بالضبط
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من المخطط التنظيمي كفكرة لاحقة إلى المخطط التنظيمي كاستراتيجية
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من التوظيف بالإلحاح إلى التوظيف بالتصميم
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من المساءلة غير الواضحة إلى الملكية المرئية
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                هذا ليس مخططاً تنظيمياً يعيش في درج. إنها <strong>بنية الفريق الخاصة بك مرئية</strong>، مبنية من احتياجاتك الفعلية، جاهزة للتوظيف والنمو على أساسها.
+            </p>
+        </div>
+    </section>
+
+    <!-- Upgrade Option -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">تريد المزيد من الدعم؟</span>
+                <h2>ترقية إلى <em>مع خبير</em></h2>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream); text-align: center;">
+                <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">مع خبير</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">خبير نموذج الفريق</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,299</div>
+                <p style="font-size: 0.9375rem; color: rgba(250,248,245,0.8); margin-bottom: 1.5rem;">جلسة فردية لمدة ساعتين مع أكرم، مراجعة شخصية للمخرجات، ودعم غير متزامن.</p>
+                <a href="people-model-expert.html" class="btn btn-primary btn-block">عرض الخيار مع خبير</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">جاهز لتحديد من يقدم؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">ابنِ <em>نموذج الفريق</em> الخاص بك</h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">صمم الهيكل التنظيمي والأدوار التي تنفذ نموذج التشغيل الخاص بك.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ نموذج الفريق الباني — $399 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">المتطلب الأساسي: إكمال نموذج الأعمال ونموذج التشغيل</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">الشراكة التنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>الموارد</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

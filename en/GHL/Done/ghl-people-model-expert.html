@@ -1,0 +1,199 @@
+<!-- S2A People Model Expert - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --purple: #7b1fa2;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(5rem, 10vw, 7rem);
+}
+
+.s2a-pme * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-pme { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); background: var(--cream); }
+.s2a-pme a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+.s2a-pme ul { list-style: none; }
+.s2a-pme .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2.5rem); }
+.s2a-pme h1, .s2a-pme h2, .s2a-pme h3, .s2a-pme h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-pme h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 700; }
+.s2a-pme h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.s2a-pme h1 em, .s2a-pme h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+.s2a-pme p { margin-bottom: 1rem; }
+.s2a-pme .text-lead { font-size: 1.125rem; color: var(--steel); line-height: 1.8; }
+.s2a-pme .section { padding: var(--section-padding) 0; }
+.s2a-pme .section--ivory { background: var(--ivory); }
+.s2a-pme .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+.s2a-pme .section-header h2 { margin-bottom: 0.75rem; }
+.s2a-pme .section-eyebrow { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem; }
+
+.s2a-pme .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 0.875rem 1.75rem; font-family: var(--font-display); font-size: 0.9375rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.3s ease; }
+.s2a-pme .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); }
+.s2a-pme .btn-secondary { background: transparent; color: var(--navy); border: 2px solid var(--sand); }
+.s2a-pme .btn-large { font-size: 1rem; padding: 1rem 2rem; }
+.s2a-pme .btn-block { width: 100%; }
+
+.s2a-pme .grid { display: grid; gap: 1.25rem; }
+.s2a-pme .grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .s2a-pme .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .s2a-pme .grid-3 { grid-template-columns: 1fr; } }
+
+.s2a-pme-hero { padding: 6rem 0 5rem; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%); color: var(--cream); position: relative; }
+.s2a-pme-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: radial-gradient(ellipse at right top, rgba(123, 31, 162, 0.2) 0%, transparent 60%); pointer-events: none; }
+.s2a-pme-hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+@media (max-width: 900px) { .s2a-pme-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.s2a-pme-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--purple); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 100px; margin-bottom: 1.5rem; }
+
+.s2a-pme-features li { display: flex; align-items: center; padding: 0.5rem 0; font-size: 1rem; color: var(--cream); position: relative; padding-left: 1.75rem; }
+.s2a-pme-features li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; }
+
+.s2a-pme-price-card { background: rgba(250, 248, 245, 0.05); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 2.5rem; }
+.s2a-pme-price-display { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(250, 248, 245, 0.1); }
+.s2a-pme-price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--gold); }
+.s2a-pme-price-amount span { font-size: 1.25rem; font-weight: 400; color: rgba(250, 248, 245, 0.6); }
+.s2a-pme-price-features li { display: flex; align-items: flex-start; font-size: 0.9375rem; color: var(--cream); padding: 0.5rem 0; position: relative; padding-left: 1.75rem; }
+.s2a-pme-price-features li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 14px; height: 14px; background: var(--gold); border-radius: 50%; }
+
+.s2a-pme-leader-card { display: flex; gap: 2rem; background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem; align-items: center; max-width: 800px; margin: 0 auto; }
+@media (max-width: 640px) { .s2a-pme-leader-card { flex-direction: column; text-align: center; } }
+.s2a-pme-leader-avatar { width: 120px; height: 120px; border-radius: 50%; flex-shrink: 0; background: var(--sand); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: var(--gold-dark); }
+.s2a-pme-leader-info h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.s2a-pme-leader-role { color: var(--gold-dark); font-weight: 500; margin-bottom: 0.75rem; }
+
+.s2a-pme-component-card { background: var(--cream); border: 1px solid var(--sand); border-radius: 12px; padding: 1.5rem; }
+.s2a-pme-component-icon { width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--purple); font-weight: 700; }
+.s2a-pme-component-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+.s2a-pme-component-card p { font-size: 0.875rem; color: var(--steel); margin: 0; }
+
+.s2a-pme-builder-option { max-width: 500px; margin: 0 auto; background: var(--cream); border: 2px solid var(--purple); border-radius: 16px; padding: 2rem; text-align: center; }
+.s2a-pme-section-gradient { background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%); color: var(--cream); text-align: center; padding: var(--section-padding) 0; }
+
+.s2a-pme-footer { padding: 3rem 0 1.5rem; background: var(--midnight); color: rgba(250, 248, 245, 0.7); }
+.s2a-pme-footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2.5rem; margin-bottom: 2.5rem; }
+@media (max-width: 768px) { .s2a-pme-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .s2a-pme-footer-grid { grid-template-columns: 1fr; } }
+.s2a-pme-footer-column h4 { font-family: var(--font-display); font-size: 0.8125rem; font-weight: 600; color: var(--cream); margin-bottom: 1rem; }
+.s2a-pme-footer-column a { display: block; font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); padding: 0.25rem 0; }
+.s2a-pme-footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(250, 248, 245, 0.1); font-size: 0.75rem; }
+</style>
+
+<div class="s2a-pme">
+    <section class="s2a-pme-hero">
+        <div class="container">
+            <div class="s2a-pme-hero-grid">
+                <div>
+                    <div class="s2a-pme-badge">Module 3: Expert-Led</div>
+                    <h1 style="color: var(--cream);">People Model <em>Expert</em></h1>
+                    <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">Define WHO delivers with direct expert guidance. 2-hour 1:1 session with Akram, personally reviewed deliverables, and async support throughout.</p>
+                    <ul class="s2a-pme-features" style="margin-bottom: 2rem;">
+                        <li>2-hour 1:1 Session with Akram</li>
+                        <li>Akram-Reviewed Deliverables</li>
+                        <li>Async Messaging Support</li>
+                        <li>Strategy360 AI Agent (24/7)</li>
+                    </ul>
+                </div>
+                <div class="s2a-pme-price-card">
+                    <div class="s2a-pme-price-display">
+                        <div class="s2a-pme-price-amount">$1,299 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem;">Expert-Led Module</p>
+                    </div>
+                    <ul class="s2a-pme-price-features" style="margin-bottom: 1.5rem;">
+                        <li>2-hour 1:1 Session with Akram</li>
+                        <li>Organizational Structure Design</li>
+                        <li>Role Definitions and Job Architecture</li>
+                        <li>Capability Requirements</li>
+                        <li>Hiring Priority Framework</li>
+                        <li>Async Support Throughout</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-large btn-block">Start People Model Expert - $1,299</a>
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); text-align: center; margin-top: 1rem;">Prerequisite: Business + Operating Models completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Expert Guide</span>
+                <h2>Direct Work With <em>Akram</em></h2>
+            </div>
+            <div class="s2a-pme-leader-card">
+                <div class="s2a-pme-leader-avatar">AA</div>
+                <div class="s2a-pme-leader-info">
+                    <h3>Akram AlQadasi</h3>
+                    <p class="s2a-pme-leader-role">Founder and Principal Advisor</p>
+                    <p style="font-size: 0.9375rem; color: var(--steel);">Strategy architect who has guided 400+ founders through transformations. Your People Model Expert module includes a 2-hour 1:1 session and personal review of all deliverables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You'll Build</span>
+                <h2>Your Complete <em>People Model</em></h2>
+                <p class="text-lead">With expert guidance and personal review at every step.</p>
+            </div>
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">1</div><h4>Org Structure</h4><p>Design organizational architecture with expert guidance on optimal structure.</p></div>
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">2</div><h4>Role Definitions</h4><p>Create job architecture with expert input on responsibilities and accountabilities.</p></div>
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">3</div><h4>HR Policies</h4><p>Establish policy framework with expert best practices guidance.</p></div>
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">4</div><h4>Capability Matrix</h4><p>Map required capabilities with expert gap analysis and development planning.</p></div>
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">5</div><h4>Initiative Ownership</h4><p>Assign ownership with expert guidance on accountability structures.</p></div>
+                <div class="s2a-pme-component-card"><div class="s2a-pme-component-icon">6</div><h4>Hiring Priority</h4><p>Identify key hires with expert prioritization based on strategic impact.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Alternative Option</span>
+                <h2>Prefer <em>Self-Paced?</em></h2>
+            </div>
+            <div class="s2a-pme-builder-option">
+                <div style="background: var(--purple); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">Self-Paced</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">People Model Builder</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--purple); margin-bottom: 1rem;">$399</div>
+                <p style="font-size: 0.9375rem; color: var(--steel); margin-bottom: 1.5rem;">Build your People Model with AI agents at your own pace. Weekly group Q&A support included.</p>
+                <a href="#" class="btn btn-secondary btn-block">View Builder Option</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="s2a-pme-section-gradient">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready for Expert Guidance?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Build Your People Model <em>With Akram</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">2-hour 1:1 session, personally reviewed deliverables, and async support throughout.</p>
+                <a href="#" class="btn btn-primary btn-large">Start People Model Expert - $1,299</a>
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Prerequisite: Business + Operating Models completed - Save with <a href="#" style="color: var(--gold);">Full Bundle $3,999</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="s2a-pme-footer">
+        <div class="container">
+            <div class="s2a-pme-footer-grid">
+                <div><p style="font-size: 1.25rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem;">Strategy2Action</p><p style="font-size: 0.875rem; color: rgba(250, 248, 245, 0.7);">We don't give you strategy. We show you yours.</p></div>
+                <div class="s2a-pme-footer-column"><h4>Programs</h4><a href="#">Strategic Diagnosis</a><a href="#">Builder Modules</a><a href="#">Expert-Led Modules</a><a href="#">Executive Partnership</a></div>
+                <div class="s2a-pme-footer-column"><h4>Resources</h4><a href="#">About</a><a href="#">Case Studies</a><a href="#">Blog</a></div>
+                <div class="s2a-pme-footer-column"><h4>Connect</h4><a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a><a href="tel:+966509993384">+966 509993384</a><a href="#">LinkedIn</a></div>
+            </div>
+            <div class="s2a-pme-footer-bottom"><span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span></div>
+        </div>
+    </footer>
+</div>

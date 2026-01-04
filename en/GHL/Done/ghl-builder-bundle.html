@@ -1,0 +1,879 @@
+<!-- S2A BUILDER BUNDLE - GoHighLevel Custom Code -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --steel: #4a5568;
+    --fog: #718096;
+    --success: #2d8a6e;
+    --sand: #e8e4dc;
+}
+
+.s2a-builder * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-builder { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--navy); }
+.s2a-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Hero */
+.builder-hero {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+}
+.builder-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+@media (max-width: 900px) { .builder-hero-grid { grid-template-columns: 1fr; } }
+
+.s2a-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+}
+.builder-hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--midnight);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+.builder-hero h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+}
+.builder-hero .lead { font-size: 1.1rem; color: var(--steel); margin-bottom: 2rem; }
+
+.feature-list { list-style: none; margin-bottom: 2rem; }
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--navy);
+}
+.feature-list li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: var(--success);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Price Card */
+.price-card {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+    position: relative;
+}
+.price-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+}
+.price-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand);
+}
+.price-original {
+    font-size: 1rem;
+    color: var(--fog);
+    text-decoration: line-through;
+    margin-bottom: 0.25rem;
+}
+.price-amount {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--midnight);
+}
+.price-amount span { font-size: 1rem; font-weight: 400; color: var(--fog); }
+.price-desc { font-size: 0.9rem; color: var(--steel); margin-top: 0.5rem; }
+
+.price-features { list-style: none; margin-bottom: 1.5rem; }
+.price-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--navy);
+    padding: 0.5rem 0;
+}
+.price-features li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--success);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Buttons */
+.s2a-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.s2a-btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
+}
+.s2a-btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--sand);
+}
+
+/* Sections */
+.s2a-section { padding: 4rem 0; }
+.s2a-section--ivory { background: var(--ivory); }
+.s2a-section--dark { background: var(--navy); }
+.s2a-section-header { text-align: center; margin-bottom: 3rem; }
+.s2a-section-header h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.75rem;
+}
+.s2a-section-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+}
+.s2a-section-header p { color: var(--steel); font-size: 1rem; }
+
+/* Module Cards */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 1000px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .module-grid { grid-template-columns: 1fr; } }
+
+.module-card {
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+}
+.module-card-blue {
+    background: linear-gradient(180deg, #e3f2fd 0%, var(--cream) 100%);
+    border: 2px solid #1976d2;
+}
+.module-card-orange {
+    background: linear-gradient(180deg, #fff3e0 0%, var(--cream) 100%);
+    border: 2px solid #f57c00;
+}
+.module-card-purple {
+    background: linear-gradient(180deg, #f3e5f5 0%, var(--cream) 100%);
+    border: 2px solid #7b1fa2;
+}
+.module-card-green {
+    background: linear-gradient(180deg, #e8f5e9 0%, var(--cream) 100%);
+    border: 2px solid #388e3c;
+}
+
+.module-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: white;
+}
+.module-badge-blue { background: #1976d2; }
+.module-badge-orange { background: #f57c00; }
+.module-badge-purple { background: #7b1fa2; }
+.module-badge-green { background: #388e3c; }
+
+.module-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.module-icon-blue { color: #1976d2; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2); }
+.module-icon-orange { color: #f57c00; box-shadow: 0 2px 8px rgba(245, 124, 0, 0.2); }
+.module-icon-purple { color: #7b1fa2; box-shadow: 0 2px 8px rgba(123, 31, 162, 0.2); }
+.module-icon-green { color: #388e3c; box-shadow: 0 2px 8px rgba(56, 142, 60, 0.2); }
+
+.module-card h3 {
+    text-align: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+.module-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+.module-price-blue { color: #1976d2; }
+.module-price-orange { color: #f57c00; }
+.module-price-purple { color: #7b1fa2; }
+.module-price-green { color: #388e3c; }
+
+.module-desc {
+    font-size: 0.85rem;
+    color: var(--steel);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.module-features {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+}
+.module-features-title {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.module-features ul {
+    font-size: 0.8rem;
+    color: var(--steel);
+    padding-left: 1rem;
+}
+.module-features li { padding: 0.2rem 0; }
+.module-prereq {
+    font-size: 0.75rem;
+    color: var(--fog);
+    text-align: center;
+    margin: 0.75rem 0 0.5rem;
+}
+
+/* Sequence Flow */
+.sequence-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+.sequence-item {
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.sequence-arrow { color: var(--fog); }
+
+/* Why Sequence Box */
+.sequence-box {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2rem;
+    color: var(--cream);
+}
+.sequence-box h4 {
+    color: var(--cream);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    margin-bottom: 0.75rem;
+}
+.sequence-box p {
+    font-size: 0.9rem;
+    color: rgba(250, 248, 245, 0.85);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.sequence-labels {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    flex-wrap: wrap;
+}
+
+/* Growth Drivers */
+.driver-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+@media (max-width: 768px) { .driver-grid { grid-template-columns: 1fr; } }
+
+.driver-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.driver-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--sand);
+}
+.driver-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+.driver-num {
+    width: 22px;
+    height: 22px;
+    background: var(--ivory);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+.driver-item span { font-size: 0.85rem; color: var(--steel); }
+
+/* Timeline */
+.timeline { max-width: 800px; margin: 0 auto; }
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: var(--sand);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-week {
+    width: 48px;
+    height: 48px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+.timeline-content h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+.timeline-content p { font-size: 0.9rem; color: var(--steel); }
+
+/* Comparison */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) { .comparison-grid { grid-template-columns: 1fr; } }
+
+.comparison-col {
+    padding: 2rem;
+    border-radius: 12px;
+}
+.comparison-col--negative {
+    background: rgba(201, 107, 107, 0.1);
+    border: 1px solid rgba(201, 107, 107, 0.3);
+}
+.comparison-col--positive {
+    background: rgba(45, 138, 110, 0.1);
+    border: 1px solid rgba(45, 138, 110, 0.3);
+}
+.comparison-col h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.comparison-col--negative h3 { color: #c96b6b; }
+.comparison-col--positive h3 { color: var(--success); }
+
+.comparison-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.comparison-item:last-child { border-bottom: none; }
+.comparison-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fog);
+    margin-bottom: 0.25rem;
+}
+.comparison-value { font-size: 0.9rem; color: var(--navy); }
+
+/* Final CTA */
+.final-cta {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+.final-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+.final-cta h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+.final-cta p { color: rgba(250,248,245,0.85); margin-bottom: 2rem; }
+.final-cta .btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.final-cta .note { color: rgba(250,248,245,0.6); font-size: 0.8rem; margin-top: 1.5rem; }
+.final-cta .note a { color: var(--gold); }
+
+/* Footer */
+.s2a-footer {
+    background: var(--midnight);
+    padding: 3rem 0 2rem;
+    color: rgba(250,248,245,0.7);
+}
+.s2a-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+@media (max-width: 768px) { .s2a-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .s2a-footer-grid { grid-template-columns: 1fr; } }
+.s2a-footer-brand p { font-size: 0.9rem; margin-top: 0.75rem; }
+.s2a-footer-col h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+.s2a-footer-col a {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(250,248,245,0.7);
+    padding: 0.3rem 0;
+    text-decoration: none;
+}
+.s2a-footer-col a:hover { color: var(--gold); }
+.s2a-footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250,248,245,0.1);
+    font-size: 0.8rem;
+    text-align: center;
+}
+</style>
+
+<div class="s2a-builder">
+    <!-- Hero -->
+    <section class="builder-hero">
+        <div class="s2a-container">
+            <div class="builder-hero-grid">
+                <div>
+                    <span class="s2a-eyebrow">Tier 2: Builder Modules</span>
+                    <h1>Build Your Business Mirror <em>At Your Own Pace</em></h1>
+                    <p class="lead">Self-paced modules using Strategy360 methodology. AI-guided process with 24/7 access to specialized agents. Build one module or get the complete bundle.</p>
+                    <ul class="feature-list">
+                        <li>Strategy360 AI Agents (24/7)</li>
+                        <li>Weekly Q&A Sessions</li>
+                        <li>Progress Dashboard</li>
+                        <li>Sequential module unlocking</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <span class="price-badge">Best Value</span>
+                    <div class="price-display">
+                        <div class="price-original">$1,896 (if purchased separately)</div>
+                        <div class="price-amount">$999 <span>USD</span></div>
+                        <p class="price-desc">Full Builder Bundle - Save 47%</p>
+                    </div>
+                    <ul class="price-features">
+                        <li>Business Model Builder ($499 value)</li>
+                        <li>Operating Model Builder ($499 value)</li>
+                        <li>People Model Builder ($399 value)</li>
+                        <li>Financial Model Builder ($499 value)</li>
+                        <li>All Strategy360 AI Agents (24/7)</li>
+                        <li>Weekly Q&A Sessions</li>
+                        <li>Progress Dashboard</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary">Get Full Builder Bundle - $999 -></a>
+                    <p style="font-size: 0.8rem; color: var(--fog); text-align: center; margin-top: 1rem;">Requires completed Strategic Diagnosis ($133)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Modules -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Individual Modules</span>
+                <h2>Buy What You Need. <em>Build at Your Pace.</em></h2>
+                <p>Each module can be purchased individually. Prerequisites apply - you must complete them in sequence.</p>
+            </div>
+
+            <div class="sequence-flow">
+                <span class="sequence-item" style="background: #e3f2fd; color: #1976d2;">1. Business</span>
+                <span class="sequence-arrow">-></span>
+                <span class="sequence-item" style="background: #fff3e0; color: #f57c00;">2. Operating</span>
+                <span class="sequence-arrow">-></span>
+                <span class="sequence-item" style="background: #f3e5f5; color: #7b1fa2;">3. People</span>
+                <span class="sequence-arrow">-></span>
+                <span class="sequence-item" style="background: #e8f5e9; color: #388e3c;">4. Financial</span>
+            </div>
+
+            <div class="module-grid">
+                <div class="module-card module-card-blue">
+                    <span class="module-badge module-badge-blue">Entry Point</span>
+                    <div class="module-icon module-icon-blue">B</div>
+                    <h3>Business Model</h3>
+                    <div class="module-price module-price-blue">$499</div>
+                    <p class="module-desc">WHAT you deliver. Value, pricing, positioning.</p>
+                    <div class="module-features">
+                        <p class="module-features-title" style="color: #1976d2;">What's Covered</p>
+                        <ul>
+                            <li>Core Definition & Value Prop</li>
+                            <li>Customer Pain to Profit Map</li>
+                            <li>Pricing & Offering Strategy</li>
+                            <li>Competitive Positioning</li>
+                            <li>Marketing & Sales Framework</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: Diagnosis only</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary">Learn More</a>
+                </div>
+
+                <div class="module-card module-card-orange">
+                    <span class="module-badge module-badge-orange">Step 2</span>
+                    <div class="module-icon module-icon-orange">O</div>
+                    <h3>Operating Model</h3>
+                    <div class="module-price module-price-orange">$499</div>
+                    <p class="module-desc">HOW you deliver. Processes, systems, integration.</p>
+                    <div class="module-features">
+                        <p class="module-features-title" style="color: #f57c00;">What's Covered</p>
+                        <ul>
+                            <li>Process System Architecture</li>
+                            <li>People System Design</li>
+                            <li>Program System (Initiatives)</li>
+                            <li>Engagement Model</li>
+                            <li>Integration Layer</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: Business Model</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary">Learn More</a>
+                </div>
+
+                <div class="module-card module-card-purple">
+                    <span class="module-badge module-badge-purple">Step 3</span>
+                    <div class="module-icon module-icon-purple">P</div>
+                    <h3>People Model</h3>
+                    <div class="module-price module-price-purple">$399</div>
+                    <p class="module-desc">WHO delivers. Org structure, roles, capabilities.</p>
+                    <div class="module-features">
+                        <p class="module-features-title" style="color: #7b1fa2;">What's Covered</p>
+                        <ul>
+                            <li>Organizational Structure</li>
+                            <li>Role Definitions</li>
+                            <li>HR Policy Framework</li>
+                            <li>Capability Requirements</li>
+                            <li>Initiative Ownership</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: Business + Operating</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary">Learn More</a>
+                </div>
+
+                <div class="module-card module-card-green">
+                    <span class="module-badge module-badge-green">Step 4</span>
+                    <div class="module-icon module-icon-green">F</div>
+                    <h3>Financial Model</h3>
+                    <div class="module-price module-price-green">$499</div>
+                    <p class="module-desc">What it COSTS and EARNS. Financial framework.</p>
+                    <div class="module-features">
+                        <p class="module-features-title" style="color: #388e3c;">What's Covered</p>
+                        <ul>
+                            <li>Income Statement Framework</li>
+                            <li>Balance Sheet Overview</li>
+                            <li>Cash Flow Structure</li>
+                            <li>Key Assumptions</li>
+                            <li>Revenue Model Logic</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: All 3 prior models</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <div class="sequence-box">
+                <h4>Why This Sequence Matters</h4>
+                <p>Each model builds on the one before it. You can't design HOW to deliver without knowing WHAT you're delivering. You can't design WHO delivers without knowing HOW. And you can't project financial outcomes without all three inputs.</p>
+                <div class="sequence-labels">
+                    <span>WHAT</span> <span>-></span>
+                    <span>HOW</span> <span>-></span>
+                    <span>WHO</span> <span>-></span>
+                    <span>WHAT IT COSTS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 Growth Drivers -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Growth Engine</span>
+                <h2>Nine Drivers. <em>Compound Effect.</em></h2>
+                <p>10% improvement across nine drivers compounds to 60% growth. We diagnose all nine and prioritize interventions.</p>
+            </div>
+            <div class="driver-grid">
+                <div class="driver-card">
+                    <div class="driver-title">Acquisition</div>
+                    <div class="driver-item"><span class="driver-num">1</span><span>Lead Generation</span></div>
+                    <div class="driver-item"><span class="driver-num">2</span><span>Conversion Rate</span></div>
+                    <div class="driver-item"><span class="driver-num">3</span><span>Acquisition Cost</span></div>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-title">Value</div>
+                    <div class="driver-item"><span class="driver-num">4</span><span>Transaction Value</span></div>
+                    <div class="driver-item"><span class="driver-num">5</span><span>Transaction Frequency</span></div>
+                    <div class="driver-item"><span class="driver-num">6</span><span>Customer Retention</span></div>
+                </div>
+                <div class="driver-card">
+                    <div class="driver-title">Efficiency</div>
+                    <div class="driver-item"><span class="driver-num">7</span><span>Profit Margin</span></div>
+                    <div class="driver-item"><span class="driver-num">8</span><span>Referral Rate</span></div>
+                    <div class="driver-item"><span class="driver-num">9</span><span>Strategic Leverage</span></div>
+                </div>
+            </div>
+            <div style="max-width: 700px; margin: 2rem auto 0; text-align: center;">
+                <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--steel);">"Most businesses over-invest in 1-2 drivers while ignoring others with 10x more potential."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 90-Day Timeline -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Roadmap</span>
+                <h2>90 Days to <em>Systematic Execution</em></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">W1-2</div>
+                    <div class="timeline-content">
+                        <h4>Foundation & Business Model</h4>
+                        <p>Review Strategic Diagnosis, validate KNOW alignment, complete Business Model Canvas with DSI validation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W3-4</div>
+                    <div class="timeline-content">
+                        <h4>Operating Model Architecture</h4>
+                        <p>Map current processes, identify founder dependencies, design accountability structure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W5-6</div>
+                    <div class="timeline-content">
+                        <h4>Financial Model & People Model</h4>
+                        <p>Build revenue projections, unit economics, cash flow model. Define role architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W7-8</div>
+                    <div class="timeline-content">
+                        <h4>9-Driver Growth Analysis</h4>
+                        <p>Score all nine growth drivers, identify leverage points, design interventions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W9-12</div>
+                    <div class="timeline-content">
+                        <h4>Integration & Implementation</h4>
+                        <p>Integrate all four models, validate coherence, create 90-day action plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Why This Approach</span>
+                <h2>Not Consulting. <em>Mirror Building.</em></h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-col comparison-col--negative">
+                    <h3>Traditional Consulting</h3>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Approach</div>
+                        <div class="comparison-value">We tell you what to do based on our frameworks</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Deliverable</div>
+                        <div class="comparison-value">Generic strategy deck with borrowed ideas</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Timeline</div>
+                        <div class="comparison-value">6-12 month engagements, billable hours</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Outcome</div>
+                        <div class="comparison-value">Slides gather dust, nothing changes</div>
+                    </div>
+                </div>
+                <div class="comparison-col comparison-col--positive">
+                    <h3>Builder Modules</h3>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Approach</div>
+                        <div class="comparison-value">We extract YOUR strategy and make it visible</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Deliverable</div>
+                        <div class="comparison-value">Four integrated models built from your reality</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Timeline</div>
+                        <div class="comparison-value">Self-paced, fixed investment, 24/7 AI support</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">Outcome</div>
+                        <div class="comparison-value">Actionable roadmap with weekly Q&A support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="s2a-container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="s2a-eyebrow" style="color: var(--gold);">Ready to Build Your Mirror?</span>
+                <h2>Start With Any Module <em>or Get the Bundle</em></h2>
+                <p>Transform your Strategic Diagnosis into four integrated models. Build at your own pace with AI support.</p>
+                <div class="btn-group">
+                    <a href="#" class="s2a-btn s2a-btn-primary" style="width: auto;">Get Full Bundle - $999 -></a>
+                    <a href="#" class="s2a-btn" style="width: auto; background: transparent; border: 2px solid var(--cream); color: var(--cream);">Start with Business Model - $499</a>
+                </div>
+                <p class="note">Requires completed Strategic Diagnosis ($133) - Need expert guidance? See <a href="#">Expert-Led Modules</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="s2a-footer">
+        <div class="s2a-container">
+            <div class="s2a-footer-grid">
+                <div class="s2a-footer-brand">
+                    <strong style="color: var(--cream); font-size: 1.2rem;">Strategy2Action</strong>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-footer-bottom">
+                <span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,987 @@
+<!-- S2A HOMEPAGE - GoHighLevel Custom Code -->
+<!-- Copy everything below and paste into GHL Custom Code element -->
+
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --steel: #4a5568;
+    --success: #2d8a6e;
+    --error: #c96b6b;
+}
+
+.s2a-page * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.s2a-page {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--navy);
+    background: var(--cream);
+}
+
+.s2a-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* HERO SECTION */
+.s2a-hero {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.s2a-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(201,169,97,0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.s2a-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.s2a-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.s2a-hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.s2a-hero h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+
+.s2a-hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(250, 248, 245, 0.85);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.s2a-hero-subtitle strong {
+    color: var(--cream);
+}
+
+.s2a-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.s2a-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.s2a-btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
+}
+
+.s2a-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+}
+
+.s2a-trust {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.s2a-trust-item {
+    text-align: center;
+    color: rgba(250, 248, 245, 0.7);
+    font-size: 0.875rem;
+}
+
+.s2a-trust-item strong {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+}
+
+/* REFRAME SECTION */
+.s2a-reframe {
+    background: var(--navy);
+    padding: 5rem 0;
+}
+
+.s2a-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.s2a-section-header h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+}
+
+.s2a-section-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+
+.s2a-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .s2a-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+.s2a-comparison-col {
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.s2a-comparison-col--negative {
+    background: rgba(201, 107, 107, 0.1);
+    border: 1px solid rgba(201, 107, 107, 0.3);
+}
+
+.s2a-comparison-col--positive {
+    background: rgba(45, 138, 110, 0.1);
+    border: 1px solid rgba(45, 138, 110, 0.3);
+}
+
+.s2a-comparison-col h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.s2a-comparison-col--negative h3 {
+    color: #e4a8a8;
+}
+
+.s2a-comparison-col--positive h3 {
+    color: #7dd4ae;
+}
+
+.s2a-comparison-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+    color: rgba(250, 248, 245, 0.8);
+    font-size: 0.9375rem;
+}
+
+.s2a-comparison-item:last-child {
+    border-bottom: none;
+}
+
+/* PROBLEM SECTION */
+.s2a-problem {
+    background: var(--cream);
+    padding: 5rem 0;
+}
+
+.s2a-problem .s2a-section-header h2 {
+    color: var(--midnight);
+}
+
+.s2a-problem .s2a-section-header h2 em {
+    color: var(--gold-dark);
+}
+
+.s2a-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .s2a-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.s2a-card {
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e8e4dc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.s2a-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(10, 22, 40, 0.1);
+}
+
+.s2a-icon-box {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(201,169,97,0.1) 0%, rgba(201,169,97,0.05) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--gold-dark);
+}
+
+.s2a-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.125rem;
+    color: var(--midnight);
+    margin-bottom: 0.75rem;
+}
+
+.s2a-card p {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    line-height: 1.7;
+}
+
+/* RAGE CALLOUT */
+.s2a-rage {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 4rem 0;
+}
+
+.s2a-rage-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.s2a-rage-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.s2a-rage-attribution {
+    font-size: 0.875rem;
+    color: rgba(250, 248, 245, 0.6);
+}
+
+/* FRAMEWORK SECTION */
+.s2a-framework {
+    background: var(--ivory);
+    padding: 5rem 0;
+}
+
+.s2a-framework .s2a-section-header h2 {
+    color: var(--midnight);
+}
+
+.s2a-framework .s2a-section-header h2 em {
+    color: var(--gold-dark);
+}
+
+.s2a-phases {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.s2a-phase-item {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+.s2a-phase-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.s2a-phase-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.s2a-phase-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+}
+
+.s2a-phase-subtitle {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.125rem;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+
+.s2a-phase-desc {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    line-height: 1.7;
+}
+
+/* MIRRORS SECTION */
+.s2a-mirrors {
+    background: var(--cream);
+    padding: 5rem 0;
+}
+
+.s2a-mirrors .s2a-section-header h2 {
+    color: var(--midnight);
+}
+
+.s2a-mirrors .s2a-section-header h2 em {
+    color: var(--gold-dark);
+}
+
+.s2a-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+    .s2a-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .s2a-grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.s2a-mirror-card {
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e8e4dc;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.s2a-mirror-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(10, 22, 40, 0.1);
+}
+
+.s2a-mirror-card .s2a-icon-box {
+    margin: 0 auto 1rem;
+}
+
+/* PRICING SECTION */
+.s2a-pricing {
+    background: var(--ivory);
+    padding: 5rem 0;
+}
+
+.s2a-pricing .s2a-section-header h2 {
+    color: var(--midnight);
+}
+
+.s2a-pricing .s2a-section-header h2 em {
+    color: var(--gold-dark);
+}
+
+.s2a-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+@media (max-width: 1000px) {
+    .s2a-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .s2a-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.s2a-pricing-card {
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e8e4dc;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    transition: all 0.3s ease;
+}
+
+.s2a-pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(10, 22, 40, 0.1);
+}
+
+.s2a-pricing-card--featured {
+    border: 2px solid var(--gold);
+    background: linear-gradient(180deg, rgba(201, 169, 97, 0.05) 0%, white 100%);
+    position: relative;
+}
+
+.s2a-pricing-card--featured::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.s2a-pricing-tier {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+}
+
+.s2a-pricing-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+
+.s2a-pricing-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+
+.s2a-pricing-price span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #718096;
+}
+
+.s2a-pricing-description {
+    font-size: 0.875rem;
+    color: var(--steel);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.s2a-pricing-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.s2a-pricing-features li {
+    font-size: 0.875rem;
+    color: var(--steel);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.s2a-pricing-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--success);
+    border-radius: 50%;
+    top: 0.6rem;
+}
+
+.s2a-btn-block {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.s2a-btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid #e8e4dc;
+}
+
+.s2a-btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+
+/* FINAL CTA */
+.s2a-final-cta {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 5rem 0;
+}
+
+.s2a-final-cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.s2a-final-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+
+.s2a-final-cta h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+
+.s2a-final-cta p {
+    color: rgba(250, 248, 245, 0.85);
+    font-size: 1.0625rem;
+    margin-bottom: 2rem;
+}
+
+.s2a-guarantee {
+    color: rgba(250, 248, 245, 0.6);
+    font-size: 0.8125rem;
+    margin-top: 1.5rem;
+}
+
+/* FOOTER */
+.s2a-footer {
+    background: var(--midnight);
+    padding: 4rem 0 2rem;
+    color: rgba(250, 248, 245, 0.7);
+}
+
+.s2a-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .s2a-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .s2a-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.s2a-footer-brand p {
+    font-size: 0.9375rem;
+    margin-top: 1rem;
+}
+
+.s2a-footer-column h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.s2a-footer-column a {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(250, 248, 245, 0.7);
+    padding: 0.375rem 0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.s2a-footer-column a:hover {
+    color: var(--gold);
+}
+
+.s2a-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(250, 248, 245, 0.1);
+    font-size: 0.8125rem;
+}
+
+@media (max-width: 600px) {
+    .s2a-footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+</style>
+
+<div class="s2a-page">
+    <!-- HERO SECTION -->
+    <section class="s2a-hero">
+        <div class="s2a-container">
+            <div class="s2a-hero-content">
+                <span class="s2a-eyebrow">For Founders Who Are Done Explaining Themselves</span>
+                <h1>Strategy's Not Missing. <em>Visibility Is.</em></h1>
+                <p class="s2a-hero-subtitle">You've explained your strategy a hundred times. <strong>But no one truly sees it.</strong> Not your team. Not your investors. Sometimes not even you. We don't give you strategy. We make yours visible.</p>
+                <p class="s2a-tagline">Know. Show. Grow.</p>
+                <a href="#" class="s2a-btn s2a-btn-primary">Reveal Your Strategy →</a>
+                <div class="s2a-trust">
+                    <div class="s2a-trust-item">
+                        <strong>400+</strong>
+                        Strategies Revealed
+                    </div>
+                    <div class="s2a-trust-item">
+                        <strong>15+</strong>
+                        Years of Clarity
+                    </div>
+                    <div class="s2a-trust-item">
+                        <strong>4</strong>
+                        Mirror Models
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFRAME SECTION -->
+    <section class="s2a-reframe">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Reframe</span>
+                <h2>You Don't Have a Strategy Problem. <em>You Have an Identity Alignment Problem.</em></h2>
+            </div>
+            <div class="s2a-comparison">
+                <div class="s2a-comparison-col s2a-comparison-col--negative">
+                    <h3>What You've Been Told</h3>
+                    <div class="s2a-comparison-item">"You need a better strategy"</div>
+                    <div class="s2a-comparison-item">"Hire a consultant to fix it"</div>
+                    <div class="s2a-comparison-item">"Use this framework template"</div>
+                    <div class="s2a-comparison-item">"Just execute faster"</div>
+                </div>
+                <div class="s2a-comparison-col s2a-comparison-col--positive">
+                    <h3>What's Actually True</h3>
+                    <div class="s2a-comparison-item">You have a strategy—it's trapped in your head</div>
+                    <div class="s2a-comparison-item">You need a mirror, not a mentor</div>
+                    <div class="s2a-comparison-item">Your framework must come from your identity</div>
+                    <div class="s2a-comparison-item">Execution follows clarity—not speed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="s2a-problem">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Real Problem</span>
+                <h2>The Four Traps That Keep Founders <em>Stuck</em></h2>
+            </div>
+            <div class="s2a-grid-2">
+                <div class="s2a-card">
+                    <div class="s2a-icon-box">1</div>
+                    <h3>The Translation Gap</h3>
+                    <p>Your vision is crystal clear in your mind. But when you speak it, people nod politely and do something else entirely.</p>
+                </div>
+                <div class="s2a-card">
+                    <div class="s2a-icon-box">2</div>
+                    <h3>The Lonely Genius Problem</h3>
+                    <p>You're carrying the entire strategy in your head. No one can help because no one can see what you see.</p>
+                </div>
+                <div class="s2a-card">
+                    <div class="s2a-icon-box">3</div>
+                    <h3>The Consultant Trap</h3>
+                    <p>You've paid for strategy decks that now collect dust. Generic frameworks that feel foreign to who you actually are.</p>
+                </div>
+                <div class="s2a-card">
+                    <div class="s2a-icon-box">4</div>
+                    <h3>The Invisible Architect</h3>
+                    <p>You built something valuable. But investors, partners, and team members can't see the structure - only the chaos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RAGE CALLOUT -->
+    <section class="s2a-rage">
+        <div class="s2a-container">
+            <div class="s2a-rage-inner">
+                <p class="s2a-rage-quote">"I've explained this a hundred times. Why doesn't anyone get it? Why do I have to carry this alone?"</p>
+                <p class="s2a-rage-attribution">— Every founder we've ever worked with</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRAMEWORK SECTION -->
+    <section class="s2a-framework">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Framework</span>
+                <h2>Every Business Moves Through <em>Three Phases</em></h2>
+                <p style="color: #4a5568; font-size: 1.125rem; margin-top: 0.5rem;">And gets stuck in predictable ways. The question is: where are you?</p>
+            </div>
+            <div class="s2a-phases">
+                <div class="s2a-phase-item">
+                    <div class="s2a-phase-circle">
+                        <span class="s2a-phase-number">1</span>
+                        <span class="s2a-phase-title">KNOW</span>
+                    </div>
+                    <h4 class="s2a-phase-subtitle">Uncover Your Truth</h4>
+                    <p class="s2a-phase-desc">Soul alignment. Vision clarity. Strategic spine. The foundation everything else builds on.</p>
+                </div>
+                <div class="s2a-phase-item">
+                    <div class="s2a-phase-circle">
+                        <span class="s2a-phase-number">2</span>
+                        <span class="s2a-phase-title">SHOW</span>
+                    </div>
+                    <h4 class="s2a-phase-subtitle">Build Your Mirror</h4>
+                    <p class="s2a-phase-desc">Business model. Operating model. Financial model. People model. The architecture that makes strategy visible.</p>
+                </div>
+                <div class="s2a-phase-item">
+                    <div class="s2a-phase-circle">
+                        <span class="s2a-phase-number">3</span>
+                        <span class="s2a-phase-title">GROW</span>
+                    </div>
+                    <h4 class="s2a-phase-subtitle">Scale Your Impact</h4>
+                    <p class="s2a-phase-desc">Market execution. Client acquisition. Team building. Investor alignment. The external world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIRRORS SECTION -->
+    <section class="s2a-mirrors">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Mirror</span>
+                <h2>Four Models That Make <em>Strategy Visible</em></h2>
+            </div>
+            <div class="s2a-grid-4">
+                <div class="s2a-mirror-card">
+                    <div class="s2a-icon-box">B</div>
+                    <h3>Business Model</h3>
+                    <p>Value proposition, pricing, market positioning. How you create and capture value.</p>
+                </div>
+                <div class="s2a-mirror-card">
+                    <div class="s2a-icon-box">O</div>
+                    <h3>Operating Model</h3>
+                    <p>Processes, org structure, initiatives, roadmap. How the organization actually works.</p>
+                </div>
+                <div class="s2a-mirror-card">
+                    <div class="s2a-icon-box">F</div>
+                    <h3>Financial Model</h3>
+                    <p>Projections, unit economics, cash flow. The numbers that tell the truth.</p>
+                </div>
+                <div class="s2a-mirror-card">
+                    <div class="s2a-icon-box">P</div>
+                    <h3>People Model</h3>
+                    <p>Role definitions, accountability, hiring roadmap, culture. Who does what and how they grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="s2a-pricing">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Choose Your Path</span>
+                <h2>From Diagnosis to <em>Full Clarity</em></h2>
+                <p style="color: #4a5568; font-size: 1.125rem; margin-top: 0.5rem;">Start where you are. Build what you need. Each step reveals more of your strategy.</p>
+            </div>
+            <div class="s2a-pricing-grid">
+                <div class="s2a-pricing-card">
+                    <div class="s2a-pricing-tier">Entry Point</div>
+                    <h3 class="s2a-pricing-name">Strategic Diagnosis</h3>
+                    <div class="s2a-pricing-price">$133</div>
+                    <p class="s2a-pricing-description">See where you're stuck. Get your prescription.</p>
+                    <ul class="s2a-pricing-features">
+                        <li>90-minute AI diagnostic</li>
+                        <li>KSG Assessment</li>
+                        <li>Module Recommendation</li>
+                        <li>13-Page Strategic Report</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary s2a-btn-block">Start Diagnosis</a>
+                </div>
+                <div class="s2a-pricing-card s2a-pricing-card--featured">
+                    <div class="s2a-pricing-tier">Tier 2: Builder</div>
+                    <h3 class="s2a-pricing-name">Builder Modules</h3>
+                    <div class="s2a-pricing-price">$399-$499<span>/module</span></div>
+                    <p class="s2a-pricing-description">Build your mirror. AI-guided, self-paced.</p>
+                    <ul class="s2a-pricing-features">
+                        <li>Strategy360 AI Agents (24/7)</li>
+                        <li>Weekly Q&A Sessions</li>
+                        <li>Progress Dashboard</li>
+                        <li>Full Bundle: $999</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary s2a-btn-block">View Builder Options</a>
+                </div>
+                <div class="s2a-pricing-card">
+                    <div class="s2a-pricing-tier">Tier 3: Expert-Led</div>
+                    <h3 class="s2a-pricing-name">Expert-Led Modules</h3>
+                    <div class="s2a-pricing-price">$1,299-$1,999<span>/module</span></div>
+                    <p class="s2a-pricing-description">Build with expert validation. Models reviewed and refined.</p>
+                    <ul class="s2a-pricing-features">
+                        <li>1 Live 90-min session/module</li>
+                        <li>Expert validation</li>
+                        <li>CFA-built Financial Model</li>
+                        <li>Full Bundle: $3,999-$4,999</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-secondary s2a-btn-block">View Expert-Led Options</a>
+                </div>
+                <div class="s2a-pricing-card">
+                    <div class="s2a-pricing-tier">Tier 4: Partnership</div>
+                    <h3 class="s2a-pricing-name">Executive Partnership</h3>
+                    <div class="s2a-pricing-price">$25K-$50K+</div>
+                    <p class="s2a-pricing-description">Direct 1:1 with Akram. Full strategic integration.</p>
+                    <ul class="s2a-pricing-features">
+                        <li>8-15+ private sessions</li>
+                        <li>Direct WhatsApp/email access</li>
+                        <li>Board-ready strategy document</li>
+                        <li>CFA + Legal included</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-secondary s2a-btn-block">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="s2a-final-cta">
+        <div class="s2a-container">
+            <div class="s2a-final-cta-inner">
+                <span class="s2a-eyebrow">Ready to Be Seen?</span>
+                <h2>Your Strategy Already Exists. <em>Stop Explaining Yourself.</em></h2>
+                <p>Start with the Strategic Diagnosis. In 90 minutes, discover exactly where you're stuck and get the precise protocol to break through.</p>
+                <a href="#" class="s2a-btn s2a-btn-primary">Reveal Your Strategy — $133 →</a>
+                <p class="s2a-guarantee">Insight Guarantee: Breakthrough insight or full refund.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="s2a-footer">
+        <div class="s2a-container">
+            <div class="s2a-footer-grid">
+                <div class="s2a-footer-brand">
+                    <strong style="color: var(--cream); font-size: 1.25rem;">Strategy2Action</strong>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

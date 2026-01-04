@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade to Guided Intensive | Strategy2Action</title>
+    <meta name="description" content="Add live 1:1 sessions with personal review. Transform faster with direct guidance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .upsell-page {
+            min-height: 100vh;
+            padding: 3rem 0;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            color: var(--cream);
+        }
+
+        .upsell-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .upsell-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .upsell-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .upsell-header h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .upsell-header p {
+            font-size: 1.125rem;
+            color: rgba(250, 248, 245, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .upsell-card {
+            background: rgba(250, 248, 245, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .upsell-price {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .upsell-price .upgrade-text {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .upsell-price .current {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .upsell-price .current span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.5);
+        }
+
+        .upsell-price .note {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.6);
+            margin-top: 0.5rem;
+        }
+
+        .upgrade-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .upgrade-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .upgrade-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(250, 248, 245, 0.05);
+            border-radius: 8px;
+        }
+
+        .upgrade-feature svg {
+            color: var(--gold);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .upgrade-feature span {
+            font-size: 0.9375rem;
+            color: var(--cream);
+        }
+
+        .upsell-cta {
+            text-align: center;
+        }
+
+        .upsell-cta .btn {
+            margin-bottom: 1rem;
+        }
+
+        .upsell-skip {
+            color: rgba(250, 248, 245, 0.5);
+            font-size: 0.875rem;
+            text-decoration: underline;
+        }
+
+        .upsell-skip:hover {
+            color: rgba(250, 248, 245, 0.8);
+        }
+
+        .session-preview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .session-preview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .session-mini {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(250, 248, 245, 0.03);
+            border-radius: 8px;
+        }
+
+        .session-mini .week {
+            font-family: var(--font-display);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-mini .topic {
+            font-size: 0.8125rem;
+            color: var(--cream);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+
+    <div class="upsell-page">
+        <div class="upsell-container">
+            <div class="upsell-header">
+                <div class="upsell-badge">Upgrade Offer</div>
+                <h1>Want to Move <em>Even Faster?</em></h1>
+                <p>Add 4 live 1:1 sessions, Strategic Intervention Toolkit, and personal review of all deliverables. Transform in 4 weeks instead of 12.</p>
+            </div>
+
+            <div class="upsell-card">
+                <div class="upsell-price">
+                    <div class="upgrade-text">Add to your Accelerator for just</div>
+                    <div class="current">+$3,000 <span>USD</span></div>
+                    <div class="note">Total: $3,997 (save $997 vs. purchasing separately)</div>
+                </div>
+
+                <div class="upgrade-features">
+                    <div class="upgrade-feature">
+                        <i data-lucide="video"></i>
+                        <span>4x Live 90-minute 1:1 sessions</span>
+                    </div>
+                    <div class="upgrade-feature">
+                        <i data-lucide="compass"></i>
+                        <span>Strategic Intervention Toolkit (12 Strategies)</span>
+                    </div>
+                    <div class="upgrade-feature">
+                        <i data-lucide="shield"></i>
+                        <span>Self-Sabotage Sequence Interrupt</span>
+                    </div>
+                    <div class="upgrade-feature">
+                        <i data-lucide="file-check"></i>
+                        <span>Akram-reviewed deliverables</span>
+                    </div>
+                    <div class="upgrade-feature">
+                        <i data-lucide="message-circle"></i>
+                        <span>Async messaging support</span>
+                    </div>
+                    <div class="upgrade-feature">
+                        <i data-lucide="calendar"></i>
+                        <span>30-day post-intensive follow-up</span>
+                    </div>
+                </div>
+
+                <div class="upsell-cta">
+                    <a href="https://platform.strategy2action.com/upsell-intensive" class="btn btn-primary btn-large btn-block">Yes! Upgrade to Guided Intensive — +$3,000 <i data-lucide="arrow-right"></i></a>
+                    <a href="thank-you.html" class="upsell-skip">No thanks, I'll continue with Accelerator</a>
+                </div>
+
+                <div class="session-preview">
+                    <div class="session-mini">
+                        <div class="week">Week 1</div>
+                        <div class="topic">Soul Excavation</div>
+                    </div>
+                    <div class="session-mini">
+                        <div class="week">Week 2</div>
+                        <div class="topic">Architecture</div>
+                    </div>
+                    <div class="session-mini">
+                        <div class="week">Week 3</div>
+                        <div class="topic">Financial Engine</div>
+                    </div>
+                    <div class="session-mini">
+                        <div class="week">Week 4</div>
+                        <div class="topic">Activation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 1rem;">
+                <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5);">Limited to 4 intensive clients per month</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

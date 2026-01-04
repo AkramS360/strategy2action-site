@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لك | Strategy2Action</title>
+    <meta name="description" content="تم تأكيد عملية الشراء. إليك ما سيحدث لاحقاً.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .thank-you-page {
+            min-height: 100vh;
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .thank-you-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--success) 0%, #27ae60 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+            stroke-width: 2.5;
+        }
+
+        .thank-you-container h1 {
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-container .lead {
+            font-size: 1.125rem;
+            color: var(--steel);
+            margin-bottom: 2.5rem;
+        }
+
+        .next-steps {
+            background: white;
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+
+        .next-steps h3 {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sand);
+            flex-direction: row-reverse;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            text-align: right;
+        }
+
+        .step-content h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        .support-box {
+            background: var(--ivory);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .support-box h4 {
+            font-size: 0.9375rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-box p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin-bottom: 0.5rem;
+        }
+
+        .support-box a {
+            color: var(--gold-dark);
+            font-weight: 500;
+        }
+
+        .social-share {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .social-share p {
+            font-size: 0.875rem;
+            color: var(--fog);
+            margin-bottom: 1rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-direction: row-reverse;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            background: var(--ivory);
+            border: 1px solid var(--sand);
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--navy);
+            transition: var(--transition-fast);
+            flex-direction: row-reverse;
+        }
+
+        .social-btn:hover {
+            background: var(--sand);
+            color: var(--navy);
+        }
+
+        .social-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-page">
+        <div class="thank-you-container">
+            <div class="success-icon">
+                <i data-lucide="check"></i>
+            </div>
+
+            <h1>انضممت. <em>لنبدأ.</em></h1>
+            <p class="lead">تم تأكيد عملية الشراء. تحقق من بريدك الإلكتروني للحصول على تفاصيل الوصول والخطوات التالية.</p>
+
+            <div class="next-steps">
+                <h3>ما سيحدث بعد ذلك</h3>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>تحقق من بريدك الإلكتروني</h4>
+                        <p>ستتلقى رسالة تأكيد بالإيصال ورابط الوصول خلال 5 دقائق.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>ادخل للمنصة</h4>
+                        <p>سجّل دخولك على platform.strategy2action.com لبدء محادثة التشخيص.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>ابدأ تشخيصك</h4>
+                        <p>وكيل الذكاء الاصطناعي سيرشدك عبر محادثة تشخيصية عميقة. خصص 60-90 دقيقة.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>استلم تقريرك</h4>
+                        <p>تقرير الجاهزية الاستراتيجية سيُرسل عبر البريد الإلكتروني خلال 24 ساعة من الإنجاز.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="support-box">
+                <h4>تحتاج مساعدة؟</h4>
+                <p>إذا لم تستلم الرسالة خلال 15 دقيقة، تحقق من مجلد الرسائل غير المرغوب فيها.</p>
+                <p>ما زلت تواجه مشكلة؟ تواصل معنا على <a href="mailto:support@strategy2action.com">support@strategy2action.com</a></p>
+            </div>
+
+            <a href="https://platform.strategy2action.com" class="btn btn-primary btn-large">اذهب للمنصة <i data-lucide="arrow-left"></i></a>
+
+            <div class="social-share">
+                <p>شارك الآخرين التزامك بالوضوح</p>
+                <div class="social-buttons">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://strategy2action.com" class="social-btn" target="_blank">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=بدأت%20تشخيصي%20الاستراتيجي%20مع%20@Strategy2Action%20—%20أجعل%20استراتيجيتي%20مرئية.&url=https://strategy2action.com" class="social-btn" target="_blank">
+                        <i data-lucide="twitter"></i> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

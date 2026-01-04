@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Accelerator | Strategy2Action</title>
+    <meta name="description" content="Transform your Strategic Diagnosis into an actionable 90-day implementation plan. Get your Business Mirror, Operating Model, and Financial Model built.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        /* Hero */
+        .accelerator-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .accelerator-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .accelerator-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+            position: relative;
+        }
+
+        .price-card-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-original {
+            font-size: 1rem;
+            color: var(--fog);
+            text-decoration: line-through;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: var(--success);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Mirror Cards */
+        .mirror-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .mirror-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mirror-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-dark);
+        }
+
+        .mirror-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.5;
+        }
+
+        .mirror-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .mirror-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 1rem;
+        }
+
+        .mirror-includes {
+            text-align: left;
+            background: rgba(45, 138, 110, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .mirror-includes h5 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        .mirror-includes li {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .mirror-includes li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+
+        /* Growth Drivers */
+        .driver-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .driver-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .driver-category {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .driver-category-title {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .driver-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+        }
+
+        .driver-num {
+            width: 22px;
+            height: 22px;
+            background: var(--ivory);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        .driver-item span {
+            font-size: 0.875rem;
+            color: var(--steel);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: 0;
+            width: 2px;
+            background: var(--sand);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-week {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="strategic-diagnosis.html">Diagnosis</a>
+                    <a href="implementation-accelerator.html" style="color: var(--gold-dark);">Accelerator</a>
+                    <a href="guided-intensive.html">Intensive</a>
+                    <a href="about.html">About</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Get Started <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" onclick="toggleMobileNav()">Home</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">Diagnosis</a>
+        <a href="implementation-accelerator.html" onclick="toggleMobileNav()">Accelerator</a>
+        <a href="guided-intensive.html" onclick="toggleMobileNav()">Intensive</a>
+        <a href="about.html" onclick="toggleMobileNav()">About</a>
+        <a href="https://platform.strategy2action.com/register" onclick="toggleMobileNav()" style="color: var(--gold);">Get Started</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="accelerator-hero">
+        <div class="container">
+            <div class="accelerator-hero-grid">
+                <div>
+                    <span class="section-eyebrow">Tier 2: Implementation Accelerator</span>
+                    <h1>Turn Your Diagnosis Into a <em>90-Day Action Plan</em></h1>
+                    <p class="text-lead mb-4">Your Strategic Diagnosis revealed where you're stuck. Now let's build the mirror—Business Model, Operating Model, Financial Model—and a concrete implementation roadmap.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: var(--success); width: 20px; height: 20px;"></i> Complete Business Mirror (all 4 models)</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: var(--success); width: 20px; height: 20px;"></i> 9-Driver Growth Diagnostic</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: var(--success); width: 20px; height: 20px;"></i> 90-Day Implementation Roadmap</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: var(--success); width: 20px; height: 20px;"></i> 2x AI-Guided Working Sessions</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <span class="price-card-badge">Most Popular</span>
+                    <div class="price-display">
+                        <div class="price-original">$1,497</div>
+                        <div class="price-amount">$997 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">One-time investment</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> Everything in Strategic Diagnosis</li>
+                        <li><i data-lucide="check"></i> Business Model Canvas (complete)</li>
+                        <li><i data-lucide="check"></i> Operating Model Framework</li>
+                        <li><i data-lucide="check"></i> Financial Model Template</li>
+                        <li><i data-lucide="check"></i> People Model Architecture</li>
+                        <li><i data-lucide="check"></i> 9-Driver Growth Analysis</li>
+                        <li><i data-lucide="check"></i> 90-Day Implementation Roadmap</li>
+                        <li><i data-lucide="check"></i> 2x AI-Guided Working Sessions</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">Start Implementation Accelerator <i data-lucide="arrow-right"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">Requires completed Strategic Diagnosis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Four Mirrors Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Business Mirror</span>
+                <h2>Four Models. <em>One Integrated System.</em></h2>
+                <p class="text-lead">Your strategy becomes visible when translated into four interconnected models. We build all four.</p>
+            </div>
+
+            <div class="grid grid-4" style="gap: 1.5rem;">
+                <div class="mirror-card">
+                    <div class="mirror-icon"><i data-lucide="target"></i></div>
+                    <h3>Business Model</h3>
+                    <p>How you create, deliver, and capture value.</p>
+                    <div class="mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Value proposition design</li>
+                            <li>Customer segments</li>
+                            <li>Revenue streams</li>
+                            <li>Pricing architecture</li>
+                            <li>DSI validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mirror-card">
+                    <div class="mirror-icon"><i data-lucide="settings"></i></div>
+                    <h3>Operating Model</h3>
+                    <p>How the organization actually works.</p>
+                    <div class="mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Process architecture</li>
+                            <li>Decision rights</li>
+                            <li>Accountability structure</li>
+                            <li>Operating rhythms</li>
+                            <li>System dependencies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mirror-card">
+                    <div class="mirror-icon"><i data-lucide="trending-up"></i></div>
+                    <h3>Financial Model</h3>
+                    <p>The numbers that tell the truth.</p>
+                    <div class="mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Revenue projections</li>
+                            <li>Unit economics</li>
+                            <li>Cash flow modeling</li>
+                            <li>Break-even analysis</li>
+                            <li>Investor readiness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mirror-card">
+                    <div class="mirror-icon"><i data-lucide="users"></i></div>
+                    <h3>People Model</h3>
+                    <p>Who does what and how they grow.</p>
+                    <div class="mirror-includes">
+                        <h5>Includes</h5>
+                        <ul>
+                            <li>Role definitions</li>
+                            <li>Hiring roadmap</li>
+                            <li>Accountability matrix</li>
+                            <li>Culture architecture</li>
+                            <li>Leadership pipeline</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 Growth Drivers Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Growth Engine</span>
+                <h2>Nine Drivers. <em>Compound Effect.</em></h2>
+                <p class="text-lead">10% improvement across nine drivers compounds to 60% growth. We diagnose all nine and prioritize interventions.</p>
+            </div>
+
+            <div class="driver-grid">
+                <div class="driver-category">
+                    <div class="driver-category-title">Acquisition</div>
+                    <div class="driver-item">
+                        <span class="driver-num">1</span>
+                        <span>Lead Generation</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">2</span>
+                        <span>Conversion Rate</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">3</span>
+                        <span>Acquisition Cost</span>
+                    </div>
+                </div>
+
+                <div class="driver-category">
+                    <div class="driver-category-title">Value</div>
+                    <div class="driver-item">
+                        <span class="driver-num">4</span>
+                        <span>Transaction Value</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">5</span>
+                        <span>Transaction Frequency</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">6</span>
+                        <span>Customer Retention</span>
+                    </div>
+                </div>
+
+                <div class="driver-category">
+                    <div class="driver-category-title">Efficiency</div>
+                    <div class="driver-item">
+                        <span class="driver-num">7</span>
+                        <span>Profit Margin</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">8</span>
+                        <span>Referral Rate</span>
+                    </div>
+                    <div class="driver-item">
+                        <span class="driver-num">9</span>
+                        <span>Strategic Leverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width: 700px; margin: 2rem auto 0; text-align: center;">
+                <p class="text-lead" style="font-family: var(--font-accent); font-style: italic;">"Most businesses over-invest in 1-2 drivers while ignoring others with 10x more potential."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 90-Day Timeline -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Roadmap</span>
+                <h2>90 Days to <em>Systematic Execution</em></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">W1-2</div>
+                    <div class="timeline-content">
+                        <h4>Foundation & Business Model</h4>
+                        <p>Review Strategic Diagnosis, validate KNOW alignment, complete Business Model Canvas with DSI validation and value proposition design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W3-4</div>
+                    <div class="timeline-content">
+                        <h4>Operating Model Architecture</h4>
+                        <p>Map current processes, identify founder dependencies, design accountability structure, establish operating rhythms and decision rights.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W5-6</div>
+                    <div class="timeline-content">
+                        <h4>Financial Model & People Model</h4>
+                        <p>Build revenue projections, unit economics, cash flow model. Define role architecture, hiring priorities, and accountability matrix.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W7-8</div>
+                    <div class="timeline-content">
+                        <h4>9-Driver Growth Analysis</h4>
+                        <p>Score all nine growth drivers, identify leverage points, design quick wins, medium-term, and transformational interventions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">W9-12</div>
+                    <div class="timeline-content">
+                        <h4>Integration & Implementation Launch</h4>
+                        <p>Integrate all four models, validate coherence, create 90-day action plan with weekly milestones, metrics, and accountability structures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Why This Approach</span>
+                <h2>Not Consulting. <em>Mirror Building.</em></h2>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-col comparison-col--negative">
+                    <h3>Traditional Consulting</h3>
+                    <div class="comparison-item">
+                        <span class="label">Approach</span>
+                        <span class="value">We tell you what to do based on our frameworks</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Deliverable</span>
+                        <span class="value">Generic strategy deck with borrowed ideas</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Timeline</span>
+                        <span class="value">6-12 month engagements, billable hours</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Outcome</span>
+                        <span class="value">Slides gather dust, nothing changes</span>
+                    </div>
+                </div>
+
+                <div class="comparison-col comparison-col--positive">
+                    <h3>Implementation Accelerator</h3>
+                    <div class="comparison-item">
+                        <span class="label">Approach</span>
+                        <span class="value">We extract YOUR strategy and make it visible</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Deliverable</span>
+                        <span class="value">Four integrated models built from your reality</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Timeline</span>
+                        <span class="value">90 days, fixed investment, clear milestones</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="label">Outcome</span>
+                        <span class="value">Actionable roadmap with weekly execution</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready to Build Your Mirror?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">From Diagnosis to <em>Implementation</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">Transform your Strategic Diagnosis into four integrated models and a 90-day action plan.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">Start Implementation Accelerator — $997 <i data-lucide="arrow-right"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Includes everything in Strategic Diagnosis + complete Business Mirror</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
+                    <a href="implementation-accelerator.html">Implementation Accelerator</a>
+                    <a href="guided-intensive.html">Guided Intensive</a>
+                    <a href="executive-partnership.html">Executive Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="about.html">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

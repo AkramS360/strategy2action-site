@@ -1,0 +1,115 @@
+<!-- S2A Downsell Financial Review - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+}
+
+.s2a-ds * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-ds { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); min-height: 100vh; padding: 3rem 0; background: var(--cream); }
+.s2a-ds a { text-decoration: none; color: inherit; }
+.s2a-ds h1, .s2a-ds h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-ds h1 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+.s2a-ds h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+
+.s2a-ds-container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+.s2a-ds-header { text-align: center; margin-bottom: 2.5rem; }
+.s2a-ds-badge { display: inline-block; background: var(--ivory); color: var(--steel); font-size: 0.75rem; font-weight: 600; padding: 0.5rem 1.25rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.s2a-ds-header p { font-size: 1rem; color: var(--steel); }
+
+.s2a-ds-card { background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+.s2a-ds-price { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--sand); }
+.s2a-ds-price .amount { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--midnight); }
+.s2a-ds-price .amount span { font-size: 1rem; font-weight: 400; color: var(--fog); }
+.s2a-ds-price .note { font-size: 0.875rem; color: var(--fog); margin-top: 0.25rem; }
+
+.s2a-ds-cfa { display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: rgba(45, 138, 110, 0.08); border: 1px solid rgba(45, 138, 110, 0.2); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem; }
+.s2a-ds-cfa span { font-size: 0.875rem; color: var(--success); font-weight: 500; }
+
+.s2a-ds-features { margin-bottom: 1.5rem; }
+.s2a-ds-feature { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--ivory); border-radius: 8px; margin-bottom: 0.75rem; position: relative; padding-left: 2.5rem; }
+.s2a-ds-feature::before { content: ''; position: absolute; left: 1rem; top: 1.35rem; width: 12px; height: 12px; background: var(--gold-dark); border-radius: 50%; }
+.s2a-ds-feature .content h4 { font-size: 0.9375rem; font-weight: 600; color: var(--navy); margin-bottom: 0.125rem; }
+.s2a-ds-feature .content p { font-size: 0.8125rem; color: var(--steel); margin: 0; }
+
+.s2a-ds-cta { text-align: center; }
+.s2a-ds .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 1rem 2rem; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); width: 100%; margin-bottom: 1rem; }
+.s2a-ds-skip { color: var(--fog); font-size: 0.875rem; text-decoration: underline; }
+</style>
+
+<div class="s2a-ds">
+    <div class="s2a-ds-container">
+        <div class="s2a-ds-header">
+            <div class="s2a-ds-badge">Alternative Option</div>
+            <h1>Need Just the <em>Financial Piece?</em></h1>
+            <p>Get a professional review of your financial model by our CFA-certified team. Perfect for investor prep.</p>
+        </div>
+
+        <div class="s2a-ds-card">
+            <div class="s2a-ds-price">
+                <div class="amount">$497 <span>USD</span></div>
+                <div class="note">One-time - Delivered in 5 business days</div>
+            </div>
+
+            <div class="s2a-ds-cfa">
+                <span>Reviewed by CFA Charterholder</span>
+            </div>
+
+            <div class="s2a-ds-features">
+                <div class="s2a-ds-feature">
+                    <div class="content">
+                        <h4>Model Structure Review</h4>
+                        <p>Assessment of your spreadsheet architecture, formula logic, and best practices</p>
+                    </div>
+                </div>
+                <div class="s2a-ds-feature">
+                    <div class="content">
+                        <h4>Assumption Validation</h4>
+                        <p>Reality check on growth rates, margins, and key assumptions vs. industry benchmarks</p>
+                    </div>
+                </div>
+                <div class="s2a-ds-feature">
+                    <div class="content">
+                        <h4>Unit Economics Analysis</h4>
+                        <p>CAC, LTV, payback period, and margin analysis with improvement recommendations</p>
+                    </div>
+                </div>
+                <div class="s2a-ds-feature">
+                    <div class="content">
+                        <h4>Investor Readiness Score</h4>
+                        <p>Rating on how your model will be perceived by investors, with specific fixes</p>
+                    </div>
+                </div>
+                <div class="s2a-ds-feature">
+                    <div class="content">
+                        <h4>Written Report</h4>
+                        <p>Detailed findings document with prioritized action items</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-ds-cta">
+                <a href="#" class="btn">Get CFA Financial Review - $497 -></a>
+                <a href="#" class="s2a-ds-skip">No thanks, I'll continue without this</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 1rem;">
+            <p style="font-size: 0.8125rem; color: var(--fog);">You can always upgrade to full Guided Intensive later.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+<!-- S2A Upsell Accelerator - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+}
+
+.s2a-up * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-up { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); min-height: 100vh; padding: 3rem 0; background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%); }
+.s2a-up a { text-decoration: none; color: inherit; }
+.s2a-up ul { list-style: none; }
+.s2a-up h1, .s2a-up h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-up h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.s2a-up h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+
+.s2a-up-container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.s2a-up-header { text-align: center; margin-bottom: 2.5rem; }
+.s2a-up-badge { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1.25rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.s2a-up-header p { font-size: 1.125rem; color: var(--steel); max-width: 600px; margin: 1rem auto 0; }
+
+.s2a-up-timer { background: rgba(232, 93, 59, 0.1); border: 1px solid rgba(232, 93, 59, 0.2); border-radius: 8px; padding: 1rem; text-align: center; margin-bottom: 2rem; }
+.s2a-up-timer p { font-size: 0.875rem; color: #d46a47; margin: 0; }
+.s2a-up-timer strong { font-family: var(--font-display); font-size: 1.25rem; }
+
+.s2a-up-card { background: white; border: 2px solid var(--gold); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 20px 60px rgba(10, 22, 40, 0.1); }
+.s2a-up-price { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--sand); }
+.s2a-up-price .original { font-size: 1.25rem; color: var(--fog); text-decoration: line-through; margin-bottom: 0.25rem; }
+.s2a-up-price .current { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--success); }
+.s2a-up-price .current span { font-size: 1.5rem; font-weight: 400; color: var(--fog); }
+.s2a-up-price .savings { display: inline-block; background: rgba(45, 138, 110, 0.1); color: var(--success); font-size: 0.875rem; font-weight: 600; padding: 0.375rem 1rem; border-radius: 100px; margin-top: 0.5rem; }
+
+.s2a-up-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+@media (max-width: 600px) { .s2a-up-features { grid-template-columns: 1fr; } }
+.s2a-up-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9375rem; color: var(--navy); position: relative; padding-left: 1.75rem; }
+.s2a-up-features li::before { content: ''; position: absolute; left: 0; top: 0.35rem; width: 14px; height: 14px; background: var(--success); border-radius: 50%; }
+
+.s2a-up-cta { text-align: center; }
+.s2a-up .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 1rem 2rem; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); width: 100%; margin-bottom: 1rem; }
+.s2a-up-skip { color: var(--fog); font-size: 0.875rem; text-decoration: underline; }
+
+.s2a-up-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--sand); }
+@media (max-width: 600px) { .s2a-up-comparison { grid-template-columns: 1fr; } }
+.s2a-up-col h4 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+.s2a-up-col.already h4 { color: var(--fog); }
+.s2a-up-col.upgrade h4 { color: var(--gold-dark); }
+.s2a-up-col li { font-size: 0.875rem; color: var(--steel); padding: 0.375rem 0; padding-left: 1.25rem; position: relative; }
+.s2a-up-col.already li::before { content: 'v'; position: absolute; left: 0; color: var(--fog); }
+.s2a-up-col.upgrade li::before { content: '+'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+</style>
+
+<div class="s2a-up">
+    <div class="s2a-up-container">
+        <div class="s2a-up-header">
+            <div class="s2a-up-badge">One-Time Offer</div>
+            <h1>Wait! Don't Leave Without <em>Your Implementation Plan</em></h1>
+            <p>Your Strategic Diagnosis revealed exactly where you're stuck. Now let's build the complete Business Mirror to break through.</p>
+        </div>
+
+        <div class="s2a-up-timer">
+            <p>This special pricing expires in <strong>15:00</strong></p>
+        </div>
+
+        <div class="s2a-up-card">
+            <div class="s2a-up-price">
+                <div class="original">Regular Price: $997</div>
+                <div class="current">$864 <span>USD</span></div>
+                <div class="savings">Save $133 - Your Diagnosis Cost!</div>
+            </div>
+
+            <ul class="s2a-up-features">
+                <li>Complete Business Model Canvas</li>
+                <li>Operating Model Architecture</li>
+                <li>Financial Model Template</li>
+                <li>People Model Framework</li>
+                <li>9-Driver Growth Analysis</li>
+                <li>90-Day Implementation Roadmap</li>
+                <li>2x AI-Guided Working Sessions</li>
+                <li>DSI Validation and Positioning</li>
+            </ul>
+
+            <div class="s2a-up-cta">
+                <a href="#" class="btn">Yes! Add Implementation Accelerator - $864 -></a>
+                <a href="#" class="s2a-up-skip">No thanks, I'll just take my diagnosis</a>
+            </div>
+
+            <div class="s2a-up-comparison">
+                <div class="s2a-up-col already">
+                    <h4>You Already Have</h4>
+                    <ul>
+                        <li>KSG Assessment with scores</li>
+                        <li>Trap diagnosis</li>
+                        <li>Protocol prescription</li>
+                        <li>8-Dimension Gap Analysis</li>
+                        <li>Priority actions</li>
+                    </ul>
+                </div>
+                <div class="s2a-up-col upgrade">
+                    <h4>Add With Upgrade</h4>
+                    <ul>
+                        <li>Complete Business Mirror (4 models)</li>
+                        <li>9-Driver Growth Diagnostic</li>
+                        <li>90-Day Implementation Roadmap</li>
+                        <li>2x AI Working Sessions</li>
+                        <li>Full deliverable package</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 1rem;">
+            <p style="font-size: 0.8125rem; color: var(--fog);">Questions? Email us at <a href="mailto:Akram.m.qa@gmail.com" style="color: var(--gold-dark);">Akram.m.qa@gmail.com</a></p>
+        </div>
+    </div>
+</div>

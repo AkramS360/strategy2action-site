@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Model Builder | Strategy2Action</title>
+    <meta name="description" content="Build your People Model with AI-powered guidance. Define WHO delivers—organizational structure, roles, and capabilities. Self-paced module with 24/7 AI agent support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, #f3e5f5 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at right top, rgba(123, 31, 162, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #7b1fa2;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #7b1fa2;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(123, 31, 162, 0.15);
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7b1fa2;
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: #7b1fa2;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="strategic-diagnosis.html">Diagnosis</a>
+                    <a href="builder-bundle.html">Builder</a>
+                    <a href="expert-led-bundle.html">Expert-Led</a>
+                    <a href="about.html">About</a>
+                    <a href="../ar/people-model-builder.html" class="lang-toggle lang-ar">ع</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Get Started <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" onclick="toggleMobileNav()">Home</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">Diagnosis</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">Builder</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">Expert-Led</a>
+        <a href="about.html" onclick="toggleMobileNav()">About</a>
+        <a href="../ar/people-model-builder.html" class="lang-toggle lang-ar" onclick="toggleMobileNav()">عربي</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="users" style="width: 16px; height: 16px;"></i> Module 3: Step 3</div>
+                    <h1>People Model <em>Builder</em></h1>
+                    <p class="text-lead mb-4">Define WHO delivers. Build your organizational structure, role definitions, and capability requirements with AI-powered guidance available 24/7.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> Strategy360 AI Agent (24/7)</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> Weekly Group Q&A Sessions</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> Self-Paced Completion</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #7b1fa2; width: 20px; height: 20px;"></i> Progress Dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$399 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">Self-Paced Module</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> Organizational Structure Design</li>
+                        <li><i data-lucide="check"></i> Role Definitions & Job Architecture</li>
+                        <li><i data-lucide="check"></i> HR Policy Framework</li>
+                        <li><i data-lucide="check"></i> Capability Requirements</li>
+                        <li><i data-lucide="check"></i> Initiative Ownership Matrix</li>
+                        <li><i data-lucide="check"></i> Hiring Priority Framework</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block" style="background: #7b1fa2;">Start People Model Builder — $399 <i data-lucide="arrow-right"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">Prerequisite: Business + Operating Models completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You'll Build</span>
+                <h2>Your Complete <em>People Model</em></h2>
+                <p class="text-lead">Define WHO delivers what your Operating Model requires.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="network" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>Org Structure</h4>
+                    <p>Design your organizational architecture that supports your Operating Model.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-check" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>Role Definitions</h4>
+                    <p>Create clear job architecture with responsibilities and accountabilities.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="file-text" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>HR Policies</h4>
+                    <p>Establish policy framework for hiring, performance, and development.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="brain" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>Capability Matrix</h4>
+                    <p>Map required capabilities to roles and identify development needs.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="clipboard-list" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>Initiative Ownership</h4>
+                    <p>Assign clear ownership for strategic initiatives and projects.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-plus" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>Hiring Priority</h4>
+                    <p>Identify and prioritize your next key hires based on capability gaps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">What You Walk Away With</span>
+                <h2 style="color: var(--cream);">Not Advice. <em style="color: var(--gold);">Architecture.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">Every People Model Builder engagement produces three layers of value.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>The Artifact</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can hold</p>
+
+                    <p class="deliverable-main">
+                        <strong>Your Complete People Model</strong>: a documented org design that answers "who does what and why."
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Org chart that reflects strategy, not history.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Role definitions with clear ownership. No more "I thought that was your job."
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Hiring roadmap: who to hire, when, and why.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Capability gaps visible, not guessed.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>The Capability</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What you can do now</p>
+
+                    <p class="deliverable-main">
+                        <strong>Hire with confidence.</strong> Because you know what you're hiring for and why.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            Write a job description in minutes, not hours.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Onboard new hires by showing them the org, not explaining it.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Say "no" to roles that don't fit the model.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            Promote by pointing at capability gaps, not politics.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>The Shift</h3>
+                    </div>
+                    <p class="deliverable-subtitle">What changes forever</p>
+
+                    <p class="deliverable-main">
+                        <strong>Your team stops asking "who handles this?"</strong> Because the answer is in the model.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            From "we need someone" to knowing exactly who
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From org chart as afterthought to org chart as strategy
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From hiring by urgency to hiring by design
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            From unclear accountability to visible ownership
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                This isn't an org chart that lives in a drawer. It's your <strong>people architecture made visible</strong>, built from your actual needs, ready to hire and grow against.
+            </p>
+        </div>
+    </section>
+
+    <!-- Upgrade Option -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Want More Support?</span>
+                <h2>Upgrade to <em>Expert-Led</em></h2>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream); text-align: center;">
+                <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">Expert-Led</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">People Model Expert</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,299</div>
+                <p style="font-size: 0.9375rem; color: rgba(250,248,245,0.8); margin-bottom: 1.5rem;">2-hour 1:1 session with Akram, personally reviewed deliverables, and async support.</p>
+                <a href="people-model-expert.html" class="btn btn-primary btn-block">View Expert-Led Option</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready to Define WHO Delivers?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Build Your <em>People Model</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">Design the organizational structure and roles that execute your Operating Model.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">Start People Model Builder — $399 <i data-lucide="arrow-right"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Prerequisite: Business + Operating Models completed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
+                    <a href="builder-bundle.html">Builder Modules</a>
+                    <a href="expert-led-bundle.html">Expert-Led Modules</a>
+                    <a href="executive-partnership.html">Executive Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="about.html">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الفريق مع خبير | Strategy2Action</title>
+    <meta name="description" content="ابنِ نموذج فريقك مع إرشاد خبير. جلسة فردية لمدة ساعتين مع أكرم، مراجعة شخصية للنواتج، ودعم غير متزامن طوال الرحلة.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            color: var(--cream);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at left top, rgba(123, 31, 162, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #7b1fa2;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: rgba(250, 248, 245, 0.05);
+            border: 1px solid rgba(250, 248, 245, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--cream);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: var(--gold);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        .leader-card {
+            display: flex;
+            gap: 2rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav" style="background: rgba(10, 22, 40, 0.95);">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action" style="filter: brightness(0) invert(1);"></a>
+                <div class="nav-links">
+                    <a href="about.html" style="color: rgba(250, 248, 245, 0.7);">من نحن</a>
+                    <a href="expert-led-bundle.html" style="color: rgba(250, 248, 245, 0.7);">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html" style="color: rgba(250, 248, 245, 0.7);">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html" style="color: rgba(250, 248, 245, 0.7);">التشخيص</a>
+                    <a href="index.html" style="color: rgba(250, 248, 245, 0.7);">الرئيسية</a>
+                    <a href="../en/people-model-expert.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">قدم الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()" style="color: var(--cream);"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/people-model-expert.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="users" style="width: 16px; height: 16px;"></i> الوحدة 3: مع خبير</div>
+                    <h1 style="color: var(--cream);">نموذج الفريق <em>مع خبير</em></h1>
+                    <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">حدد من يقدم الخدمة مع إرشاد خبير مباشر. جلسة فردية لمدة ساعتين مع أكرم، مراجعة شخصية للنواتج، ودعم غير متزامن طوال الرحلة.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> جلسة فردية لمدة ساعتين مع أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> نواتج بمراجعة من أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> دعم عبر الرسائل غير المتزامنة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> وكيل الذكاء الاصطناعي Strategy360 (24/7)</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$1,299 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem;">وحدة مع خبير</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> جلسة فردية لمدة ساعتين مع أكرم</li>
+                        <li><i data-lucide="check"></i> تصميم الهيكل التنظيمي</li>
+                        <li><i data-lucide="check"></i> تعريف الأدوار وبنية الوظائف</li>
+                        <li><i data-lucide="check"></i> متطلبات القدرات</li>
+                        <li><i data-lucide="check"></i> إطار عمل أولويات التوظيف</li>
+                        <li><i data-lucide="check"></i> دعم غير متزامن طوال الرحلة</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">ابدأ نموذج الفريق مع خبير — $1,299 <i data-lucide="arrow-left"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); text-align: center; margin-top: 1rem;">شرط مسبق: إكمال نموذجي الأعمال والعمليات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Guide -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">مرشدك الخبير</span>
+                <h2>عمل مباشر مع <em>أكرم</em></h2>
+            </div>
+
+            <div class="leader-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="leader-avatar">
+                    <img src="images/akram-profile (2).png" alt="Akram AlQadasi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="leader-info">
+                    <h3>أكرم القدسي</h3>
+                    <p class="leader-role">المؤسس والمستشار الرئيسي</p>
+                    <p style="font-size: 0.9375rem; color: var(--steel);">مهندس استراتيجي أرشد +400 مؤسس عبر التحولات. وحدة نموذج الفريق مع خبير تتضمن جلسة فردية لمدة ساعتين ومراجعة شخصية لجميع النواتج.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">ما ستبنيه</span>
+                <h2><em>نموذج فريقك</em> الكامل</h2>
+                <p class="text-lead">مع إرشاد خبير ومراجعة شخصية في كل خطوة.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="network" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>الهيكل التنظيمي</h4>
+                    <p>صمم البنية التنظيمية مع إرشاد خبير حول الهيكل الأمثل.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-check" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>تعريف الأدوار</h4>
+                    <p>أنشئ بنية الوظائف مع مدخلات خبير حول المسؤوليات والمساءلات.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="file-text" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>سياسات الموارد البشرية</h4>
+                    <p>ضع إطار عمل السياسات مع إرشاد خبير بأفضل الممارسات.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="brain" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>مصفوفة القدرات</h4>
+                    <p>خريطة القدرات المطلوبة مع تحليل خبير للفجوات وتخطيط التطوير.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="clipboard-list" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>ملكية المبادرات</h4>
+                    <p>حدد الملكية مع إرشاد خبير حول هياكل المساءلة.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(123, 31, 162, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="user-plus" style="color: #7b1fa2; width: 20px; height: 20px;"></i></div>
+                    <h4>أولوية التوظيف</h4>
+                    <p>حدد التوظيفات الأساسية مع ترتيب خبير بناءً على التأثير الاستراتيجي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">ما تحصل عليه</span>
+                <h2 style="color: var(--cream);">ليس نصائح. <em style="color: var(--gold);">بنية.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">مع خبير يعني أن تصميم مؤسستك تم التحقق منه بواسطة شخص أعاد هيكلة الفرق لمدة 15 عاماً.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>الناتج</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك الاحتفاظ به</p>
+
+                    <p class="deliverable-main">
+                        <strong>نموذج فريقك المُصادق عليه من خبير</strong>: تمت مراجعته شخصياً من أكرم، جاهز للتوظيف والترقية بناءً عليه.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            هيكل تنظيمي تم التحقق منه مقابل أنماط التوسع التي رآها أكرم تنجح.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            تعريفات أدوار تم اختبارها للصراعات التي ستمنعها.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            خارطة طريق توظيف حسب الأولوية بالتأثير الاستراتيجي، وليس الإلحاح.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            فجوات القدرات مُخططة مع توصيات خبير للتطوير.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>القدرة</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك فعله الآن</p>
+
+                    <p class="deliverable-main">
+                        <strong>اتخذ قرارات التوظيف والمؤسسة بدعم خبير.</strong> لا مزيد من التخمين حول بناء الفريق الصحيح.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            دافع عن هيكلك التنظيمي للمستثمرين. لقد بنيته مع خبير.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            اتخذ قرارات صعبة بشأن الأفراد مع نموذج يبررها.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            أدمج التوظيفات الكبيرة بهيكل يمكنهم الوثوق به.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            وسع الفريق دون الفوضى التي يجلبها التوسع عادةً.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>التحول</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
+
+                    <p class="deliverable-main">
+                        <strong>تتوقف عن التشكيك في تصميم مؤسستك.</strong> خبير صادق عليه. أنت تعرف أنه صحيح.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الأمل في نجاح الهيكل إلى معرفة أنه تم التحقق منه
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من التوظيف التفاعلي إلى بناء الفريق الاستراتيجي
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من "أعتقد أننا نحتاج..." إلى عدد موظفين مدعوم بالبيانات
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من البناء وحدك إلى البناء مع مرشد
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                هذا ليس مخططاً تنظيمياً بنيته وحدك. إنه <strong>نموذج فريقك المُصادق عليه من خبير</strong>، مصمم لحيث أنت ذاهب، وليس فقط لحيث أنت.
+            </p>
+        </div>
+    </section>
+
+    <!-- Builder Option -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">خيار بديل</span>
+                <h2>تفضل <em>السرعة الذاتية؟</em></h2>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; background: var(--cream); border: 2px solid #7b1fa2; border-radius: 16px; padding: 2rem; text-align: center;">
+                <div style="background: #7b1fa2; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">بسرعة ذاتية</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">نموذج الفريق الباني</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #7b1fa2; margin-bottom: 1rem;">$399</div>
+                <p style="font-size: 0.9375rem; color: var(--steel); margin-bottom: 1.5rem;">ابنِ نموذج فريقك مع وكلاء الذكاء الاصطناعي بسرعتك الخاصة. دعم أسبوعي لجلسات الأسئلة والأجوبة الجماعية مُضمن.</p>
+                <a href="people-model-builder.html" class="btn btn-secondary btn-block">اطلع على خيار الباني</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">مستعد لإرشاد خبير؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">ابنِ نموذج فريقك <em>مع أكرم</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">جلسة فردية لمدة ساعتين، نواتج تمت مراجعتها شخصياً، ودعم غير متزامن طوال الرحلة.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ نموذج الفريق مع خبير — $1,299 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">شرط مسبق: إكمال نموذجي الأعمال والعمليات • وفر مع <a href="expert-led-bundle.html" style="color: var(--gold);">الحزمة الكاملة $3,999</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">الشراكة التنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>الموارد</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 22, 40, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 22, 40, 0.95)';
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

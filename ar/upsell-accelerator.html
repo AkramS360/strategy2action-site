@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض خاص: المسرّع التنفيذي | Strategy2Action</title>
+    <meta name="description" content="عرض حصري لمرة واحدة للترقية من التشخيص الاستراتيجي إلى المسرّع التنفيذي الكامل بسعر خاص.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .upsell-page {
+            min-height: 100vh;
+            padding: 3rem 0;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .upsell-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .upsell-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .upsell-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .upsell-header h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .upsell-header p {
+            font-size: 1.125rem;
+            color: var(--steel);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .upsell-card {
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(10, 22, 40, 0.1);
+        }
+
+        .upsell-price {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .upsell-price .original {
+            font-size: 1.25rem;
+            color: var(--fog);
+            text-decoration: line-through;
+            margin-bottom: 0.25rem;
+        }
+
+        .upsell-price .current {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .upsell-price .current span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .upsell-price .savings {
+            display: inline-block;
+            background: rgba(45, 138, 110, 0.1);
+            color: var(--success);
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            margin-top: 0.5rem;
+        }
+
+        .upsell-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .upsell-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .upsell-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+        }
+
+        .upsell-features li svg {
+            color: var(--success);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .upsell-cta {
+            text-align: center;
+        }
+
+        .upsell-cta .btn {
+            margin-bottom: 1rem;
+        }
+
+        .upsell-skip {
+            color: var(--fog);
+            font-size: 0.875rem;
+            text-decoration: underline;
+        }
+
+        .upsell-skip:hover {
+            color: var(--steel);
+        }
+
+        .timer-bar {
+            background: rgba(232, 93, 59, 0.1);
+            border: 1px solid rgba(232, 93, 59, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .timer-bar p {
+            font-size: 0.875rem;
+            color: #d46a47;
+            margin: 0;
+        }
+
+        .timer-bar strong {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .comparison-simple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        @media (max-width: 600px) {
+            .comparison-simple {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-col h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-col.already h4 {
+            color: var(--fog);
+        }
+
+        .comparison-col.upgrade h4 {
+            color: var(--gold-dark);
+        }
+
+        .comparison-col li {
+            font-size: 0.875rem;
+            color: var(--steel);
+            padding: 0.375rem 0;
+            padding-right: 1.25rem;
+            position: relative;
+        }
+
+        .comparison-col.already li::after {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--fog);
+        }
+
+        .comparison-col.upgrade li::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="upsell-page">
+        <div class="upsell-container">
+            <div class="upsell-header">
+                <div class="upsell-badge">عرض لمرة واحدة</div>
+                <h1>انتظر! لا تغادر دون <em>خطتك التنفيذية</em></h1>
+                <p>كشف تشخيصك الاستراتيجي بالضبط أين أنت عالق. الآن دعنا نبني المرآة التجارية الكاملة لتحقيق الاختراق.</p>
+            </div>
+
+            <div class="timer-bar">
+                <p>ينتهي هذا السعر الخاص خلال <strong id="countdown">15:00</strong></p>
+            </div>
+
+            <div class="upsell-card">
+                <div class="upsell-price">
+                    <div class="original">السعر العادي: $997</div>
+                    <div class="current">$864 <span>USD</span></div>
+                    <div class="savings">وفّر $133 — تكلفة تشخيصك!</div>
+                </div>
+
+                <ul class="upsell-features">
+                    <li><i data-lucide="check"></i> نموذج الأعمال الكامل (Canvas)</li>
+                    <li><i data-lucide="check"></i> هيكل النموذج التشغيلي</li>
+                    <li><i data-lucide="check"></i> قالب النموذج المالي</li>
+                    <li><i data-lucide="check"></i> إطار نموذج الأفراد</li>
+                    <li><i data-lucide="check"></i> تحليل النمو بـ9 محركات</li>
+                    <li><i data-lucide="check"></i> خارطة طريق تنفيذية لـ90 يوماً</li>
+                    <li><i data-lucide="check"></i> جلستا عمل موجّهتان بالذكاء الاصطناعي</li>
+                    <li><i data-lucide="check"></i> التحقق من DSI والموقع التنافسي</li>
+                </ul>
+
+                <div class="upsell-cta">
+                    <a href="https://platform.strategy2action.com/upsell-accelerator" class="btn btn-primary btn-large btn-block">نعم! أضف المسرّع التنفيذي — $864 <i data-lucide="arrow-left"></i></a>
+                    <a href="thank-you.html" class="upsell-skip">لا شكراً، سآخذ تشخيصي فقط</a>
+                </div>
+
+                <div class="comparison-simple">
+                    <div class="comparison-col already">
+                        <h4>لديك بالفعل</h4>
+                        <ul>
+                            <li>تقييم KSG مع الدرجات</li>
+                            <li>تشخيص الفخ</li>
+                            <li>وصفة البروتوكول</li>
+                            <li>تحليل الفجوة في 8 أبعاد</li>
+                            <li>الإجراءات ذات الأولوية</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-col upgrade">
+                        <h4>أضف مع الترقية</h4>
+                        <ul>
+                            <li>المرآة التجارية الكاملة (4 نماذج)</li>
+                            <li>تشخيص النمو بـ9 محركات</li>
+                            <li>خارطة طريق تنفيذية لـ90 يوماً</li>
+                            <li>جلستا عمل بالذكاء الاصطناعي</li>
+                            <li>حزمة المخرجات الكاملة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 1rem;">
+                <p style="font-size: 0.8125rem; color: var(--fog);">أسئلة؟ راسلنا على <a href="mailto:Akram.m.qa@gmail.com" style="color: var(--gold-dark);">Akram.m.qa@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Countdown timer
+        let timeLeft = 15 * 60;
+        const countdownEl = document.getElementById('countdown');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                countdownEl.textContent = 'منتهي';
+            }
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>

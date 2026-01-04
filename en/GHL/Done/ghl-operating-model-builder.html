@@ -1,0 +1,451 @@
+<!-- S2A Operating Model Builder - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --slate: #2d3a52;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --stone: #d4cfc5;
+    --gold: #c9a961;
+    --gold-light: #e0c97f;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --error: #c96b6b;
+    --orange: #f57c00;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(5rem, 10vw, 7rem);
+}
+
+.s2a-omb * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-omb { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); background: var(--cream); }
+.s2a-omb img { max-width: 100%; display: block; }
+.s2a-omb a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+.s2a-omb ul { list-style: none; }
+
+.s2a-omb .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2.5rem); }
+
+.s2a-omb h1, .s2a-omb h2, .s2a-omb h3, .s2a-omb h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--midnight);
+}
+.s2a-omb h1 { font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 700; line-height: 1.1; }
+.s2a-omb h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.s2a-omb h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+.s2a-omb h1 em, .s2a-omb h2 em, .s2a-omb h3 em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-dark);
+}
+.s2a-omb p { margin-bottom: 1rem; }
+.s2a-omb .text-lead { font-size: 1.125rem; color: var(--steel); line-height: 1.8; }
+
+.s2a-omb .section { padding: var(--section-padding) 0; }
+.s2a-omb .section--ivory { background: var(--ivory); }
+.s2a-omb .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+.s2a-omb .section-header h2 { margin-bottom: 0.75rem; }
+.s2a-omb .section-header p { color: var(--steel); }
+.s2a-omb .section-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.s2a-omb .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+.s2a-omb .btn-primary {
+    background: var(--orange);
+    color: white;
+    box-shadow: 0 4px 14px rgba(245, 124, 0, 0.3);
+}
+.s2a-omb .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245, 124, 0, 0.4); color: white; }
+.s2a-omb .btn-large { font-size: 1rem; padding: 1rem 2rem; }
+.s2a-omb .btn-block { width: 100%; }
+
+/* Grids */
+.s2a-omb .grid { display: grid; gap: 1.25rem; }
+.s2a-omb .grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+    .s2a-omb .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .s2a-omb .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Module Hero */
+.s2a-omb-hero {
+    padding: 6rem 0 5rem;
+    background: linear-gradient(180deg, #fff3e0 0%, var(--ivory) 100%);
+    position: relative;
+}
+.s2a-omb-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at right top, rgba(245, 124, 0, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+.s2a-omb-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .s2a-omb-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+.s2a-omb-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--orange);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+}
+
+/* Price Card */
+.s2a-omb-price-card {
+    background: white;
+    border: 2px solid var(--orange);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(245, 124, 0, 0.15);
+}
+.s2a-omb-price-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand);
+}
+.s2a-omb-price-amount {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--orange);
+}
+.s2a-omb-price-amount span { font-size: 1.25rem; font-weight: 400; color: var(--fog); }
+.s2a-omb-price-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--navy);
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.75rem;
+}
+.s2a-omb-price-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+/* Hero Features */
+.s2a-omb-hero-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--navy);
+    position: relative;
+    padding-left: 1.75rem;
+}
+.s2a-omb-hero-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 16px;
+    height: 16px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+/* Component Card */
+.s2a-omb-component-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.s2a-omb-component-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(245, 124, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--orange);
+    font-weight: 700;
+}
+.s2a-omb-component-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+.s2a-omb-component-card p { font-size: 0.875rem; color: var(--steel); margin: 0; }
+
+/* Upgrade Card */
+.s2a-omb-upgrade-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2rem;
+    color: var(--cream);
+    text-align: center;
+}
+
+/* Section Gradient */
+.s2a-omb-section-gradient {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    color: var(--cream);
+    text-align: center;
+    padding: var(--section-padding) 0;
+}
+
+/* Footer */
+.s2a-omb-footer {
+    padding: 3rem 0 1.5rem;
+    background: var(--midnight);
+    color: rgba(250, 248, 245, 0.7);
+}
+.s2a-omb-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+    .s2a-omb-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+    .s2a-omb-footer-grid { grid-template-columns: 1fr; }
+}
+.s2a-omb-footer-brand p { font-size: 0.875rem; line-height: 1.7; max-width: 260px; color: rgba(250, 248, 245, 0.7); }
+.s2a-omb-footer-column h4 {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+.s2a-omb-footer-column a {
+    display: block;
+    font-size: 0.8125rem;
+    color: rgba(250, 248, 245, 0.6);
+    padding: 0.25rem 0;
+}
+.s2a-omb-footer-column a:hover { color: var(--cream); }
+.s2a-omb-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 248, 245, 0.1);
+    font-size: 0.75rem;
+}
+@media (max-width: 480px) {
+    .s2a-omb-footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
+
+<div class="s2a-omb">
+    <!-- Hero Section -->
+    <section class="s2a-omb-hero">
+        <div class="container">
+            <div class="s2a-omb-hero-grid">
+                <div>
+                    <div class="s2a-omb-badge">Module 2: Step 2</div>
+                    <h1>Operating Model <em>Builder</em></h1>
+                    <p class="text-lead" style="margin-bottom: 2rem;">Define HOW you deliver. Build your process architecture, system design, and integration layer with AI-powered guidance available 24/7.</p>
+
+                    <ul class="s2a-omb-hero-features" style="margin-bottom: 2rem;">
+                        <li>Strategy360 AI Agent (24/7)</li>
+                        <li>Weekly Group Q&A Sessions</li>
+                        <li>Self-Paced Completion</li>
+                        <li>Progress Dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="s2a-omb-price-card">
+                    <div class="s2a-omb-price-display">
+                        <div class="s2a-omb-price-amount">$499 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">Self-Paced Module</p>
+                    </div>
+
+                    <ul class="s2a-omb-price-features" style="margin-bottom: 1.5rem;">
+                        <li>Process System Architecture</li>
+                        <li>People System Design</li>
+                        <li>Program System (Initiatives)</li>
+                        <li>Engagement Model</li>
+                        <li>Integration Layer</li>
+                        <li>Decision Rights Framework</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary btn-large btn-block">Start Operating Model Builder - $499</a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">Prerequisite: Business Model completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You'll Build</span>
+                <h2>Your Complete <em>Operating Model</em></h2>
+                <p class="text-lead">Define HOW you deliver what your Business Model promises.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">1</div>
+                    <h4>Process System</h4>
+                    <p>Map and optimize your core processes - how work actually flows through your organization.</p>
+                </div>
+
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">2</div>
+                    <h4>People System</h4>
+                    <p>Design accountability structures, decision rights, and role clarity.</p>
+                </div>
+
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">3</div>
+                    <h4>Program System</h4>
+                    <p>Structure initiatives, projects, and ongoing programs for execution.</p>
+                </div>
+
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">4</div>
+                    <h4>Engagement Model</h4>
+                    <p>Define how different parts of your organization interact and collaborate.</p>
+                </div>
+
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">5</div>
+                    <h4>Integration Layer</h4>
+                    <p>Connect systems, data flows, and technology to support operations.</p>
+                </div>
+
+                <div class="s2a-omb-component-card">
+                    <div class="s2a-omb-component-icon">6</div>
+                    <h4>Decision Rights</h4>
+                    <p>Clarify who decides what, reducing bottlenecks and founder dependency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade Option -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Want More Support?</span>
+                <h2>Upgrade to <em>Expert-Led</em></h2>
+            </div>
+
+            <div class="s2a-omb-upgrade-card">
+                <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">Expert-Led</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">Operating Model Expert</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,499</div>
+                <p style="font-size: 0.9375rem; color: rgba(250,248,245,0.8); margin-bottom: 1.5rem;">2-hour 1:1 session with Akram, personally reviewed deliverables, and async support.</p>
+                <a href="#" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);">View Expert-Led Option</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="s2a-omb-section-gradient">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready to Define HOW You Deliver?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">Build Your <em>Operating Model</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">Design the systems and processes that deliver what your Business Model promises.</p>
+
+                <a href="#" class="btn btn-primary btn-large" style="background: var(--orange);">Start Operating Model Builder - $499</a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Prerequisite: Business Model completed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="s2a-omb-footer">
+        <div class="container">
+            <div class="s2a-omb-footer-grid">
+                <div class="s2a-omb-footer-brand">
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem;">Strategy2Action</p>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-omb-footer-column">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-omb-footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-omb-footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-omb-footer-bottom">
+                <span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

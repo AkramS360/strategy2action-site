@@ -1,0 +1,426 @@
+/* ============================================
+   STRATEGY2ACTION ARABIC - RTL STYLESHEET
+   ============================================
+
+   This stylesheet provides RTL (Right-to-Left) support
+   for the Arabic version of strategy2action.com
+
+   Typography Stack:
+   - Display: Masmak (Saudi Ministry of Culture)
+   - Body: Dubai (Dubai Executive Council)
+   - Accent: Al-Naseeb (Saudi Ministry of Culture)
+
+   ============================================ */
+
+/* ============================================
+   RTL BASE DIRECTION
+   ============================================ */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ============================================
+   TYPOGRAPHY - ARABIC FONT ASSIGNMENTS
+   ============================================ */
+
+:root {
+    /* Arabic Font Variables */
+    --font-display-ar: 'Masmak', 'Dubai', system-ui, sans-serif;
+    --font-body-ar: 'Dubai', system-ui, sans-serif;
+    --font-accent-ar: 'Al-Naseeb', 'Dubai', serif;
+}
+
+/* Body Text - Dubai */
+html[dir="rtl"] body {
+    font-family: var(--font-body-ar);
+    letter-spacing: 0; /* Arabic doesn't use letter-spacing */
+}
+
+/* Headlines - Masmak */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+    font-family: var(--font-display-ar);
+    letter-spacing: 0;
+}
+
+/* Accent/Emphasis - Al-Naseeb */
+html[dir="rtl"] em,
+html[dir="rtl"] .hero h1 em,
+html[dir="rtl"] .section-header h2 em,
+html[dir="rtl"] h1 em,
+html[dir="rtl"] h2 em,
+html[dir="rtl"] h3 em,
+html[dir="rtl"] .text-accent {
+    font-family: var(--font-accent-ar);
+    font-style: normal; /* Arabic doesn't use italic */
+}
+
+/* Navigation - Dubai Medium */
+html[dir="rtl"] .nav-links a,
+html[dir="rtl"] .nav-cta-btn {
+    font-family: var(--font-body-ar);
+    font-weight: 500;
+}
+
+/* Buttons - Dubai Bold */
+html[dir="rtl"] .btn {
+    font-family: var(--font-body-ar);
+    font-weight: 600;
+}
+
+/* Eyebrows/Labels - Dubai */
+html[dir="rtl"] .section-eyebrow,
+html[dir="rtl"] .hero-eyebrow,
+html[dir="rtl"] .module-badge,
+html[dir="rtl"] .pricing-tier {
+    font-family: var(--font-body-ar);
+    letter-spacing: 0.05em; /* Slight spacing OK for short labels */
+}
+
+/* Pricing Cards */
+html[dir="rtl"] .pricing-name,
+html[dir="rtl"] .pricing-price {
+    font-family: var(--font-display-ar);
+}
+
+/* ============================================
+   LAYOUT FLIPS
+   ============================================ */
+
+/* Flex direction flips */
+html[dir="rtl"] .nav-inner {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-trust {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .pricing-features li {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .deliverable-list li {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .deliverable-header {
+    flex-direction: row-reverse;
+}
+
+/* Text alignment */
+html[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .page-hero-content {
+    text-align: center;
+}
+
+html[dir="rtl"] .section-header {
+    text-align: center; /* Keep centered headers centered */
+}
+
+/* Background gradients flip */
+html[dir="rtl"] .hero::before {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .section-dark::before {
+    left: auto;
+    right: -20%;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-logo {
+    order: 2;
+}
+
+html[dir="rtl"] .nav-cta-btn {
+    order: 0;
+}
+
+html[dir="rtl"] .nav-mobile-toggle {
+    order: 0;
+}
+
+/* ============================================
+   BUTTONS & ICONS
+   ============================================ */
+
+/* Flip arrow icons */
+html[dir="rtl"] .btn i,
+html[dir="rtl"] .btn svg,
+html[dir="rtl"] .nav-cta-btn i,
+html[dir="rtl"] .nav-cta-btn svg {
+    transform: rotate(180deg);
+}
+
+/* Icon positioning in buttons */
+html[dir="rtl"] .btn {
+    flex-direction: row-reverse;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+/* Bullet list adjustments */
+html[dir="rtl"] .bullet-list li {
+    padding-left: 0;
+    padding-right: 1rem;
+}
+
+html[dir="rtl"] .bullet-list li::before {
+    left: auto;
+    right: 0;
+}
+
+/* Check list adjustments */
+html[dir="rtl"] .check-list li {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .check-list li::before {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+/* Price features list */
+html[dir="rtl"] .pricing-features {
+    text-align: right;
+}
+
+html[dir="rtl"] .pricing-features li {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+html[dir="rtl"] .pricing-features li svg,
+html[dir="rtl"] .pricing-features li i {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+/* Deliverable list */
+html[dir="rtl"] .deliverable-list li i {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+/* ============================================
+   GRIDS
+   ============================================ */
+
+html[dir="rtl"] .comparison-grid,
+html[dir="rtl"] .grid,
+html[dir="rtl"] .deliverables-grid {
+    direction: rtl;
+}
+
+/* ============================================
+   CARDS & COMPONENTS
+   ============================================ */
+
+html[dir="rtl"] .card {
+    text-align: right;
+}
+
+html[dir="rtl"] .pricing-card {
+    text-align: center;
+}
+
+html[dir="rtl"] .deliverable-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .comparison-col {
+    text-align: right;
+}
+
+html[dir="rtl"] .icon-box {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Centered icon boxes stay centered */
+html[dir="rtl"] .card[style*="text-align: center"] .icon-box {
+    margin: 0 auto 1rem;
+}
+
+/* ============================================
+   PHASES SECTION
+   ============================================ */
+
+html[dir="rtl"] .phases {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .phase-content {
+    text-align: center;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] .form-label {
+    text-align: right;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+html[dir="rtl"] .footer-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .footer-brand {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-brand p {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-column {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-column a {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-social {
+    flex-direction: row-reverse;
+}
+
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+
+html[dir="rtl"] .mobile-nav {
+    text-align: right;
+}
+
+html[dir="rtl"] .mobile-nav a {
+    text-align: right;
+}
+
+/* ============================================
+   RAGE CALLOUT
+   ============================================ */
+
+html[dir="rtl"] .rage-inner {
+    text-align: center;
+}
+
+html[dir="rtl"] .rage-quote {
+    font-style: normal; /* Arabic doesn't use italic */
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+
+html[dir="rtl"] .testimonial {
+    text-align: right;
+}
+
+html[dir="rtl"] .testimonial-quote {
+    font-style: normal; /* Arabic doesn't use italic */
+}
+
+html[dir="rtl"] .testimonial-author {
+    flex-direction: row-reverse;
+}
+
+/* ============================================
+   TRUST ITEMS
+   ============================================ */
+
+html[dir="rtl"] .trust-item {
+    text-align: right;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    html[dir="rtl"] .hero-trust {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    html[dir="rtl"] .nav-inner {
+        flex-direction: row-reverse;
+    }
+
+    html[dir="rtl"] .phases {
+        flex-direction: column;
+    }
+
+    html[dir="rtl"] .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    html[dir="rtl"] .deliverables-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   SPECIAL RTL FIXES
+   ============================================ */
+
+/* Ensure proper number display */
+html[dir="rtl"] .pricing-price,
+html[dir="rtl"] .trust-item strong {
+    direction: ltr;
+    display: inline-block;
+}
+
+/* Keep brand name LTR */
+html[dir="rtl"] .nav-logo,
+html[dir="rtl"] .footer-logo {
+    direction: ltr;
+}
+
+/* Bridge statement stays centered */
+html[dir="rtl"] .bridge-statement {
+    text-align: center;
+}
+
+/* Section gradient center alignment */
+html[dir="rtl"] .section-gradient {
+    text-align: center;
+}

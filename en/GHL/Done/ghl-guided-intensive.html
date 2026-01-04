@@ -1,0 +1,427 @@
+<!-- S2A Guided Intensive - GHL Custom Code Element -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --steel: #4a5568;
+    --fog: #718096;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --sand: #e8e4dc;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --success: #2d8a6e;
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+    --section-padding: clamp(4rem, 8vw, 6rem);
+}
+
+.s2a-gi * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-gi { font-family: var(--font-body); font-weight: 400; line-height: 1.7; color: var(--navy); }
+.s2a-gi a { text-decoration: none; color: inherit; }
+.s2a-gi ul { list-style: none; }
+.s2a-gi h1, .s2a-gi h2, .s2a-gi h3, .s2a-gi h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--midnight); }
+.s2a-gi h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.s2a-gi h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.s2a-gi h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+.s2a-gi h1 em, .s2a-gi h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 500; color: var(--gold-dark); }
+.s2a-gi .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.s2a-gi .section-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; }
+.s2a-gi .text-lead { font-size: 1.125rem; color: var(--steel); max-width: 700px; margin: 0 auto; }
+.s2a-gi .section-header { text-align: center; margin-bottom: 3rem; }
+
+/* Hero */
+.s2a-gi-hero { padding: 6rem 0 4rem; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%); color: var(--cream); position: relative; overflow: hidden; }
+.s2a-gi-hero::before { content: ''; position: absolute; top: 0; right: -20%; width: 80%; height: 100%; background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.15) 0%, transparent 60%); pointer-events: none; }
+.s2a-gi-hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; position: relative; z-index: 1; }
+@media (max-width: 900px) { .s2a-gi-hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.s2a-gi-hero h1 { color: var(--cream); margin-bottom: 1rem; }
+.s2a-gi-hero h1 em { color: var(--gold); }
+.s2a-gi-hero-text { font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 1.5rem; }
+.s2a-gi-hero-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream); position: relative; padding-left: 2rem; }
+.s2a-gi-hero-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background: var(--gold); border-radius: 50%; }
+
+/* Price Card */
+.s2a-gi-price-card { background: rgba(250, 248, 245, 0.05); border: 1px solid rgba(250, 248, 245, 0.15); border-radius: 16px; padding: 2rem; backdrop-filter: blur(10px); }
+.s2a-gi-price-display { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(250, 248, 245, 0.1); }
+.s2a-gi-price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--gold); }
+.s2a-gi-price-amount span { font-size: 1.25rem; font-weight: 400; color: rgba(250, 248, 245, 0.6); }
+.s2a-gi-price-note { font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem; }
+.s2a-gi-price-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9375rem; color: var(--cream); padding: 0.5rem 0; position: relative; padding-left: 1.75rem; }
+.s2a-gi-price-features li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 12px; height: 12px; background: var(--gold); border-radius: 50%; }
+.s2a-gi .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 1rem 2rem; font-family: var(--font-display); font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: none; }
+.s2a-gi .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3); }
+.s2a-gi .btn-large { padding: 1.125rem 2.5rem; font-size: 1.0625rem; }
+.s2a-gi .btn-block { width: 100%; }
+.s2a-gi-price-limit { font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); text-align: center; margin-top: 1rem; }
+
+/* Guide Section */
+.s2a-gi-guide { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-gi-leader-card { display: flex; gap: 2rem; background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 2rem; align-items: center; max-width: 800px; margin: 0 auto; }
+@media (max-width: 640px) { .s2a-gi-leader-card { flex-direction: column; text-align: center; } }
+.s2a-gi-leader-avatar { width: 120px; height: 120px; border-radius: 50%; background: var(--navy); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: var(--font-display); font-size: 2rem; font-weight: 700; }
+.s2a-gi-leader-name { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.s2a-gi-leader-role { color: var(--gold-dark); font-weight: 500; margin-bottom: 0.75rem; }
+.s2a-gi-credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+@media (max-width: 640px) { .s2a-gi-credentials { justify-content: center; } }
+.s2a-gi-credential { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.375rem 0.75rem; background: var(--ivory); border-radius: 4px; color: var(--steel); }
+.s2a-gi-leader-bio { font-size: 0.9375rem; color: var(--steel); }
+
+/* Sessions Section */
+.s2a-gi-sessions { padding: var(--section-padding) 0; background: var(--ivory); }
+.s2a-gi-sessions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+@media (max-width: 768px) { .s2a-gi-sessions-grid { grid-template-columns: 1fr; } }
+.s2a-gi-session-card { background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem; position: relative; }
+.s2a-gi-session-week { position: absolute; top: -12px; left: 24px; background: var(--navy); color: var(--gold); font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; padding: 0.375rem 1rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+.s2a-gi-session-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--midnight); margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.s2a-gi-session-duration { font-size: 0.8125rem; color: var(--fog); margin-bottom: 1rem; }
+.s2a-gi-session-outcomes { background: var(--ivory); border-radius: 8px; padding: 1rem; }
+.s2a-gi-session-outcomes h5 { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold-dark); margin-bottom: 0.5rem; }
+.s2a-gi-session-outcomes li { font-size: 0.8125rem; color: var(--steel); padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+.s2a-gi-session-outcomes li::before { content: '>'; position: absolute; left: 0; color: var(--gold); }
+
+/* Toolkit Section */
+.s2a-gi-toolkit { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-gi-toolkit-list { max-width: 700px; margin: 0 auto; }
+.s2a-gi-toolkit-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--sand); }
+.s2a-gi-toolkit-item:last-child { border-bottom: none; }
+.s2a-gi-toolkit-num { width: 48px; height: 48px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: white; flex-shrink: 0; }
+.s2a-gi-toolkit-content h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.s2a-gi-toolkit-subtitle { font-size: 0.875rem; color: var(--gold-dark); margin-bottom: 0.5rem; }
+.s2a-gi-toolkit-content p { font-size: 0.9375rem; color: var(--steel); margin-bottom: 0; }
+.s2a-gi-toolkit-quote { max-width: 700px; margin: 2rem auto 0; text-align: center; padding: 2rem; background: var(--ivory); border-radius: 12px; }
+.s2a-gi-toolkit-quote p { font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; }
+.s2a-gi-toolkit-quote span { font-size: 0.875rem; color: var(--fog); }
+
+/* Sabotage Section */
+.s2a-gi-sabotage { padding: var(--section-padding) 0; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%); color: var(--cream); }
+.s2a-gi-sabotage .section-eyebrow { color: var(--gold); }
+.s2a-gi-sabotage h2 { color: var(--cream); }
+.s2a-gi-sabotage h2 em { color: var(--gold); }
+.s2a-gi-sabotage .text-lead { color: rgba(250, 248, 245, 0.8); }
+.s2a-gi-sabotage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+@media (max-width: 768px) { .s2a-gi-sabotage-grid { grid-template-columns: 1fr; } }
+.s2a-gi-sabotage-card { background: rgba(250, 248, 245, 0.05); border: 1px solid rgba(250, 248, 245, 0.1); border-radius: 12px; padding: 1.5rem; text-align: center; }
+.s2a-gi-sabotage-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.s2a-gi-sabotage-label { font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); margin-bottom: 0.75rem; }
+.s2a-gi-sabotage-text { font-size: 0.8125rem; color: rgba(250, 248, 245, 0.9); }
+.s2a-gi-sabotage-quote { max-width: 700px; margin: 2rem auto 0; text-align: center; }
+.s2a-gi-sabotage-quote p { font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--cream); }
+.s2a-gi-sabotage-quote span { font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); margin-top: 0.5rem; display: block; }
+
+/* Package Section */
+.s2a-gi-package { padding: var(--section-padding) 0; background: var(--cream); }
+.s2a-gi-package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+@media (max-width: 768px) { .s2a-gi-package-grid { grid-template-columns: 1fr; } }
+.s2a-gi-package-card { background: white; border: 1px solid var(--sand); border-radius: 12px; padding: 1.5rem; text-align: center; }
+.s2a-gi-package-icon { width: 48px; height: 48px; margin: 0 auto 1rem; background: var(--ivory); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-dark); font-family: var(--font-display); font-weight: 700; }
+.s2a-gi-package-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+.s2a-gi-package-card p { font-size: 0.9375rem; color: var(--steel); margin: 0; }
+
+/* CTA Section */
+.s2a-gi-cta { padding: var(--section-padding) 0; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%); }
+.s2a-gi-cta-content { max-width: 700px; margin: 0 auto; text-align: center; }
+.s2a-gi-cta .section-eyebrow { color: var(--gold); }
+.s2a-gi-cta h2 { color: var(--cream); margin-bottom: 1rem; }
+.s2a-gi-cta h2 em { color: var(--gold); }
+.s2a-gi-cta-text { color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem; }
+.s2a-gi-cta-note { color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem; }
+</style>
+
+<div class="s2a-gi">
+    <!-- Hero Section -->
+    <section class="s2a-gi-hero">
+        <div class="container">
+            <div class="s2a-gi-hero-grid">
+                <div>
+                    <span class="section-eyebrow" style="color: var(--gold);">Tier 3: Guided Strategy Intensive</span>
+                    <h1>4 Weeks. Live 1:1 Sessions. <em>Real Transformation.</em></h1>
+                    <p class="s2a-gi-hero-text">Beyond AI diagnostics. This is direct work with human guidance, Akram-reviewed deliverables, and implementation support. For founders ready to move fast with high-touch accountability.</p>
+
+                    <ul class="s2a-gi-hero-list">
+                        <li>4x Live 90-minute 1:1 sessions</li>
+                        <li>Strategic Intervention Toolkit</li>
+                        <li>Akram-reviewed deliverables</li>
+                        <li>Async support throughout</li>
+                    </ul>
+                </div>
+
+                <div class="s2a-gi-price-card">
+                    <div class="s2a-gi-price-display">
+                        <div class="s2a-gi-price-amount">$3,997 <span>USD</span></div>
+                        <p class="s2a-gi-price-note">4-week intensive</p>
+                    </div>
+
+                    <ul class="s2a-gi-price-features" style="margin-bottom: 1.5rem;">
+                        <li>Everything in Implementation Accelerator</li>
+                        <li>4x Live 90-minute 1:1 sessions</li>
+                        <li>Strategic Intervention Toolkit (12 Strategies)</li>
+                        <li>Self-Sabotage Sequence Interrupt</li>
+                        <li>Akram-reviewed final deliverables</li>
+                        <li>Async support via messaging</li>
+                        <li>30-day post-intensive support</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary btn-large btn-block">Apply for Intensive</a>
+
+                    <p class="s2a-gi-price-limit">Limited to 4 clients per month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Guide Section -->
+    <section class="s2a-gi-guide">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Guide</span>
+                <h2>Direct Work With <em>Akram</em></h2>
+            </div>
+
+            <div class="s2a-gi-leader-card">
+                <div class="s2a-gi-leader-avatar">AQ</div>
+                <div class="s2a-gi-leader-info">
+                    <h3 class="s2a-gi-leader-name">Akram AlQadasi</h3>
+                    <p class="s2a-gi-leader-role">Founder & Principal Advisor</p>
+                    <div class="s2a-gi-credentials">
+                        <span class="s2a-gi-credential">IE Business School</span>
+                        <span class="s2a-gi-credential">MIT Sloan</span>
+                        <span class="s2a-gi-credential">INSEAD</span>
+                        <span class="s2a-gi-credential">15+ Years Strategy</span>
+                    </div>
+                    <p class="s2a-gi-leader-bio">Strategy architect who has guided 400+ founders through transformations. Creator of the Know-Show-Grow framework and the Strategic Intervention methodology. Your intensive includes personal review of all deliverables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Week Structure -->
+    <section class="s2a-gi-sessions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Structure</span>
+                <h2>4 Weeks of <em>Deep Work</em></h2>
+                <p class="text-lead">Each week includes a 90-minute live session plus async work and messaging support.</p>
+            </div>
+
+            <div class="s2a-gi-sessions-grid">
+                <div class="s2a-gi-session-card">
+                    <span class="s2a-gi-session-week">Week 1</span>
+                    <h4 class="s2a-gi-session-title">KNOW: Soul Excavation</h4>
+                    <p class="s2a-gi-session-duration">90-minute live session + async work</p>
+                    <div class="s2a-gi-session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Complete Strategic Spine articulation</li>
+                            <li>Six Human Needs diagnostic</li>
+                            <li>Life Stage Transition mapping</li>
+                            <li>Self-Sabotage pattern identification</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-session-card">
+                    <span class="s2a-gi-session-week">Week 2</span>
+                    <h4 class="s2a-gi-session-title">SHOW: Architecture Design</h4>
+                    <p class="s2a-gi-session-duration">90-minute live session + async work</p>
+                    <div class="s2a-gi-session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Business Model with DSI validation</li>
+                            <li>Operating Model architecture</li>
+                            <li>Founder dependency reduction plan</li>
+                            <li>Decision rights and accountability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-session-card">
+                    <span class="s2a-gi-session-week">Week 3</span>
+                    <h4 class="s2a-gi-session-title">BRIDGE: Financial Engine</h4>
+                    <p class="s2a-gi-session-duration">90-minute live session + async work</p>
+                    <div class="s2a-gi-session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Strategic Deviation Diagnostic</li>
+                            <li>Financial Model with projections</li>
+                            <li>Decision velocity optimization</li>
+                            <li>Cash flow and runway planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-session-card">
+                    <span class="s2a-gi-session-week">Week 4</span>
+                    <h4 class="s2a-gi-session-title">GROW: Activation Plan</h4>
+                    <p class="s2a-gi-session-duration">90-minute live session + async work</p>
+                    <div class="s2a-gi-session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>9-Driver Growth prioritization</li>
+                            <li>90-day implementation roadmap</li>
+                            <li>Revenue Momentum activation</li>
+                            <li>Protocol prescription and launch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Intervention Toolkit -->
+    <section class="s2a-gi-toolkit">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Breakthrough Method</span>
+                <h2>Strategic <em>Intervention Toolkit</em></h2>
+                <p class="text-lead">12 proven strategies across 4 tiers. People don't change through information - they change through experiences.</p>
+            </div>
+
+            <div class="s2a-gi-toolkit-list">
+                <div class="s2a-gi-toolkit-item">
+                    <div class="s2a-gi-toolkit-num">1</div>
+                    <div class="s2a-gi-toolkit-content">
+                        <h4>State Interventions</h4>
+                        <p class="s2a-gi-toolkit-subtitle">Change How You Feel</p>
+                        <p>Elevation Strategy, Finding the Spark, and Positive Intent. Transform emotional state to unlock new possibilities.</p>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-toolkit-item">
+                    <div class="s2a-gi-toolkit-num">2</div>
+                    <div class="s2a-gi-toolkit-content">
+                        <h4>Belief Interventions</h4>
+                        <p class="s2a-gi-toolkit-subtitle">Change How You Think</p>
+                        <p>Empowering Disagreement, Counter Examples, and Metaphor Intervention. Rewire limiting beliefs that hold you back.</p>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-toolkit-item">
+                    <div class="s2a-gi-toolkit-num">3</div>
+                    <div class="s2a-gi-toolkit-content">
+                        <h4>System Interventions</h4>
+                        <p class="s2a-gi-toolkit-subtitle">Change Your Context</p>
+                        <p>Expanding the Unit, Pick Three Issues, and Pretend Strategy. Modify the environment to enable new behavior.</p>
+                    </div>
+                </div>
+
+                <div class="s2a-gi-toolkit-item">
+                    <div class="s2a-gi-toolkit-num">4</div>
+                    <div class="s2a-gi-toolkit-content">
+                        <h4>Development Interventions</h4>
+                        <p class="s2a-gi-toolkit-subtitle">Change Your Level</p>
+                        <p>Four Levels of Development, Six Human Needs, and Compelling Future. Elevate to the next stage of growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s2a-gi-toolkit-quote">
+                <p>"The right intervention at the right moment creates breakthrough change"</p>
+                <span>The Strategic Intervention Principle</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Sabotage Section -->
+    <section class="s2a-gi-sabotage">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Pattern Breaker</span>
+                <h2>Self-Sabotage <em>Sequence Interrupt</em></h2>
+                <p class="text-lead">Recognize and interrupt the six-stage sabotage sequence before it derails your success.</p>
+            </div>
+
+            <div class="s2a-gi-sabotage-grid">
+                <div class="s2a-gi-sabotage-card">
+                    <div class="s2a-gi-sabotage-num">1-2</div>
+                    <p class="s2a-gi-sabotage-label">Trigger - Thoughts</p>
+                    <p class="s2a-gi-sabotage-text">Positive opportunity appears. Mind generates doubt disguised as wisdom. 85% intervention success rate.</p>
+                </div>
+
+                <div class="s2a-gi-sabotage-card">
+                    <div class="s2a-gi-sabotage-num">3-4</div>
+                    <p class="s2a-gi-sabotage-label">Somatic - Behavior</p>
+                    <p class="s2a-gi-sabotage-text">Body translates fear to symptoms. Sabotage actions disguised as strategy begin. Last high-percentage window.</p>
+                </div>
+
+                <div class="s2a-gi-sabotage-card">
+                    <div class="s2a-gi-sabotage-num">5-6</div>
+                    <p class="s2a-gi-sabotage-label">Justify - Hidden Gains</p>
+                    <p class="s2a-gi-sabotage-text">Stories explain actions. Until you name the hidden gain, the sequence repeats indefinitely.</p>
+                </div>
+            </div>
+
+            <div class="s2a-gi-sabotage-quote">
+                <p>"Sabotage feels like strategy. That's what makes it dangerous."</p>
+                <span>The Interrupt Protocol: SENSE - PAUSE - SPEAK - ASK - ACT</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Package -->
+    <section class="s2a-gi-package">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Complete Package</span>
+                <h2>Everything <em>Included</em></h2>
+            </div>
+
+            <div class="s2a-gi-package-grid">
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">4x</div>
+                    <h3>Live Sessions</h3>
+                    <p>90-minute 1:1 sessions over 4 weeks. Deep work, not surface consulting.</p>
+                </div>
+
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">AR</div>
+                    <h3>Akram Review</h3>
+                    <p>All deliverables personally reviewed and refined by Akram.</p>
+                </div>
+
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">AS</div>
+                    <h3>Async Support</h3>
+                    <p>Messaging access throughout the intensive for quick questions.</p>
+                </div>
+
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">12</div>
+                    <h3>Intervention Toolkit</h3>
+                    <p>12 breakthrough strategies across 4 tiers for lasting change.</p>
+                </div>
+
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">4M</div>
+                    <h3>Full Business Mirror</h3>
+                    <p>All four models: Business, Operating, Financial, People.</p>
+                </div>
+
+                <div class="s2a-gi-package-card">
+                    <div class="s2a-gi-package-icon">30</div>
+                    <h3>30-Day Follow-Up</h3>
+                    <p>Post-intensive support to ensure implementation momentum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="s2a-gi-cta">
+        <div class="container">
+            <div class="s2a-gi-cta-content">
+                <span class="section-eyebrow">Ready for Transformation?</span>
+                <h2>4 Weeks That Change <em>Everything</em></h2>
+                <p class="s2a-gi-cta-text">Limited to 4 clients per month. Live sessions, personal review, real transformation.</p>
+
+                <a href="#" class="btn btn-primary btn-large">Apply for Guided Intensive - $3,997</a>
+
+                <p class="s2a-gi-cta-note">Includes everything in Accelerator + live 1:1 sessions + personal review</p>
+            </div>
+        </div>
+    </section>
+</div>

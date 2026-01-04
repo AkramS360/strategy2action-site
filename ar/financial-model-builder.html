@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الباني للنموذج المالي | Strategy2Action</title>
+    <meta name="description" content="ابنِ نموذجك المالي بتوجيه مدعوم بالذكاء الاصطناعي. حدد ما تكلفته وما يحققه—إطار مالي استراتيجي. وحدة ذاتية السرعة مع دعم وكيل الذكاء الاصطناعي على مدار الساعة.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .module-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, #e8f5e9 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at left top, rgba(56, 142, 60, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .module-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .module-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #388e3c;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #388e3c;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(56, 142, 60, 0.15);
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: #388e3c;
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: #388e3c;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .component-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .component-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../en/financial-model-builder.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/financial-model-builder.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="module-hero">
+        <div class="container">
+            <div class="module-hero-grid">
+                <div>
+                    <div class="module-badge"><i data-lucide="trending-up" style="width: 16px; height: 16px;"></i> الوحدة 4: الخطوة الأخيرة</div>
+                    <h1>النموذج المالي <em>الباني</em></h1>
+                    <p class="text-lead mb-4">حدد ما تكلفته وما يحققه. ابنِ إطارك المالي الاستراتيجي مع توقعات الدخل، واقتصاديات الوحدة، ونمذجة التدفقات النقدية بتوجيه مدعوم بالذكاء الاصطناعي.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #388e3c; width: 20px; height: 20px;"></i> وكيل الذكاء الاصطناعي Strategy360 (على مدار الساعة)</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #388e3c; width: 20px; height: 20px;"></i> جلسات أسئلة وأجوبة جماعية أسبوعية</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #388e3c; width: 20px; height: 20px;"></i> إتمام ذاتي السرعة</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--navy);"><i data-lucide="check-circle" style="color: #388e3c; width: 20px; height: 20px;"></i> لوحة تحكم التقدم</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$499 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: var(--steel); margin-top: 0.5rem;">وحدة ذاتية السرعة</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> إطار بيان الدخل</li>
+                        <li><i data-lucide="check"></i> نظرة عامة على الميزانية العمومية</li>
+                        <li><i data-lucide="check"></i> هيكل التدفقات النقدية</li>
+                        <li><i data-lucide="check"></i> توثيق الافتراضات الرئيسية</li>
+                        <li><i data-lucide="check"></i> منطق نموذج الإيرادات</li>
+                        <li><i data-lucide="check"></i> تحليل اقتصاديات الوحدة</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block" style="background: #388e3c;">ابدأ الباني للنموذج المالي — $499 <i data-lucide="arrow-left"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: var(--fog); text-align: center; margin-top: 1rem;">المتطلب الأساسي: إكمال جميع النماذج الثلاثة السابقة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">ما الذي ستبنيه</span>
+                <h2>نموذجك المالي <em>الكامل</em></h2>
+                <p class="text-lead">توقّع ما سيكلفه ويحققه مرآة عملك.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.5rem;">
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="file-spreadsheet" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>بيان الدخل</h4>
+                    <p>توقّع الإيرادات والتكاليف والربحية بناءً على نموذج عملك.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="scale" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>الميزانية العمومية</h4>
+                    <p>افهم الأصول والالتزامات ومركز حقوق الملكية لعملك.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="trending-up" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>التدفقات النقدية</h4>
+                    <p>نمذجة التدفقات النقدية الداخلة والخارجة لضمان الاستدامة المالية.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="clipboard-check" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>الافتراضات الرئيسية</h4>
+                    <p>وثّق وصادق على الافتراضات التي تحرّك توقعاتك المالية.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="dollar-sign" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>نموذج الإيرادات</h4>
+                    <p>حدد كيف تتدفق الإيرادات من نموذج عملك إلى النتائج المالية.</p>
+                </div>
+
+                <div class="component-card">
+                    <div style="width: 40px; height: 40px; background: rgba(56, 142, 60, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;"><i data-lucide="calculator" style="color: #388e3c; width: 20px; height: 20px;"></i></div>
+                    <h4>اقتصاديات الوحدة</h4>
+                    <p>احسب تكلفة اكتساب العميل، والقيمة مدى الحياة، والربحية لكل وحدة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section class="section section-dark" id="deliverables">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">ما الذي ستحصل عليه</span>
+                <h2 style="color: var(--cream);">ليس نصيحة. بل <em style="color: var(--gold);">هندسة معمارية.</em></h2>
+                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">كل مشاركة في الباني للنموذج المالي تنتج ثلاث طبقات من القيمة.</p>
+            </div>
+
+            <div class="deliverables-grid">
+
+                <!-- Layer 1: The Artifact -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>القطعة الأثرية</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك الإمساك به</p>
+
+                    <p class="deliverable-main">
+                        <strong>نموذجك المالي الكامل</strong>: توقّع موثّق يجيب على "ماذا لو؟" بالأرقام.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            نموذج من ثلاثة بيانات: الدخل، الميزانية العمومية، التدفقات النقدية.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            الافتراضات موثّقة. لا مزيد من "من أين جاء هذا الرقم؟"
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            تخطيط السيناريوهات: أساسي، متفائل، متحفظ.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            اقتصاديات الوحدة مرئية: CAC، LTV، فترة الاسترداد.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 2: The Capability -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>القدرة</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يمكنك فعله الآن</p>
+
+                    <p class="deliverable-main">
+                        <strong>الإجابة على "ماذا لو؟" دون تخمين.</strong> لأن النموذج يخبرك.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            اطلع المستثمرين على أرقامك دون سيناريو.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            اتخذ قرارات التوظيف بالنظر إلى النموذج، وليس السقف.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            تفاوض على شروط الاستثمار بوضوح مالي.
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            خطط للاحتياجات النقدية قبل أن تصبح حالات طوارئ.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Layer 3: The Shift -->
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <div class="deliverable-icon">
+                            <i data-lucide="sunrise"></i>
+                        </div>
+                        <h3>التحوّل</h3>
+                    </div>
+                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
+
+                    <p class="deliverable-main">
+                        <strong>تتوقف عن الطيران بشكل أعمى مالياً.</strong> لأن الأرقام مرئية.
+                    </p>
+                    <ul class="deliverable-list">
+                        <li>
+                            <i data-lucide="check"></i>
+                            من "أعتقد أننا نستطيع تحمله" إلى المعرفة بالضبط
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من فوضى جداول البيانات إلى توقعات منظمة
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الأمل في أن يدوم المدرج إلى التخطيط له
+                        </li>
+                        <li>
+                            <i data-lucide="check"></i>
+                            من الخوف من أسئلة المستثمرين إلى الترحيب بها
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bridge Statement -->
+            <p class="bridge-statement">
+                هذا ليس جدول بيانات يجمع الغبار. إنه <strong>مستقبلك المالي مرئياً</strong>، مبني من نماذجك الثلاثة الأخرى، جاهز لتوجيه القرارات الحقيقية.
+            </p>
+        </div>
+    </section>
+
+    <!-- Upgrade Option -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">تريد المزيد من الدعم؟</span>
+                <h2>الترقية إلى <em>مع خبير</em></h2>
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream); text-align: center;">
+                <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">مع خبير</div>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">خبير النموذج المالي</h3>
+                <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,999</div>
+                <p style="font-size: 0.9375rem; color: rgba(250,248,245,0.8); margin-bottom: 1.5rem;">جلسة فردية لمدة ساعتين مع أكرم، مراجعة شخصية للنتائج، ودعم غير متزامن.</p>
+                <a href="financial-model-expert.html" class="btn btn-primary btn-block">اعرض خيار مع خبير</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Mirror -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">الرحلة الكاملة</span>
+                <h2>مرآة عملك <em>كاملة</em></h2>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 1</div>
+                    <div style="font-weight: 600; color: #1976d2;">نموذج العمل</div>
+                    <div style="font-size: 0.75rem; color: var(--success);">مكتمل</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 2</div>
+                    <div style="font-weight: 600; color: #f57c00;">نموذج التشغيل</div>
+                    <div style="font-size: 0.75rem; color: var(--success);">مكتمل</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: var(--cream); border: 1px solid var(--sand); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fog); margin-bottom: 0.25rem;">الخطوة 3</div>
+                    <div style="font-weight: 600; color: #7b1fa2;">نموذج الأفراد</div>
+                    <div style="font-size: 0.75rem; color: var(--success);">مكتمل</div>
+                </div>
+                <i data-lucide="arrow-left" style="color: var(--sand); width: 24px; height: 24px;"></i>
+                <div style="background: #388e3c; color: white; padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 150px;">
+                    <div style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.25rem;">الخطوة 4</div>
+                    <div style="font-weight: 600;">النموذج المالي</div>
+                    <div style="font-size: 0.75rem; opacity: 0.8;">أنت هنا</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">جاهز لإكمال مرآتك؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">ابنِ <em>نموذجك المالي</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">توقّع النتائج المالية لمرآة عملك الكاملة.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ الباني للنموذج المالي — $499 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">المتطلب الأساسي: إكمال جميع النماذج الثلاثة السابقة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">شراكة تنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>الموارد</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات الحالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

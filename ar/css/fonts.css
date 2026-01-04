@@ -1,0 +1,83 @@
+/* ============================================
+   OFFICIAL GOVERNMENT ARABIC FONTS
+   ============================================
+
+   Font Stack for S2A Arabic:
+   - Masmak: Headlines/Display (Saudi Ministry of Culture)
+   - Dubai: Body Text (Dubai Executive Council)
+   - Al-Naseeb: Accent/Emphasis (Saudi Ministry of Culture)
+
+   ============================================ */
+
+/* Masmak - Saudi Ministry of Culture Official Font */
+@font-face {
+    font-family: 'Masmak';
+    src: url('../fonts/Masmak-Regular.woff2') format('woff2'),
+         url('../fonts/Masmak-Regular.woff') format('woff'),
+         url('../fonts/Masmak-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Masmak';
+    src: url('../fonts/Masmak-Bold.woff2') format('woff2'),
+         url('../fonts/Masmak-Bold.woff') format('woff'),
+         url('../fonts/Masmak-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Dubai - Dubai Executive Council Official Font */
+@font-face {
+    font-family: 'Dubai';
+    src: url('../fonts/Dubai-Light.woff2') format('woff2'),
+         url('../fonts/Dubai-Light.woff') format('woff'),
+         url('../fonts/Dubai-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../fonts/Dubai-Regular.woff2') format('woff2'),
+         url('../fonts/Dubai-Regular.woff') format('woff'),
+         url('../fonts/Dubai-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../fonts/Dubai-Medium.woff2') format('woff2'),
+         url('../fonts/Dubai-Medium.woff') format('woff'),
+         url('../fonts/Dubai-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: url('../fonts/Dubai-Bold.woff2') format('woff2'),
+         url('../fonts/Dubai-Bold.woff') format('woff'),
+         url('../fonts/Dubai-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Al-Naseeb - Saudi Ministry of Culture Literary Font */
+@font-face {
+    font-family: 'Al-Naseeb';
+    src: url('../fonts/Al-Naseeb.woff2') format('woff2'),
+         url('../fonts/Al-Naseeb.woff') format('woff'),
+         url('../fonts/Al-Naseeb.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

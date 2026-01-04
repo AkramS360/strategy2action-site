@@ -1,0 +1,824 @@
+<!-- S2A EXPERT-LED BUNDLE - GoHighLevel Custom Code -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --steel: #4a5568;
+    --fog: #718096;
+    --success: #2d8a6e;
+    --sand: #e8e4dc;
+}
+
+.s2a-expert * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-expert { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--navy); }
+.s2a-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Dark Hero */
+.expert-hero {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+.expert-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20%;
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+.expert-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 900px) { .expert-hero-grid { grid-template-columns: 1fr; } }
+
+.s2a-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+.expert-hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+.expert-hero h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+.expert-hero .lead {
+    font-size: 1.1rem;
+    color: rgba(250,248,245,0.85);
+    margin-bottom: 2rem;
+}
+.feature-list { list-style: none; margin-bottom: 2rem; }
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--cream);
+}
+.feature-list li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Frosted Price Card */
+.price-card-dark {
+    background: rgba(250, 248, 245, 0.05);
+    border: 1px solid rgba(250, 248, 245, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+}
+.price-badge-dark {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+}
+.price-display-dark {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(250,248,245,0.1);
+}
+.price-original-dark {
+    font-size: 0.9rem;
+    color: rgba(250,248,245,0.5);
+    text-decoration: line-through;
+    margin-bottom: 0.25rem;
+}
+.price-amount-dark {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+.price-amount-dark span { font-size: 1rem; font-weight: 400; color: rgba(250,248,245,0.6); }
+.price-features-dark { list-style: none; margin-bottom: 1.5rem; }
+.price-features-dark li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--cream);
+    padding: 0.5rem 0;
+}
+.price-features-dark li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Buttons */
+.s2a-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.s2a-btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+}
+.s2a-btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--sand);
+}
+
+/* Sections */
+.s2a-section { padding: 4rem 0; }
+.s2a-section--ivory { background: var(--ivory); }
+.s2a-section-header { text-align: center; margin-bottom: 3rem; }
+.s2a-section-header h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.75rem;
+}
+.s2a-section-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+}
+.s2a-section-header p { color: var(--steel); font-size: 1rem; }
+
+/* Module Cards */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 1000px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .module-grid { grid-template-columns: 1fr; } }
+
+.module-card {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.module-card-blue { border: 2px solid #1976d2; }
+.module-card-orange { border: 2px solid #f57c00; }
+.module-card-purple { border: 2px solid #7b1fa2; }
+.module-card-green { border: 2px solid #388e3c; }
+
+.module-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: white;
+}
+.module-badge-blue { background: #1976d2; }
+.module-badge-orange { background: #f57c00; }
+.module-badge-purple { background: #7b1fa2; }
+.module-badge-green { background: #388e3c; }
+
+.module-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.module-icon-blue { background: rgba(25,118,210,0.1); color: #1976d2; }
+.module-icon-orange { background: rgba(245,124,0,0.1); color: #f57c00; }
+.module-icon-purple { background: rgba(123,31,162,0.1); color: #7b1fa2; }
+.module-icon-green { background: rgba(56,142,60,0.1); color: #388e3c; }
+
+.module-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+.module-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+.module-desc { font-size: 0.85rem; color: var(--steel); margin-bottom: 1rem; }
+
+.module-includes {
+    background: var(--ivory);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: auto;
+}
+.module-includes h5 {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+}
+.module-includes ul { list-style: none; font-size: 0.8rem; color: var(--steel); }
+.module-includes li { padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+.module-includes li::before { content: '->'; position: absolute; left: 0; color: var(--gold); }
+.module-prereq { font-size: 0.75rem; color: var(--fog); margin-top: 1rem; }
+
+/* Leader Card */
+.leader-card {
+    display: flex;
+    gap: 2rem;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 2rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+@media (max-width: 640px) { .leader-card { flex-direction: column; text-align: center; } }
+.leader-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--navy);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.leader-info h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.leader-role { color: var(--gold-dark); font-weight: 500; margin-bottom: 0.75rem; }
+.credential-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.credential-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    background: var(--ivory);
+    border-radius: 4px;
+    color: var(--steel);
+}
+.leader-bio { font-size: 0.9rem; color: var(--steel); }
+
+/* Intervention Components */
+.intervention-list { max-width: 700px; margin: 0 auto; }
+.intervention-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--sand);
+}
+.intervention-item:last-child { border-bottom: none; }
+.intervention-num {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+.intervention-content h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+}
+.intervention-subtitle { font-size: 0.85rem; color: var(--gold-dark); margin-bottom: 0.5rem; }
+.intervention-content p { font-size: 0.9rem; color: var(--steel); }
+
+/* Comparison Grid */
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-col {
+    padding: 2rem;
+    border-radius: 12px;
+}
+.compare-col--builder {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+}
+.compare-col--expert {
+    background: var(--navy);
+    color: var(--cream);
+}
+.compare-col h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.compare-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.compare-col--builder .compare-price { color: var(--navy); }
+.compare-col--expert .compare-price { color: var(--gold); }
+.compare-features { list-style: none; }
+.compare-features li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.compare-features li::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.compare-col--builder .compare-features li::before { background: var(--success); }
+.compare-col--expert .compare-features li::before { background: var(--gold); }
+.compare-features .missing { opacity: 0.5; }
+.compare-features .missing::before { background: #c96b6b !important; }
+
+/* What You Get Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 768px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .benefits-grid { grid-template-columns: 1fr; } }
+.benefit-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(201,169,97,0.15) 0%, rgba(201,169,97,0.05) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.25rem;
+}
+.benefit-card h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+.benefit-card p { font-size: 0.85rem; color: var(--steel); }
+
+/* Final CTA */
+.final-cta {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+.final-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+.final-cta h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+.final-cta p { color: rgba(250,248,245,0.85); margin-bottom: 2rem; }
+.btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.final-cta .note { color: rgba(250,248,245,0.6); font-size: 0.8rem; margin-top: 1.5rem; }
+
+/* Footer */
+.s2a-footer {
+    background: var(--midnight);
+    padding: 3rem 0 2rem;
+    color: rgba(250,248,245,0.7);
+}
+.s2a-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+@media (max-width: 768px) { .s2a-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .s2a-footer-grid { grid-template-columns: 1fr; } }
+.s2a-footer-brand p { font-size: 0.9rem; margin-top: 0.75rem; }
+.s2a-footer-col h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+.s2a-footer-col a {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(250,248,245,0.7);
+    padding: 0.3rem 0;
+    text-decoration: none;
+}
+.s2a-footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250,248,245,0.1);
+    font-size: 0.8rem;
+    text-align: center;
+}
+</style>
+
+<div class="s2a-expert">
+    <!-- Hero -->
+    <section class="expert-hero">
+        <div class="s2a-container">
+            <div class="expert-hero-grid">
+                <div>
+                    <span class="s2a-eyebrow">Tier 3: Expert-Led Modules</span>
+                    <h1>Build Your Business Mirror <em>With Expert Guidance</em></h1>
+                    <p class="lead">Beyond self-paced. Each module includes a 2-hour live 1:1 session with Akram, personally reviewed deliverables, and async support. For founders ready to move fast with high-touch accountability.</p>
+                    <ul class="feature-list">
+                        <li>2-hour 1:1 session per module</li>
+                        <li>Akram-reviewed deliverables</li>
+                        <li>Async support throughout</li>
+                        <li>Strategic Intervention Toolkit</li>
+                    </ul>
+                </div>
+                <div class="price-card-dark">
+                    <span class="price-badge-dark">Best Value</span>
+                    <div class="price-display-dark">
+                        <div class="price-original-dark">$6,296 (if purchased separately)</div>
+                        <div class="price-amount-dark">$3,999 <span>USD</span></div>
+                        <p style="font-size: 0.9rem; color: rgba(250,248,245,0.7); margin-top: 0.5rem;">Full Expert-Led Bundle - Save 36%</p>
+                    </div>
+                    <ul class="price-features-dark">
+                        <li>Business Model Expert ($1,499 value)</li>
+                        <li>Operating Model Expert ($1,499 value)</li>
+                        <li>People Model Expert ($1,299 value)</li>
+                        <li>Financial Model Expert ($1,999 value)</li>
+                        <li>4x 2-hour 1:1 sessions (8 hours total)</li>
+                        <li>All deliverables Akram-reviewed</li>
+                        <li>Strategic Intervention Toolkit</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary">Get Full Expert Bundle - $3,999 -></a>
+                    <p style="font-size: 0.8rem; color: rgba(250,248,245,0.5); text-align: center; margin-top: 1rem;">Requires completed Strategic Diagnosis ($133)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Modules -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Individual Modules</span>
+                <h2>Expert Guidance. <em>One Module at a Time.</em></h2>
+                <p>Each module can be purchased individually with full expert support. Prerequisites apply.</p>
+            </div>
+            <div class="module-grid">
+                <div class="module-card module-card-blue">
+                    <span class="module-badge module-badge-blue">Entry Point</span>
+                    <div class="module-icon module-icon-blue">B</div>
+                    <h3>Business Model</h3>
+                    <div class="module-price" style="color: #1976d2;">$1,499</div>
+                    <p class="module-desc">WHAT you deliver and to whom. Value proposition, pricing, positioning.</p>
+                    <div class="module-includes">
+                        <h5>What's Included</h5>
+                        <ul>
+                            <li>2-hour 1:1 session with Akram</li>
+                            <li>Akram-reviewed Business Model</li>
+                            <li>DSI & Value Prop validation</li>
+                            <li>Async support throughout</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Prerequisite: Diagnosis only</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary" style="margin-top: 0.5rem;">Learn More</a>
+                </div>
+                <div class="module-card module-card-orange">
+                    <span class="module-badge module-badge-orange">Step 2</span>
+                    <div class="module-icon module-icon-orange">O</div>
+                    <h3>Operating Model</h3>
+                    <div class="module-price" style="color: #f57c00;">$1,499</div>
+                    <p class="module-desc">HOW you deliver. Processes, systems, integration.</p>
+                    <div class="module-includes">
+                        <h5>What's Included</h5>
+                        <ul>
+                            <li>2-hour 1:1 session with Akram</li>
+                            <li>Akram-reviewed Operating Model</li>
+                            <li>Process & System Architecture</li>
+                            <li>Async support throughout</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: Business Model</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary" style="margin-top: 0.5rem;">Learn More</a>
+                </div>
+                <div class="module-card module-card-purple">
+                    <span class="module-badge module-badge-purple">Step 3</span>
+                    <div class="module-icon module-icon-purple">P</div>
+                    <h3>People Model</h3>
+                    <div class="module-price" style="color: #7b1fa2;">$1,299</div>
+                    <p class="module-desc">WHO delivers. Org structure, roles, capabilities.</p>
+                    <div class="module-includes">
+                        <h5>What's Included</h5>
+                        <ul>
+                            <li>2-hour 1:1 session with Akram</li>
+                            <li>Akram-reviewed People Model</li>
+                            <li>Role & Accountability Design</li>
+                            <li>Async support throughout</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: Business + Operating</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary" style="margin-top: 0.5rem;">Learn More</a>
+                </div>
+                <div class="module-card module-card-green">
+                    <span class="module-badge module-badge-green">Step 4</span>
+                    <div class="module-icon module-icon-green">F</div>
+                    <h3>Financial Model</h3>
+                    <div class="module-price" style="color: #388e3c;">$1,999</div>
+                    <p class="module-desc">What it COSTS. CFA-built financial framework.</p>
+                    <div class="module-includes">
+                        <h5>What's Included</h5>
+                        <ul>
+                            <li>2-hour 1:1 session with Akram</li>
+                            <li>CFA-built Financial Model</li>
+                            <li>Projections & Unit Economics</li>
+                            <li>Async support throughout</li>
+                        </ul>
+                    </div>
+                    <p class="module-prereq">Requires: All 3 prior models</p>
+                    <a href="#" class="s2a-btn s2a-btn-secondary" style="margin-top: 0.5rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Expert Guide -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Your Expert Guide</span>
+                <h2>Meet <em>Akram</em></h2>
+            </div>
+            <div class="leader-card">
+                <div class="leader-avatar">A</div>
+                <div class="leader-info">
+                    <h3>Akram AlQadasi</h3>
+                    <p class="leader-role">Founder & Principal Advisor</p>
+                    <div class="credential-tags">
+                        <span class="credential-tag">IE EMBA 2023</span>
+                        <span class="credential-tag">MIT 2024</span>
+                        <span class="credential-tag">INSEAD 2024</span>
+                        <span class="credential-tag">15+ Years</span>
+                        <span class="credential-tag">CFA</span>
+                    </div>
+                    <p class="leader-bio">Strategy architect with 15+ years across investment governance, corporate strategy, and business transformation. Creator of the Know-Show-Grow framework.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Intervention Toolkit -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Exclusive to Expert-Led</span>
+                <h2>Strategic Intervention <em>Toolkit</em></h2>
+                <p>Four tiers of breakthrough strategies for sustainable transformation.</p>
+            </div>
+            <div class="intervention-list">
+                <div class="intervention-item">
+                    <div class="intervention-num">1</div>
+                    <div class="intervention-content">
+                        <h4>State Interventions</h4>
+                        <p class="intervention-subtitle">Change How You Feel</p>
+                        <p>Interrupt patterns, shift physiology, create breakthrough states that unlock new possibilities.</p>
+                    </div>
+                </div>
+                <div class="intervention-item">
+                    <div class="intervention-num">2</div>
+                    <div class="intervention-content">
+                        <h4>Belief Interventions</h4>
+                        <p class="intervention-subtitle">Change How You Think</p>
+                        <p>Identify limiting beliefs, reframe perspectives, install empowering mental models.</p>
+                    </div>
+                </div>
+                <div class="intervention-item">
+                    <div class="intervention-num">3</div>
+                    <div class="intervention-content">
+                        <h4>System Interventions</h4>
+                        <p class="intervention-subtitle">Change Your Context</p>
+                        <p>Redesign environments, structures, and systems that shape behavior automatically.</p>
+                    </div>
+                </div>
+                <div class="intervention-item">
+                    <div class="intervention-num">4</div>
+                    <div class="intervention-content">
+                        <h4>Development Interventions</h4>
+                        <p class="intervention-subtitle">Change Your Level</p>
+                        <p>Expand capacity, develop new capabilities, elevate your stage of leadership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Compare Options</span>
+                <h2>Builder vs <em>Expert-Led</em></h2>
+            </div>
+            <div class="compare-grid">
+                <div class="compare-col compare-col--builder">
+                    <h3>Builder Modules</h3>
+                    <div class="compare-price">$999</div>
+                    <ul class="compare-features">
+                        <li>Self-paced modules</li>
+                        <li>AI Agents 24/7</li>
+                        <li>Weekly Q&A Sessions</li>
+                        <li>Progress Dashboard</li>
+                        <li class="missing">No 1:1 sessions</li>
+                        <li class="missing">No Akram review</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-secondary" style="margin-top: 1rem;">View Builder Options</a>
+                </div>
+                <div class="compare-col compare-col--expert">
+                    <h3>Expert-Led Modules</h3>
+                    <div class="compare-price">$3,999</div>
+                    <ul class="compare-features">
+                        <li>All Builder features PLUS</li>
+                        <li>2-hour 1:1 per module</li>
+                        <li>Akram-reviewed deliverables</li>
+                        <li>Async messaging support</li>
+                        <li>Strategic Intervention Toolkit</li>
+                        <li>Self-Sabotage Interrupt</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary" style="margin-top: 1rem;">Get Expert Bundle</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">What You Get</span>
+                <h2">Everything <em>Included</em></h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">8h</div>
+                    <h4>8 Hours 1:1</h4>
+                    <p>Four 2-hour sessions with Akram</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">R</div>
+                    <h4>Akram Review</h4>
+                    <p>Every deliverable personally reviewed</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">A</div>
+                    <h4>Async Support</h4>
+                    <p>Messaging access throughout</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">T</div>
+                    <h4>Intervention Toolkit</h4>
+                    <p>12 breakthrough strategies</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">M</div>
+                    <h4>Full Business Mirror</h4>
+                    <p>All 4 integrated models</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">24</div>
+                    <h4>AI Agents 24/7</h4>
+                    <p>Strategy360 AI support anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="s2a-container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="s2a-eyebrow" style="color: var(--gold);">Ready for Expert Guidance?</span>
+                <h2>Build Your Mirror <em>With Akram</em></h2>
+                <p>Transform your strategic vision into four integrated, expert-validated models.</p>
+                <div class="btn-group">
+                    <a href="#" class="s2a-btn s2a-btn-primary" style="width: auto;">Get Full Expert Bundle - $3,999 -></a>
+                    <a href="#" class="s2a-btn" style="width: auto; background: transparent; border: 2px solid var(--cream); color: var(--cream);">Start with Business Model - $1,499</a>
+                </div>
+                <p class="note">Requires completed Strategic Diagnosis ($133)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="s2a-footer">
+        <div class="s2a-container">
+            <div class="s2a-footer-grid">
+                <div class="s2a-footer-brand">
+                    <strong style="color: var(--cream); font-size: 1.2rem;">Strategy2Action</strong>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-footer-bottom">
+                <span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

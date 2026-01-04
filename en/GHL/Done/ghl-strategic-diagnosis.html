@@ -1,0 +1,743 @@
+<!-- S2A STRATEGIC DIAGNOSIS - GoHighLevel Custom Code -->
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --midnight: #0a1628;
+    --navy: #1a2a47;
+    --cream: #faf8f5;
+    --ivory: #f5f2ed;
+    --gold: #c9a961;
+    --gold-dark: #9d7f3a;
+    --steel: #4a5568;
+    --fog: #718096;
+    --success: #2d8a6e;
+    --sand: #e8e4dc;
+}
+
+.s2a-diag * { box-sizing: border-box; margin: 0; padding: 0; }
+.s2a-diag { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--navy); }
+.s2a-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Hero */
+.diag-hero {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+}
+.diag-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .diag-hero-grid { grid-template-columns: 1fr; }
+}
+.s2a-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+}
+.diag-hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--midnight);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+.diag-hero h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+}
+.diag-hero .lead {
+    font-size: 1.1rem;
+    color: var(--steel);
+    margin-bottom: 2rem;
+}
+
+/* KSG Visual */
+.ksg-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+}
+.ksg-phase { text-align: center; }
+.ksg-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto 0.5rem;
+}
+.ksg-circle.know { background: #4A90D9; }
+.ksg-circle.show { background: #50C878; }
+.ksg-circle.bridge { background: #E8B54A; color: var(--midnight); }
+.ksg-circle.grow { background: #E85D3B; }
+.ksg-label { font-size: 0.65rem; color: var(--fog); }
+.ksg-arrow { font-size: 1.25rem; color: var(--sand); margin-bottom: 1.5rem; }
+
+/* Price Card */
+.price-card {
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+    position: relative;
+}
+.price-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--success);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+}
+.price-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand);
+}
+.price-amount {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--midnight);
+}
+.price-amount span { font-size: 1rem; font-weight: 400; color: var(--fog); }
+.price-desc { font-size: 0.9rem; color: var(--steel); margin-top: 0.5rem; }
+.price-features { list-style: none; margin-bottom: 1.5rem; }
+.price-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--navy);
+    padding: 0.5rem 0;
+}
+.price-features li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--success);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+.guarantee-box {
+    background: rgba(45, 138, 110, 0.08);
+    border: 1px solid rgba(45, 138, 110, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.25rem;
+    text-align: center;
+}
+.guarantee-box p { font-size: 0.8rem; color: var(--success); }
+
+/* Buttons */
+.s2a-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.s2a-btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
+}
+
+/* Sections */
+.s2a-section { padding: 4rem 0; }
+.s2a-section--ivory { background: var(--ivory); }
+.s2a-section--dark { background: var(--navy); }
+.s2a-section-header { text-align: center; margin-bottom: 3rem; }
+.s2a-section-header h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.75rem;
+}
+.s2a-section-header h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+}
+.s2a-section-header p { color: var(--steel); font-size: 1rem; }
+.s2a-section--dark .s2a-section-header h2 { color: var(--cream); }
+.s2a-section--dark .s2a-section-header p { color: rgba(250,248,245,0.8); }
+
+/* Cards */
+.s2a-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 800px) { .s2a-grid-3 { grid-template-columns: 1fr; } }
+.s2a-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 700px) { .s2a-grid-2 { grid-template-columns: 1fr; } }
+
+.s2a-card {
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+.s2a-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    color: var(--midnight);
+    margin-bottom: 0.75rem;
+}
+.s2a-card p { font-size: 0.9rem; color: var(--steel); }
+
+/* Deliverable Cards */
+.deliv-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.deliv-card h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+}
+.deliv-card p { font-size: 0.85rem; color: var(--steel); line-height: 1.6; }
+
+/* Protocol Cards */
+.protocol-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: var(--cream);
+}
+.protocol-letter {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+.protocol-trigger {
+    font-size: 0.7rem;
+    color: rgba(250,248,245,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.protocol-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.protocol-desc { font-size: 0.8rem; color: rgba(250,248,245,0.8); line-height: 1.6; }
+
+/* Process Steps */
+.process-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--sand);
+}
+.process-step:last-child { border-bottom: none; }
+.step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.step-content h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+.step-content p { font-size: 0.9rem; color: var(--steel); }
+
+/* Gap Analysis */
+.gap-box {
+    background: rgba(250,248,245,0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.gap-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(250,248,245,0.1);
+    align-items: flex-start;
+}
+.gap-item:last-child { border-bottom: none; }
+.gap-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(250,248,245,0.1);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.gap-content h5 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cream);
+    margin-bottom: 0.25rem;
+}
+.gap-content p { font-size: 0.8rem; color: rgba(250,248,245,0.7); }
+.gap-phase {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.gap-phase.know { background: rgba(74,144,217,0.2); color: #4A90D9; }
+.gap-phase.show { background: rgba(80,200,120,0.2); color: #50C878; }
+.gap-phase.bridge { background: rgba(232,181,74,0.2); color: #E8B54A; }
+.gap-phase.grow { background: rgba(232,93,59,0.2); color: #E85D3B; }
+
+/* Final CTA */
+.final-cta {
+    background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+.final-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+.final-cta h2 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+}
+.final-cta p { color: rgba(250,248,245,0.85); margin-bottom: 2rem; }
+.final-cta .guarantee { color: rgba(250,248,245,0.6); font-size: 0.8rem; margin-top: 1.5rem; }
+
+/* Footer */
+.s2a-footer {
+    background: var(--midnight);
+    padding: 3rem 0 2rem;
+    color: rgba(250,248,245,0.7);
+}
+.s2a-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+@media (max-width: 768px) { .s2a-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .s2a-footer-grid { grid-template-columns: 1fr; } }
+.s2a-footer-brand p { font-size: 0.9rem; margin-top: 0.75rem; }
+.s2a-footer-col h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.s2a-footer-col a {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(250,248,245,0.7);
+    padding: 0.3rem 0;
+    text-decoration: none;
+}
+.s2a-footer-col a:hover { color: var(--gold); }
+.s2a-footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250,248,245,0.1);
+    font-size: 0.8rem;
+    text-align: center;
+}
+</style>
+
+<div class="s2a-diag">
+    <!-- Hero -->
+    <section class="diag-hero">
+        <div class="s2a-container">
+            <div class="diag-hero-grid">
+                <div>
+                    <span class="s2a-eyebrow">Tier 1: Strategic Diagnosis</span>
+                    <h1>In 90 Minutes, Discover <em>Exactly Why</em> Your Strategy Isn't Working</h1>
+                    <p class="lead">Strategy's not missing. Visibility is. Our AI-powered Strategic Diagnosis reveals where you're stuck in the Know-Show-Grow cycle and prescribes the exact intervention to break through.</p>
+
+                    <div class="ksg-visual">
+                        <div class="ksg-phase">
+                            <div class="ksg-circle know">KNOW</div>
+                            <div class="ksg-label">Soul</div>
+                        </div>
+                        <span class="ksg-arrow">-></span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle show">SHOW</div>
+                            <div class="ksg-label">Systems</div>
+                        </div>
+                        <span class="ksg-arrow">-></span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle bridge">BRIDGE</div>
+                            <div class="ksg-label">Finance</div>
+                        </div>
+                        <span class="ksg-arrow">-></span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle grow">GROW</div>
+                            <div class="ksg-label">Market</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <span class="price-badge">Start Here</span>
+                    <div class="price-display">
+                        <div class="price-amount">$133 <span>USD</span></div>
+                        <p class="price-desc">One-time investment</p>
+                    </div>
+                    <ul class="price-features">
+                        <li>90-minute AI diagnostic conversation</li>
+                        <li>Complete KSG Assessment with scores</li>
+                        <li>Trap diagnosis with visualization</li>
+                        <li>Protocol prescription (6 options)</li>
+                        <li>8-Dimension Gap Analysis</li>
+                        <li>13-page Strategic Readiness Report</li>
+                    </ul>
+                    <a href="#" class="s2a-btn s2a-btn-primary">Start My Strategic Diagnosis -></a>
+                    <div class="guarantee-box">
+                        <p><strong>Insight Guarantee:</strong> If your diagnosis doesn't reveal at least one breakthrough insight, we'll refund every dirham.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Hidden Problem</span>
+                <h2>You've Tried Templates. You've Hired Consultants. <em>Something's Still Not Clicking.</em></h2>
+                <p>The problem isn't that you don't have a strategy. The problem is you can't see it clearly enough to communicate it, execute it, or scale it.</p>
+            </div>
+            <div class="s2a-grid-3">
+                <div class="s2a-card">
+                    <h3>KNOW-Stuck?</h3>
+                    <p>You have vision but can't translate it to action. Multiple strategy offsites, vision decks on version 7+, endless contemplation with zero execution.</p>
+                </div>
+                <div class="s2a-card">
+                    <h3>SHOW-Stuck?</h3>
+                    <p>You have plans but they feel disconnected from purpose. Elegant org charts, confused people. Perfect processes, wrong outcomes.</p>
+                </div>
+                <div class="s2a-card">
+                    <h3>GROW-Stuck?</h3>
+                    <p>You're scaling but the foundation is unstable. Revenue growing, profits declining. Team expanding, quality declining.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Complete Diagnostic Report</span>
+                <h2>13 Pages of <em>Actionable Clarity</em></h2>
+                <p>Not a generic assessment. A deep diagnostic conversation with an AI agent trained on the complete Know-Show-Grow framework.</p>
+            </div>
+            <div class="s2a-grid-2">
+                <div class="deliv-card">
+                    <h4>Section 1: KSG Framework Assessment</h4>
+                    <p>Complete scoring across all four phases: KNOW (Soul Alignment), SHOW (System Architecture), BRIDGE (Financial Engine), and GROW (External World). Each phase scored 0-100.</p>
+                </div>
+                <div class="deliv-card">
+                    <h4>Section 2: Trap Diagnosis</h4>
+                    <p>Primary trap identification with graphical visualization. Are you KNOW-stuck, SHOW-stuck, GROW-stuck, or in Foundation Crisis? Root cause mapping.</p>
+                </div>
+                <div class="deliv-card">
+                    <h4>Section 3: Protocol Prescription</h4>
+                    <p>Which of the 6 intervention protocols you need: Protocol A through F based on your specific situation and where you're stuck.</p>
+                </div>
+                <div class="deliv-card">
+                    <h4>Section 4: 8-Dimension Gap Analysis</h4>
+                    <p>Each dimension scored 0-20 with specific insights: Vision Clarity, Strategic Positioning, Business Model, Operations, Finance, Market, Team, Communication.</p>
+                </div>
+                <div class="deliv-card">
+                    <h4>Section 5: Hidden Obstacles</h4>
+                    <p>The obstacles you can't see because you're too close. The questions that unlock the next level. Personalized to your specific situation.</p>
+                </div>
+                <div class="deliv-card">
+                    <h4>Section 6: Priority Actions</h4>
+                    <p>Top 3 priority actions: Immediate (this week), short-term (30 days), and medium-term (90 days). Clear next steps based on your protocol.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8-Dimension Gap Analysis -->
+    <section class="s2a-section s2a-section--dark">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow" style="color: var(--gold);">8-Dimension Framework</span>
+                <h2>The Strategic Gap Analysis</h2>
+                <p>Every dimension scored 0-20 with specific insights tied to your Know-Show-Grow position.</p>
+            </div>
+            <div class="gap-box">
+                <div class="gap-item">
+                    <span class="gap-num">1</span>
+                    <div class="gap-content">
+                        <h5>Vision Clarity & Purpose</h5>
+                        <p>Can you articulate your Strategic Spine in 2 minutes?</p>
+                    </div>
+                    <span class="gap-phase know">KNOW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">2</span>
+                    <div class="gap-content">
+                        <h5>Strategic Positioning</h5>
+                        <p>Do you have a true DSI that passes the SIBMO filter?</p>
+                    </div>
+                    <span class="gap-phase know">KNOW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">3</span>
+                    <div class="gap-content">
+                        <h5>Business Model Strength</h5>
+                        <p>Does business model clearly express purpose?</p>
+                    </div>
+                    <span class="gap-phase show">SHOW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">4</span>
+                    <div class="gap-content">
+                        <h5>Operational Readiness</h5>
+                        <p>Would systems work without founder heroics?</p>
+                    </div>
+                    <span class="gap-phase show">SHOW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">5</span>
+                    <div class="gap-content">
+                        <h5>Financial Architecture</h5>
+                        <p>Is financial model aligned with purpose?</p>
+                    </div>
+                    <span class="gap-phase bridge">BRIDGE</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">6</span>
+                    <div class="gap-content">
+                        <h5>Market Traction</h5>
+                        <p>Attracting ideal clients or just any clients?</p>
+                    </div>
+                    <span class="gap-phase grow">GROW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">7</span>
+                    <div class="gap-content">
+                        <h5>Team & Leadership</h5>
+                        <p>Does team embody culture or just fill seats?</p>
+                    </div>
+                    <span class="gap-phase grow">GROW</span>
+                </div>
+                <div class="gap-item">
+                    <span class="gap-num">8</span>
+                    <div class="gap-content">
+                        <h5>Stakeholder Communication</h5>
+                        <p>Can everyone articulate why you exist?</p>
+                    </div>
+                    <span class="gap-phase grow">GROW</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocols -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">Protocol Activation</span>
+                <h2>Six Protocols. One <em>Prescribed for You.</em></h2>
+                <p>Your diagnosis identifies which protocol you need based on where you're stuck.</p>
+            </div>
+            <div class="s2a-grid-3">
+                <div class="protocol-card">
+                    <div class="protocol-letter">A</div>
+                    <div class="protocol-trigger">Know-Stuck</div>
+                    <div class="protocol-name">SHOW Unblocking</div>
+                    <p class="protocol-desc">Beautiful vision, zero execution. Force movement to SHOW with deadlines and minimum viable systems.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">B</div>
+                    <div class="protocol-trigger">Show-Stuck</div>
+                    <div class="protocol-name">Founder Decoupling</div>
+                    <p class="protocol-desc">Systems exist but require you for everything. Build architecture that delivers without founder dependency.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">C</div>
+                    <div class="protocol-trigger">Grow-Stuck</div>
+                    <div class="protocol-name">Foundation Emergency</div>
+                    <p class="protocol-desc">Scaling chaos. Stop growth, return to SHOW and KNOW, rebuild foundation before resuming.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">D</div>
+                    <div class="protocol-trigger">Foundation Crisis</div>
+                    <div class="protocol-name">Start from Zero</div>
+                    <p class="protocol-desc">Everything unstable. Systematic rebuild from KNOW through SHOW before any GROW activity.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">E</div>
+                    <div class="protocol-trigger">Launch Ready</div>
+                    <div class="protocol-name">GROW Activation</div>
+                    <p class="protocol-desc">Strong KNOW and SHOW, ready for market. Activate systematic growth and market execution.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">F</div>
+                    <div class="protocol-trigger">Healthy</div>
+                    <div class="protocol-name">Optimize & Scale</div>
+                    <p class="protocol-desc">All zones 70%+. Fine-tune, optimize, and compound your advantages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="s2a-section s2a-section--ivory">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">How It Works</span>
+                <h2>90 Minutes to <em>Complete Clarity</em></h2>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Start the Conversation</h4>
+                        <p>After payment, you're connected to our AI diagnostic agent trained on the complete Know-Show-Grow framework.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Deep Exploration</h4>
+                        <p>The agent asks probing questions, adapts based on your responses, explores your business context, identifies pain patterns.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Diagnosis Generation</h4>
+                        <p>AI synthesizes the conversation, calculates your scores, identifies your primary trap, and selects the appropriate protocol.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Report Delivery</h4>
+                        <p>Your 13-page Strategic Readiness Report is delivered via email with visual representations and clear protocol prescription.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="s2a-container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <span class="s2a-eyebrow" style="color: var(--gold);">Ready to See Clearly?</span>
+                <h2>Your Strategy Already Exists. <em>Let's Make It Visible.</em></h2>
+                <p>In 90 minutes, discover exactly where you're stuck and get the precise protocol to break through.</p>
+                <a href="#" class="s2a-btn s2a-btn-primary" style="max-width: 400px; margin: 0 auto;">Start My Strategic Diagnosis - $133 -></a>
+                <p class="guarantee">Insight Guarantee: Breakthrough insight or full refund.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="s2a-footer">
+        <div class="s2a-container">
+            <div class="s2a-footer-grid">
+                <div class="s2a-footer-brand">
+                    <strong style="color: var(--cream); font-size: 1.2rem;">Strategy2Action</strong>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Programs</h4>
+                    <a href="#">Strategic Diagnosis</a>
+                    <a href="#">Builder Modules</a>
+                    <a href="#">Expert-Led Modules</a>
+                    <a href="#">Executive Partnership</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="s2a-footer-col">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="s2a-footer-bottom">
+                <span>2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+</div>

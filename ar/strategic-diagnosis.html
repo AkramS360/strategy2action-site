@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التشخيص الاستراتيجي | Strategy2Action</title>
+    <meta name="description" content="في 90 دقيقة، اكتشف بالضبط أين أنت عالق في دورة اعرف-أظهر-انمُ واحصل على البروتوكول الدقيق للاختراق. تشخيص استراتيجي بالذكاء الاصطناعي لمؤسسي الشرق الأوسط.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rtl.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        /* Page-specific styles */
+        .diagnosis-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+            position: relative;
+        }
+
+        .diagnosis-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at left top, rgba(201, 169, 97, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .diagnosis-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .diagnosis-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .diagnosis-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-card-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--phase-know);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--fog);
+        }
+
+        .price-description {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-top: 0.5rem;
+        }
+
+        .price-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+        }
+
+        .price-features li svg {
+            color: var(--success);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .guarantee-box {
+            background: rgba(45, 138, 110, 0.08);
+            border: 1px solid rgba(45, 138, 110, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.25rem;
+            text-align: center;
+        }
+
+        .guarantee-box p {
+            font-size: 0.8125rem;
+            color: var(--success);
+            margin: 0;
+        }
+
+        /* KSG Framework Visual */
+        .ksg-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 2rem 0;
+            flex-direction: row-reverse;
+        }
+
+        .ksg-phase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ksg-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.05em;
+        }
+
+        .ksg-circle.know { background: #4A90D9; }
+        .ksg-circle.show { background: #50C878; }
+        .ksg-circle.bridge { background: #E8B54A; color: var(--midnight); }
+        .ksg-circle.grow { background: #E85D3B; }
+
+        .ksg-label {
+            font-size: 0.6875rem;
+            color: var(--fog);
+            text-align: center;
+        }
+
+        .ksg-arrow {
+            font-size: 1.25rem;
+            color: var(--sand);
+            margin-bottom: 1.5rem;
+        }
+
+        /* What You Get Section */
+        .deliverable-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1.75rem;
+            height: 100%;
+        }
+
+        .deliverable-card h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .deliverable-card p {
+            font-size: 0.875rem;
+            color: var(--steel);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Process Steps */
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--sand);
+            flex-direction: row-reverse;
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            text-align: right;
+        }
+
+        .step-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+
+        /* Protocol Cards */
+        .protocol-card {
+            background: var(--navy);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: var(--cream);
+            text-align: right;
+        }
+
+        .protocol-letter {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .protocol-name {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.375rem;
+        }
+
+        .protocol-trigger {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .protocol-desc {
+            font-size: 0.8125rem;
+            color: rgba(250, 248, 245, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Gap Analysis Section */
+        .gap-dimension {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sand);
+            flex-direction: row-reverse;
+        }
+
+        .gap-dimension:last-child {
+            border-bottom: none;
+        }
+
+        .gap-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--ivory);
+            color: var(--gold-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .gap-content {
+            text-align: right;
+            flex: 1;
+        }
+
+        .gap-content h5 {
+            font-family: var(--font-display);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .gap-content p {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+
+        .gap-phase {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .gap-phase.know { background: rgba(74, 144, 217, 0.15); color: #4A90D9; }
+        .gap-phase.show { background: rgba(80, 200, 120, 0.15); color: #50C878; }
+        .gap-phase.bridge { background: rgba(232, 181, 74, 0.15); color: #b8920a; }
+        .gap-phase.grow { background: rgba(232, 93, 59, 0.15); color: #E85D3B; }
+
+        /* RTL specific for price features */
+        html[dir="rtl"] .price-features li {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <div class="nav-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
+                    <a href="builder-bundle.html">البناء الذاتي</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../en/strategic-diagnosis.html" class="lang-toggle lang-en">EN</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
+        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
+        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="../en/strategic-diagnosis.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="diagnosis-hero">
+        <div class="container">
+            <div class="diagnosis-hero-grid">
+                <div class="diagnosis-hero-content">
+                    <span class="section-eyebrow">المستوى الأول: التشخيص الاستراتيجي</span>
+                    <h1>في 90 دقيقة، اكتشف <em>بالضبط لماذا</em> استراتيجيتك لا تعمل</h1>
+                    <p class="text-lead mb-4">ليست الاستراتيجية غائبة. الوضوح غائب. تشخيصنا الاستراتيجي بالذكاء الاصطناعي يكشف أين أنت عالق في دورة اعرف-أظهر-انمُ ويصف التدخل الدقيق للاختراق.</p>
+
+                    <div class="ksg-visual">
+                        <div class="ksg-phase">
+                            <div class="ksg-circle know">اعرف</div>
+                            <div class="ksg-label">الروح</div>
+                        </div>
+                        <span class="ksg-arrow">←</span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle show">أظهر</div>
+                            <div class="ksg-label">الأنظمة</div>
+                        </div>
+                        <span class="ksg-arrow">←</span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle bridge">الجسر</div>
+                            <div class="ksg-label">المالية</div>
+                        </div>
+                        <span class="ksg-arrow">←</span>
+                        <div class="ksg-phase">
+                            <div class="ksg-circle grow">انمُ</div>
+                            <div class="ksg-label">السوق</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <span class="price-card-badge">ابدأ هنا</span>
+                    <div class="price-display">
+                        <div class="price-amount">$133 <span>USD</span></div>
+                        <p class="price-description">استثمار لمرة واحدة</p>
+                    </div>
+
+                    <ul class="price-features">
+                        <li><i data-lucide="check"></i> محادثة تشخيصية بالذكاء الاصطناعي 90 دقيقة</li>
+                        <li><i data-lucide="check"></i> تقييم اعرف-أظهر-انمُ كامل مع الدرجات</li>
+                        <li><i data-lucide="check"></i> تشخيص الفخ مع التصور البياني</li>
+                        <li><i data-lucide="check"></i> وصفة البروتوكول (6 خيارات)</li>
+                        <li><i data-lucide="check"></i> تحليل الفجوات على 8 أبعاد</li>
+                        <li><i data-lucide="check"></i> تقرير الجاهزية الاستراتيجية 13 صفحة</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">ابدأ تشخيصي الاستراتيجي <i data-lucide="arrow-left"></i></a>
+
+                    <div class="guarantee-box">
+                        <p><strong>ضمان البصيرة:</strong> إذا لم يكشف تشخيصك عن اختراق واحد على الأقل، سنرد كل دولار.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">المشكلة الخفية</span>
+                <h2>جربت النماذج الجاهزة. استعنت بمستشارين. <em>شيء ما زال ناقصاً.</em></h2>
+                <p class="text-lead">المشكلة ليست أنك لا تملك استراتيجية. المشكلة أنك لا تراها بوضوح كافٍ لتوصيلها، أو تنفيذها، أو توسيعها.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>عالق في "اعرف"؟</h3>
+                    <p>لديك رؤية لكن لا تستطيع ترجمتها لعمل. ورش استراتيجية متعددة، عروض رؤية بالنسخة 7+، تأمل لا نهائي بصفر تنفيذ.</p>
+                </div>
+                <div class="card">
+                    <h3>عالق في "أظهر"؟</h3>
+                    <p>لديك خطط لكنها تشعر منفصلة عن الغرض. هياكل تنظيمية أنيقة، أناس مشوشون. عمليات مثالية، نتائج خاطئة.</p>
+                </div>
+                <div class="card">
+                    <h3>عالق في "انمُ"؟</h3>
+                    <p>تتوسع لكن الأساس غير مستقر. الإيرادات تنمو، الأرباح تنخفض. الفريق يتوسع، الجودة تنخفض.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">التقرير التشخيصي الكامل</span>
+                <h2>13 صفحة من <em>الوضوح القابل للتنفيذ</em></h2>
+                <p class="text-lead">ليس تقييماً عاماً. محادثة تشخيصية عميقة مع وكيل ذكاء اصطناعي مدرب على منهج اعرف-أظهر-انمُ الكامل.</p>
+            </div>
+
+            <div class="grid grid-2" style="gap: 2rem;">
+                <div class="deliverable-card">
+                    <h4>القسم 1: تقييم منهج اعرف-أظهر-انمُ</h4>
+                    <p>تقييم كامل عبر المراحل الأربع: اعرف (محاذاة الروح)، أظهر (بنية الأنظمة)، الجسر (المحرك المالي)، وانمُ (العالم الخارجي). كل مرحلة مُقيّمة 0-100 مع تفصيل المكونات الفرعية.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>القسم 2: تشخيص الفخ</h4>
+                    <p>تحديد الفخ الرئيسي مع تصور بياني. هل أنت عالق في اعرف، عالق في أظهر، عالق في انمُ، أو في أزمة أساس؟ خريطة السبب الجذري وتحليل الأنماط.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>القسم 3: وصفة البروتوكول</h4>
+                    <p>أي من البروتوكولات الستة تحتاج: بروتوكول أ (فك قفل أظهر)، ب (فصل المؤسس)، ج (طوارئ الأساس)، د (البداية من الصفر)، هـ (تفعيل انمُ)، أو و (التحسين والتوسع).</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>القسم 4: تحليل الفجوات على 8 أبعاد</h4>
+                    <p>كل بُعد مُقيّم 0-20 مع رؤى محددة: وضوح الرؤية، التموضع الاستراتيجي، قوة نموذج الأعمال، الجاهزية التشغيلية، البنية المالية، الجذب السوقي، الفريق والقيادة، التواصل مع أصحاب المصلحة.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>القسم 5: العوائق الخفية وأسئلة الاختراق</h4>
+                    <p>العوائق التي لا تراها لأنك قريب جداً. الأسئلة التي تفتح المستوى التالي. مخصصة لوضعك وأنماطك المحددة.</p>
+                </div>
+                <div class="deliverable-card">
+                    <h4>القسم 6: الإجراءات ذات الأولوية</h4>
+                    <p>أهم 3 إجراءات ذات أولوية: فورية (هذا الأسبوع)، قصيرة المدى (30 يوم)، ومتوسطة المدى (90 يوم). خطوات واضحة بناءً على بروتوكولك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8-Dimension Gap Analysis -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">إطار الأبعاد الثمانية</span>
+                <h2 style="color: var(--cream);">تحليل الفجوات الاستراتيجية</h2>
+                <p style="color: rgba(250, 248, 245, 0.8);">كل بُعد مُقيّم 0-20 مع رؤى محددة مرتبطة بموقعك في اعرف-أظهر-انمُ.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(250, 248, 245, 0.05); border-radius: 12px; padding: 2rem;">
+                <div class="gap-dimension">
+                    <span class="gap-number">1</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">وضوح الرؤية والغرض</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل تستطيع صياغة عمودك الفقري الاستراتيجي في دقيقتين؟ هل الغرض المُعلن متسق مع تخصيص الوقت والمال؟</p>
+                    </div>
+                    <span class="gap-phase know">اعرف</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">2</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">التموضع الاستراتيجي</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل لديك DSI حقيقي (فكرة البيع المهيمنة) تجتاز فلتر SIBMO؟ هل أنت الوحيد، الأفضل، أو الأول في شيء؟</p>
+                    </div>
+                    <span class="gap-phase know">اعرف</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">3</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">قوة نموذج الأعمال</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل نموذج الأعمال يعبر بوضوح عن الغرض؟ عرض القيمة، شرائح العملاء، مصادر الإيرادات كلها متوافقة؟</p>
+                    </div>
+                    <span class="gap-phase show">أظهر</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">4</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">الجاهزية التشغيلية</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل ستعمل الأنظمة بدون بطولات المؤسس؟ عمليات موثقة، حقوق قرار واضحة، هياكل مساءلة؟</p>
+                    </div>
+                    <span class="gap-phase show">أظهر</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">5</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">البنية المالية</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل النموذج المالي متوافق مع الغرض؟ الوضع النقدي يخلق حرية أم يأساً؟ مصادر التمويل تشاركك قيمك؟</p>
+                    </div>
+                    <span class="gap-phase bridge">الجسر</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">6</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">الجذب السوقي</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">تجذب العملاء المثاليين أم أي عملاء؟ النمو مستدام أم توسيع للمشاكل؟ حلقات التغذية الراجعة تعمل؟</p>
+                    </div>
+                    <span class="gap-phase grow">انمُ</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">7</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">الفريق والقيادة</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل الفريق يجسد الثقافة أم فقط يملأ المقاعد؟ الموهبة المناسبة في الأدوار المناسبة؟ توافق القيادة مع العمود الفقري الاستراتيجي؟</p>
+                    </div>
+                    <span class="gap-phase grow">انمُ</span>
+                </div>
+                <div class="gap-dimension">
+                    <span class="gap-number">8</span>
+                    <div class="gap-content">
+                        <h5 style="color: var(--cream);">التواصل مع أصحاب المصلحة</h5>
+                        <p style="color: rgba(250, 248, 245, 0.7);">هل الجميع يستطيع صياغة لماذا تتواجد؟ الاستراتيجية مرئية للمستثمرين، الفريق، الشركاء؟ أم محبوسة في رأسك؟</p>
+                    </div>
+                    <span class="gap-phase grow">انمُ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocols Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">تفعيل البروتوكول</span>
+                <h2>ستة بروتوكولات. واحد <em>يُوصف لك.</em></h2>
+                <p class="text-lead">تشخيصك يحدد أي بروتوكول تحتاج بناءً على أين أنت عالق في دورة اعرف-أظهر-انمُ.</p>
+            </div>
+
+            <div class="grid grid-3" style="gap: 1.25rem;">
+                <div class="protocol-card">
+                    <div class="protocol-letter">أ</div>
+                    <div class="protocol-trigger">عالق في اعرف</div>
+                    <div class="protocol-name">فك قفل أظهر</div>
+                    <p class="protocol-desc">رؤية جميلة، صفر تنفيذ. إجبار الانتقال لأظهر بمواعيد نهائية وأنظمة الحد الأدنى.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">ب</div>
+                    <div class="protocol-trigger">عالق في أظهر</div>
+                    <div class="protocol-name">فصل المؤسس</div>
+                    <p class="protocol-desc">الأنظمة موجودة لكن تتطلبك لكل شيء. بناء بنية تُنتج بدون اعتماد على المؤسس.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">ج</div>
+                    <div class="protocol-trigger">عالق في انمُ</div>
+                    <div class="protocol-name">طوارئ الأساس</div>
+                    <p class="protocol-desc">فوضى التوسع. أوقف النمو، عُد لأظهر واعرف، أعد بناء الأساس قبل الاستئناف.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">د</div>
+                    <div class="protocol-trigger">أزمة أساس</div>
+                    <div class="protocol-name">البداية من الصفر</div>
+                    <p class="protocol-desc">كل شيء غير مستقر. إعادة بناء منهجية من اعرف عبر أظهر قبل أي نشاط انمُ.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">هـ</div>
+                    <div class="protocol-trigger">جاهز للإطلاق</div>
+                    <div class="protocol-name">تفعيل انمُ</div>
+                    <p class="protocol-desc">اعرف وأظهر قويان، جاهز للسوق. تفعيل النمو المنهجي والتنفيذ السوقي.</p>
+                </div>
+                <div class="protocol-card">
+                    <div class="protocol-letter">و</div>
+                    <div class="protocol-trigger">صحي</div>
+                    <div class="protocol-name">التحسين والتوسع</div>
+                    <p class="protocol-desc">كل المناطق 70%+. ضبط دقيق، تحسين، ومضاعفة مزاياك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">كيف يعمل</span>
+                <h2>90 دقيقة نحو <em>الوضوح الكامل</em></h2>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>ابدأ المحادثة</h4>
+                        <p>بعد الدفع، تتصل بوكيل التشخيص بالذكاء الاصطناعي المدرب على منهج اعرف-أظهر-انمُ الكامل. ليس استبياناً—محادثة حقيقية.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>استكشاف عميق</h4>
+                        <p>الوكيل يسأل أسئلة استقصائية، يتكيف بناءً على ردودك، يستكشف سياق عملك، يحدد أنماط الألم، ويرسم خريطة مقابل منهج اعرف-أظهر-انمُ.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>توليد التشخيص</h4>
+                        <p>الذكاء الاصطناعي يُركب المحادثة، يحسب درجاتك في اعرف/أظهر/الجسر/انمُ، يحدد فخك الرئيسي، ويختار البروتوكول المناسب.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>تسليم التقرير</h4>
+                        <p>تقرير الجاهزية الاستراتيجية 13 صفحة يُسلم عبر البريد الإلكتروني مع تمثيلات بصرية، درجات ملونة، ووصفة بروتوكول واضحة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Next Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">بعد تشخيصك</span>
+                <h2>تقريرك يوصي <em>بوحدتك التالية</em></h2>
+                <p class="text-lead">بناءً على تشخيصك، نوصي بالبدء بوحدة نموذج الأعمال—أساس مرآة أعمالك الكاملة.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div style="background: var(--cream); border: 2px solid #1976d2; border-radius: 16px; padding: 2rem;">
+                    <div style="background: #1976d2; color: white; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">ذاتي السرعة</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">باني نموذج الأعمال</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #1976d2; margin-bottom: 1rem;">$499</div>
+                    <p style="font-size: 0.9375rem; color: var(--steel); margin-bottom: 1.5rem;">ابنِ نموذج أعمالك مع وكلاء Strategy360 AI. ذاتي السرعة مع دعم أسئلة أسبوعي.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--success); width: 16px; height: 16px;"></i> وكلاء AI (24/7)</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--success); width: 16px; height: 16px;"></i> جلسات أسئلة أسبوعية</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--success); width: 16px; height: 16px;"></i> لوحة متابعة التقدم</li>
+                    </ul>
+                    <a href="business-model-builder.html" class="btn btn-secondary btn-block">اعرف المزيد</a>
+                </div>
+
+                <div style="background: var(--navy); border-radius: 16px; padding: 2rem; color: var(--cream);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-direction: row-reverse;">
+                        <div style="background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px; display: inline-block; margin-bottom: 1rem;">مع خبير</div>
+                        <span style="background: rgba(250,248,245,0.15); color: var(--cream); font-size: 0.6875rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px;">موصى به</span>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--cream);">خبير نموذج الأعمال</h3>
+                    <div style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem;">$1,499</div>
+                    <p style="font-size: 0.9375rem; color: rgba(250,248,245,0.8); margin-bottom: 1.5rem;">ابنِ نموذج أعمالك مع توجيه خبير مباشر. جلسة 1:1 لمدة ساعتين مع أكرم.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> جلسة 1:1 لمدة ساعتين</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> مخرج مُراجع من أكرم</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; font-size: 0.875rem; flex-direction: row-reverse;"><i data-lucide="check" style="color: var(--gold); width: 16px; height: 16px;"></i> دعم غير متزامن</li>
+                    </ul>
+                    <a href="business-model-expert.html" class="btn btn-primary btn-block">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 0.9375rem; color: var(--steel);">أو احصل على الوحدات الأربع كاملة: <a href="builder-bundle.html" style="color: var(--gold-dark); font-weight: 600;">حزمة الباني $999</a> | <a href="expert-led-bundle.html" style="color: var(--gold-dark); font-weight: 600;">حزمة الخبير $3,999</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">جاهز لترى بوضوح؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">استراتيجيتك موجودة. <em>لنجعلها مرئية.</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">في 90 دقيقة، اكتشف بالضبط أين أنت عالق واحصل على البروتوكول الدقيق للاختراق.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ تشخيصي الاستراتيجي — $133 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">ضمان البصيرة: اختراق حقيقي أو استرداد كامل.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>نحن لا نمنحك استراتيجية. نحن نُظهر استراتيجيتك.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>البرامج</h4>
+                    <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
+                    <a href="builder-bundle.html">وحدات الباني</a>
+                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="executive-partnership.html">الشراكة التنفيذية</a>
+                </div>
+                <div class="footer-column">
+                    <h4>المصادر</h4>
+                    <a href="about.html">من نحن</a>
+                    <a href="#">دراسات حالة</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

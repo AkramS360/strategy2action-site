@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Strategy Intensive | Strategy2Action</title>
+    <meta name="description" content="4-week intensive with live 1:1 sessions. Transform your business with personalized strategic guidance, Akram-reviewed deliverables, and implementation support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <style>
+        .intensive-hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intensive-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .intensive-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .intensive-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .intensive-hero h1 {
+            color: var(--cream);
+        }
+
+        .intensive-price-card {
+            background: rgba(250, 248, 245, 0.05);
+            border: 1px solid rgba(250, 248, 245, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .intensive-price-card .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .intensive-price-card .price-amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .intensive-price-card .price-amount span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        .intensive-price-card .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--cream);
+            padding: 0.5rem 0;
+        }
+
+        .intensive-price-card .price-features li svg {
+            color: var(--gold);
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Session Cards */
+        .session-card {
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .session-week {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--navy);
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .session-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--midnight);
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .session-duration {
+            font-size: 0.8125rem;
+            color: var(--fog);
+            margin-bottom: 1rem;
+        }
+
+        .session-outcomes {
+            background: var(--ivory);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .session-outcomes h5 {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-outcomes li {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .session-outcomes li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Framework Component Section */
+        .sirat-component {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .sirat-component:last-child {
+            border-bottom: none;
+        }
+
+        .sirat-letter {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .sirat-content h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .sirat-arabic {
+            font-size: 0.875rem;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .sirat-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 0;
+        }
+
+        /* Leader Card */
+        .leader-card {
+            display: flex;
+            gap: 2rem;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .leader-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--navy);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .leader-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .credential-tag {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.375rem 0.75rem;
+            background: var(--ivory);
+            border-radius: 4px;
+            color: var(--steel);
+        }
+
+        .leader-bio {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav" style="background: rgba(10, 22, 40, 0.95);">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action" style="filter: brightness(0) invert(1);"></a>
+                <div class="nav-links" style="color: var(--cream);">
+                    <a href="index.html" style="color: rgba(250, 248, 245, 0.7);">Home</a>
+                    <a href="strategic-diagnosis.html" style="color: rgba(250, 248, 245, 0.7);">Diagnosis</a>
+                    <a href="implementation-accelerator.html" style="color: rgba(250, 248, 245, 0.7);">Accelerator</a>
+                    <a href="guided-intensive.html" style="color: var(--gold);">Intensive</a>
+                    <a href="about.html" style="color: rgba(250, 248, 245, 0.7);">About</a>
+                </div>
+                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Apply Now <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <button class="nav-mobile-toggle" onclick="toggleMobileNav()" style="color: var(--cream);"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" onclick="toggleMobileNav()">Home</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">Diagnosis</a>
+        <a href="implementation-accelerator.html" onclick="toggleMobileNav()">Accelerator</a>
+        <a href="guided-intensive.html" onclick="toggleMobileNav()">Intensive</a>
+        <a href="about.html" onclick="toggleMobileNav()">About</a>
+        <a href="https://platform.strategy2action.com/register" onclick="toggleMobileNav()" style="color: var(--gold);">Apply Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="intensive-hero">
+        <div class="container">
+            <div class="intensive-hero-grid">
+                <div>
+                    <span class="section-eyebrow" style="color: var(--gold);">Tier 3: Guided Strategy Intensive</span>
+                    <h1>4 Weeks. Live 1:1 Sessions. <em>Real Transformation.</em></h1>
+                    <p style="font-size: 1.125rem; color: rgba(250, 248, 245, 0.85); line-height: 1.8; margin-bottom: 2rem;">Beyond AI diagnostics. This is direct work with human guidance, Akram-reviewed deliverables, and implementation support. For founders ready to move fast with high-touch accountability.</p>
+
+                    <ul style="margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> 4x Live 90-minute 1:1 sessions</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Strategic Intervention Toolkit</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Akram-reviewed deliverables</li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 1rem; color: var(--cream);"><i data-lucide="check-circle" style="color: var(--gold); width: 20px; height: 20px;"></i> Async support throughout</li>
+                    </ul>
+                </div>
+
+                <div class="intensive-price-card">
+                    <div class="price-display">
+                        <div class="price-amount">$3,997 <span>USD</span></div>
+                        <p style="font-size: 0.9375rem; color: rgba(250, 248, 245, 0.7); margin-top: 0.5rem;">4-week intensive</p>
+                    </div>
+
+                    <ul class="price-features" style="margin-bottom: 1.5rem;">
+                        <li><i data-lucide="check"></i> Everything in Implementation Accelerator</li>
+                        <li><i data-lucide="check"></i> 4x Live 90-minute 1:1 sessions</li>
+                        <li><i data-lucide="check"></i> Strategic Intervention Toolkit (12 Strategies)</li>
+                        <li><i data-lucide="check"></i> Self-Sabotage Sequence Interrupt</li>
+                        <li><i data-lucide="check"></i> Akram-reviewed final deliverables</li>
+                        <li><i data-lucide="check"></i> Async support via messaging</li>
+                        <li><i data-lucide="check"></i> 30-day post-intensive support</li>
+                    </ul>
+
+                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">Apply for Intensive <i data-lucide="arrow-right"></i></a>
+
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); text-align: center; margin-top: 1rem;">Limited to 4 clients per month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Guide Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Guide</span>
+                <h2>Direct Work With <em>Akram</em></h2>
+            </div>
+
+            <div class="leader-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="leader-avatar" style="background: none; overflow: hidden;">
+                    <img src="images/akram-profile (2).png" alt="Akram AlQadasi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="leader-info">
+                    <h3>Akram AlQadasi</h3>
+                    <p class="leader-role">Founder & Principal Advisor</p>
+                    <div class="leader-credentials">
+                        <span class="credential-tag">IE Business School</span>
+                        <span class="credential-tag">MIT Sloan</span>
+                        <span class="credential-tag">INSEAD</span>
+                        <span class="credential-tag">15+ Years Strategy</span>
+                    </div>
+                    <p class="leader-bio">Strategy architect who has guided 400+ founders through transformations. Creator of the Know-Show-Grow framework and the Strategic Intervention methodology. Your intensive includes personal review of all deliverables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Week Structure -->
+    <section class="section section--ivory">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Structure</span>
+                <h2>4 Weeks of <em>Deep Work</em></h2>
+                <p class="text-lead">Each week includes a 90-minute live session plus async work and messaging support.</p>
+            </div>
+
+            <div class="grid grid-2" style="gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <div class="session-card">
+                    <span class="session-week">Week 1</span>
+                    <h4 class="session-title">KNOW: Soul Excavation</h4>
+                    <p class="session-duration">90-minute live session + async work</p>
+                    <div class="session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Complete Strategic Spine articulation</li>
+                            <li>Six Human Needs diagnostic</li>
+                            <li>Life Stage Transition mapping</li>
+                            <li>Self-Sabotage pattern identification</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <span class="session-week">Week 2</span>
+                    <h4 class="session-title">SHOW: Architecture Design</h4>
+                    <p class="session-duration">90-minute live session + async work</p>
+                    <div class="session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Business Model with DSI validation</li>
+                            <li>Operating Model architecture</li>
+                            <li>Founder dependency reduction plan</li>
+                            <li>Decision rights and accountability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <span class="session-week">Week 3</span>
+                    <h4 class="session-title">BRIDGE: Financial Engine</h4>
+                    <p class="session-duration">90-minute live session + async work</p>
+                    <div class="session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>Strategic Deviation Diagnostic</li>
+                            <li>Financial Model with projections</li>
+                            <li>Decision velocity optimization</li>
+                            <li>Cash flow and runway planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <span class="session-week">Week 4</span>
+                    <h4 class="session-title">GROW: Activation Plan</h4>
+                    <p class="session-duration">90-minute live session + async work</p>
+                    <div class="session-outcomes">
+                        <h5>Outcomes</h5>
+                        <ul>
+                            <li>9-Driver Growth prioritization</li>
+                            <li>90-day implementation roadmap</li>
+                            <li>Revenue Momentum activation</li>
+                            <li>Protocol prescription and launch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Intervention Toolkit -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Breakthrough Method</span>
+                <h2>Strategic <em>Intervention Toolkit</em></h2>
+                <p class="text-lead">12 proven strategies across 4 tiers. People don't change through information—they change through experiences.</p>
+            </div>
+
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="sirat-component">
+                    <div class="sirat-letter">1</div>
+                    <div class="sirat-content">
+                        <h4>State Interventions</h4>
+                        <p class="sirat-arabic">Change How You Feel</p>
+                        <p>Elevation Strategy, Finding the Spark, and Positive Intent. Transform emotional state to unlock new possibilities.</p>
+                    </div>
+                </div>
+
+                <div class="sirat-component">
+                    <div class="sirat-letter">2</div>
+                    <div class="sirat-content">
+                        <h4>Belief Interventions</h4>
+                        <p class="sirat-arabic">Change How You Think</p>
+                        <p>Empowering Disagreement, Counter Examples, and Metaphor Intervention. Rewire limiting beliefs that hold you back.</p>
+                    </div>
+                </div>
+
+                <div class="sirat-component">
+                    <div class="sirat-letter">3</div>
+                    <div class="sirat-content">
+                        <h4>System Interventions</h4>
+                        <p class="sirat-arabic">Change Your Context</p>
+                        <p>Expanding the Unit, Pick Three Issues, and Pretend Strategy. Modify the environment to enable new behavior.</p>
+                    </div>
+                </div>
+
+                <div class="sirat-component">
+                    <div class="sirat-letter">4</div>
+                    <div class="sirat-content">
+                        <h4>Development Interventions</h4>
+                        <p class="sirat-arabic">Change Your Level</p>
+                        <p>Four Levels of Development, Six Human Needs, and Compelling Future. Elevate to the next stage of growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width: 700px; margin: 2rem auto 0; text-align: center; padding: 2rem; background: var(--ivory); border-radius: 12px;">
+                <p style="font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem;">"The right intervention at the right moment creates breakthrough change"</p>
+                <p style="font-size: 0.875rem; color: var(--fog);">The Strategic Intervention Principle</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Sabotage Sequence Interrupt -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow section-eyebrow--light">The Pattern Breaker</span>
+                <h2 style="color: var(--cream);">Self-Sabotage <em>Sequence Interrupt</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.8);">Recognize and interrupt the six-stage sabotage sequence before it derails your success.</p>
+            </div>
+
+            <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+                <div class="card card-dark" style="text-align: center;">
+                    <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;">1-2</div>
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); margin-bottom: 0.75rem;">Trigger → Thoughts</p>
+                    <p style="font-size: 0.8125rem;">Positive opportunity appears. Mind generates doubt disguised as wisdom. 85% intervention success rate.</p>
+                </div>
+
+                <div class="card card-dark" style="text-align: center;">
+                    <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;">3-4</div>
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); margin-bottom: 0.75rem;">Somatic → Behavior</p>
+                    <p style="font-size: 0.8125rem;">Body translates fear to symptoms. Sabotage actions disguised as strategy begin. Last high-percentage window.</p>
+                </div>
+
+                <div class="card card-dark" style="text-align: center;">
+                    <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;">5-6</div>
+                    <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); margin-bottom: 0.75rem;">Justify → Hidden Gains</p>
+                    <p style="font-size: 0.8125rem;">Stories explain actions. Until you name the hidden gain, the sequence repeats indefinitely.</p>
+                </div>
+            </div>
+
+            <div style="max-width: 700px; margin: 2rem auto 0; text-align: center;">
+                <p style="font-family: var(--font-accent); font-style: italic; font-size: 1.25rem; color: var(--cream);">"Sabotage feels like strategy. That's what makes it dangerous."</p>
+                <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.5); margin-top: 0.5rem;">The Interrupt Protocol: SENSE → PAUSE → SPEAK → ASK → ACT</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Complete Package</span>
+                <h2>Everything <em>Included</em></h2>
+            </div>
+
+            <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="message-circle"></i></div>
+                    <h3>4x Live Sessions</h3>
+                    <p>90-minute 1:1 sessions over 4 weeks. Deep work, not surface consulting.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="file-check"></i></div>
+                    <h3>Akram Review</h3>
+                    <p>All deliverables personally reviewed and refined by Akram.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="zap"></i></div>
+                    <h3>Async Support</h3>
+                    <p>Messaging access throughout the intensive for quick questions.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="compass"></i></div>
+                    <h3>Intervention Toolkit</h3>
+                    <p>12 breakthrough strategies across 4 tiers for lasting change.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="layers"></i></div>
+                    <h3>Full Business Mirror</h3>
+                    <p>All four models: Business, Operating, Financial, People.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i data-lucide="calendar"></i></div>
+                    <h3>30-Day Follow-Up</h3>
+                    <p>Post-intensive support to ensure implementation momentum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-eyebrow" style="color: var(--gold);">Ready for Transformation?</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">4 Weeks That Change <em>Everything</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">Limited to 4 clients per month. Live sessions, personal review, real transformation.</p>
+
+                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">Apply for Guided Intensive — $3,997 <i data-lucide="arrow-right"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;">Includes everything in Accelerator + live 1:1 sessions + personal review</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>We don't give you strategy. We show you yours.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
+                    <a href="implementation-accelerator.html">Implementation Accelerator</a>
+                    <a href="guided-intensive.html">Guided Intensive</a>
+                    <a href="executive-partnership.html">Executive Partnership</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="about.html">About</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
+                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 22, 40, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 22, 40, 0.95)';
+            }
+        });
+
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
