@@ -623,10 +623,44 @@ p {
     pointer-events: none;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 .hero-content {
     max-width: 750px;
     position: relative;
     z-index: 1;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 900px) {
+    .hero-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 }
 
 .hero-eyebrow {
@@ -1509,32 +1543,26 @@ p {
     padding: 2rem;
 }
 
-.deliverable-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
+.deliverable-image {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto 1.5rem;
 }
 
-.deliverable-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(198, 169, 125, 0.15);
+.deliverable-image img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.deliverable-icon i {
-    width: 20px;
-    height: 20px;
-    color: var(--gold);
+.deliverable-header {
+    text-align: center;
+    margin-bottom: 0.75rem;
 }
 
 .deliverable-header h3 {
     color: var(--gold);
-    font-size: 1rem;
+    font-size: 1.125rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin: 0;
@@ -1545,6 +1573,7 @@ p {
     font-size: 0.9rem;
     font-style: italic;
     margin-bottom: 1.25rem;
+    text-align: center;
 }
 
 .deliverable-main {
@@ -1600,4 +1629,153 @@ p {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
+}
+
+/* ============================================
+   COMPONENTS - TRAP CARDS (Four Traps Section)
+   ============================================ */
+.trap-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.trap-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.trap-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.trap-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.trap-card:hover .trap-image img {
+    transform: scale(1.03);
+}
+
+.trap-content {
+    padding: 1.5rem;
+}
+
+.trap-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: var(--midnight);
+}
+
+.trap-content p {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.trap-content strong {
+    color: var(--navy);
+}
+
+/* ============================================
+   COMPONENTS - PHASE IMAGES (Know-Show-Grow with images)
+   ============================================ */
+.phases-visual {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .phases-visual {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.phase-visual-card {
+    text-align: center;
+}
+
+.phase-visual-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.phase-visual-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.phase-visual-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.5rem;
+}
+
+.phase-visual-card p {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    line-height: 1.6;
+}
+
+/* ============================================
+   COMPONENTS - MIRROR CARDS (Four Models with images)
+   ============================================ */
+.mirror-card {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.mirror-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mirror-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.mirror-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mirror-content {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.mirror-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.mirror-content p {
+    font-size: 0.875rem;
+    color: var(--steel);
+    margin-bottom: 0;
 }
