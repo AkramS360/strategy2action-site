@@ -343,9 +343,129 @@
         .gap-phase.show { background: rgba(80, 200, 120, 0.15); color: #50C878; }
         .gap-phase.bridge { background: rgba(232, 181, 74, 0.15); color: #b8920a; }
         .gap-phase.grow { background: rgba(232, 93, 59, 0.15); color: #E85D3B; }
+
+        /* Payment Popup Modal */
+        .payment-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 22, 40, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .payment-popup-overlay.active {
+            display: flex;
+        }
+
+        .payment-popup {
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            animation: popupSlideIn 0.3s ease-out;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .payment-popup-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .payment-popup-close:hover {
+            background: var(--sand);
+        }
+
+        .payment-popup-close svg {
+            width: 18px;
+            height: 18px;
+            color: var(--navy);
+        }
+
+        .payment-popup-content {
+            padding: 0;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        .payment-popup-content iframe {
+            width: 100%;
+            min-height: 700px;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .payment-popup {
+                max-width: 100%;
+                max-height: 95vh;
+                border-radius: 12px;
+            }
+            .payment-popup-content iframe {
+                min-height: 600px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Payment Popup Modal -->
+    <div class="payment-popup-overlay" id="paymentPopup">
+        <div class="payment-popup">
+            <button class="payment-popup-close" onclick="closePaymentPopup()">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="payment-popup-content">
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/MBooN6WEf8LkL0k3kaYn"
+                    id="inline-MBooN6WEf8LkL0k3kaYn"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Strategic Diagnosis"
+                    data-height="700"
+                    data-layout-iframe-id="inline-MBooN6WEf8LkL0k3kaYn"
+                    data-form-id="MBooN6WEf8LkL0k3kaYn"
+                    title="Strategic Diagnosis Payment"
+                ></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
@@ -432,7 +552,7 @@
                         </p>
                     </div>
 
-                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">Start My Strategic Diagnosis <i data-lucide="arrow-right"></i></a>
+                    <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large btn-block">Start My Strategic Diagnosis <i data-lucide="arrow-right"></i></a>
 
                     <div class="guarantee-box">
                         <p><strong>Insight Guarantee:</strong> If your diagnosis doesn't reveal at least one breakthrough insight, we'll refund every dollar.</p>
@@ -557,7 +677,7 @@
                     <span class="gap-number">2</span>
                     <div class="gap-content">
                         <h5 style="color: var(--cream);">Strategic Positioning</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Do you have a true DSI (Dominant Selling Idea) that passes the SIBMO filter? Are you the ONLY, BEST, or FIRST at something?</p>
+                        <p style="color: rgba(250, 248, 245, 0.7);">Do you have a true Unique Edge that passes the 5-filter test? Are you the ONLY, BEST, or FIRST at something?</p>
                     </div>
                     <span class="gap-phase know">KNOW</span>
                 </div>
@@ -779,7 +899,7 @@
                 <!-- Baaghil Quote -->
                 <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
                     <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "If you want to work with Akram, understand what you're signing up for: <strong style="color: var(--gold);">Radical Clarity.</strong> A mirror, not a megaphone. The truth, not just agreement. A partner who sees what you can't and says what others won't."
+                        "If you want to work with Akram, understand what you're signing up for. He doesn't accept things at face value. He will go deep, ask uncomfortable questions, and keep pulling threads until he understands the full picture. But if you go through that process, you end up with <strong style="color: var(--gold);">clarity, solidity, and decisions you can actually stand behind.</strong>"
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 1.125rem;">B</div>
@@ -792,7 +912,7 @@
                 <!-- Alesayi Quote -->
                 <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
                     <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "Over the past two years, our meetings have greatly influenced my decision-making processes and <strong style="color: var(--gold);">added significant value to my personal development.</strong>"
+                        "Akram brought structure to complexity. His ability to cut through ambiguity and deliver <strong style="color: var(--gold);">actionable clarity is rare.</strong> A true strategic partner."
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 1.125rem;">A</div>
@@ -836,7 +956,7 @@
                     </div>
                 </div>
 
-                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">Start My Strategic Diagnosis — $97 <i data-lucide="arrow-right"></i></a>
+                <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large">Start My Strategic Diagnosis — $97 <i data-lucide="arrow-right"></i></a>
 
                 <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>Insight Guarantee:</strong> Breakthrough insight or full refund. No questions asked.</p>
 
@@ -922,6 +1042,34 @@
             }
             lucide.createIcons();
         }
+
+        // Payment Popup Functions
+        function openPaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closePaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close popup when clicking overlay (outside the form)
+        document.getElementById('paymentPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePaymentPopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePaymentPopup();
+            }
+        });
     </script>
 </body>
 </html>

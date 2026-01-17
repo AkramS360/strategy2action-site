@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -363,9 +363,129 @@
             flex-direction: row-reverse;
             text-align: right;
         }
+
+        /* Payment Popup Modal */
+        .payment-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 22, 40, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .payment-popup-overlay.active {
+            display: flex;
+        }
+
+        .payment-popup {
+            background: white;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            animation: popupSlideIn 0.3s ease-out;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .payment-popup-close {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 1px solid var(--sand);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .payment-popup-close:hover {
+            background: var(--sand);
+        }
+
+        .payment-popup-close svg {
+            width: 18px;
+            height: 18px;
+            color: var(--navy);
+        }
+
+        .payment-popup-content {
+            padding: 0;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        .payment-popup-content iframe {
+            width: 100%;
+            min-height: 700px;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .payment-popup {
+                max-width: 100%;
+                max-height: 95vh;
+                border-radius: 12px;
+            }
+            .payment-popup-content iframe {
+                min-height: 600px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Payment Popup Modal -->
+    <div class="payment-popup-overlay" id="paymentPopup">
+        <div class="payment-popup">
+            <button class="payment-popup-close" onclick="closePaymentPopup()">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="payment-popup-content">
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/MBooN6WEf8LkL0k3kaYn"
+                    id="inline-MBooN6WEf8LkL0k3kaYn"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Strategic Diagnosis"
+                    data-height="700"
+                    data-layout-iframe-id="inline-MBooN6WEf8LkL0k3kaYn"
+                    data-form-id="MBooN6WEf8LkL0k3kaYn"
+                    title="التشخيص الاستراتيجي - الدفع"
+                ></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
@@ -452,7 +572,7 @@
                         </p>
                     </div>
 
-                    <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large btn-block">ابدأ تشخيصي الاستراتيجي <i data-lucide="arrow-left"></i></a>
+                    <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large btn-block">ابدأ تشخيصي الاستراتيجي <i data-lucide="arrow-left"></i></a>
 
                     <div class="guarantee-box">
                         <p><strong>ضمان الوضوح:</strong> إذا لم يكشف التشخيص عن رؤية جديدة تفيدك، نعيد لك كامل المبلغ.</p>
@@ -523,7 +643,7 @@
             <div class="section-header">
                 <span class="section-eyebrow">التقرير التشخيصي الشامل</span>
                 <h2>13 صفحة من <em>الوضوح العملي</em></h2>
-                <p class="text-lead">ليس تقييماً عاماً. بل حوار تشخيصي معمّق مع مساعد ذكي مُدرَّب على منهجية حدّد-صمّم-انطلق.</p>
+                <p class="text-lead">ليس تقييماً عاماً. بل حوار تشخيصي معمّق مع مساعد ذكي مُدرَّب على منهجية حدّد. صمّم. انطلق.</p>
             </div>
 
             <div class="grid grid-2" style="gap: 2rem;">
@@ -561,7 +681,7 @@
             <div class="section-header">
                 <span class="section-eyebrow section-eyebrow--light">المحاور الثمانية</span>
                 <h2 style="color: var(--cream);">التحليل الاستراتيجي الشامل</h2>
-                <p style="color: rgba(250, 248, 245, 0.8);">كل محور يُقيَّم من 0-20 مع ملاحظات مرتبطة بموقعك في رحلة حدّد-صمّم-انطلق.</p>
+                <p style="color: rgba(250, 248, 245, 0.8);">كل محور يُقيَّم من 0-20 مع ملاحظات مرتبطة بموقعك في رحلة حدّد. صمّم. انطلق.</p>
             </div>
 
             <div style="max-width: 800px; margin: 0 auto; background: rgba(250, 248, 245, 0.05); border-radius: 12px; padding: 2rem;">
@@ -639,7 +759,7 @@
             <div class="section-header">
                 <span class="section-eyebrow">مسارات التدخل</span>
                 <h2>ستة مسارات. واحد <em>يُحدد لك.</em></h2>
-                <p class="text-lead">التشخيص يحدد المسار الأنسب لك بناءً على موقعك في رحلة حدّد-صمّم-انطلق.</p>
+                <p class="text-lead">التشخيص يحدد المسار الأنسب لك بناءً على موقعك في رحلة حدّد. صمّم. انطلق.</p>
             </div>
 
             <div class="grid grid-3" style="gap: 1.25rem;">
@@ -696,14 +816,14 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h4>ابدأ الحوار</h4>
-                        <p>بعد إتمام الدفع، تبدأ جلستك مع المساعد الذكي المُدرَّب على منهجية حدّد-صمّم-انطلق. ليس استبياناً جامداً—بل حوار حقيقي وتفاعلي.</p>
+                        <p>بعد إتمام الدفع، تبدأ جلستك مع المساعد الذكي المُدرَّب على منهجية حدّد. صمّم. انطلق. ليس استبياناً جامداً—بل حوار حقيقي وتفاعلي.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h4>استكشاف معمّق</h4>
-                        <p>المساعد يطرح أسئلة استقصائية، يتكيف مع إجاباتك، يستكشف سياق عملك، يحدد مواطن الخلل، ويربطها بمنهجية حدّد-صمّم-انطلق.</p>
+                        <p>المساعد يطرح أسئلة استقصائية، يتكيف مع إجاباتك، يستكشف سياق عملك، يحدد مواطن الخلل، ويربطها بمنهجية حدّد. صمّم. انطلق.</p>
                     </div>
                 </div>
                 <div class="process-step">
@@ -799,7 +919,7 @@
                 <!-- Baaghil Quote -->
                 <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
                     <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "إن قررت العمل مع أكرم، اعلم ما الذي ستحصل عليه: <strong style="color: var(--gold);">وضوح لا مجاملة فيه.</strong> مرآة صادقة، لا صدى لأفكارك. الحقيقة، لا المجاملة. شريك يرى ما لا تراه ويقول لك ما لن يقوله غيره."
+                        "إذا أردت العمل مع أكرم، افهم ما أنت مقبل عليه. لا يقبل الأمور على ظاهرها. سيتعمق، يسأل أسئلة غير مريحة، ويستمر في البحث حتى يفهم الصورة الكاملة. لكن إذا مررت بهذه العملية، ستخرج <strong style="color: var(--gold);">بوضوح وصلابة وقرارات يمكنك الدفاع عنها.</strong>"
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-direction: row-reverse;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 1.125rem;">ب</div>
@@ -812,7 +932,7 @@
                 <!-- Alesayi Quote -->
                 <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
                     <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "على مدار العامين الماضيين، أثرت اجتماعاتنا بشكل كبير على عمليات اتخاذ القرار لدي و<strong style="color: var(--gold);">أضافت قيمة كبيرة لتطوري الشخصي.</strong>"
+                        "أكرم جلب البنية للتعقيد. قدرته على تبديد الغموض وتقديم <strong style="color: var(--gold);">وضوح قابل للتنفيذ نادرة.</strong> شريك استراتيجي حقيقي."
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-direction: row-reverse;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 1.125rem;">ع</div>
@@ -856,7 +976,7 @@
                     </div>
                 </div>
 
-                <a href="https://platform.strategy2action.com/register" class="btn btn-primary btn-large">ابدأ تشخيصي الاستراتيجي — $97 <i data-lucide="arrow-left"></i></a>
+                <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large">ابدأ تشخيصي الاستراتيجي — $97 <i data-lucide="arrow-left"></i></a>
 
                 <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>ضمان الوضوح:</strong> نتيجة ملموسة أو استرداد كامل. بدون شروط.</p>
 
@@ -890,8 +1010,8 @@
                 <div class="footer-column">
                     <h4>البرامج</h4>
                     <a href="strategic-diagnosis.html">التشخيص الاستراتيجي</a>
-                    <a href="builder-bundle.html">وحدات الباني</a>
-                    <a href="expert-led-bundle.html">وحدات مع خبير</a>
+                    <a href="builder-bundle.html">مسار الباني</a>
+                    <a href="expert-led-bundle.html">مسار الخبير</a>
                     <a href="executive-partnership.html">الشراكة التنفيذية</a>
                 </div>
                 <div class="footer-column">
@@ -904,13 +1024,13 @@
                     <h4>تواصل</h4>
                     <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
                     <a href="tel:+966509993384">+966 509993384</a>
-                    <a href="#">LinkedIn</a>
+                    <a href="https://www.linkedin.com/company/strategy2action-inc/">LinkedIn</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
                 <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.linkedin.com/company/strategy2action-inc/" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
                 </div>
             </div>
@@ -942,6 +1062,34 @@
             }
             lucide.createIcons();
         }
+
+        // Payment Popup Functions
+        function openPaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closePaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close popup when clicking overlay (outside the form)
+        document.getElementById('paymentPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePaymentPopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePaymentPopup();
+            }
+        });
     </script>
 </body>
 </html>
