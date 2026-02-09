@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinar Replay: The Strategy You Already Have | Strategy2Action</title>
+    <meta name="description" content="Watch the replay of 'The Strategy You Already Have Is the One They Can't See.' Available for 72 hours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GHL Tracking Script -->
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+    <!-- 72-Hour Replay Expiration (Method C from implementation doc) -->
+    <script>
+    // UPDATE: Set webinar end time for each cohort
+    const webinarEnd = new Date('2026-03-28T21:00:00+03:00'); // March 28, 2026 at 9:00 PM AST (webinar ends after 60 min)
+    const expiryTime = new Date(webinarEnd.getTime() + (72 * 60 * 60 * 1000));
+    const now = new Date();
+    if (now > expiryTime) {
+        window.location.href = 'diagnosis.html';
+    }
+    </script>
+
+    <!-- LinkedIn Insight Tag - ADD YOUR PARTNER ID -->
+    <!--
+    <script type="text/javascript">
+    _linkedin_partner_id = "YOUR_PARTNER_ID";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+    (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";s.parentNode.insertBefore(b,s)})(window.lintrk);
+    </script>
+    -->
+
+    <style>
+        /* Replay Page Specific Styles */
+        .replay-hero {
+            padding: 8rem 0 3rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+            text-align: center;
+        }
+
+        .replay-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .replay-hero h1 em {
+            color: var(--gold);
+        }
+
+        .replay-subtitle {
+            font-size: 1.0625rem;
+            color: rgba(250, 248, 245, 0.8);
+            max-width: 650px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+
+        .replay-timer {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 100px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.875rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .replay-timer svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 3rem 0;
+            background: var(--ivory);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--midnight);
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .video-placeholder svg {
+            width: 64px;
+            height: 64px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder p {
+            color: rgba(250, 248, 245, 0.6);
+            font-size: 0.9375rem;
+        }
+
+        .video-note {
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.7;
+        }
+
+        /* CTA Sections */
+        .cta-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cta-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 2px solid var(--sand);
+            transition: border-color 0.2s;
+        }
+
+        .cta-card:hover {
+            border-color: var(--gold);
+        }
+
+        .cta-card-primary {
+            border-color: var(--success);
+        }
+
+        .cta-card-badge {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.375rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-card-primary .cta-card-badge {
+            background: rgba(45, 138, 110, 0.1);
+            color: var(--success);
+        }
+
+        .cta-card:not(.cta-card-primary) .cta-card-badge {
+            background: rgba(201, 169, 97, 0.1);
+            color: var(--gold-dark);
+        }
+
+        .cta-card h3 {
+            font-size: 1.25rem;
+            color: var(--midnight);
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Scarcity Note */
+        .scarcity-section {
+            padding: 2rem 0;
+            background: var(--navy);
+        }
+
+        .scarcity-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9375rem;
+            color: rgba(250, 248, 245, 0.75);
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* Minimal nav for landing page */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(201, 169, 97, 0.1);
+        }
+
+        .nav-minimal .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-minimal .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Minimal footer for landing page */
+        .footer-minimal {
+            padding: 1.5rem 0;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .footer-minimal p {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="nav-minimal">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo_s2a.png" alt="Strategy2Action">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Replay Hero -->
+    <section class="replay-hero">
+        <div class="container">
+            <h1>The strategy you already have <em>is the one they cannot see.</em></h1>
+            <p class="replay-subtitle">
+                You attended. You heard the framework. This replay is available for 72 hours — then it comes down.
+            </p>
+            <span class="replay-timer">
+                <i data-lucide="clock"></i>
+                Replay expires in 72 hours
+            </span>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <!-- REPLACE WITH VIMEO/VIDEO EMBED -->
+                <div class="video-placeholder">
+                    <i data-lucide="play-circle"></i>
+                    <p>Video embed will be placed here.<br>Vimeo Pro recommended (domain-restricted).</p>
+                </div>
+            </div>
+            <p class="video-note">
+                If you watched live and something landed — good. Watch it again. The second time, you will hear what you missed.
+                If you stepped away or joined late, start from the beginning. The first eleven minutes will reframe something you have believed about yourself for years.
+                The replay is unedited. The silences are intentional.
+            </p>
+        </div>
+    </section>
+
+    <!-- Two CTA Cards -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Next Step</span>
+                <h2>Two Paths <em>Forward</em></h2>
+            </div>
+
+            <div class="cta-grid">
+                <!-- Primary CTA: Free Diagnosis -->
+                <div class="cta-card cta-card-primary">
+                    <span class="cta-card-badge">Free for You</span>
+                    <h3>Your Strategic Diagnosis is ready.</h3>
+                    <p>
+                        Every transformation story from the session started here. A 90-minute diagnostic conversation that produces a 13-page report — your Know, Show, and Grow scores. Your trap identified. Your protocol prescribed.
+                    </p>
+                    <p>This normally costs $133. It is free for you.</p>
+                    <p style="font-style: italic; color: var(--gold-dark);">Whether or not you join the Accelerator, this diagnosis will show you something you have not seen before.</p>
+                    <a href="diagnosis.html" class="btn btn-primary">Claim Your Free Strategic Diagnosis</a>
+                </div>
+
+                <!-- Secondary CTA: Accelerator -->
+                <div class="cta-card">
+                    <span class="cta-card-badge">Founding Cohort</span>
+                    <h3>Strategy2Action Implementation Accelerator</h3>
+                    <p>
+                        Eight weeks. Five AI systems trained on fifteen years of methodology. Weekly group Q&A. Your complete strategic reflection — business model, operating model, people model, financial structure — built from your words, not a consultant's.
+                    </p>
+                    <p style="font-weight: 500; color: var(--navy);">20 spots at $799 (normally $999).</p>
+                    <p>14-day insight guarantee. If you do not see something new about your business within two weeks, you get every dollar back.</p>
+                    <a href="accelerator.html" class="btn btn-secondary">Join the Founding Cohort — $799</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity Note -->
+    <section class="scarcity-section">
+        <div class="container">
+            <p class="scarcity-content">
+                The replay comes down in 72 hours. The founding cohort spots are real — the group Q&A calls require a small enough room for real conversation. Once twenty founders have enrolled, the next cohort opens at $999.
+            </p>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2026 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

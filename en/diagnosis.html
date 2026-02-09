@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Diagnosis — Free for Webinar Attendees | Strategy2Action</title>
+    <meta name="description" content="A 90-minute AI-guided diagnostic conversation that produces a 13-page report. Discover your Know-Show-Grow scores, your trap, and your path forward.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GHL Tracking Script -->
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+    <style>
+        /* Diagnosis Page Specific Styles */
+        .diagnosis-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .diagnosis-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .diagnosis-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .diagnosis-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+        }
+
+        .diagnosis-hero h1 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .diagnosis-subtitle {
+            font-size: 1.0625rem;
+            color: var(--steel);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .diagnosis-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+
+        .diagnosis-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .diagnosis-features li svg {
+            color: var(--success);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .diagnosis-value {
+            font-size: 0.875rem;
+            color: var(--fog);
+            padding-top: 1rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .diagnosis-value strong {
+            color: var(--success);
+        }
+
+        /* Form Card */
+        .diagnosis-form-card {
+            background: white;
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(10, 22, 40, 0.12);
+        }
+
+        .diagnosis-form-card h3 {
+            font-size: 1.25rem;
+            color: var(--midnight);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .diagnosis-form-card .form-note {
+            font-size: 0.875rem;
+            color: var(--steel);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .ghl-form-container {
+            min-height: 300px;
+        }
+
+        /* How It Works Section */
+        .process-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .process-number {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            color: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.0625rem;
+            color: var(--midnight);
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.7;
+        }
+
+        /* Report Preview Section */
+        .report-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .report-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .report-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1.25rem;
+            background: var(--ivory);
+            border-radius: 12px;
+        }
+
+        .report-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gold-dark);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .report-item p {
+            font-size: 0.9375rem;
+            color: var(--navy);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Minimal nav */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(26, 42, 71, 0.08);
+        }
+
+        .nav-minimal .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-minimal .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-minimal {
+            padding: 1.5rem 0;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .footer-minimal p {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="nav-minimal">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo_s2a.png" alt="Strategy2Action">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="diagnosis-hero">
+        <div class="container">
+            <div class="diagnosis-hero-grid">
+                <!-- Left: Content -->
+                <div>
+                    <span class="diagnosis-badge">Free for Webinar Attendees</span>
+                    <h1>Your Strategic Diagnosis <em>Is Ready</em></h1>
+                    <p class="diagnosis-subtitle">
+                        A 90-minute AI-guided diagnostic conversation that produces a 13-page report.
+                        It scores your Know, Show, and Grow dimensions. It identifies which trap has you.
+                        It prescribes your specific path forward.
+                    </p>
+
+                    <ul class="diagnosis-features">
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>Your Know-Show-Grow scores — measured, not guessed</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>Your trap identified — Know-Stuck, Show-Stuck, or Grow-Stuck</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>Your specific protocol prescribed — not generic advice</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle"></i>
+                            <span>13-page personalized report — delivered to your inbox</span>
+                        </li>
+                    </ul>
+
+                    <p class="diagnosis-value">
+                        This is the same diagnostic that has started every transformation described in the webinar.
+                        Normally <strong>$133</strong>. Free for every attendee.
+                    </p>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="diagnosis-form-card">
+                    <h3>Claim Your Diagnosis</h3>
+                    <p class="form-note">No purchase required. No follow-up sales call. Just a reflection of where you are.</p>
+
+                    <!-- GHL Form Embed: Strategic Diagnosis -->
+                    <div class="ghl-form-container">
+                        <iframe src="https://api.leadconnectorhq.com/widget/form/MBooN6WEf8LkL0k3kaYn" style="width:100%;height:100%;border:none;border-radius:3px" id="inline-MBooN6WEf8LkL0k3kaYn" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Strategic Diagnosis" data-height="undefined" data-layout-iframe-id="inline-MBooN6WEf8LkL0k3kaYn" data-form-id="MBooN6WEf8LkL0k3kaYn" title="Strategic Diagnosis"></iframe>
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">How It Works</span>
+                <h2>Three Steps to <em>Clarity</em></h2>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Claim Your Diagnosis</h3>
+                    <p>Fill in your details above. You will receive access to the AI-guided diagnostic within minutes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>90-Minute Conversation</h3>
+                    <p>The AI asks you the same questions Akram asks in strategy sessions. Your answers become your data.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Your 13-Page Report</h3>
+                    <p>Your Know, Show, and Grow scores. Your trap type. Your specific intervention protocol. Delivered immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Your Report Contains -->
+    <section class="report-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Your Report</span>
+                <h2>What You Will <em>Discover</em></h2>
+            </div>
+
+            <div class="report-grid">
+                <div class="report-item">
+                    <i data-lucide="bar-chart-3"></i>
+                    <p>Your Know, Show, and Grow dimension scores — where the cycle is breaking</p>
+                </div>
+                <div class="report-item">
+                    <i data-lucide="target"></i>
+                    <p>Your trap type — Know-Stuck (over-learning), Show-Stuck (invisible), or Grow-Stuck (fragile scaling)</p>
+                </div>
+                <div class="report-item">
+                    <i data-lucide="compass"></i>
+                    <p>Your prescribed intervention protocol — the specific actions for your situation</p>
+                </div>
+                <div class="report-item">
+                    <i data-lucide="map"></i>
+                    <p>Your strategic visibility map — what others see vs. what exists in your head</p>
+                </div>
+                <div class="report-item">
+                    <i data-lucide="users"></i>
+                    <p>Peer comparison — how your scores relate to 400+ founders across the MENA region</p>
+                </div>
+                <div class="report-item">
+                    <i data-lucide="arrow-right"></i>
+                    <p>Your next step — whether that is the Accelerator or something else entirely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Accelerator Mention -->
+    <section style="padding: 3rem 0; background: var(--ivory);">
+        <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1rem; color: var(--steel); line-height: 1.8; margin-bottom: 1rem;">
+                If your diagnosis reveals something you want to act on — the Strategy2Action Implementation Accelerator is how founders turn diagnosis into visible strategy. But the diagnosis stands on its own. No purchase required.
+            </p>
+            <a href="accelerator.html" style="font-size: 0.9375rem; color: var(--gold-dark); font-weight: 500; text-decoration: underline;">
+                Learn about the Accelerator
+            </a>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2026 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

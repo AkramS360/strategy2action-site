@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy2Action Implementation Accelerator — Founding Cohort | Strategy2Action</title>
+    <meta name="description" content="Eight weeks. Five AI systems. Weekly Q&A. Your complete strategic reflection — built from your words, not a consultant's. Founding cohort: $799.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GHL Tracking Script -->
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+    <style>
+        /* Accelerator Page Specific Styles */
+        .accel-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+        }
+
+        .accel-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .accel-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            border: 1px solid rgba(201, 169, 97, 0.4);
+            color: var(--gold);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .accel-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            color: var(--cream);
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .accel-hero h1 em {
+            color: var(--gold);
+        }
+
+        .accel-subtitle {
+            font-size: 1.125rem;
+            color: rgba(250, 248, 245, 0.8);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .accel-price-block {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .accel-price {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .accel-price-original {
+            font-size: 1.25rem;
+            color: rgba(250, 248, 245, 0.5);
+            text-decoration: line-through;
+        }
+
+        .accel-price-note {
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        /* What's Included Section */
+        .included-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .included-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--sand);
+        }
+
+        .included-card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .included-card-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gold-dark);
+        }
+
+        .included-card h3 {
+            font-size: 1.0625rem;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .included-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* 8-Week Structure */
+        .structure-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .structure-timeline {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .structure-week {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .structure-week:last-child {
+            border-bottom: none;
+        }
+
+        .week-number {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--gold-dark);
+            white-space: nowrap;
+            min-width: 60px;
+        }
+
+        .week-content h4 {
+            font-size: 1rem;
+            color: var(--midnight);
+            margin-bottom: 0.25rem;
+        }
+
+        .week-content p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .guarantee-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(45, 138, 110, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .guarantee-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--success);
+        }
+
+        .guarantee-box h3 {
+            font-size: 1.375rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-box p {
+            font-size: 1rem;
+            color: var(--steel);
+            line-height: 1.8;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: rgba(250, 248, 245, 0.8);
+            font-size: 1.0625rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .final-cta .btn {
+            font-size: 1.125rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .final-cta-details {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: rgba(250, 248, 245, 0.5);
+        }
+
+        /* Minimal nav */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(201, 169, 97, 0.1);
+        }
+
+        .nav-minimal .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-minimal .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-minimal {
+            padding: 1.5rem 0;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .footer-minimal p {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="nav-minimal">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo_s2a.png" alt="Strategy2Action">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="accel-hero">
+        <div class="container">
+            <div class="accel-hero-content">
+                <span class="accel-badge">Founding Cohort — 20 Spots</span>
+                <h1>Strategy2Action <em>Implementation Accelerator</em></h1>
+                <p class="accel-subtitle">
+                    Eight weeks. Five AI systems trained on fifteen years of methodology.
+                    Weekly group Q&A. Your complete strategic reflection — business model,
+                    operating model, people model, financial structure — built from your words,
+                    not a consultant's.
+                </p>
+
+                <div class="accel-price-block">
+                    <span class="accel-price">$799</span>
+                    <span class="accel-price-original">$999</span>
+                </div>
+                <p class="accel-price-note">Founding cohort pricing. After 20 spots fill, price is $999.</p>
+
+                <!-- STRIPE PAYMENT BUTTON PLACEHOLDER -->
+                <div style="margin-top: 2rem;">
+                    <a href="#enroll" class="btn btn-primary btn-large" style="font-size: 1.125rem;">
+                        Join the Founding Cohort — $799
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">What You Get</span>
+                <h2>Everything <em>Included</em></h2>
+            </div>
+
+            <div class="included-grid">
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="scan"></i>
+                    </div>
+                    <h3>Strategic Diagnosis ($133 Value)</h3>
+                    <p>A 90-minute AI-guided diagnostic conversation producing your 13-page Know-Show-Grow report. Your starting point.</p>
+                </div>
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3>Five AI Strategy Systems</h3>
+                    <p>Trained on fifteen years of methodology. They ask the same questions Akram asks. Your answers become your models.</p>
+                </div>
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="layout-grid"></i>
+                    </div>
+                    <h3>Your Business Mirror</h3>
+                    <p>Four integrated models — business model, operating model, people model, financial structure — built from YOUR words.</p>
+                </div>
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Weekly Group Q&A</h3>
+                    <p>Small room. Real conversation. Eight weeks of live sessions with Akram and fellow founders navigating visibility.</p>
+                </div>
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3>Complete Strategic Reflection</h3>
+                    <p>Your strategy — visible, documented, shareable. Something your team, investors, and partners can finally see.</p>
+                </div>
+                <div class="included-card">
+                    <div class="included-card-icon">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3>AI Implementation Agent</h3>
+                    <p>Personal system trained on your diagnosis. Available around the clock. Guides your implementation decisions between sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8-Week Structure -->
+    <section class="structure-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Journey</span>
+                <h2>Eight Weeks to <em>Visibility</em></h2>
+            </div>
+
+            <div class="structure-timeline">
+                <div class="structure-week">
+                    <span class="week-number">Week 1</span>
+                    <div class="week-content">
+                        <h4>Strategic Diagnosis</h4>
+                        <p>Complete your AI-guided diagnosis. Discover your Know-Show-Grow scores and trap type. Set your baseline.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 2</span>
+                    <div class="week-content">
+                        <h4>Business Model Reflection</h4>
+                        <p>Your AI strategy agent guides you through your business model. Revenue logic, value proposition, competitive positioning — reflected, not imposed.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 3</span>
+                    <div class="week-content">
+                        <h4>Operating Model</h4>
+                        <p>How your strategy actually runs. Processes, capabilities, resource allocation — made visible for the first time.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 4</span>
+                    <div class="week-content">
+                        <h4>People Model</h4>
+                        <p>Who needs to see what. Role clarity, delegation architecture, the leadership structure that makes strategy travel.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 5</span>
+                    <div class="week-content">
+                        <h4>Financial Structure</h4>
+                        <p>Your strategy in numbers. Unit economics, funding requirements, the financial model that investors and boards can read.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 6</span>
+                    <div class="week-content">
+                        <h4>Integration</h4>
+                        <p>All four models connected. The Business Mirror assembled. Your strategy — visible, coherent, shareable.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 7</span>
+                    <div class="week-content">
+                        <h4>Communication Artifacts</h4>
+                        <p>Board deck. Investor narrative. Team alignment document. Built from your Business Mirror, not a template.</p>
+                    </div>
+                </div>
+                <div class="structure-week">
+                    <span class="week-number">Week 8</span>
+                    <div class="week-content">
+                        <h4>Launch + Next Steps</h4>
+                        <p>Your complete strategic reflection delivered. Action plan defined. Ongoing support path established.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">
+                    <i data-lucide="shield"></i>
+                </div>
+                <h3>14-Day Insight Guarantee</h3>
+                <p>
+                    If you do not see something new about your business within two weeks — something you had not seen before,
+                    something that changes how you think about your strategy — you get every dollar back. No questions asked.
+                    No complicated process. Just an email.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="enroll">
+        <div class="container">
+            <span class="section-eyebrow" style="color: var(--gold);">Your Strategy Deserves to Be Seen</span>
+            <h2>Founding Cohort — <em>20 Spots at $799</em></h2>
+            <p>Your strategy was always good. The question was always visibility. This is where that changes.</p>
+
+            <!-- STRIPE CHECKOUT BUTTON PLACEHOLDER -->
+            <a href="#" class="btn btn-primary btn-large">
+                Join the Founding Cohort — $799
+            </a>
+
+            <p class="final-cta-details">
+                Founding cohort pricing. After these 20 spots, the price is $999.<br>
+                14-day insight guarantee. Secure payment via Stripe.<br><br>
+                Questions? Email <a href="mailto:akram@strategy360.ai" style="color: var(--gold);">akram@strategy360.ai</a> or reply to any email from Akram.
+            </p>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2026 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

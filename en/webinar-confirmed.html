@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In — Webinar Confirmed | Strategy2Action</title>
+    <meta name="description" content="Your seat is saved. Check your email for the session link and calendar invite.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GHL Tracking Script -->
+    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+
+    <style>
+        /* Thank You Page Specific Styles */
+        .thankyou-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+        }
+
+        .thankyou-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .thankyou-check {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(45, 138, 110, 0.15) 0%, rgba(45, 138, 110, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .thankyou-check svg {
+            width: 40px;
+            height: 40px;
+            color: var(--success);
+            stroke-width: 2;
+        }
+
+        .thankyou-content h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .thankyou-details {
+            font-size: 1.0625rem;
+            color: var(--steel);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .thankyou-details strong {
+            color: var(--navy);
+        }
+
+        .calendar-section {
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-section h3 {
+            font-size: 1.125rem;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .calendar-section p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            margin-bottom: 1.25rem;
+        }
+
+        .calendar-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: var(--ivory);
+            border: 1px solid var(--sand);
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .calendar-btn:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+        }
+
+        .calendar-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Micro-commitment Section */
+        .commitment-section {
+            padding: var(--section-padding) 0;
+            background: var(--ivory);
+        }
+
+        .commitment-box {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .commitment-box h2 {
+            font-size: 1.5rem;
+            color: var(--midnight);
+            margin-bottom: 1.25rem;
+        }
+
+        .commitment-question {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--gold-dark);
+            padding: 1.5rem 2rem;
+            background: white;
+            border-left: 4px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .commitment-box p {
+            font-size: 1rem;
+            color: var(--steel);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* What to Expect Section */
+        .expect-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .expect-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .expect-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .expect-item:last-child {
+            border-bottom: none;
+        }
+
+        .expect-item svg {
+            width: 22px;
+            height: 22px;
+            color: var(--gold-dark);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .expect-item p {
+            font-size: 1rem;
+            color: var(--navy);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Sign-off */
+        .signoff {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+            text-align: center;
+        }
+
+        .signoff p {
+            color: var(--cream);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .signoff .signature {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        /* Minimal nav for landing page */
+        .nav-minimal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(26, 42, 71, 0.08);
+        }
+
+        .nav-minimal .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-minimal .nav-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Minimal footer for landing page */
+        .footer-minimal {
+            padding: 1.5rem 0;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .footer-minimal p {
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="nav-minimal">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo_s2a.png" alt="Strategy2Action">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero / Confirmation Section -->
+    <section class="thankyou-hero">
+        <div class="container">
+            <div class="thankyou-content">
+                <div class="thankyou-check">
+                    <i data-lucide="check-circle"></i>
+                </div>
+
+                <h1>You are in.</h1>
+
+                <p class="thankyou-details">
+                    Your seat is saved for <strong>March 28, 2026</strong> at <strong>8:00 PM AST</strong>.<br><br>
+                    Check your email for the session link and calendar invite.
+                    If it does not arrive in five minutes, check your spam or promotions folder.
+                    Questions? Email <a href="mailto:akram@strategy360.ai" style="color: var(--gold-dark);">akram@strategy360.ai</a>
+                </p>
+
+                <!-- Calendar Integration -->
+                <div class="calendar-section">
+                    <h3>Add this to your calendar now.</h3>
+                    <p>Not later. Now.</p>
+                    <div class="calendar-buttons">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Strategy+You+Already+Have+Is+the+One+They+Can%27t+See&dates=20260328T170000Z/20260328T180000Z&details=Join+the+live+session+with+Akram+Al+Qadasi:+https://calendly.com/akram-s2a/s2a-complete-system-build-webinar&location=Online+(Zoom)" target="_blank" class="calendar-btn">
+                            <i data-lucide="calendar"></i>
+                            Add to Google Calendar
+                        </a>
+                        <a href="https://outlook.live.com/calendar/0/action/compose?subject=The+Strategy+You+Already+Have+Is+the+One+They+Can%27t+See&startdt=2026-03-28T17:00:00Z&enddt=2026-03-28T18:00:00Z&body=Join+the+live+session+with+Akram+Al+Qadasi:+https://calendly.com/akram-s2a/s2a-complete-system-build-webinar&location=Online+(Zoom)" target="_blank" class="calendar-btn">
+                            <i data-lucide="calendar"></i>
+                            Add to Outlook
+                        </a>
+                        <a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20260328T170000Z%0ADTEND:20260328T180000Z%0ASUMMARY:The Strategy You Already Have Is the One They Can't See%0ADESCRIPTION:Join the live session with Akram Al Qadasi: https://calendly.com/akram-s2a/s2a-complete-system-build-webinar%0ALOCATION:Online (Zoom)%0AEND:VEVENT%0AEND:VCALENDAR" download="s2a-webinar.ics" class="calendar-btn">
+                            <i data-lucide="calendar"></i>
+                            Add to iCal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Micro-Commitment Section -->
+    <section class="commitment-section">
+        <div class="container">
+            <div class="commitment-box">
+                <h2>One thing to do before we meet.</h2>
+                <p>Before the session, ask yourself this question:</p>
+
+                <div class="commitment-question">
+                    "Can my team explain my strategy without me in the room?"
+                </div>
+
+                <p>Do not rush past it. Sit with it.</p>
+                <p>If the answer unsettles you — good. That is exactly where we begin.</p>
+                <p style="font-weight: 500; color: var(--navy);">Write down your honest answer. Bring it with you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section class="expect-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Before the Session</span>
+                <h2>Here Is How <em>This Will Work</em></h2>
+            </div>
+
+            <div class="expect-list">
+                <div class="expect-item">
+                    <i data-lucide="mail"></i>
+                    <p>You will receive a confirmation email shortly with your session link and calendar invite.</p>
+                </div>
+                <div class="expect-item">
+                    <i data-lucide="bell"></i>
+                    <p>The day before, you will get a brief reminder with one idea to think about.</p>
+                </div>
+                <div class="expect-item">
+                    <i data-lucide="pen-tool"></i>
+                    <p>When you join, bring something to take notes with. This is a working session — not a lecture.</p>
+                </div>
+                <div class="expect-item">
+                    <i data-lucide="gift"></i>
+                    <p>At the end, every attendee receives the Strategic Diagnosis ($133 value) — the same tool that has started over 400 founder transformations.</p>
+                </div>
+                <div class="expect-item">
+                    <i data-lucide="message-circle"></i>
+                    <p>Come with questions. Come ready to think.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-off -->
+    <section class="signoff">
+        <div class="container">
+            <p>See you on March 28, 2026.</p>
+            <p class="signature">— Akram</p>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <p>&copy; 2026 Strategy2Action Inc. Delaware, USA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
