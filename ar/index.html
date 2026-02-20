@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategy2Action | اجعل استراتيجيتك مرئية</title>
-    <meta name="description" content="لا نصنع لك استراتيجية—نساعدك على رؤية ما لا تراه. تشخيص استراتيجي بالذكاء الاصطناعي لمؤسسي المنطقة. منهجية حدّد. صمّم. انطلق.">
+    <meta name="description" content="استراتيجيتك ليست معطوبة، إنها غير مرئية. نساعد المؤسسين على تحويل الاستراتيجية المحبوسة في رؤوسهم إلى أربعة نماذج يراها فريقهم ومستثمروهم ومجلس إدارتهم.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700&family=Dubai:wght@300;400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-rtl.css">
-    <link rel="stylesheet" href="css/language-switcher.css">
-    <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
+    <link rel="stylesheet" href="../en/css/style.css">
+    <link rel="stylesheet" href="../en/css/style-v2.css">
+    <link rel="stylesheet" href="css/style-v2-rtl.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav nav--dark" id="nav">
         <div class="container">
             <div class="nav-inner">
-                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <a href="index.html" class="nav-logo"><img src="../en/images/logo_s2a.png" alt="Strategy2Action"></a>
                 <div class="nav-links">
-                    <a href="about.html">من نحن</a>
-                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
-                    <a href="builder-bundle.html">البناء الذاتي</a>
-                    <a href="strategic-diagnosis.html">التشخيص</a>
                     <a href="index.html">الرئيسية</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="#programs">البرامج</a>
+                    <a href="about.html">من نحن</a>
                     <a href="../en/index.html" class="lang-toggle lang-en">EN</a>
                 </div>
-                <a href="strategic-diagnosis.html" class="nav-cta-btn">اكشف نقاطك العمياء <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <a href="strategic-diagnosis.html" class="nav-cta-btn">ابدأ التشخيص <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
                 <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
             </div>
         </div>
@@ -38,559 +35,352 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav">
-        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
-        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
-        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
-        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
         <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="#programs" onclick="toggleMobileNav()">البرامج</a>
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
         <a href="../en/index.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
     </div>
 
-    <!-- Hero Section -->
+    <!-- ============================================
+         SECTION 1: HERO
+         ============================================ -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="hero-eyebrow">للمؤسسين الذين سئموا التكرار</span>
-                    <h1>يهزون رؤوسهم. يبتسمون. <em>ثم يتجاهلون كل ما قلته.</em></h1>
-                    <p class="hero-subtitle">شرحتها مئات المرات. يومئون بالفهم. ثم ينصرفون ليفعلوا ما خططوا له من البداية. <strong>استراتيجيتك ليست معطوبة—إنها غير مرئية. وهذا يكلفك كل شيء.</strong> نحن لا نمنحك استراتيجية. نحن نجعلها مستحيلة التجاهل.</p>
-                    <p class="hero-tagline">حدّد. صمّم. انطلق.</p>
+                    <span class="hero-eyebrow">للمؤسسين الذين يحملون رؤيتهم وحدهم</span>
+                    <h1>استراتيجيتك موجودة، <em>لكنها غير مرئية</em></h1>
+                    <p class="hero-subtitle">تعرفها وتعيشها كل يوم، غير أن من حولك لا يرونها، فتجد نفسك تشرحها من جديد في كل اجتماع وتحمل ثقلها وحدك. ليست المشكلة في استراتيجيتك بل في أنها محبوسة في رأسك ولم تتحول بعد إلى شيء يراه الآخرون ويتصرفون بناءً عليه.</p>
+                    <p class="hero-subtitle" style="margin-bottom: 1.5rem;"><strong style="color: var(--gold);">نحن نجعلها مرئية.</strong></p>
                     <div class="hero-cta">
-                        <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">اكتشف ما يعيقك <i data-lucide="arrow-left"></i></a>
-                        <p style="font-size: 0.8125rem; color: var(--steel); margin-top: 0.75rem;"><strong>محدود:</strong> 20 موعد تشخيص فقط متاح هذا الشهر</p>
+                        <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">ابدأ التشخيص · $97 <i data-lucide="arrow-left"></i></a>
+                        <p style="font-size: 0.8125rem; color: rgba(250, 248, 245, 0.6); margin-top: 0.75rem;">محادثة واحدة مدتها 90 دقيقة تكشف بالضبط أين تتعثر استراتيجيتك ولماذا.</p>
                     </div>
                     <div class="hero-trust">
                         <div class="trust-item">
                             <strong>+400</strong>
-                            مؤسسة رأت استراتيجيتها
+                            مؤسس تمت مرافقتهم
                         </div>
                         <div class="trust-item">
-                            <strong>+15</strong>
-                            عاماً من صنع الوضوح
+                            <strong>+12</strong>
+                            قطاعاً مختلفاً
                         </div>
                         <div class="trust-item">
-                            <strong>4</strong>
-                            مرايا استراتيجية
+                            <strong>IE · MIT · INSEAD</strong>
+                            خريج
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/hero-identity-mirror.jpg" alt="التحول: محاذاة الهوية - منشور بلوري يعكس الوضوح الاستراتيجي">
+                    <img src="../en/images/phase-show.jpg" alt="الوضوح الاستراتيجي، من غير مرئية إلى مرئية">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reframe Section -->
-    <section class="section section-dark" id="reframe" style="padding: var(--section-padding) 0;">
-        <div class="container">
-            <div class="section-header" style="position: relative; z-index: 1;">
-                <span class="section-eyebrow section-eyebrow--light">إعادة التأطير</span>
-                <h2 style="color: var(--cream);">المشكلة ليست في استراتيجيتك. <em style="color: var(--gold);">المشكلة أنها غير مرئية.</em></h2>
-            </div>
-
-            <div class="comparison-grid" style="position: relative; z-index: 1;">
-                <div class="comparison-col comparison-col--negative" style="background: rgba(201, 107, 107, 0.1); border-color: rgba(201, 107, 107, 0.3);">
-                    <h3 style="color: #e4a8a8;">ما قيل لك</h3>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">"تحتاج استراتيجية جديدة"</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">"استعن بمستشار ليبنيها لك"</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">"طبّق هذا النموذج الجاهز"</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">"نفّذ بسرعة أكبر"</span>
-                    </div>
-                </div>
-
-                <div class="comparison-col comparison-col--positive" style="background: rgba(45, 138, 110, 0.1); border-color: rgba(45, 138, 110, 0.3);">
-                    <h3 style="color: #7dd4ae;">الحقيقة</h3>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">استراتيجيتك موجودة—لكنها محبوسة في رأسك</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">تحتاج مرآة تُريك ما تعرفه، لا معلّماً يُمليه عليك</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">النموذج الصحيح ينبع من هويتك—لا من قالب جاهز</span>
-                    </div>
-                    <div class="comparison-item">
-                        <span class="value" style="color: rgba(250, 248, 245, 0.8);">التنفيذ يتبع الوضوح—لا السرعة</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="section" id="problem">
+    <!-- ============================================
+         SECTION 1B: PROOF - Say-Do Cycles
+         نتائج حقيقية. قبل ← بعد. عنصر القوة في SPCL.
+         ============================================ -->
+    <section class="section proof-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">المشكلة الحقيقية</span>
-                <h2>أربعة فخاخ تُبقي المؤسسين <em>عالقين</em></h2>
+                <span class="section-eyebrow">نتائج حقيقية</span>
+                <h2>الاستراتيجية لم تتغير، <em>لكنها أصبحت مرئية</em></h2>
             </div>
 
-            <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto; gap: 1.5rem;">
-                <div class="trap-card">
-                    <div class="trap-image">
-                        <img src="images/trap-translation-gap.jpg" alt="فجوة التواصل - مؤسس يكافح للتواصل عبر حاجز ضبابي">
+            <div class="proof-grid">
+                <div class="proof-card reveal-on-scroll">
+                    <div class="proof-transformation">
+                        <span class="proof-before">استراتيجية لم يرها المستثمرون</span>
+                        <span class="proof-arrow">&larr;</span>
+                        <span class="proof-after">تمويل بمليوني ريال</span>
                     </div>
-                    <div class="trap-content">
-                        <h3>فجوة التواصل</h3>
-                        <p>رؤيتك واضحة كعين الشمس في ذهنك. لكن حين تشرحها؟ نظرات فارغة. إيماءات مجاملة. ثم ينصرفون ليفعلوا ما خططوا له من البداية. <strong>في كل مرة. بلا استثناء.</strong></p>
-                    </div>
+                    <p class="proof-context">شركة ناشئة في قطاع الدفاع، التقنية ذاتها والفريق ذاته، لكن حين أصبحت الاستراتيجية مرئية للمستثمرين المناسبين تحول الرفض إلى تمويل.</p>
                 </div>
-
-                <div class="trap-card">
-                    <div class="trap-image">
-                        <img src="images/trap-lonely-genius.jpg" alt="عقدة المؤسس الوحيد - مؤسس يقف وحيداً يحمل العبء">
+                <div class="proof-card reveal-on-scroll">
+                    <div class="proof-transformation">
+                        <span class="proof-before">فكرة بلا نموذج أعمال</span>
+                        <span class="proof-arrow">&larr;</span>
+                        <span class="proof-after">جاهزة للاستثمار بـ 1.125M ر.س</span>
                     </div>
-                    <div class="trap-content">
-                        <h3>عبء المؤسس الوحيد</h3>
-                        <p>تحمل الاستراتيجية كاملة في رأسك كصخرة سيزيف—تصعد بها الجبل كل يوم من جديد. لا أحد يستطيع مساعدتك لأن لا أحد يرى ما تراه. <strong>والإرهاق يستنزفك.</strong></p>
-                    </div>
+                    <p class="proof-context">شركة استهلاكية تدخل السوق السعودي، بنينا نموذج الأعمال والتسعير والخطة التشغيلية فأصبح المشروع جاهزاً للاستثمار.</p>
                 </div>
-
-                <div class="trap-card">
-                    <div class="trap-image">
-                        <img src="images/trap-consultant.jpg" alt="فخ المستشارين - أطر عمل مهملة تجمع الغبار">
+                <div class="proof-card reveal-on-scroll">
+                    <div class="proof-transformation">
+                        <span class="proof-before">مؤسسة عمرها 12 سنة بلا توثيق</span>
+                        <span class="proof-arrow">&larr;</span>
+                        <span class="proof-after">عرض من 32 شريحة لمجلس الإدارة</span>
                     </div>
-                    <div class="trap-content">
-                        <h3>فخ المستشارين</h3>
-                        <p>دفعت عشرات الآلاف لمستشارين. حصلت على عرض تقديمي أنيق. شعرت بالذكاء لأسبوع. ثم شاهدته يجمع الغبار بينما لم يتغير شيء على أرض الواقع. <strong>مرة أخرى.</strong></p>
-                    </div>
+                    <p class="proof-context">حاضنة مؤسسين، اكتشفنا فيها 7 مصادر إيرادات وبنينا توقعات بـ 4.15 مليون ريال في السنة الأولى.</p>
                 </div>
-
-                <div class="trap-card">
-                    <div class="trap-image">
-                        <img src="images/trap-invisible-architect.jpg" alt="المعماري الخفي - بنية رائعة مخفية في الظلال">
+                <div class="proof-card reveal-on-scroll">
+                    <div class="proof-transformation">
+                        <span class="proof-before">مجموعة عائلية بلا حوكمة</span>
+                        <span class="proof-arrow">&larr;</span>
+                        <span class="proof-after">مسار جاهزية للطرح خلال 24 شهراً</span>
                     </div>
-                    <div class="trap-content">
-                        <h3>المعماري الخفي</h3>
-                        <p>بنيت شيئاً قيّماً. هناك بنية حقيقية وراء ما يبدو فوضى. لكن المستثمرين والشركاء والفريق لا يرونها—<strong>يرون الفوضى فقط.</strong></p>
-                    </div>
+                    <p class="proof-context">تحول شامل عبر خمسة محاور، من هيكلة الحوكمة والنظام القانوني إلى نموذج التشغيل ومسار الطرح.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rage Callout -->
-    <div class="rage-callout">
-        <div class="container">
-            <div class="rage-inner">
-                <p class="rage-quote">"شرحت هذا مئات المرات. لماذا لا يفهم أحد؟ لماذا أحمل هذا العبء وحدي؟"</p>
-                <p class="rage-attribution">— كل مؤسس التقينا به</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Second Rage Callout -->
-    <div class="rage-callout" style="background: linear-gradient(135deg, #1a2a47 0%, #0a1628 100%);">
-        <div class="container">
-            <div class="rage-inner">
-                <p class="rage-quote">"أعرف ما يجب أن يحدث. أعرفه منذ أشهر. لكنه لا يحدث. ولا أفهم السبب."</p>
-                <p class="rage-attribution">— اللحظة التي تسبق الوضوح</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Framework Section -->
-    <section class="section section--ivory" id="framework">
+    <!-- ============================================
+         SECTION 2: حدّد. صمّم. انطلق. - KSG
+         ============================================ -->
+    <section class="ksg-section" id="framework">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow">المنهج</span>
                 <h2>كل مشروع يمر بـ<em>ثلاث مراحل</em></h2>
-                <p class="text-lead">ويتعثر بطرق متوقعة. السؤال: أين أنت الآن؟</p>
+                <p class="text-lead">ويتعثر بطرق يمكن تشخيصها، والسؤال هو أين أنت الآن.</p>
             </div>
 
-            <!-- Visual Phases with Images -->
-            <div class="phases-visual">
-                <div class="phase-visual-card">
-                    <div class="phase-visual-image">
-                        <img src="images/phase-know.jpg" alt="حدّد: اكتشف هويتك - التأمل واكتشاف الذات">
+            <div class="ksg-grid">
+                <div class="ksg-item ksg-item--know reveal-on-scroll">
+                    <div class="ksg-img-wrap">
+                        <img src="../en/images/phase-know.jpg" alt="حدّد: الوعي الاستراتيجي" class="ksg-img">
                     </div>
-                    <h4>1. حدّد: اكتشف هويتك</h4>
-                    <p>وضوح الرؤية. محاذاة الهوية. العمود الفقري الاستراتيجي. الأساس الذي يُبنى عليه كل شيء.</p>
+                    <h3 class="ksg-phase">حدّد</h3>
+                    <p class="ksg-wall-text">صِغ رؤيتك واستراتيجيتك بوضوح يمكّن أي شخص في مؤسستك من فهمها وتكرارها دون أن تكون في الغرفة.</p>
                 </div>
-
-                <div class="phase-visual-card">
-                    <div class="phase-visual-image">
-                        <img src="images/phase-show.jpg" alt="صمّم: ابنِ بنيتك - أيدٍ تصنع البنية الاستراتيجية">
+                <div class="ksg-item ksg-item--show reveal-on-scroll">
+                    <div class="ksg-img-wrap">
+                        <img src="../en/images/phase-show.jpg" alt="صمّم: اجعل الاستراتيجية مرئية" class="ksg-img">
                     </div>
-                    <h4>2. صمّم: ابنِ بنيتك</h4>
-                    <p>نموذج الأعمال. نموذج التشغيل. النموذج المالي. نموذج الفريق. البنية التي تجعل الاستراتيجية مرئية.</p>
+                    <h3 class="ksg-phase">صمّم</h3>
+                    <p class="ksg-wall-text">وثّق استراتيجيتك في أربعة نماذج يستطيع فريقك ومستثمروك ومجلس إدارتك رؤيتها ومتابعتها والبناء عليها.</p>
                 </div>
-
-                <div class="phase-visual-card">
-                    <div class="phase-visual-image">
-                        <img src="images/phase-grow.jpg" alt="انطلق: وسّع أثرك - نمو يظهر ويتوسع">
+                <div class="ksg-item ksg-item--grow reveal-on-scroll">
+                    <div class="ksg-img-wrap">
+                        <img src="../en/images/phase-grow.jpg" alt="انطلق: وسّع بأنظمة" class="ksg-img">
                     </div>
-                    <h4>3. انطلق: وسّع أثرك</h4>
-                    <p>التنفيذ في السوق. اكتساب العملاء. بناء الفريق. جذب المستثمرين. الانطلاق للعالم.</p>
+                    <h3 class="ksg-phase">انطلق</h3>
+                    <p class="ksg-wall-text">وسّع بأنظمة تعمل دونك، من اكتساب العملاء وبناء الفريق إلى جذب المستثمرين والانطلاق في السوق.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Mirrors Section -->
-    <section class="section" id="mirrors">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">المرايا الأربع</span>
-                <h2>أربعة نماذج تجعل <em>استراتيجيتك مرئية</em></h2>
-            </div>
-
-            <div class="grid grid-4" style="gap: 1.25rem;">
-                <div class="mirror-card">
-                    <div class="mirror-image">
-                        <img src="images/mirror-business-model.jpg" alt="نموذج الأعمال - عناصر متفرقة تصبح بنية موحدة">
-                    </div>
-                    <div class="mirror-content">
-                        <h3>نموذج الأعمال</h3>
-                        <p>عرض القيمة. التسعير. التموضع السوقي. كيف تخلق القيمة وتجنيها.</p>
-                    </div>
-                </div>
-
-                <div class="mirror-card">
-                    <div class="mirror-image">
-                        <img src="images/mirror-operating-model.jpg" alt="نموذج التشغيل - تروس مكسورة تصبح نظام متشابك">
-                    </div>
-                    <div class="mirror-content">
-                        <h3>نموذج التشغيل</h3>
-                        <p>العمليات. الهيكل التنظيمي. المبادرات. خارطة الطريق. كيف تعمل المؤسسة فعلياً.</p>
-                    </div>
-                </div>
-
-                <div class="mirror-card">
-                    <div class="mirror-image">
-                        <img src="images/mirror-financial-model.jpg" alt="النموذج المالي - تدفق فوضوي يصبح حلزون منظم">
-                    </div>
-                    <div class="mirror-content">
-                        <h3>النموذج المالي</h3>
-                        <p>التوقعات. اقتصاديات الوحدة. التدفق النقدي. الأرقام التي تكشف الحقيقة.</p>
-                    </div>
-                </div>
-
-                <div class="mirror-card">
-                    <div class="mirror-image">
-                        <img src="images/mirror-people-model.jpg" alt="نموذج الفريق - نقاط متفرقة تصبح شبكة مترابطة">
-                    </div>
-                    <div class="mirror-content">
-                        <h3>نموذج الفريق</h3>
-                        <p>الأدوار. المسؤوليات. خطة التوظيف. الثقافة. من يفعل ماذا وكيف ينمو الفريق.</p>
-                    </div>
-                </div>
+            <div class="ksg-cta reveal-on-scroll">
+                <p>التشخيص يحدد بالضبط أين أنت في هذا المسار وما الخطوة التالية.</p>
+                <a href="strategic-diagnosis.html" class="btn btn-primary">ابدأ بالتشخيص · $97 <i data-lucide="arrow-left"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- What You Walk Away With Section -->
+    <!-- ============================================
+         SECTION 4: أربعة نماذج
+         ============================================ -->
     <section class="section section-dark" id="deliverables">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow section-eyebrow--light">ما ستحصل عليه</span>
-                <h2 style="color: var(--cream);">ليست نصائح. <em style="color: var(--gold);">نظام متكامل.</em></h2>
-                <p class="text-lead" style="color: rgba(250, 248, 245, 0.85);">كل مشاركة تُنتج ثلاثة أنواع من القيمة: مخرجات ملموسة، قدرات جديدة، وتحوّل دائم.</p>
+                <span class="section-eyebrow section-eyebrow--light">ما ستخرج به</span>
+                <h2 style="color: var(--cream);">أربعة نماذج <em>تجعل استراتيجيتك مرئية</em></h2>
             </div>
 
-            <div class="deliverables-grid">
-
-                <!-- Layer 1: The Artifact -->
-                <div class="deliverable-card">
-                    <div class="deliverable-header">
-                        <h3>المخرج</h3>
-                    </div>
-                    <p class="deliverable-subtitle">ما يمكنك حمله</p>
-
-                    <p class="deliverable-main">
-                        <strong>مرآة أعمالك الكاملة</strong>: أربعة نماذج موثقة جاهزة للمشاركة مع المستثمرين ومجلس الإدارة والفريق—دون ساعة شرح إضافية.
-                    </p>
-                    <ul class="deliverable-list">
-                        <li>
-                            <i data-lucide="check"></i>
-                            فجواتك محددة ومُقيَّمة. لا مزيد من التخمين.
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            كل عملية موثقة بمالك واضح. لا مزيد من "ظننت أنك تتولى هذا."
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            نموذج مالي يجيب على "ماذا لو؟"—ثلاثة سيناريوهات، حقيقة واحدة.
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            خارطة طريق 90 يوماً: ما سيحدث يوم الأحد، لا "يوماً ما".
-                        </li>
+            <div class="four-systems">
+                <div class="system-item reveal-on-scroll">
+                    <h4 class="system-name">نموذج الأعمال</h4>
+                    <ul class="system-bullets">
+                        <li>من تخدم ولماذا يختارونك</li>
+                        <li>عرض القيمة والتسعير والتموضع</li>
+                        <li>كيف تخلق القيمة وتجنيها</li>
                     </ul>
                 </div>
-
-                <!-- Layer 2: The Capability -->
-                <div class="deliverable-card">
-                    <div class="deliverable-header">
-                        <h3>القدرة</h3>
-                    </div>
-                    <p class="deliverable-subtitle">ما تستطيع فعله الآن</p>
-
-                    <p class="deliverable-main">
-                        <strong>اعرض استراتيجيتك دون تحضير</strong>: بلغتك أنت، لأي شخص يحتاج أن يفهم.
-                    </p>
-                    <ul class="deliverable-list">
-                        <li>
-                            <i data-lucide="check"></i>
-                            اشرح منطقك للمستثمر—بلا عرض تقديمي، بلا تحضير.
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            أدمج الموظفين الجدد في أيام، لا أشهر.
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            اتخذ قرارات بالإشارة للنموذج، لا بالجدال في حلقات مفرغة.
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            فوّض بثقة—دون أن يعود العمل ناقصاً.
-                        </li>
+                <div class="system-item reveal-on-scroll">
+                    <h4 class="system-name">نموذج التشغيل</h4>
+                    <ul class="system-bullets">
+                        <li>كل عملية موثقة ومُسندة لمالك</li>
+                        <li>خارطة طريق 90 يوماً بتواريخ واضحة</li>
+                        <li>حوكمة تعمل دون أن تكون في الغرفة</li>
                     </ul>
                 </div>
-
-                <!-- Layer 3: The Shift -->
-                <div class="deliverable-card">
-                    <div class="deliverable-header">
-                        <h3>التحول</h3>
-                    </div>
-                    <p class="deliverable-subtitle">ما يتغير للأبد</p>
-
-                    <p class="deliverable-main">
-                        <strong>فريقك يتوقف عن السؤال "ما الاستراتيجية؟"</strong>—لأنهم يرونها. وأنت أيضاً.
-                    </p>
-                    <ul class="deliverable-list">
-                        <li>
-                            <i data-lucide="check"></i>
-                            من حمل العبء وحدك ← إلى فريق يفهم ويشارك
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            من تكرار نفسك ← إلى الإشارة للمرآة
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            من "يبدو فوضى" ← إلى "الآن فهمت"
-                        </li>
-                        <li>
-                            <i data-lucide="check"></i>
-                            من عنق الزجاجة ← إلى التدفق السلس
-                        </li>
+                <div class="system-item reveal-on-scroll">
+                    <h4 class="system-name">نموذج الفريق</h4>
+                    <ul class="system-bullets">
+                        <li>من يفعل ماذا وكيف يُحاسب</li>
+                        <li>هيكل تنظيمي يعكس الواقع لا الطموح</li>
+                        <li>خطة توظيف وتصميم الفريق</li>
+                    </ul>
+                </div>
+                <div class="system-item reveal-on-scroll">
+                    <h4 class="system-name">النموذج المالي</h4>
+                    <ul class="system-bullets">
+                        <li>ثلاثة سيناريوهات واقعية</li>
+                        <li>التدفق النقدي واقتصاديات الوحدة</li>
+                        <li>بناء محلل مالي معتمد CFA</li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Bottom Bridge Statement -->
-            <p class="bridge-statement">
-                هذا ليس عرضاً تقديمياً يجمع الغبار. إنه <strong>نظام حي</strong>—مبني مما في رأسك، مُهيكل ليراه الآخرون أخيراً.
-            </p>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials">
+    <!-- ============================================
+         SECTION 5: TESTIMONIALS - Arrow navigation
+         ============================================ -->
+    <section class="section reviews-section" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">ماذا يقول عملاؤنا</span>
-                <h2>لا تأخذ كلامنا. <em>اسمع كلامهم.</em></h2>
+                <span class="section-eyebrow">ماذا يقول المؤسسون</span>
+                <h2>لا تأخذ كلامنا، <em>اسمع كلامهم</em></h2>
             </div>
+        </div>
 
-            <div class="grid grid-2" style="gap: 2rem; max-width: 1000px; margin: 0 auto;">
-                <!-- Testimonial 1: Haifa -->
-                <div style="background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--cream); font-weight: 600; font-size: 1.25rem;">ه</div>
+        <div class="reviews-track-wrapper">
+            <div class="reviews-track" id="reviews-track">
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"العمل مع Strategy2Action أحدث نقلة نوعية حقيقية في مشروعنا، <strong>نجحوا في تحويل المفهوم إلى مشروع استثماري متكامل ومحوكم وجاهز للسوق.</strong>"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">ه</div>
                         <div>
-                            <strong style="display: block; color: var(--navy);">هيفاء</strong>
-                            <span style="font-size: 0.875rem; color: var(--steel);">شريك اجتماعي، معهد منهج للفنون للتدريب العالي</span>
+                            <strong class="review-name">هيفاء</strong>
+                            <span class="review-role">شريك اجتماعي، معهد منهج للفنون</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin: 0;">
-                        "العمل مع Strategy2Action أحدث <strong>نقلة نوعية حقيقية</strong> في مشروعنا. نجحوا في تحويل المفهوم إلى مشروع استثماري متكامل ومحوكم وجاهز للسوق. تميّز نهجهم بالدقة في التحليل الاستراتيجي والتقني والمالي. كما لعبوا دوراً محورياً في <strong>تمكيننا من دخول مفاوضات واثقة مع الجهات الحكومية</strong>. شريك استراتيجي موثوق، نوصي به بثقة تامة."
-                    </p>
                 </div>
 
-                <!-- Testimonial 2: Abdulmajeed -->
-                <div style="background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--cream); font-weight: 600; font-size: 1.25rem;">ع</div>
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"لعبوا دوراً محورياً في <strong>تأسيس أعمالنا بنجاح في السوق السعودي</strong>، توجيه عملي مبني على البيانات <strong>ساعدنا في تجنب أخطاء مكلفة</strong> وسرّع عملية التأسيس."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">م</div>
                         <div>
-                            <strong style="display: block; color: var(--navy);">عبدالمجيد</strong>
-                            <span style="font-size: 0.875rem; color: var(--steel);">محامي ومؤسس أعمال، السعودية</span>
+                            <strong class="review-name">محمد</strong>
+                            <span class="review-role">مؤسس مشارك، Squeezy</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin: 0;">
-                        "كتب الله لي فرصة التعرف على الأستاذ أكرم القدسي. من الاجتماع الأول أظهر <strong>تمكّناً استثنائياً</strong> في هذا المجال. بدلاً من أن تبقى فكرة نريد تحقيقها، تحولت بفضل الله إلى طموح نعمل على تحقيقه بأفضل طريقة. <strong>فاق التوقعات.</strong> أرى في مشروعكم عملة نادرة ومشروعاً رائداً في هذا المجال."
-                    </p>
                 </div>
 
-                <!-- Testimonial 3: Mohammed -->
-                <div style="background: var(--cream); border: 1px solid var(--sand); border-radius: 16px; padding: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--cream); font-weight: 600; font-size: 1.25rem;">م</div>
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"من الاجتماع الأول أظهر تمكّناً استثنائياً، <strong>تحولت الفكرة من مجرد طموح إلى مشروع نعمل على تحقيقه بأفضل طريقة.</strong> فاق التوقعات."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">ع</div>
                         <div>
-                            <strong style="display: block; color: var(--navy);">محمد</strong>
-                            <span style="font-size: 0.875rem; color: var(--steel);">مؤسس مشارك، Squeezy</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.9375rem; color: var(--steel); line-height: 1.7; margin: 0;">
-                        "لعب Strategy2Action دوراً محورياً في <strong>تأسيس أعمالنا بنجاح في السوق السعودي</strong>. من استراتيجية دخول السوق إلى التأسيس والتموضع، كان توجيههم عملياً ومبنياً على البيانات ومتوافقاً مع أنظمة المملكة. <strong>ساعدونا في تجنب أخطاء مكلفة</strong>، وسرّعوا عملية التأسيس، ومنحونا وضوحاً حول التوسع المستدام."
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Featured Quotes Row -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 3rem auto 0;">
-                <!-- Baaghil Quote -->
-                <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
-                    <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "إذا أردت العمل مع أكرم، افهم ما أنت مُقبل عليه. لا يقبل الأمور على ظاهرها. سيتعمق، يسأل أسئلة غير مريحة، ويستمر في البحث حتى يفهم الصورة الكاملة. لكن إذا مررت بهذه الرحلة، ستخرج بوضوح وصلابة وقرارات يمكنك الدفاع عنها."
-                    </p>
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 600;">ب</div>
-                        <div style="text-align: right;">
-                            <strong style="color: var(--cream); display: block;">سعيد باعقيل</strong>
-                            <span style="font-size: 0.875rem; color: rgba(250, 248, 245, 0.7);">مؤسس، Baaghil Global Brand Advisory</span>
+                            <strong class="review-name">عبدالمجيد</strong>
+                            <span class="review-role">محامي ومؤسس أعمال، السعودية</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Alesayi Quote -->
-                <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
-                    <p style="font-size: 1.125rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "أكرم يجلب البنية للتعقيد. قدرته على تبديد الغموض وتقديم وضوح قابل للتنفيذ—نادرة. شريك استراتيجي حقيقي."
-                    </p>
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 600;">أ</div>
-                        <div style="text-align: right;">
-                            <strong style="color: var(--cream); display: block;">محمد الحاج</strong>
-                            <span style="font-size: 0.875rem; color: rgba(250, 248, 245, 0.7);">الرئيس التنفيذي، مجموعة العيسائي</span>
+                <div class="review-card review-card--dark">
+                    <div class="review-stars" style="color: var(--gold);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text" style="color: var(--cream);">"لا يقبل الأمور على ظاهرها، يتعمق ويسأل أسئلة غير مريحة ويستمر في البحث حتى يفهم الصورة الكاملة. لكن إذا مررت بهذه الرحلة ستخرج بـ<strong style="color: var(--gold);">وضوح وصلابة وقرارات يمكنك الدفاع عنها.</strong>"</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: var(--gold); color: var(--navy);">ب</div>
+                        <div>
+                            <strong class="review-name" style="color: var(--cream);">سعيد باعقيل</strong>
+                            <span class="review-role" style="color: rgba(250,248,245,0.6);">Baaghil Global Brand Advisory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card review-card--dark">
+                    <div class="review-stars" style="color: var(--gold);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text" style="color: var(--cream);">"أكرم يجلب البنية للتعقيد، قدرته على تبديد الغموض وتقديم <strong style="color: var(--gold);">وضوح قابل للتنفيذ نادرة.</strong> شريك استراتيجي حقيقي."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background: var(--gold); color: var(--navy);">أ</div>
+                        <div>
+                            <strong class="review-name" style="color: var(--cream);">محمد الحاج</strong>
+                            <span class="review-role" style="color: rgba(250,248,245,0.6);">الرئيس التنفيذي، مجموعة العيسائي</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Arrow navigation -->
+        <div class="reviews-nav">
+            <button id="review-prev" aria-label="السابق">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button id="review-next" aria-label="التالي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+        </div>
     </section>
 
-    <!-- Programs Section -->
+    <!-- ============================================
+         SECTION 6: كيف تبدأ - Start Grid
+         ============================================ -->
     <section class="section section--ivory" id="programs">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">اختر مسارك</span>
-                <h2>من التشخيص إلى <em>التنفيذ</em></h2>
-                <p class="text-lead">ابدأ من حيث أنت. ابنِ ما تحتاج. كل خطوة تكشف المزيد من استراتيجيتك.</p>
+                <span class="section-eyebrow">كيف تبدأ</span>
+                <h2>ابدأ من حيث أنت، <em>والتشخيص يكشف الطريق</em></h2>
+                <p class="text-lead">كل رحلة تبدأ بمحادثة مدتها 90 دقيقة، لأنك لا تستطيع إصلاح ما لا تراه.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; align-items: stretch;">
-                <div class="pricing-card" style="display: flex; flex-direction: column; min-height: 420px;">
-                    <div class="pricing-tier">نقطة البداية</div>
-                    <h3 class="pricing-name">التشخيص الاستراتيجي</h3>
-                    <div class="pricing-price">$97</div>
-                    <p class="pricing-description" style="flex: 1;">اكتشف أخيراً لماذا أنت عالق. واحصل على خطة التدخل المناسبة.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> جلسة تشخيص ذكية 90 دقيقة <span style="color: var(--gold-dark); font-size: 0.75rem;">($297 قيمة)</span></li>
-                        <li><i data-lucide="check"></i> تحليل 8 محاور استراتيجية <span style="color: var(--gold-dark); font-size: 0.75rem;">($149 قيمة)</span></li>
-                        <li><i data-lucide="check"></i> مسار تدخل مخصص <span style="color: var(--gold-dark); font-size: 0.75rem;">($97 قيمة)</span></li>
-                        <li><i data-lucide="check"></i> تقرير الجاهزية 13 صفحة <span style="color: var(--gold-dark); font-size: 0.75rem;">($197 قيمة)</span></li>
+            <div class="start-grid">
+                <div class="start-card start-card--primary">
+                    <span class="start-label">ابدأ من هنا</span>
+                    <h3>التشخيص الاستراتيجي</h3>
+                    <div class="start-price">$97</div>
+                    <p class="start-description">محادثة ذكية تحدد بالضبط أين تتعثر استراتيجيتك وتكشف الطريق الأنسب للمضي قدماً. ستخرج بتقرير الجاهزية الاستراتيجية من 13 صفحة ونتائج حدّد-صمّم-انطلق ووصفة تدخل مخصصة لوضعك.</p>
+                    <ul class="start-features">
+                        <li><i data-lucide="check"></i> جلسة تشخيص ذكية 90 دقيقة</li>
+                        <li><i data-lucide="check"></i> تحليل شامل عبر 8 محاور استراتيجية</li>
+                        <li><i data-lucide="check"></i> نتائج حدّد-صمّم-انطلق تحدد أين أنت عالق</li>
+                        <li><i data-lucide="check"></i> تقرير الجاهزية الاستراتيجية من 13 صفحة</li>
+                        <li><i data-lucide="check"></i> مسار تدخل مخصص يناسب وضعك</li>
                     </ul>
-                    <p style="font-size: 0.75rem; color: var(--steel); text-align: center; margin-bottom: 0.75rem;"><strong>القيمة الإجمالية: +$740</strong>—لك فقط بـ $97</p>
-                    <a href="strategic-diagnosis.html" class="btn btn-primary btn-block" style="margin-top: auto;">ابدأ التشخيص</a>
+                    <a href="strategic-diagnosis.html" class="btn btn-primary btn-block">ابدأ التشخيص <i data-lucide="arrow-left"></i></a>
+                    <p class="start-guarantee"><strong>ضمان الوضوح:</strong> رؤية جديدة أو أموالك كاملة، بلا أسئلة.</p>
                 </div>
 
-                <div class="pricing-card pricing-card--featured" style="display: flex; flex-direction: column; min-height: 420px;">
-                    <div class="pricing-tier">المستوى الثاني: البناء الذاتي</div>
-                    <h3 class="pricing-name">البناء الذاتي</h3>
-                    <div class="pricing-price">$399–$499<span style="font-size: 0.75rem; font-weight: 400;">/نموذج</span></div>
-                    <p class="pricing-description" style="flex: 1;">ابنِ مرآة يستطيع فريقك رؤيتها. توقف عن كونك عنق الزجاجة.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> وكلاء Strategy360 AI (24/7)</li>
-                        <li><i data-lucide="check"></i> جلسات أسئلة أسبوعية</li>
-                        <li><i data-lucide="check"></i> لوحة متابعة التقدم</li>
-                        <li><i data-lucide="check"></i> الحزمة الكاملة: $999</li>
-                    </ul>
-                    <a href="builder-bundle.html" class="btn btn-primary btn-block" style="margin-top: auto;">اعرض خيارات البناء الذاتي</a>
-                </div>
-
-                <div class="pricing-card" style="display: flex; flex-direction: column; min-height: 420px;">
-                    <div class="pricing-tier">المستوى الثالث: مع خبير</div>
-                    <h3 class="pricing-name">مسار الخبير</h3>
-                    <div class="pricing-price">$1,299–$1,999<span style="font-size: 0.75rem; font-weight: 400;">/نموذج</span></div>
-                    <p class="pricing-description" style="flex: 1;">احصل على نظرة أكرم المباشرة. نماذج تصمد أمام تدقيق المستثمرين.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> جلسة حية 90 دقيقة/وحدة</li>
-                        <li><i data-lucide="check"></i> مصادقة الخبير</li>
-                        <li><i data-lucide="check"></i> نموذج مالي بناء CFA</li>
-                        <li><i data-lucide="check"></i> الحزمة الكاملة: $3,999–$4,999</li>
-                    </ul>
-                    <a href="expert-led-bundle.html" class="btn btn-secondary btn-block" style="margin-top: auto;">اعرض خيارات الخبير</a>
-                </div>
-
-                <div class="pricing-card" style="display: flex; flex-direction: column; min-height: 420px;">
-                    <div class="pricing-tier">المستوى الرابع: الشراكة</div>
-                    <h3 class="pricing-name">الشراكة التنفيذية</h3>
-                    <div class="pricing-price">$25K–$50K+</div>
-                    <p class="pricing-description" style="flex: 1;">حين تكون الرهانات أكبر من أن تواجهها وحدك. شراكة مباشرة 1:1 مع أكرم.</p>
-                    <ul class="pricing-features">
-                        <li><i data-lucide="check"></i> 8-15+ جلسة خاصة</li>
-                        <li><i data-lucide="check"></i> وصول مباشر واتساب/إيميل</li>
-                        <li><i data-lucide="check"></i> وثيقة استراتيجية جاهزة لمجلس الإدارة</li>
-                        <li><i data-lucide="check"></i> CFA + قانوني مشمول</li>
-                    </ul>
-                    <a href="executive-partnership.html" class="btn btn-secondary btn-block" style="margin-top: auto;">قدّم الآن</a>
+                <div class="start-card start-card--secondary">
+                    <span class="start-label">بعد التشخيص</span>
+                    <h3>ابنِ نماذجك</h3>
+                    <p class="start-description">حين يتضح أين أنت عالق اختر مدى العمق الذي تحتاجه، من البناء الذاتي بالذكاء الاصطناعي إلى الشراكة المباشرة مع أكرم.</p>
+                    <div class="go-deeper-options">
+                        <div class="go-deeper-item">
+                            <h4>البناء الذاتي</h4>
+                            <p>بالذكاء الاصطناعي وبإيقاعك، مع جلسات أسبوعية لتوجيهك.</p>
+                            <span class="go-deeper-price">من $399/نموذج</span>
+                        </div>
+                        <div class="go-deeper-item">
+                            <h4>مسار الخبير</h4>
+                            <p>جلسات حية مع أكرم ونموذج مالي بناء محلل معتمد CFA.</p>
+                            <span class="go-deeper-price">من $1,299/نموذج</span>
+                        </div>
+                        <div class="go-deeper-item">
+                            <h4>الشراكة التنفيذية</h4>
+                            <p>شراكة استراتيجية مستمرة بمخرجات جاهزة لمجلس الإدارة.</p>
+                            <span class="go-deeper-price">$25K+/ربع سنوي</span>
+                        </div>
+                    </div>
+                    <a href="strategic-diagnosis.html" class="btn btn-secondary btn-block">ابدأ بالتشخيص أولاً <i data-lucide="arrow-left"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="section section-gradient" style="padding: var(--section-padding) 0;">
+    <!-- ============================================
+         SECTION 7: FINAL CTA
+         ============================================ -->
+    <section class="section section-gradient">
         <div class="container">
-            <div style="max-width: 750px; margin: 0 auto; text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
                 <span class="section-eyebrow" style="color: var(--gold);">الاختيار لك</span>
-                <h2 style="color: var(--cream); margin-bottom: 1rem;">طريقان. <em>قرار واحد.</em></h2>
+                <h2 style="color: var(--cream); margin-bottom: 1.5rem;">استراتيجيتك موجودة، <em>اجعلها مرئية</em></h2>
 
-                <!-- Crossroads Close -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; text-align: right;">
-                    <div style="background: rgba(201, 107, 107, 0.15); border: 1px solid rgba(201, 107, 107, 0.3); border-radius: 12px; padding: 1.5rem;">
-                        <h4 style="color: #e4a8a8; margin-bottom: 0.75rem; font-size: 1rem;">الطريق أ: أغلق هذه الصفحة</h4>
-                        <ul style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; line-height: 1.7; padding-right: 1.25rem; margin: 0;">
-                            <li>استمر في الشرح والتكرار. مرة أخرى.</li>
-                            <li>استمر في حمل العبء وحدك.</li>
-                            <li>استمر في مشاهدة المستثمرين يهزون رؤوسهم... ثم يغادرون.</li>
-                            <li>وانتظر أن تتحسن الأمور من تلقاء نفسها.</li>
-                        </ul>
-                    </div>
-                    <div style="background: rgba(45, 138, 110, 0.15); border: 1px solid rgba(45, 138, 110, 0.3); border-radius: 12px; padding: 1.5rem;">
-                        <h4 style="color: #7dd4ae; margin-bottom: 0.75rem; font-size: 1rem;">الطريق ب: ابدأ التشخيص</h4>
-                        <ul style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; line-height: 1.7; padding-right: 1.25rem; margin: 0;">
-                            <li>اكتشف بالضبط أين أنت عالق.</li>
-                            <li>احصل على خطة التدخل المناسبة لوضعك.</li>
-                            <li>أخيراً امتلك شيئاً تُشير إليه.</li>
-                            <li>توقف عن كونك عنق الزجاجة.</li>
-                        </ul>
-                    </div>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; line-height: 1.8; margin-bottom: 2rem;">لست بحاجة لاستراتيجية جديدة ولا لمستشار آخر يعيد صياغة ما تعرفه، تحتاج مرآة تعكس ما في رأسك بصورة يراها من حولك ويتصرفون بناءً عليها أخيراً.</p>
+
+                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">ابدأ التشخيص · $97 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>ضمان الوضوح:</strong> رؤية جديدة أو أموالك كاملة، بلا أسئلة.</p>
+
+                <div class="founder-note">
+                    <p class="founder-note-text">طوال خمسة عشر عاماً وأكثر من أربعمئة مشاركة شهدت النمط ذاته، مؤسسون لامعون يملكون استراتيجية سليمة غير أن أحداً من حولهم لا يراها. كانت الاستراتيجية موجودة دائماً وكل ما احتاجته مرآة.</p>
+                    <span class="founder-note-name">أكرم القدسي</span>
+                    <span class="founder-note-creds">CFA · IE Business School · MIT · INSEAD</span>
                 </div>
 
-                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1rem; margin-bottom: 1.5rem;">لا يوجد خيار ثالث. عدم القرار <em>هو</em> قرار—بالبقاء عالقاً.</p>
-
-                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">اكتشف عائقك الخفي — $97 فقط <i data-lucide="arrow-left"></i></a>
-
-                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>ضمان الوضوح:</strong> رؤية جديدة أو أموالك كاملة—بلا أسئلة، بلا شروط.</p>
-
-                <!-- P.S. What If I'm Right -->
                 <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250, 248, 245, 0.15);">
-                    <p style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; font-style: italic;">
-                        <strong style="color: var(--gold);">ملاحظة:</strong> ماذا لو كان كل ما قلته صحيحاً؟ ماذا لو كانت استراتيجيتك موجودة فعلاً—لكنها غير مرئية؟ ماذا لو غيّرت 90 دقيقة كل شيء؟ إما تحصل على الوضوح... أو تسترد أموالك. المخاطرة الوحيدة هي البقاء عالقاً.
+                    <p style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem;">
+                        <strong style="color: var(--gold);">ملاحظة:</strong> ماذا لو كانت استراتيجيتك موجودة فعلاً، لكنها غير مرئية فحسب؟ ماذا لو غيّرت محادثة واحدة كل شيء؟ إما تحصل على وضوح حقيقي أو تسترد أموالك كاملة، المخاطرة الوحيدة هي أن تبقى حيث أنت.
                     </p>
                 </div>
             </div>
@@ -602,8 +392,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
-                    <p>لا نصنع لك استراتيجية. نساعدك على رؤية ما لا تراه.</p>
+                    <a href="index.html" class="footer-logo"><img src="../en/images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>لا نصنع لك استراتيجية، نجعلها مرئية.</p>
                 </div>
                 <div class="footer-column">
                     <h4>البرامج</h4>
@@ -616,7 +406,6 @@
                     <h4>المصادر</h4>
                     <a href="about.html">من نحن</a>
                     <a href="#">دراسات حالة</a>
-                    <a href="#">المدونة</a>
                 </div>
                 <div class="footer-column">
                     <h4>تواصل</h4>
@@ -625,7 +414,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <span>&copy; 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/strategy2action-inc/" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
@@ -637,6 +426,7 @@
     <script>
         lucide.createIcons();
 
+        // Nav scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.getElementById('nav');
             if (window.scrollY > 50) {
@@ -646,6 +436,7 @@
             }
         });
 
+        // Mobile nav toggle
         function toggleMobileNav() {
             const mobileNav = document.getElementById('mobile-nav');
             const menuIcon = document.getElementById('menu-icon');
@@ -668,13 +459,79 @@
                 if (target) {
                     const navHeight = document.getElementById('nav').offsetHeight;
                     const targetPosition = target.offsetTop - navHeight - 20;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             });
         });
+
+        // Scroll-triggered reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Reviews arrow navigation - RTL aware
+        (function() {
+            const track = document.getElementById('reviews-track');
+            const prevBtn = document.getElementById('review-prev');
+            const nextBtn = document.getElementById('review-next');
+            if (!track || !prevBtn || !nextBtn) return;
+
+            let currentOffset = 0;
+
+            function getCardStep() {
+                const card = track.querySelector('.review-card');
+                if (!card) return 340;
+                const style = getComputedStyle(track);
+                const gap = parseFloat(style.gap) || 20;
+                return card.offsetWidth + gap;
+            }
+
+            function getMaxOffset() {
+                const wrapperWidth = track.parentElement.offsetWidth;
+                const trackWidth = track.scrollWidth;
+                return Math.max(0, trackWidth - wrapperWidth);
+            }
+
+            function updateButtons() {
+                const max = getMaxOffset();
+                prevBtn.disabled = currentOffset <= 0;
+                nextBtn.disabled = currentOffset >= max - 5;
+            }
+
+            function slideTo(offset) {
+                const max = getMaxOffset();
+                currentOffset = Math.max(0, Math.min(offset, max));
+                track.style.transform = 'translateX(' + currentOffset + 'px)';
+                updateButtons();
+            }
+
+            prevBtn.addEventListener('click', function() {
+                slideTo(currentOffset - getCardStep());
+            });
+
+            nextBtn.addEventListener('click', function() {
+                slideTo(currentOffset + getCardStep());
+            });
+
+            setTimeout(updateButtons, 100);
+            window.addEventListener('resize', function() {
+                currentOffset = 0;
+                track.style.transform = 'translateX(0)';
+                updateButtons();
+            });
+        })();
     </script>
 </body>
 </html>

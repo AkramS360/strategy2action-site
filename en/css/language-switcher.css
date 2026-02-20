@@ -78,6 +78,18 @@ html[dir="rtl"] .mobile-nav .lang-toggle {
     color: white;
 }
 
+/* Dark nav variant */
+.nav--dark .lang-toggle {
+    color: rgba(250, 248, 245, 0.85);
+    border-color: rgba(250, 248, 245, 0.25);
+}
+
+.nav--dark .lang-toggle:hover {
+    background: var(--gold, #c9a961);
+    color: white;
+    border-color: var(--gold, #c9a961);
+}
+
 /* Hide desktop lang toggle on mobile, show in mobile nav */
 @media (max-width: 968px) {
     .nav-links .lang-toggle {

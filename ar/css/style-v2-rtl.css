@@ -1,0 +1,475 @@
+/* ============================================
+   ARABIC RTL STYLESHEET — V2 COMPLETE
+   Strategy2Action Arabic Homepage
+   ============================================
+
+   Combines:
+   1. Base RTL overrides (from original style-rtl.css)
+   2. V2 component RTL overrides (proof, reviews, start grid, founder note)
+
+   Typography Stack (Google Fonts CDN):
+   - Display: Cairo (modern geometric Arabic)
+   - Body: Dubai (Dubai Executive Council)
+   - Accent: Amiri (elegant Naskh serif)
+
+   ============================================ */
+
+/* ============================================
+   RTL BASE DIRECTION
+   ============================================ */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ============================================
+   TYPOGRAPHY — ARABIC FONT ASSIGNMENTS
+   ============================================ */
+
+:root {
+    --font-display-ar: 'Cairo', 'Dubai', system-ui, sans-serif;
+    --font-body-ar: 'Dubai', system-ui, sans-serif;
+    --font-accent-ar: 'Amiri', 'Dubai', serif;
+}
+
+/* Body — Dubai */
+html[dir="rtl"] body {
+    font-family: var(--font-body-ar);
+    letter-spacing: 0;
+}
+
+/* Headlines — Cairo */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+    font-family: var(--font-display-ar);
+    letter-spacing: 0;
+}
+
+/* Body Emphasis — Amiri, NO italic */
+html[dir="rtl"] em,
+html[dir="rtl"] .text-accent {
+    font-family: var(--font-accent-ar);
+    font-style: normal;
+}
+
+/* Heading Emphasis — Cairo (same as heading), unified look */
+html[dir="rtl"] h1 em,
+html[dir="rtl"] h2 em,
+html[dir="rtl"] h3 em,
+html[dir="rtl"] .hero h1 em,
+html[dir="rtl"] .section-header h2 em {
+    font-family: var(--font-display-ar);
+    font-style: normal;
+    color: var(--gold);
+}
+
+/* Navigation — Dubai Medium */
+html[dir="rtl"] .nav-links a,
+html[dir="rtl"] .nav-cta-btn {
+    font-family: var(--font-body-ar);
+    font-weight: 500;
+}
+
+/* Buttons — Dubai Bold */
+html[dir="rtl"] .btn {
+    font-family: var(--font-body-ar);
+    font-weight: 600;
+}
+
+/* Eyebrows/Labels */
+html[dir="rtl"] .section-eyebrow,
+html[dir="rtl"] .hero-eyebrow,
+html[dir="rtl"] .pricing-tier,
+html[dir="rtl"] .start-label {
+    font-family: var(--font-body-ar);
+    letter-spacing: 0.05em;
+}
+
+/* Pricing & KSG Phase names */
+html[dir="rtl"] .pricing-name,
+html[dir="rtl"] .pricing-price,
+html[dir="rtl"] .ksg-phase,
+html[dir="rtl"] .system-name,
+html[dir="rtl"] .start-card h3,
+html[dir="rtl"] .start-price {
+    font-family: var(--font-display-ar);
+}
+
+/* Italic overrides — Arabic doesn't use italic */
+html[dir="rtl"] .ksg-cta p,
+html[dir="rtl"] .rage-quote,
+html[dir="rtl"] .testimonial-quote,
+html[dir="rtl"] .founder-note-text {
+    font-style: normal;
+}
+
+/* ============================================
+   LAYOUT FLIPS
+   ============================================ */
+
+html[dir="rtl"] .nav-inner {
+    flex-direction: row-reverse;
+}
+
+/* hero-trust: flex row in RTL already right-to-left */
+
+html[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .section-header {
+    text-align: center;
+}
+
+/* Background gradients flip */
+html[dir="rtl"] .hero::before {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .section-dark::before {
+    left: auto;
+    right: -20%;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-logo {
+    order: 2;
+}
+
+html[dir="rtl"] .nav-cta-btn {
+    order: 0;
+}
+
+html[dir="rtl"] .nav-mobile-toggle {
+    order: 0;
+}
+
+/* ============================================
+   BUTTONS & ICONS
+   ============================================ */
+
+/* Use arrow-left in HTML for RTL, no CSS flip needed for lucide icons */
+html[dir="rtl"] .btn {
+    flex-direction: row-reverse;
+}
+
+/* ============================================
+   PROOF CARDS — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .proof-card {
+    border-left: none;
+    border-right: 3px solid var(--gold);
+    border-radius: 10px 0 0 10px;
+}
+
+/* proof-transformation: flex row in RTL already goes right-to-left.
+   Do NOT add row-reverse — that double-reverses back to LTR. */
+
+html[dir="rtl"] .proof-arrow {
+    /* Arrow already set as ← in HTML for RTL flow */
+}
+
+/* ============================================
+   KSG SECTION — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .ksg-grid {
+    direction: rtl;
+}
+
+/* ============================================
+   FOUR SYSTEMS — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .four-systems {
+    direction: rtl;
+}
+
+html[dir="rtl"] .system-bullets li {
+    padding-left: 0;
+    padding-right: 0.875rem;
+}
+
+html[dir="rtl"] .system-bullets li::before {
+    left: auto;
+    right: 0;
+}
+
+/* ============================================
+   REVIEWS CAROUSEL — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .reviews-track {
+    direction: rtl;
+}
+
+html[dir="rtl"] .review-card {
+    text-align: right;
+}
+
+/* review-author: flex row in RTL already goes right-to-left */
+
+html[dir="rtl"] .review-stars {
+    text-align: right;
+}
+
+/* Flip arrow navigation buttons */
+html[dir="rtl"] .reviews-nav button svg {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   START GRID — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .start-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .start-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .start-label {
+    text-align: right;
+}
+
+/* start-features: flex row in RTL already right-to-left */
+html[dir="rtl"] .start-features li {
+    text-align: right;
+}
+
+html[dir="rtl"] .start-features li svg {
+    margin-left: 0.625rem;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .start-guarantee {
+    text-align: center;
+}
+
+html[dir="rtl"] .go-deeper-item {
+    text-align: right;
+}
+
+/* ============================================
+   FOUNDER NOTE — V2 RTL
+   ============================================ */
+
+html[dir="rtl"] .founder-note {
+    text-align: center;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+html[dir="rtl"] .footer-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .footer-brand,
+html[dir="rtl"] .footer-brand p,
+html[dir="rtl"] .footer-column,
+html[dir="rtl"] .footer-column a {
+    text-align: right;
+}
+
+/* footer-bottom/social: flex row in RTL already right-to-left */
+
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+
+html[dir="rtl"] .mobile-nav,
+html[dir="rtl"] .mobile-nav a {
+    text-align: right;
+}
+
+/* ============================================
+   CARDS & MISC
+   ============================================ */
+
+html[dir="rtl"] .card,
+html[dir="rtl"] .comparison-col {
+    text-align: right;
+}
+
+html[dir="rtl"] .pricing-card {
+    text-align: center;
+}
+
+html[dir="rtl"] .pricing-features {
+    text-align: right;
+}
+
+/* pricing-features: flex row in RTL already right-to-left */
+html[dir="rtl"] .pricing-features li {
+    text-align: right;
+}
+
+html[dir="rtl"] .trust-item {
+    text-align: right;
+}
+
+/* ============================================
+   SPECIAL RTL FIXES
+   ============================================ */
+
+/* Numbers display LTR */
+html[dir="rtl"] .pricing-price,
+html[dir="rtl"] .trust-item strong,
+html[dir="rtl"] .start-price,
+html[dir="rtl"] .go-deeper-price {
+    direction: ltr;
+    display: inline-block;
+}
+
+/* Keep brand name LTR */
+html[dir="rtl"] .nav-logo,
+html[dir="rtl"] .footer-logo {
+    direction: ltr;
+}
+
+/* Centered elements stay centered */
+html[dir="rtl"] .bridge-statement,
+html[dir="rtl"] .section-gradient {
+    text-align: center;
+}
+
+/* ============================================
+   LANGUAGE SWITCHER — NAV INTEGRATION
+   ============================================ */
+
+.language-switcher {
+    display: none !important;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.625rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    color: var(--steel, #4a5568);
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--stone, #d4cfc5);
+    letter-spacing: 0.02em;
+}
+
+.lang-toggle:hover {
+    background: var(--gold, #c9a961);
+    color: white;
+    border-color: var(--gold, #c9a961);
+}
+
+.lang-toggle.lang-en {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.lang-toggle.lang-ar {
+    font-family: 'Dubai', 'Cairo', sans-serif;
+    font-size: 0.875rem;
+    padding: 0.2rem 0.5rem;
+}
+
+/* Dark nav lang toggle */
+.nav--dark .lang-toggle {
+    color: rgba(250, 248, 245, 0.85);
+    border-color: rgba(250, 248, 245, 0.25);
+}
+
+.nav--dark .lang-toggle:hover {
+    background: var(--gold, #c9a961);
+    color: white;
+    border-color: var(--gold, #c9a961);
+}
+
+/* Mobile nav language toggle */
+.mobile-nav .lang-toggle {
+    display: block;
+    margin: 1.5rem 0 0 0;
+    padding: 0.875rem 1.5rem;
+    text-align: center;
+    background: var(--gold, #c9a961);
+    color: var(--midnight, #0a1628);
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+}
+
+.mobile-nav .lang-toggle:hover {
+    background: var(--gold-dark, #9d7f3a);
+    color: white;
+}
+
+@media (max-width: 968px) {
+    .nav-links .lang-toggle {
+        display: none;
+    }
+
+    .mobile-nav .lang-toggle {
+        display: block;
+    }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    html[dir="rtl"] .hero-trust {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    html[dir="rtl"] .nav-inner {
+        flex-direction: row-reverse;
+    }
+
+    html[dir="rtl"] .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    html[dir="rtl"] .proof-transformation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    html[dir="rtl"] .start-grid {
+        grid-template-columns: 1fr;
+    }
+
+    html[dir="rtl"] .four-systems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    html[dir="rtl"] .four-systems {
+        grid-template-columns: 1fr;
+    }
+}
