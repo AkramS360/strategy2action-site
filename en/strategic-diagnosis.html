@@ -4,33 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategic Diagnosis | Strategy2Action</title>
-    <meta name="description" content="In 90 minutes, discover exactly where you're stuck in Know-Show-Grow and get the precise protocol to break through. AI-powered strategic diagnosis for MENA founders.">
+    <meta name="description" content="90 minutes. One AI conversation. You'll know exactly where you're stuck and the precise protocol to break through. $97 strategic diagnosis for founder-led SMEs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-v2.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
     <style>
-        /* Page-specific styles */
-        .diagnosis-hero {
-            padding: 10rem 0 5rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
-            position: relative;
-        }
-
-        .diagnosis-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(ellipse at right top, rgba(201, 169, 97, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
+        /* Diagnosis Hero Grid */
         .diagnosis-hero-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -50,12 +34,13 @@
             z-index: 1;
         }
 
+        /* Price Card */
         .price-card {
             background: white;
             border: 1px solid var(--sand);
             border-radius: 16px;
             padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.15);
             position: relative;
             z-index: 1;
         }
@@ -135,53 +120,6 @@
             font-size: 0.8125rem;
             color: var(--success);
             margin: 0;
-        }
-
-        /* KSG Framework Visual */
-        .ksg-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 2rem 0;
-        }
-
-        .ksg-phase {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .ksg-circle {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 0.05em;
-        }
-
-        .ksg-circle.know { background: #4A90D9; }
-        .ksg-circle.show { background: #50C878; }
-        .ksg-circle.bridge { background: #E8B54A; color: var(--midnight); }
-        .ksg-circle.grow { background: #E85D3B; }
-
-        .ksg-label {
-            font-size: 0.6875rem;
-            color: var(--fog);
-            text-align: center;
-        }
-
-        .ksg-arrow {
-            font-size: 1.25rem;
-            color: var(--sand);
-            margin-bottom: 1.5rem;
         }
 
         /* What You Get Section */
@@ -292,7 +230,7 @@
             display: flex;
             gap: 1rem;
             padding: 1rem 0;
-            border-bottom: 1px solid var(--sand);
+            border-bottom: 1px solid rgba(250, 248, 245, 0.08);
         }
 
         .gap-dimension:last-child {
@@ -303,8 +241,8 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: var(--ivory);
-            color: var(--gold-dark);
+            background: rgba(250, 248, 245, 0.1);
+            color: var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -318,13 +256,13 @@
             font-family: var(--font-display);
             font-size: 0.9375rem;
             font-weight: 600;
-            color: var(--navy);
+            color: var(--cream);
             margin-bottom: 0.25rem;
         }
 
         .gap-content p {
             font-size: 0.8125rem;
-            color: var(--steel);
+            color: rgba(250, 248, 245, 0.7);
             margin-bottom: 0;
         }
 
@@ -337,12 +275,13 @@
             border-radius: 4px;
             margin-left: auto;
             flex-shrink: 0;
+            align-self: flex-start;
         }
 
-        .gap-phase.know { background: rgba(74, 144, 217, 0.15); color: #4A90D9; }
-        .gap-phase.show { background: rgba(80, 200, 120, 0.15); color: #50C878; }
-        .gap-phase.bridge { background: rgba(232, 181, 74, 0.15); color: #b8920a; }
-        .gap-phase.grow { background: rgba(232, 93, 59, 0.15); color: #E85D3B; }
+        .gap-phase.know { background: rgba(74, 144, 217, 0.2); color: #6AABEF; }
+        .gap-phase.show { background: rgba(80, 200, 120, 0.2); color: #6DD89A; }
+        .gap-phase.bridge { background: rgba(232, 181, 74, 0.2); color: #E8B54A; }
+        .gap-phase.grow { background: rgba(232, 93, 59, 0.2); color: #F08060; }
 
         /* Payment Popup Modal */
         .payment-popup-overlay {
@@ -468,7 +407,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <nav class="nav nav--dark" id="nav">
         <div class="container">
             <div class="nav-inner">
                 <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
@@ -480,7 +419,7 @@
                     <a href="about.html">About</a>
                     <a href="../ar/strategic-diagnosis.html" class="lang-toggle lang-ar">ع</a>
                 </div>
-                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">Get Started <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
+                <a href="#" onclick="openPaymentPopup(); return false;" class="nav-cta-btn">Start the Diagnosis <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i></a>
                 <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
             </div>
         </div>
@@ -497,43 +436,21 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="diagnosis-hero">
+    <section class="hero">
         <div class="container">
             <div class="diagnosis-hero-grid">
                 <div class="diagnosis-hero-content">
-                    <span class="section-eyebrow">Tier 1: Strategic Diagnosis</span>
-                    <h1 style="font-size: 2.75rem; line-height: 1.1;"><span style="color: var(--gold-dark);">STRATEGIC BLINDNESS.</span></h1>
-                    <p style="font-size: 1.5rem; color: var(--navy); font-weight: 500; margin: 1rem 0 0.5rem;">You can't fix what you can't see.</p>
-                    <p class="text-lead mb-4">In 90 minutes, our AI-powered diagnosis reveals <em>exactly</em> where you're stuck—and prescribes the precise protocol to break through.</p>
-
-                    <div class="ksg-visual">
-                        <div class="ksg-phase">
-                            <div class="ksg-circle know">KNOW</div>
-                            <div class="ksg-label">Soul</div>
-                        </div>
-                        <span class="ksg-arrow">→</span>
-                        <div class="ksg-phase">
-                            <div class="ksg-circle show">SHOW</div>
-                            <div class="ksg-label">Systems</div>
-                        </div>
-                        <span class="ksg-arrow">→</span>
-                        <div class="ksg-phase">
-                            <div class="ksg-circle bridge">BRIDGE</div>
-                            <div class="ksg-label">Finance</div>
-                        </div>
-                        <span class="ksg-arrow">→</span>
-                        <div class="ksg-phase">
-                            <div class="ksg-circle grow">GROW</div>
-                            <div class="ksg-label">Market</div>
-                        </div>
-                    </div>
+                    <span class="hero-eyebrow">Tier 1: Strategic Diagnosis</span>
+                    <h1 style="font-size: 2.75rem; line-height: 1.1;">Your Strategy Isn't <em>Broken.</em> <span style="color: var(--gold);">It's Invisible.</span></h1>
+                    <p style="font-size: 1.25rem; color: rgba(250, 248, 245, 0.85); margin: 1rem 0 0.5rem; font-weight: 500;">Psychologists call it the Curse of Knowledge. The more you understand, the less you can explain.</p>
+                    <p style="font-size: 1rem; color: rgba(250, 248, 245, 0.65); line-height: 1.7;">In 90 minutes, our AI diagnostic reveals exactly where you're stuck in the Know-Show-Grow cycle, and prescribes the precise protocol to break through.</p>
                 </div>
 
                 <div class="price-card">
                     <span class="price-card-badge">Start Here</span>
                     <div class="price-display">
                         <div class="price-amount">$97 <span>USD</span></div>
-                        <p class="price-description">One-time investment <span style="color: var(--gold-dark);">($740+ value)</span></p>
+                        <p class="price-description">One-time investment <span style="color: var(--gold-dark); font-weight: 600;">($740+ value)</span></p>
                     </div>
 
                     <ul class="price-features">
@@ -544,25 +461,18 @@
                         <li><i data-lucide="check"></i> 8-Dimension Gap Analysis <span style="color: var(--gold-dark); font-size: 0.8rem;">($149 value)</span></li>
                         <li><i data-lucide="check"></i> 13-page Strategic Readiness Report <span style="color: var(--gold-dark); font-size: 0.8rem;">($197 value)</span></li>
                     </ul>
-                    <p style="font-size: 0.8rem; color: var(--steel); text-align: center; margin-bottom: 1rem; font-weight: 600;">Total Value: $740+ — Yours for just $97</p>
-                    <div style="background: rgba(232, 93, 59, 0.1); border: 1px solid rgba(232, 93, 59, 0.3); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; text-align: center;">
-                        <p style="font-size: 0.8rem; color: #E85D3B; margin: 0; font-weight: 600;">
-                            <i data-lucide="clock" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
-                            January Cohort: Only 12 spots left • Price increases Feb 1
-                        </p>
-                    </div>
 
-                    <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large btn-block">Start My Strategic Diagnosis <i data-lucide="arrow-right"></i></a>
+                    <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large btn-block">Start My Diagnosis <i data-lucide="arrow-right"></i></a>
 
                     <div class="guarantee-box">
-                        <p><strong>Insight Guarantee:</strong> If your diagnosis doesn't reveal at least one breakthrough insight, we'll refund every dollar.</p>
+                        <p><strong>Insight Guarantee:</strong> Breakthrough insight or full refund. No questions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emotional Echo Section - FEEL FIRST -->
+    <!-- Emotional Echo Section -->
     <section class="section" style="padding: 4rem 0 2rem; background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);">
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -581,37 +491,37 @@
         </div>
     </section>
 
-    <!-- Problem Section - VISCERAL AGITATION -->
+    <!-- Problem Section -->
     <section class="section section--ivory">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">The Brutal Truth</span>
-                <h2>The Consultants Didn't Fail You. <em>They Never Saw What You Can't.</em></h2>
-                <p class="text-lead">They gave you frameworks. Templates. Best practices. What they didn't give you: <strong>visibility into YOUR blind spot.</strong></p>
+                <span class="section-eyebrow">Where Founders Get Stuck</span>
+                <h2>Three Traps. One Is <em>Holding You Back Right Now.</em></h2>
+                <p class="text-lead">Every founder lands in one of these. The diagnosis finds yours in 90 minutes.</p>
             </div>
 
             <div class="grid grid-3">
                 <div class="card" style="border-left: 3px solid #4A90D9;">
                     <h3 style="color: #4A90D9;">KNOW-Stuck</h3>
-                    <p><strong>The Dreamer's Prison.</strong> Vision decks on version 7. Strategy retreats that feel amazing—then nothing happens. You know exactly what you want. You just can't make it real.</p>
-                    <p style="font-size: 0.875rem; color: var(--fog); margin-top: 0.75rem; font-style: italic;">The frustration of watching your ideas die in your head.</p>
+                    <p><strong>The Architect's Curse.</strong> You see the whole building. Nobody else can. Vision deck on version 7. Strategy retreats that feel great, then nothing happens. You know exactly what you want. You just can't make it real.</p>
+                    <p style="font-size: 0.875rem; color: var(--fog); margin-top: 0.75rem; font-style: italic;">Your ideas die in your head because the strategy is invisible to everyone else.</p>
                 </div>
                 <div class="card" style="border-left: 3px solid #50C878;">
                     <h3 style="color: #50C878;">SHOW-Stuck</h3>
-                    <p><strong>The Founder Trap.</strong> Beautiful org charts. Documented processes. And still—nothing works unless YOU touch it. You've built a business that eats you alive.</p>
+                    <p><strong>The Founder Trap.</strong> Beautiful org chart. Documented processes. And still, nothing works unless YOU touch it. You've built a business that runs on your presence, not your systems.</p>
                     <p style="font-size: 0.875rem; color: var(--fog); margin-top: 0.75rem; font-style: italic;">The exhaustion of being the only one who "gets it."</p>
                 </div>
                 <div class="card" style="border-left: 3px solid #E85D3B;">
                     <h3 style="color: #E85D3B;">GROW-Stuck</h3>
                     <p><strong>The Scaling Nightmare.</strong> Revenue up. Profits down. Team bigger. Quality worse. You're succeeding yourself into a crisis you can see coming but can't stop.</p>
-                    <p style="font-size: 0.875rem; color: var(--fog); margin-top: 0.75rem; font-style: italic;">The terror of the foundation cracking under your feet.</p>
+                    <p style="font-size: 0.875rem; color: var(--fog); margin-top: 0.75rem; font-style: italic;">The foundation is cracking under the weight of your own success.</p>
                 </div>
             </div>
 
-            <!-- Villain Element -->
+            <!-- Mechanism Villain Element -->
             <div style="max-width: 700px; margin: 3rem auto 0; padding: 1.5rem 2rem; background: rgba(10, 22, 40, 0.03); border-radius: 12px; text-align: center;">
                 <p style="font-size: 1rem; color: var(--steel); margin: 0;">
-                    <strong style="color: var(--navy);">Here's what they won't tell you:</strong> Most "strategic advice" is recycled MBA frameworks. Generic. One-size-fits-none. The consultants get paid. You get a binder. And six months later, you're right back where you started—<em>but with less money and more doubt.</em>
+                    <strong style="color: var(--navy);">Why consultants didn't fix it:</strong> They gave you frameworks. Templates. Best practices. But every framework they gave you built dependency on <em>their</em> thinking, not yours. And when they left, the strategy left with them.
                 </p>
             </div>
         </div>
@@ -637,7 +547,7 @@
                 </div>
                 <div class="deliverable-card">
                     <h4>Section 3: Protocol Prescription</h4>
-                    <p>Which of the 6 intervention protocols you need: Protocol A (SHOW Unblocking), B (Founder Decoupling), C (Foundation Emergency), D (Start from Zero), E (GROW Activation), or F (Optimize & Scale).</p>
+                    <p>Which of the 6 intervention protocols you need: SHOW Unblocking, Founder Decoupling, Foundation Emergency, Start from Zero, GROW Activation, or Optimize & Scale.</p>
                 </div>
                 <div class="deliverable-card">
                     <h4>Section 4: 8-Dimension Gap Analysis</h4>
@@ -668,64 +578,64 @@
                 <div class="gap-dimension">
                     <span class="gap-number">1</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Vision Clarity & Purpose</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Can you articulate your Strategic Spine in 2 minutes? Is stated purpose consistent with time/money allocation?</p>
+                        <h5>Vision Clarity & Purpose</h5>
+                        <p>Can you articulate your Strategic Spine in 2 minutes? Is your stated purpose consistent with how you spend time and money?</p>
                     </div>
                     <span class="gap-phase know">KNOW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">2</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Strategic Positioning</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Do you have a true Unique Edge that passes the 5-filter test? Are you the ONLY, BEST, or FIRST at something?</p>
+                        <h5>Strategic Positioning</h5>
+                        <p>Do you have a true Unique Edge that passes the 5-filter test? Are you the ONLY, BEST, or FIRST at something?</p>
                     </div>
                     <span class="gap-phase know">KNOW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">3</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Business Model Strength</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Does business model clearly express purpose? Value proposition, customer segments, revenue streams all aligned?</p>
+                        <h5>Business Model Strength</h5>
+                        <p>Does your business model express your purpose? Value proposition, customer segments, revenue streams aligned?</p>
                     </div>
                     <span class="gap-phase show">SHOW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">4</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Operational Readiness</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Would systems work without founder heroics? Documented processes, clear decision rights, accountability structures?</p>
+                        <h5>Operational Readiness</h5>
+                        <p>Would systems work without founder heroics? Documented processes, clear decision rights, accountability structures?</p>
                     </div>
                     <span class="gap-phase show">SHOW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">5</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Financial Architecture</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Is financial model aligned with purpose? Cash position creating freedom or desperation? Funding sources share your values?</p>
+                        <h5>Financial Architecture</h5>
+                        <p>Is your financial model aligned with purpose? Cash position creating freedom or desperation?</p>
                     </div>
                     <span class="gap-phase bridge">BRIDGE</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">6</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Market Traction</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Attracting ideal clients or just any clients? Growth sustainable or scaling problems? Feedback loops working?</p>
+                        <h5>Market Traction</h5>
+                        <p>Attracting ideal clients or just any clients? Growth sustainable or scaling problems? Feedback loops working?</p>
                     </div>
                     <span class="gap-phase grow">GROW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">7</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Team & Leadership</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Does team embody culture or just fill seats? Right talent in right roles? Leadership alignment with strategic spine?</p>
+                        <h5>Team & Leadership</h5>
+                        <p>Does your team embody your culture or just fill seats? Right talent in right roles? Leadership aligned with strategic spine?</p>
                     </div>
                     <span class="gap-phase grow">GROW</span>
                 </div>
                 <div class="gap-dimension">
                     <span class="gap-number">8</span>
                     <div class="gap-content">
-                        <h5 style="color: var(--cream);">Stakeholder Communication</h5>
-                        <p style="color: rgba(250, 248, 245, 0.7);">Can everyone articulate why you exist? Strategy visible to investors, team, partners? Or trapped in your head?</p>
+                        <h5>Stakeholder Communication</h5>
+                        <p>Can everyone articulate why you exist? Strategy visible to investors, team, partners? Or trapped in your head?</p>
                     </div>
                     <span class="gap-phase grow">GROW</span>
                 </div>
@@ -796,7 +706,7 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h4>Start the Conversation</h4>
-                        <p>After payment, you're connected to our AI diagnostic agent trained on the complete Know-Show-Grow framework. Not a survey—a real conversation.</p>
+                        <p>After payment, you're connected to our AI diagnostic agent trained on the complete Know-Show-Grow framework. Not a survey. A real conversation.</p>
                     </div>
                 </div>
                 <div class="process-step">
@@ -830,7 +740,7 @@
             <div class="section-header">
                 <span class="section-eyebrow">After Your Diagnosis</span>
                 <h2>Your Report Recommends <em>Your Next Module</em></h2>
-                <p class="text-lead">Based on your diagnosis, we recommend starting with the Business Model module—the foundation of your complete Business Mirror.</p>
+                <p class="text-lead">Based on your diagnosis, we recommend starting with the Business Model module, the foundation of your complete Business Mirror.</p>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
@@ -899,7 +809,7 @@
                 <!-- Baaghil Quote -->
                 <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%); border-radius: 16px; padding: 2.5rem; text-align: center;">
                     <p style="font-size: 1.0625rem; color: var(--cream); line-height: 1.8; margin-bottom: 1.25rem; font-style: italic;">
-                        "If you want to work with Akram, understand what you're signing up for. He doesn't accept things at face value. He will go deep, ask uncomfortable questions, and keep pulling threads until he understands the full picture. But if you go through that process, you end up with <strong style="color: var(--gold);">clarity, solidity, and decisions you can actually stand behind.</strong>"
+                        "He doesn't accept things at face value. He will go deep, ask uncomfortable questions, and keep pulling threads until he understands the full picture. You end up with <strong style="color: var(--gold);">clarity, solidity, and decisions you can actually stand behind.</strong>"
                     </p>
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 1.125rem;">B</div>
@@ -930,9 +840,9 @@
     <section class="section section-gradient" style="padding: var(--section-padding) 0;">
         <div class="container">
             <div style="max-width: 750px; margin: 0 auto; text-align: center;">
-                <span class="section-eyebrow" style="color: var(--gold);">Not Deciding IS Deciding</span>
+                <span class="section-eyebrow" style="color: var(--gold);">Every Day You Wait, the Drift Gets Wider</span>
                 <h2 style="color: var(--cream); margin-bottom: 1rem;">Two Paths. <em>One Decision.</em></h2>
-                <p style="color: rgba(250, 248, 245, 0.7); font-size: 1rem; margin-bottom: 2rem;">Every day you wait, the fog gets thicker. The patterns get deeper. The cost of clarity goes up.</p>
+                <p style="color: rgba(250, 248, 245, 0.7); font-size: 1rem; margin-bottom: 2rem;">Research shows companies lose 37% of their strategy's value to invisible drift. The longer you wait, the further off-course you go.</p>
 
                 <!-- Crossroads Close -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; text-align: left;">
@@ -941,7 +851,7 @@
                         <ul style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; line-height: 1.7; padding-left: 1.25rem; margin: 0;">
                             <li>Keep guessing why you're stuck</li>
                             <li>Keep carrying the weight alone</li>
-                            <li>Keep paying consultants who can't see your blind spot</li>
+                            <li>Keep hiring consultants who leave with your strategy</li>
                             <li>Hope things magically change</li>
                         </ul>
                     </div>
@@ -950,29 +860,20 @@
                         <ul style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; line-height: 1.7; padding-left: 1.25rem; margin: 0;">
                             <li>Know EXACTLY where you're stuck</li>
                             <li>Get the precise protocol to break through</li>
-                            <li>Finally point at the problem—and the solution</li>
+                            <li>Finally point at the problem, and the solution</li>
                             <li>Take decisive action with complete clarity</li>
                         </ul>
                     </div>
                 </div>
 
-                <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large">Start My Strategic Diagnosis — $97 <i data-lucide="arrow-right"></i></a>
+                <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large">Start My Strategic Diagnosis · $97 <i data-lucide="arrow-right"></i></a>
 
                 <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>Insight Guarantee:</strong> Breakthrough insight or full refund. No questions asked.</p>
-
-                <!-- Scarcity Reminder -->
-                <p style="color: #E85D3B; font-size: 0.875rem; margin-top: 1rem; font-weight: 500;">
-                    <i data-lucide="alert-triangle" style="width: 14px; height: 14px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
-                    January cohort closes soon. Price increases to $147 on February 1st.
-                </p>
 
                 <!-- P.S. -->
                 <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250, 248, 245, 0.15);">
                     <p style="color: rgba(250, 248, 245, 0.75); font-size: 0.9375rem; font-style: italic;">
                         <strong style="color: var(--gold);">P.S.</strong> What if 90 minutes from now, you could finally name the invisible force that's been holding you back? You'll either get the breakthrough... or your money back. The only real risk is another month of guessing.
-                    </p>
-                    <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.875rem; margin-top: 1rem;">
-                        <strong style="color: var(--gold);">P.P.S.</strong> Still here? That feeling in your gut right now—that's not doubt. That's recognition. Your blind spot is waiting to be seen.
                     </p>
                 </div>
             </div>
@@ -985,20 +886,18 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
-                    <p>We don't give you strategy. We show you yours.</p>
+                    <p>We don't give you strategy. We make yours impossible to ignore.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Programs</h4>
                     <a href="strategic-diagnosis.html">Strategic Diagnosis</a>
                     <a href="builder-bundle.html">Builder Modules</a>
                     <a href="expert-led-bundle.html">Expert-Led Modules</a>
-                    <a href="executive-partnership.html">Executive Partnership</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <a href="about.html">About</a>
                     <a href="#">Case Studies</a>
-                    <a href="#">Blog</a>
                 </div>
                 <div class="footer-column">
                     <h4>Connect</h4>
@@ -1008,7 +907,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2025 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
+                <span>&copy; 2026 Strategy2Action Inc. Delaware, USA. All rights reserved.</span>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
@@ -1057,14 +956,12 @@
             document.body.style.overflow = '';
         }
 
-        // Close popup when clicking overlay (outside the form)
         document.getElementById('paymentPopup').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePaymentPopup();
             }
         });
 
-        // Close popup with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closePaymentPopup();
