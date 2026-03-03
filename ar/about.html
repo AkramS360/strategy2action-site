@@ -1,28 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | Strategy2Action</title>
-    <meta name="description" content="تعرّف على أكرم القدسي ومنهجية حدّد. صمّم. انطلق. أكثر من 15 عاماً من خبرة التحول الاستراتيجي مُقطّرة في منهج عملي يساعدك على رؤية استراتيجيتك.">
+    <meta name="description" content="أكرم القدسي. أكثر من 15 عاماً في بناء الاستراتيجيات وقيادة التحولات. أكثر من 400 مؤسس رافقتهم. استراتيجيتك موجودة، تحتاج فقط أن تصبح مرئية.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700&family=Dubai:wght@300;400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-rtl.css">
-    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="../en/css/style.css">
+    <link rel="stylesheet" href="../en/css/style-v2.css">
+    <link rel="stylesheet" href="css/style-v2-rtl.css">
     <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_1fd3c62edd3244f5861b96af4d3bd4de"></script>
     <style>
-        .about-hero {
-            padding: 10rem 0 5rem;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
-        }
+        /* ============================================
+           ABOUT PAGE — RTL SPECIFIC STYLES
+           ============================================ */
 
         .about-hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
         }
@@ -36,17 +34,17 @@
 
         .founder-image {
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             aspect-ratio: 1;
-            background: var(--navy);
             border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-family: var(--font-display);
-            font-size: 6rem;
-            font-weight: 700;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .credentials-list {
@@ -60,16 +58,42 @@
             display: inline-block;
             font-size: 0.6875rem;
             font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 0.03em;
             padding: 0.5rem 0.875rem;
-            background: var(--ivory);
-            border: 1px solid var(--sand);
+            background: rgba(250, 248, 245, 0.08);
+            border: 1px solid rgba(250, 248, 245, 0.15);
             border-radius: 4px;
-            color: var(--steel);
+            color: rgba(250, 248, 245, 0.7);
+            font-family: 'Montserrat', 'Dubai', sans-serif;
         }
 
-        /* Philosophy Section */
+        .credential-badge--ar {
+            font-family: var(--font-body-ar, 'Dubai', sans-serif);
+            letter-spacing: 0;
+        }
+
+        /* Origin Story */
+        .origin-section {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .origin-section p {
+            font-size: 1.0625rem;
+            color: var(--steel);
+            line-height: 2;
+            margin-bottom: 1.25rem;
+        }
+
+        .origin-section p strong {
+            color: var(--navy);
+        }
+
+        .origin-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Philosophy */
         .philosophy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -107,12 +131,13 @@
 
         .philosophy-card h3 {
             font-size: 1.125rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .philosophy-card p {
             font-size: 0.9375rem;
             color: var(--steel);
+            font-style: normal;
         }
 
         /* Stats */
@@ -135,6 +160,8 @@
             font-weight: 700;
             color: var(--gold);
             line-height: 1;
+            direction: ltr;
+            display: inline-block;
         }
 
         .stat-item .label {
@@ -143,75 +170,167 @@
             margin-top: 0.5rem;
         }
 
-        /* Frameworks */
-        .framework-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+        /* Journey Timeline */
+        .journey-timeline {
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
-            .framework-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .framework-item {
+        .journey-item {
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: var(--cream);
-            border: 1px solid var(--sand);
-            border-radius: 12px;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            position: relative;
         }
 
-        .framework-item .number {
-            width: 28px;
-            height: 28px;
-            background: var(--gold);
+        .journey-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            right: 23px;
+            left: auto;
+            top: 48px;
+            bottom: 0;
+            width: 2px;
+            background: var(--sand);
+        }
+
+        .journey-item:last-child::before {
+            display: none;
+        }
+
+        .journey-year {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: var(--font-display);
-            font-size: 0.8125rem;
+            font-family: 'Montserrat', var(--font-display);
+            font-size: 0.75rem;
             font-weight: 700;
-            color: white;
+            color: var(--gold);
             flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            direction: ltr;
         }
 
-        .framework-item h4 {
-            font-family: var(--font-display);
+        .journey-content h4 {
             font-size: 1rem;
             font-weight: 600;
             color: var(--navy);
             margin-bottom: 0.25rem;
         }
 
-        .framework-item p {
-            font-size: 0.8125rem;
+        .journey-content p {
+            font-size: 0.875rem;
             color: var(--steel);
             margin: 0;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid var(--sand);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: right;
+        }
+
+        .testimonial-card--featured {
+            background: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .testimonial-text {
+            font-size: 0.9375rem;
+            color: var(--steel);
+            line-height: 1.9;
+            margin-bottom: 1.25rem;
+            font-style: normal;
+        }
+
+        .testimonial-card--featured .testimonial-text {
+            color: rgba(250, 248, 245, 0.85);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--navy);
+        }
+
+        .testimonial-card--featured .testimonial-avatar {
+            background: var(--gold);
+            color: white;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--navy);
+        }
+
+        .testimonial-card--featured .testimonial-name {
+            color: var(--cream);
+        }
+
+        .testimonial-role {
+            font-size: 0.75rem;
+            color: var(--fog);
+        }
+
+        .testimonial-card--featured .testimonial-role {
+            color: rgba(250, 248, 245, 0.5);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
+    <!-- Navigation — dark to match hero -->
+    <nav class="nav nav--dark" id="nav">
         <div class="container">
             <div class="nav-inner">
-                <a href="index.html" class="nav-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
+                <a href="index.html" class="nav-logo"><img src="../en/images/logo_s2a.png" alt="Strategy2Action"></a>
                 <div class="nav-links">
-                    <a href="about.html">من نحن</a>
-                    <a href="expert-led-bundle.html">بقيادة الخبراء</a>
-                    <a href="builder-bundle.html">البناء الذاتي</a>
-                    <a href="strategic-diagnosis.html">التشخيص</a>
                     <a href="index.html">الرئيسية</a>
+                    <a href="strategic-diagnosis.html">التشخيص</a>
+                    <a href="index.html#programs">البرامج</a>
+                    <a href="about.html">من نحن</a>
                     <a href="../en/about.html" class="lang-toggle lang-en">EN</a>
                 </div>
-                <a href="https://platform.strategy2action.com/register" class="nav-cta-btn">ابدأ الآن <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <a href="strategic-diagnosis.html" class="nav-cta-btn">ابدأ التشخيص <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
                 <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
             </div>
         </div>
@@ -219,224 +338,268 @@
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav">
-        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
-        <a href="expert-led-bundle.html" onclick="toggleMobileNav()">بقيادة الخبراء</a>
-        <a href="builder-bundle.html" onclick="toggleMobileNav()">البناء الذاتي</a>
-        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
         <a href="index.html" onclick="toggleMobileNav()">الرئيسية</a>
+        <a href="strategic-diagnosis.html" onclick="toggleMobileNav()">التشخيص</a>
+        <a href="index.html#programs" onclick="toggleMobileNav()">البرامج</a>
+        <a href="about.html" onclick="toggleMobileNav()">من نحن</a>
         <a href="../en/about.html" class="lang-toggle lang-en" onclick="toggleMobileNav()">English</a>
     </div>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
+    <!-- ============================================
+         SECTION 1: HERO — Dark, matches home page
+         Uses .hero class from style-v2.css
+         ============================================ -->
+    <section class="hero">
         <div class="container">
             <div class="about-hero-grid">
-                <div class="founder-image" style="background: none; display: block;">
-                    <img src="images/about-pic-akram.png" alt="أكرم القدسي" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
-                </div>
-                <div>
-                    <span class="section-eyebrow">المؤسس</span>
+                <div class="hero-content">
+                    <span class="hero-eyebrow">المؤسس</span>
                     <h1>أكرم <em>القدسي</em></h1>
-                    <p class="text-lead mb-3">+15 عاماً أبني استراتيجيات وأقود تحولات.</p>
+                    <p class="hero-punchline">لا أمنحك استراتيجية. <strong>أكشف عن التي تحملها.</strong></p>
 
                     <div class="credentials-list">
-                        <span class="credential-badge">IE Business School EMBA 2023</span>
-                        <span class="credential-badge">MIT Professional Ed 2024</span>
-                        <span class="credential-badge">INSEAD 2024</span>
-                        <span class="credential-badge">+15 عاماً في الاستراتيجية</span>
+                        <span class="credential-badge">IE Business School EMBA</span>
+                        <span class="credential-badge">MIT Professional Ed</span>
+                        <span class="credential-badge">INSEAD</span>
+                        <span class="credential-badge credential-badge--ar">+15 عاماً في الاستراتيجية</span>
                     </div>
 
-                    <div style="font-size: 0.9375rem; color: var(--steel); line-height: 1.9; margin-bottom: 1.5rem;">
-                        <p style="margin-bottom: 0.75rem;">قدت الاستراتيجية في مجموعة المطلق، BIHG، والبنك العربي الوطني.</p>
-                        <p style="margin-bottom: 0.75rem;">أدرت مشاريع شراكة بين القطاعين بقيمة +$500 مليون.</p>
-                        <p style="margin-bottom: 0.75rem;">نفّذت +8 تحولات مؤسسية كبرى عبر قطاعات متعددة.</p>
+                    <div class="hero-trust" style="margin-top: 1rem;">
+                        <div class="trust-item">
+                            <strong>+400</strong>
+                            مؤسس رافقتهم
+                        </div>
+                        <div class="trust-item">
+                            <strong>+12</strong>
+                            قطاعاً مختلفاً
+                        </div>
+                        <div class="trust-item">
+                            <strong>+$500M</strong>
+                            في مشاريع أُديرت
+                        </div>
                     </div>
-
-                    <p style="font-size: 1rem; color: var(--navy); font-weight: 500; line-height: 1.8;">اليوم، أبني Strategy2Action—لأن كل مؤسس يستحق أن يرى استراتيجيته بوضوح.</p>
+                </div>
+                <div class="founder-image">
+                    <img src="../en/images/about-pic-akram.png" alt="أكرم القدسي">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
+    <!-- ============================================
+         SECTION 2: ORIGIN STORY
+         Arabic accumulative pattern:
+         الاستهلال → العرض → التعمق → الانعطاف → التبلور
+         ============================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">القصة</span>
+                <h2>لماذا <em>وُجدنا</em></h2>
+            </div>
+
+            <div class="origin-section">
+                <p>منذ بداية مسيرتي وأنا أنجذب نحو لحظة التأسيس، حيث لا شيء موجود بعد وكل شيء ممكن.</p>
+
+                <p>ساهمت في إطلاق أرقام، بوابة الأخبار المالية الأولى في العالم العربي. وبنيت وظيفة التخطيط الاستراتيجي من الصفر في مجموعة قابضة تضم أكثر من 400 كيان عبر سبعة قطاعات. وقُدت التحول المؤسسي لمجموعة المطلق فتضاعفت الأرباح التشغيلية ثلاث مرات وتحققت 200% من مؤشرات الأداء.</p>
+
+                <p><strong>غير أن نمطاً واحداً ظل يتكرر.</strong></p>
+
+                <p>لم يكن المؤسسون بلا استراتيجية. كانوا يحملونها في قراراتهم وحدسهم وتفكيرهم في ساعات الليل المتأخرة، لكن أحداً من حولهم لم يكن يراها. لا المجلس ولا المستثمرون ولا الفريق.</p>
+
+                <p>التألق كان محبوساً في رأس شخص واحد. غير مرئي لكل من حوله.</p>
+
+                <p>وُجدت Strategy2Action لحل هذه المعادلة، ليس بمنحك إطاراً من خارجك بل <strong>بجعل استراتيجيتك مرئية</strong> في أربعة نماذج موثقة يستطيع فريقك ومستثمروك ومجلس إدارتك اتباعها.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: PHILOSOPHY — Three Beliefs
+         ============================================ -->
     <section class="section section--ivory">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">فلسفتنا</span>
-                <h2>ما <em>نؤمن به</em></h2>
+                <span class="section-eyebrow">ما نؤمن به</span>
+                <h2>ثلاثة <em>مبادئ</em></h2>
             </div>
 
             <div class="philosophy-grid">
                 <div class="philosophy-card">
                     <div class="philosophy-icon"><i data-lucide="eye"></i></div>
-                    <h3>الاستراتيجية موجودة</h3>
-                    <p>لديك استراتيجية بالفعل. إنها في قراراتك، في حدسك، في أنماطك. نحن لا نمنحك استراتيجية—نحن نجعل استراتيجيتك مرئية.</p>
+                    <h3>استراتيجيتك موجودة</h3>
+                    <p>لا نصنعها لك. نجعلها مرئية.</p>
                 </div>
 
                 <div class="philosophy-card">
-                    <div class="philosophy-icon"><i data-lucide="mirror"></i></div>
-                    <h3>المرآة أفضل من النصيحة</h3>
-                    <p>لسنا استشاريين نخبرك بما تفعل. نحن مرايا نُريك ما تعرفه بالفعل لكن لا تراه بوضوح بعد.</p>
+                    <div class="philosophy-icon"><i data-lucide="scan-eye"></i></div>
+                    <h3>المرايا أقوى من النصائح</h3>
+                    <p>لسنا استشاريين. نحن مرايا.</p>
                 </div>
 
                 <div class="philosophy-card">
                     <div class="philosophy-icon"><i data-lucide="compass"></i></div>
                     <h3>الروح قبل الأنظمة</h3>
-                    <p>الأنظمة بلا روح تفشل. نبدأ بمواءمة الهوية (حدّد) قبل الهيكلة (صمّم) قبل السوق (انطلق).</p>
+                    <p>الهوية أولاً. البنية ثانياً. السوق ثالثاً.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
+    <!-- ============================================
+         SECTION 4: JOURNEY TIMELINE
+         ============================================ -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">الرؤية والرسالة</span>
-                <h2>إلى أين <em>نتجه</em></h2>
+                <span class="section-eyebrow">المسار</span>
+                <h2>15 عاماً من <em>البناء</em></h2>
             </div>
 
-            <div style="max-width: 800px; margin: 0 auto;">
-                <!-- Vision -->
-                <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0.02) 100%); border-radius: 16px; border: 1px solid var(--sand);">
-                    <h3 style="font-size: 1.25rem; color: var(--gold-dark); margin-bottom: 1rem;">الرؤية</h3>
-                    <p style="font-size: 1.125rem; color: var(--navy); font-weight: 500; line-height: 1.8; margin: 0;">أن نُحدّد المعيار العالمي للوضوح الاستراتيجي ونُمكّن القادة من صناعة أثر حقيقي.</p>
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-year">2009</div>
+                    <div class="journey-content">
+                        <h4>أرقام</h4>
+                        <p>أبحاث الأسواق المالية وبناء شراكات بوابة الأخبار المالية الأولى في العالم العربي.</p>
+                    </div>
                 </div>
-
-                <!-- Mission -->
-                <div style="background: white; border: 1px solid var(--sand); border-radius: 16px; padding: 2rem;">
-                    <h3 style="font-size: 1.25rem; color: var(--navy); margin-bottom: 1.5rem; text-align: center;">الرسالة</h3>
-
-                    <div style="display: grid; gap: 1.5rem;">
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700; font-family: var(--font-display);">1</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;">القيادة الفكرية</h4>
-                                <p style="font-size: 0.9375rem; color: var(--steel); margin: 0; line-height: 1.7;">تطوير منهجيات الوضوح الاستراتيجي التي تُشكّل المنظمات وتُمكّن القادة من خلق قيمة حقيقية.</p>
-                            </div>
-                        </div>
-
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700; font-family: var(--font-display);">2</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;">تمكين الرياديين</h4>
-                                <p style="font-size: 0.9375rem; color: var(--steel); margin: 0; line-height: 1.7;">تزويد رواد الأعمال أصحاب الرؤية بالمعرفة والأدوات والأنظمة لتحويل أفكارهم إلى مشاريع قابلة للتوسع وذات هدف.</p>
-                            </div>
-                        </div>
-
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700; font-family: var(--font-display);">3</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;">الأثر العالمي والوصول للجميع</h4>
-                                <p style="font-size: 0.9375rem; color: var(--steel); margin: 0; line-height: 1.7;">بناء منظومة عالمية من الرياديين والمفكرين والمبدعين الذين يشتركون في سعي واحد: الوضوح، الأصالة، والأثر الهادف.</p>
-                            </div>
-                        </div>
+                <div class="journey-item">
+                    <div class="journey-year">2012</div>
+                    <div class="journey-content">
+                        <h4>البنك العربي الوطني</h4>
+                        <p>حوكمة الاستثمار وتطوير المواهب لأفضل 500 موظف.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2013</div>
+                    <div class="journey-content">
+                        <h4>Bin Laden Holding International (BIHG)</h4>
+                        <p>بناء التخطيط الاستراتيجي من الصفر لأكثر من 400 كيان عبر سبعة قطاعات في منطقة الشرق الأوسط.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2020</div>
+                    <div class="journey-content">
+                        <h4>مجموعة المطلق</h4>
+                        <p>مدير الاستراتيجية والحوكمة. مضاعفة الأرباح التشغيلية ثلاث مرات وتحقيق 200% من مؤشرات الأداء.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2023</div>
+                    <div class="journey-content">
+                        <h4>IE Business School EMBA</h4>
+                        <p>المشروع النهائي: المنصة التي أصبحت Strategy2Action.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2024</div>
+                    <div class="journey-content">
+                        <h4>Strategy2Action</h4>
+                        <p>الانطلاقة. لأن كل مؤسس يستحق أن يرى استراتيجيته بوضوح.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- ============================================
+         SECTION 5: STATS
+         ============================================ -->
     <section class="section section-dark">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="number">+400</div>
-                    <div class="label">مؤسسة رأت استراتيجيتها</div>
+                    <div class="label">مؤسس رافقناهم</div>
                 </div>
                 <div class="stat-item">
                     <div class="number">+15</div>
-                    <div class="label">عاماً من الخبرة</div>
+                    <div class="label">عاماً في الاستراتيجية</div>
                 </div>
                 <div class="stat-item">
-                    <div class="number">52</div>
-                    <div class="label">منهجاً تم تطويره</div>
+                    <div class="number">+12</div>
+                    <div class="label">قطاعاً مختلفاً</div>
                 </div>
                 <div class="stat-item">
-                    <div class="number">4</div>
-                    <div class="label">مرايا استراتيجية</div>
+                    <div class="number">+$500M</div>
+                    <div class="label">في مشاريع أُديرت</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Frameworks Section -->
+    <!-- ============================================
+         SECTION 6: TESTIMONIALS — Arabic originals
+         ============================================ -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">المنهجية</span>
-                <h2>المناهج <em>الأساسية</em></h2>
-                <p class="text-lead">خبرة 15 عاماً من أعمال التحول مُقطّرة في منهجيات عملية قابلة للتطبيق.</p>
+                <span class="section-eyebrow">ماذا يقولون</span>
+                <h2>لا تأخذ كلامي. <em>خذ كلامهم.</em></h2>
             </div>
 
-            <div class="framework-list">
-                <div class="framework-item">
-                    <div class="number">1</div>
-                    <div>
-                        <h4>منهجية حدّد. صمّم. انطلق.</h4>
-                        <p>نموذج تحول من أربع مراحل: الهوية ← الأنظمة ← التمويل ← السوق. أين تعثرت؟</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card testimonial-card--featured">
+                    <p class="testimonial-text">"لن يقبل الأمور على ظاهرها بل سيغوص في العمق ويطرح أسئلة غير مريحة ويسحب كل خيط حتى يفهم الصورة كاملة. لكنك إن خضت هذه العملية ستخرج <strong style="color: var(--gold);">بوضوح وصلابة وقرارات تقف خلفها بثقة.</strong>"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">س</div>
+                        <div>
+                            <div class="testimonial-name">سعيد باغيل</div>
+                            <div class="testimonial-role">Baaghil Global Brand Advisory</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="framework-item">
-                    <div class="number">2</div>
-                    <div>
-                        <h4>أدوات التدخل الاستراتيجي</h4>
-                        <p>12 استراتيجية تحويلية عبر 4 مستويات: تدخلات الحالة، المعتقد، النظام، والتطوير.</p>
+                <div class="testimonial-card testimonial-card--featured">
+                    <p class="testimonial-text">"أكرم يجلب البنية للتعقيد. قدرته على تبديد الغموض وتقديم <strong style="color: var(--gold);">وضوح قابل للتنفيذ، نادرة.</strong> شريك استراتيجي حقيقي."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">م</div>
+                        <div>
+                            <div class="testimonial-name">محمد الحاج</div>
+                            <div class="testimonial-role">الرئيس التنفيذي، مجموعة العيسائي</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="framework-item">
-                    <div class="number">3</div>
-                    <div>
-                        <h4>مقاطعة تسلسل التخريب الذاتي</h4>
-                        <p>نظام إدراك من ست مراحل: المحفز ← الأفكار ← الجسدي ← السلوك ← التبرير ← المكاسب الخفية.</p>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"نجحوا في <strong>تحويل المفهوم إلى مشروع استثماري متكامل ومحوكم وجاهز للسوق.</strong> شريك استراتيجي موثوق نوصي به بثقة تامة."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">هـ</div>
+                        <div>
+                            <div class="testimonial-name">هيفاء</div>
+                            <div class="testimonial-role">شريك اجتماعي، معهد منهاج آرت العالي للتدريب</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="framework-item">
-                    <div class="number">4</div>
-                    <div>
-                        <h4>إطار الميزة الفريدة</h4>
-                        <p>خمس مرشحات للتمايز الحقيقي: متفوق، مهم، مصدق، قابل للقياس، قابل للامتلاك.</p>
-                    </div>
-                </div>
-
-                <div class="framework-item">
-                    <div class="number">5</div>
-                    <div>
-                        <h4>نظام النمو من 9 محركات</h4>
-                        <p>نمو مركب عبر تسعة روافع: الاستحواذ، القيمة، الكفاءة. 10% × 9 = 60%.</p>
-                    </div>
-                </div>
-
-                <div class="framework-item">
-                    <div class="number">6</div>
-                    <div>
-                        <h4>المرايا الأربع</h4>
-                        <p>أربعة نماذج متكاملة: نموذج الأعمال، نموذج التشغيل، النموذج المالي، نموذج الفريق.</p>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"من الاجتماع الأول أظهر تمكّناً استثنائياً. <strong>بدلاً من أن تبقى فكرة تحولت بفضل الله إلى طموح نعمل على تحقيقه بأفضل طريقة.</strong>"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ع</div>
+                        <div>
+                            <div class="testimonial-name">عبدالمجيد</div>
+                            <div class="testimonial-role">محامي ومؤسس أعمال، المملكة العربية السعودية</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ============================================
+         SECTION 7: CTA
+         ============================================ -->
     <section class="section section-gradient" style="padding: var(--section-padding) 0;">
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <span class="section-eyebrow" style="color: var(--gold);">مستعد للرؤية بوضوح؟</span>
-                <h2 style="color: var(--cream); margin-bottom: 1rem;">استراتيجيتك موجودة. <em>لكنك لا تراها.</em></h2>
-                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">ابدأ بالتشخيص الاستراتيجي واكتشف بدقة أين يكمن العائق.</p>
+                <span class="section-eyebrow" style="color: var(--gold);">مستعد؟</span>
+                <h2 style="color: var(--cream); margin-bottom: 1rem;">استراتيجيتك موجودة. <em>حان وقت أن تراها.</em></h2>
+                <p style="color: rgba(250, 248, 245, 0.85); font-size: 1.0625rem; margin-bottom: 2rem;">90 دقيقة. محادثة واحدة. ستعرف بالضبط أين تتعثر ولماذا.</p>
 
-                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">اكتشف عائقك الخفي — $97 <i data-lucide="arrow-left"></i></a>
+                <a href="strategic-diagnosis.html" class="btn btn-primary btn-large">ابدأ التشخيص · $97 <i data-lucide="arrow-left"></i></a>
+
+                <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>ضمان الوضوح:</strong> إما أن تحصل على رؤية جديدة أو نعيد لك المبلغ كاملاً.</p>
             </div>
         </div>
     </section>
@@ -446,8 +609,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo"><img src="images/logo_s2a.png" alt="Strategy2Action"></a>
-                    <p>لا نصنع لك استراتيجية. نساعدك على رؤية ما لا تراه.</p>
+                    <a href="index.html" class="footer-logo"><img src="../en/images/logo_s2a.png" alt="Strategy2Action"></a>
+                    <p>لا نصنع لك استراتيجية. نجعل التي تحملها مرئية.</p>
                 </div>
                 <div class="footer-column">
                     <h4>البرامج</h4>
@@ -460,17 +623,15 @@
                     <h4>المصادر</h4>
                     <a href="about.html">من نحن</a>
                     <a href="#">دراسات الحالة</a>
-                    <a href="#">المدونة</a>
                 </div>
                 <div class="footer-column">
                     <h4>تواصل</h4>
-                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
-                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="mailto:akram@strategy360.ai">akram@strategy360.ai</a>
                     <a href="https://www.linkedin.com/company/strategy2action-inc/">LinkedIn</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
+                <span>&copy; 2025 Strategy2Action Inc. Delaware, USA. جميع الحقوق محفوظة.</span>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/strategy2action-inc/" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                     <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>

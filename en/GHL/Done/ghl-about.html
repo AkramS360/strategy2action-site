@@ -20,57 +20,83 @@
 .s2a-about { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--navy); }
 .s2a-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-/* Hero */
+/* Hero — Dark navy, matches home page */
 .about-hero {
     padding: 5rem 0;
-    background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+    background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
 }
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20%;
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
 .about-hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr;
     gap: 3rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 @media (max-width: 900px) { .about-hero-grid { grid-template-columns: 1fr; } }
 
 .founder-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     aspect-ratio: 1;
-    background: var(--navy);
     border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 6rem;
-    font-weight: 700;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.s2a-eyebrow {
+.hero-eyebrow {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold-dark);
+    color: var(--gold);
     margin-bottom: 1rem;
 }
+
 .about-hero h1 {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--midnight);
+    color: var(--cream);
     line-height: 1.15;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 .about-hero h1 em {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    color: var(--gold-dark);
+    color: var(--gold);
 }
-.about-hero .lead { font-size: 1.1rem; color: var(--steel); margin-bottom: 1.5rem; }
+
+.hero-punchline {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+    font-weight: 500;
+    color: rgba(250, 248, 245, 0.9);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+.hero-punchline strong { color: var(--gold); font-weight: 700; }
 
 .credentials-list {
     display: flex;
@@ -82,13 +108,34 @@
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     padding: 0.5rem 0.875rem;
-    background: var(--ivory);
-    border: 1px solid var(--sand);
+    background: rgba(250, 248, 245, 0.08);
+    border: 1px solid rgba(250, 248, 245, 0.15);
     border-radius: 4px;
-    color: var(--steel);
+    color: rgba(250, 248, 245, 0.7);
 }
-.bio-text { font-size: 0.9rem; color: var(--steel); line-height: 1.8; }
+
+.hero-trust {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.trust-item {
+    font-size: 0.8125rem;
+    color: rgba(250, 248, 245, 0.7);
+    border-left: 1px solid rgba(250, 248, 245, 0.15);
+    padding-left: 1rem;
+}
+.trust-item:first-child { border-left: none; padding-left: 0; }
+.trust-item strong {
+    display: block;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+}
 
 /* Sections */
 .s2a-section { padding: 4rem 0; }
@@ -109,6 +156,26 @@
 }
 .s2a-section-header p { color: var(--steel); font-size: 1rem; }
 .s2a-section--dark .s2a-section-header h2 { color: var(--cream); }
+.s2a-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+}
+
+/* Origin Story */
+.origin-section { max-width: 720px; margin: 0 auto; }
+.origin-section p {
+    font-size: 1.0625rem;
+    color: var(--steel);
+    line-height: 1.9;
+    margin-bottom: 1.25rem;
+}
+.origin-section p strong { color: var(--navy); }
+.origin-section p:last-child { margin-bottom: 0; }
 
 /* Philosophy Cards */
 .philosophy-grid {
@@ -118,10 +185,7 @@
 }
 @media (max-width: 768px) { .philosophy-grid { grid-template-columns: 1fr; } }
 
-.philosophy-card {
-    text-align: center;
-    padding: 2rem;
-}
+.philosophy-card { text-align: center; padding: 2rem; }
 .philosophy-icon {
     width: 64px;
     height: 64px;
@@ -137,7 +201,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 1.1rem;
     color: var(--midnight);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 .philosophy-card p { font-size: 0.9rem; color: var(--steel); }
 
@@ -162,47 +226,8 @@
     margin-top: 0.5rem;
 }
 
-/* Frameworks */
-.framework-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-@media (max-width: 768px) { .framework-list { grid-template-columns: 1fr; } }
-
-.framework-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem;
-    background: var(--cream);
-    border: 1px solid var(--sand);
-    border-radius: 12px;
-}
-.framework-num {
-    width: 28px;
-    height: 28px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: white;
-    flex-shrink: 0;
-}
-.framework-item h4 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 1rem;
-    color: var(--navy);
-    margin-bottom: 0.25rem;
-}
-.framework-item p { font-size: 0.8rem; color: var(--steel); }
-
 /* Journey Timeline */
-.journey-timeline { max-width: 800px; margin: 0 auto; }
+.journey-timeline { max-width: 700px; margin: 0 auto; }
 .journey-item {
     display: flex;
     gap: 1.5rem;
@@ -238,11 +263,71 @@
 }
 .journey-content h4 {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--navy);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
-.journey-content p { font-size: 0.9rem; color: var(--steel); }
+.journey-content p { font-size: 0.875rem; color: var(--steel); }
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+.testimonial-card {
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 2rem;
+}
+.testimonial-card--featured {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+.testimonial-text {
+    font-size: 0.9375rem;
+    color: var(--steel);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+}
+.testimonial-card--featured .testimonial-text {
+    color: rgba(250, 248, 245, 0.85);
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ivory);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--navy);
+}
+.testimonial-card--featured .testimonial-avatar {
+    background: var(--gold);
+    color: white;
+}
+.testimonial-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--navy);
+}
+.testimonial-card--featured .testimonial-name { color: var(--cream); }
+.testimonial-role { font-size: 0.75rem; color: var(--fog); }
+.testimonial-card--featured .testimonial-role { color: rgba(250,248,245,0.5); }
 
 /* Final CTA */
 .final-cta {
@@ -315,24 +400,64 @@
 </style>
 
 <div class="s2a-about">
-    <!-- Hero -->
+    <!-- Hero — Dark navy, matches home page -->
     <section class="about-hero">
         <div class="s2a-container">
             <div class="about-hero-grid">
-                <div class="founder-image">A</div>
-                <div>
-                    <span class="s2a-eyebrow">The Founder</span>
-                    <h1>Akram <em>AlQadasi</em></h1>
-                    <p class="lead">Strategy architect with 15+ years across investment governance, corporate strategy, and business transformation. Creator of the Know-Show-Grow framework and Strategic Intervention methodology.</p>
-                    <div class="credentials-list">
-                        <span class="credential-badge">IE Business School EMBA 2023</span>
-                        <span class="credential-badge">MIT Professional Ed 2024</span>
-                        <span class="credential-badge">INSEAD 2024</span>
-                        <span class="credential-badge">15+ Years Strategy</span>
-                        <span class="credential-badge">CFA Charterholder</span>
-                    </div>
-                    <p class="bio-text">After years of consulting work across MENA with major holding companies and family businesses, I noticed a pattern: founders didn't lack strategy - they lacked visibility into their own strategy. The expertise was trapped in their heads. Strategy2Action exists to solve that problem.</p>
+                <div class="founder-image">
+                    <img src="images/about-pic-akram.png" alt="Akram AlQadasi">
                 </div>
+                <div>
+                    <span class="hero-eyebrow">The Founder</span>
+                    <h1>Akram <em>AlQadasi</em></h1>
+                    <p class="hero-punchline">I don't add strategy. <strong>I reveal it.</strong></p>
+
+                    <div class="credentials-list">
+                        <span class="credential-badge">IE Business School EMBA</span>
+                        <span class="credential-badge">MIT Professional Ed</span>
+                        <span class="credential-badge">INSEAD</span>
+                        <span class="credential-badge">15+ Years Strategy</span>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <strong>400+</strong>
+                            Founders Guided
+                        </div>
+                        <div class="trust-item">
+                            <strong>12+</strong>
+                            Industries Served
+                        </div>
+                        <div class="trust-item">
+                            <strong>$500M+</strong>
+                            In Projects
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Story</span>
+                <h2>Why This <em>Exists</em></h2>
+            </div>
+
+            <div class="origin-section">
+                <p>Since the start of my career, I've been drawn to inception -- where systems are still being imagined.</p>
+
+                <p>I helped launch Argaam, the Arab world's leading financial news portal. Built the strategic planning function from zero for a 400-entity holding group. Led the corporatization of Almutlaq Group -- tripled EBITDA, achieved 200% of three-year KPIs.</p>
+
+                <p><strong>After 400+ engagements, I noticed one pattern.</strong></p>
+
+                <p>The founders I worked with weren't missing strategy. They had it. In their decisions. Their instincts. Their 2am thinking. But nobody around them could see it. Not the board. Not the investors. Not their own team.</p>
+
+                <p>The brilliance was trapped in one person's head. Invisible to everyone else.</p>
+
+                <p>Strategy2Action exists to fix that. Not by giving you someone else's framework. <strong>By making your strategy visible</strong> -- in four documented models your team, investors, and board can follow.</p>
             </div>
         </div>
     </section>
@@ -341,24 +466,78 @@
     <section class="s2a-section s2a-section--ivory">
         <div class="s2a-container">
             <div class="s2a-section-header">
-                <span class="s2a-eyebrow">Our Philosophy</span>
-                <h2>What We <em>Believe</em></h2>
+                <span class="s2a-eyebrow">What We Believe</span>
+                <h2>Three <em>Principles</em></h2>
             </div>
             <div class="philosophy-grid">
                 <div class="philosophy-card">
-                    <div class="philosophy-icon">E</div>
-                    <h3>Strategy Exists</h3>
-                    <p>You already have a strategy. It's in your decisions, your instincts, your patterns. We don't give you strategy - we make yours visible.</p>
+                    <div class="philosophy-icon">👁</div>
+                    <h3>Your Strategy Already Exists</h3>
+                    <p>We don't give you strategy. We make yours visible.</p>
                 </div>
                 <div class="philosophy-card">
-                    <div class="philosophy-icon">M</div>
+                    <div class="philosophy-icon">🪞</div>
                     <h3>Mirrors Beat Advice</h3>
-                    <p>We're not consultants who tell you what to do. We're mirrors that show you what you already know but can't yet see clearly.</p>
+                    <p>We're not consultants. We're mirrors.</p>
                 </div>
                 <div class="philosophy-card">
-                    <div class="philosophy-icon">S</div>
+                    <div class="philosophy-icon">🧭</div>
                     <h3>Soul Before Systems</h3>
-                    <p>Systems without soul fail. We start with identity alignment (KNOW) before architecture (SHOW) before market (GROW).</p>
+                    <p>Identity first. Architecture second. Market third.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="s2a-section">
+        <div class="s2a-container">
+            <div class="s2a-section-header">
+                <span class="s2a-eyebrow">The Path</span>
+                <h2>15 Years of <em>Building</em></h2>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-year">2009</div>
+                    <div class="journey-content">
+                        <h4>Argaam</h4>
+                        <p>Financial markets research. Built partnerships for the Arab world's leading financial news portal.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2012</div>
+                    <div class="journey-content">
+                        <h4>Arab National Bank</h4>
+                        <p>Investment governance. Talent development for top 500 employees.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2013</div>
+                    <div class="journey-content">
+                        <h4>Bin Laden Holding International (BIHG)</h4>
+                        <p>Built strategic planning from zero. 400+ entities. Seven sectors across MENA.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2020</div>
+                    <div class="journey-content">
+                        <h4>Almutlaq Group</h4>
+                        <p>Strategy & Governance Director. Tripled EBITDA. 200% of KPIs.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2023</div>
+                    <div class="journey-content">
+                        <h4>IE Business School EMBA</h4>
+                        <p>Final project: the platform that became Strategy2Action.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-year">2024</div>
+                    <div class="journey-content">
+                        <h4>Strategy2Action</h4>
+                        <p>Launched. Because every founder deserves to see their strategy clearly.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -370,127 +549,74 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="number">400+</div>
-                    <div class="label">Strategies Revealed</div>
+                    <div class="label">Founders Guided</div>
                 </div>
                 <div class="stat-item">
                     <div class="number">15+</div>
-                    <div class="label">Years of Clarity</div>
+                    <div class="label">Years in Strategy</div>
                 </div>
                 <div class="stat-item">
-                    <div class="number">52</div>
-                    <div class="label">Frameworks Developed</div>
+                    <div class="number">12+</div>
+                    <div class="label">Industries Served</div>
                 </div>
                 <div class="stat-item">
-                    <div class="number">4</div>
-                    <div class="label">Mirror Models</div>
+                    <div class="number">$500M+</div>
+                    <div class="label">In Projects Managed</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Frameworks -->
+    <!-- Testimonials -->
     <section class="s2a-section">
         <div class="s2a-container">
             <div class="s2a-section-header">
-                <span class="s2a-eyebrow">The Methodology</span>
-                <h2>Core <em>Frameworks</em></h2>
-                <p>Distilled from 15+ years of transformation work into actionable systems.</p>
+                <span class="s2a-eyebrow">What They Say</span>
+                <h2>Don't Take My Word. <em>Take Theirs.</em></h2>
             </div>
-            <div class="framework-list">
-                <div class="framework-item">
-                    <div class="framework-num">1</div>
-                    <div>
-                        <h4>Know-Show-Grow Framework</h4>
-                        <p>Four-phase transformation model: Soul -> Systems -> Finance -> Market. Where are you stuck?</p>
-                    </div>
-                </div>
-                <div class="framework-item">
-                    <div class="framework-num">2</div>
-                    <div>
-                        <h4>Strategic Intervention Toolkit</h4>
-                        <p>12 breakthrough strategies across 4 tiers: State, Belief, System, and Development interventions.</p>
-                    </div>
-                </div>
-                <div class="framework-item">
-                    <div class="framework-num">3</div>
-                    <div>
-                        <h4>Self-Sabotage Sequence Interrupt</h4>
-                        <p>Six-stage recognition system: Trigger -> Thoughts -> Somatic -> Behavior -> Justify -> Hidden Gains.</p>
-                    </div>
-                </div>
-                <div class="framework-item">
-                    <div class="framework-num">4</div>
-                    <div>
-                        <h4>DSI Filters (SIBMO)</h4>
-                        <p>Five filters for Dominant Selling Ideas: Singular, Impactful, Believable, Memorable, Ownable.</p>
-                    </div>
-                </div>
-                <div class="framework-item">
-                    <div class="framework-num">5</div>
-                    <div>
-                        <h4>9-Driver Growth System</h4>
-                        <p>Nine compounding levers across Acquisition, Value, and Efficiency. 10% each = 60% growth.</p>
-                    </div>
-                </div>
-                <div class="framework-item">
-                    <div class="framework-num">6</div>
-                    <div>
-                        <h4>The Business Mirror</h4>
-                        <p>Four integrated models: Business, Operating, People, Financial. Your strategy made visible.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Journey -->
-    <section class="s2a-section s2a-section--ivory">
-        <div class="s2a-container">
-            <div class="s2a-section-header">
-                <span class="s2a-eyebrow">The Journey</span>
-                <h2">15 Years of <em>Transformation</em></h2>
-            </div>
-            <div class="journey-timeline">
-                <div class="journey-item">
-                    <div class="journey-year">2009</div>
-                    <div class="journey-content">
-                        <h4>Argaam - Financial Markets Research</h4>
-                        <p>Started career in financial markets research and analysis, building foundation in data-driven decision making.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card testimonial-card--featured">
+                    <p class="testimonial-text">"He doesn't accept things at face value. He will go deep, ask uncomfortable questions, and keep pulling threads. You end up with <strong style="color: var(--gold);">clarity, solidity, and decisions you can stand behind.</strong>"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <div class="testimonial-name">Said Baaghil</div>
+                            <div class="testimonial-role">Baaghil Global Brand Advisory</div>
+                        </div>
                     </div>
                 </div>
-                <div class="journey-item">
-                    <div class="journey-year">2012</div>
-                    <div class="journey-content">
-                        <h4>Arab National Bank - Investment Governance</h4>
-                        <p>Moved into investment governance, learning institutional frameworks and fiduciary responsibility.</p>
+
+                <div class="testimonial-card testimonial-card--featured">
+                    <p class="testimonial-text">"Akram brought structure to complexity. His ability to cut through ambiguity and deliver <strong style="color: var(--gold);">actionable clarity is rare.</strong> A true strategic partner."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mohammed Alhaj</div>
+                            <div class="testimonial-role">CEO, Alesayi Group</div>
+                        </div>
                     </div>
                 </div>
-                <div class="journey-item">
-                    <div class="journey-year">2016</div>
-                    <div class="journey-content">
-                        <h4>BIHG - Strategic Planning Leadership</h4>
-                        <p>Led strategic planning for major holding company, developing first versions of transformation frameworks.</p>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"They <strong>transformed the concept into a fully integrated, market-ready investment venture.</strong> A trusted strategic partner."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">H</div>
+                        <div>
+                            <div class="testimonial-name">Haifa</div>
+                            <div class="testimonial-role">Social Partner, Menhaj Institute</div>
+                        </div>
                     </div>
                 </div>
-                <div class="journey-item">
-                    <div class="journey-year">2022</div>
-                    <div class="journey-content">
-                        <h4>Almutlaq Group - Executive Strategy</h4>
-                        <p>Executive role overseeing strategy and governance, refining Know-Show-Grow methodology.</p>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-year">2023</div>
-                    <div class="journey-content">
-                        <h4>IE Business School EMBA</h4>
-                        <p>Completed Executive MBA, integrating academic rigor with practical experience.</p>
-                    </div>
-                </div>
-                <div class="journey-item">
-                    <div class="journey-year">2024</div>
-                    <div class="journey-content">
-                        <h4>Strategy2Action Launch</h4>
-                        <p>Launched Strategy2Action to help founders see their strategy clearly and execute systematically.</p>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"From the first meeting, he demonstrated extraordinary mastery. <strong>What was once just an idea became an ambition we're now working to achieve.</strong>"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div>
+                            <div class="testimonial-name">Abdulmajeed</div>
+                            <div class="testimonial-role">Lawyer & Founder, Saudi Arabia</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -501,11 +627,11 @@
     <section class="final-cta">
         <div class="s2a-container">
             <div style="max-width: 700px; margin: 0 auto;">
-                <span class="s2a-eyebrow" style="color: var(--gold);">Ready to Work Together?</span>
-                <h2>Your Strategy Exists. <em>Let's Make It Visible.</em></h2>
-                <p>Start with the Strategic Diagnosis and discover exactly where you're stuck in Know-Show-Grow.</p>
-                <a href="#" class="s2a-btn">Start My Strategic Diagnosis - $133 -></a>
-                <p class="guarantee">Insight Guarantee: Breakthrough insight or full refund.</p>
+                <span class="s2a-eyebrow" style="color: var(--gold);">Ready?</span>
+                <h2>Your Strategy Already Exists. <em>Let's Make It Visible.</em></h2>
+                <p>90 minutes. One conversation. You'll know exactly where you're stuck.</p>
+                <a href="#" class="s2a-btn">Start the Diagnosis · $97 →</a>
+                <p class="guarantee"><strong>Insight Guarantee:</strong> Breakthrough insight or full refund.</p>
             </div>
         </div>
     </section>
@@ -516,7 +642,7 @@
             <div class="s2a-footer-grid">
                 <div class="s2a-footer-brand">
                     <strong style="color: var(--cream); font-size: 1.2rem;">Strategy2Action</strong>
-                    <p>We don't give you strategy. We show you yours.</p>
+                    <p>We don't give you strategy. We make yours visible.</p>
                 </div>
                 <div class="s2a-footer-col">
                     <h4>Programs</h4>
@@ -529,12 +655,10 @@
                     <h4>Resources</h4>
                     <a href="#">About</a>
                     <a href="#">Case Studies</a>
-                    <a href="#">Blog</a>
                 </div>
                 <div class="s2a-footer-col">
                     <h4>Connect</h4>
-                    <a href="mailto:Akram.m.qa@gmail.com">Akram.m.qa@gmail.com</a>
-                    <a href="tel:+966509993384">+966 509993384</a>
+                    <a href="mailto:akram@strategy360.ai">akram@strategy360.ai</a>
                     <a href="#">LinkedIn</a>
                 </div>
             </div>
