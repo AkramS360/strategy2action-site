@@ -171,128 +171,9 @@
         * { font-style: normal !important; }
         em { font-weight: 600; }
 
-        /* Payment Popup Modal */
-        .payment-popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 22, 40, 0.85);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            overflow-y: auto;
-        }
-
-        .payment-popup-overlay.active {
-            display: flex;
-        }
-
-        .payment-popup {
-            background: white;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 500px;
-            max-height: 90vh;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-            animation: popupSlideIn 0.3s ease-out;
-        }
-
-        @keyframes popupSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .payment-popup-close {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--cream);
-            border: 1px solid var(--sand);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: all 0.2s ease;
-        }
-
-        .payment-popup-close:hover {
-            background: var(--sand);
-        }
-
-        .payment-popup-close svg {
-            width: 18px;
-            height: 18px;
-            color: var(--navy);
-        }
-
-        .payment-popup-content {
-            padding: 0;
-            overflow-y: auto;
-            max-height: 90vh;
-        }
-
-        .payment-popup-content iframe {
-            width: 100%;
-            min-height: 700px;
-            border: none;
-        }
-
-        @media (max-width: 600px) {
-            .payment-popup {
-                max-width: 100%;
-                max-height: 95vh;
-                border-radius: 12px;
-            }
-            .payment-popup-content iframe {
-                min-height: 600px;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- Payment Popup Modal -->
-    <div class="payment-popup-overlay" id="paymentPopup">
-        <div class="payment-popup">
-            <button class="payment-popup-close" onclick="closePaymentPopup()">
-                <i data-lucide="x"></i>
-            </button>
-            <div class="payment-popup-content">
-                <iframe
-                    src="https://api.leadconnectorhq.com/widget/form/MBooN6WEf8LkL0k3kaYn"
-                    id="inline-MBooN6WEf8LkL0k3kaYn"
-                    data-layout="{'id':'INLINE'}"
-                    data-trigger-type="alwaysShow"
-                    data-trigger-value=""
-                    data-activation-type="alwaysActivated"
-                    data-activation-value=""
-                    data-deactivation-type="neverDeactivate"
-                    data-deactivation-value=""
-                    data-form-name="Strategic Diagnosis"
-                    data-height="700"
-                    data-layout-iframe-id="inline-MBooN6WEf8LkL0k3kaYn"
-                    data-form-id="MBooN6WEf8LkL0k3kaYn"
-                    title="التشخيص الاستراتيجي - الدفع"
-                ></iframe>
-            </div>
-        </div>
-    </div>
 
     <!-- Navigation -->
     <nav class="nav nav--dark" id="nav">
@@ -307,7 +188,7 @@
                     <a href="index.html">الرئيسية</a>
                     <a href="../en/strategic-diagnosis.html" class="lang-toggle lang-en">EN</a>
                 </div>
-                <a href="#" onclick="openPaymentPopup(); return false;" class="nav-cta-btn">ابدأ التشخيص <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
+                <a href="https://platform.strategy2action.com/strategic-diagnosis" class="nav-cta-btn">ابدأ التشخيص <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i></a>
                 <button class="nav-mobile-toggle" onclick="toggleMobileNav()"><i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i></button>
             </div>
         </div>
@@ -350,7 +231,7 @@
                         <li><i data-lucide="check"></i> تقرير الجاهزية الاستراتيجية (13 صفحة)</li>
                     </ul>
 
-                    <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large btn-block">ابدأ تشخيصي الاستراتيجي <i data-lucide="arrow-left"></i></a>
+                    <a href="https://platform.strategy2action.com/strategic-diagnosis" class="btn btn-primary btn-large btn-block">ابدأ تشخيصي الاستراتيجي <i data-lucide="arrow-left"></i></a>
 
                     <div class="guarantee-box">
                         <p><strong>ضمان الوضوح:</strong> رؤية جديدة أو أموالك كاملة، بلا أسئلة</p>
@@ -613,7 +494,7 @@
                     </div>
                 </div>
 
-                <a href="#" onclick="openPaymentPopup(); return false;" class="btn btn-primary btn-large">ابدأ تشخيصي الاستراتيجي · $97 <i data-lucide="arrow-left"></i></a>
+                <a href="https://platform.strategy2action.com/strategic-diagnosis" class="btn btn-primary btn-large">ابدأ تشخيصي الاستراتيجي · $97 <i data-lucide="arrow-left"></i></a>
 
                 <p style="color: rgba(250, 248, 245, 0.6); font-size: 0.8125rem; margin-top: 1.5rem;"><strong>ضمان الوضوح:</strong> رؤية جديدة أو أموالك كاملة، بلا أسئلة</p>
 
@@ -689,30 +570,6 @@
             lucide.createIcons();
         }
 
-        function openPaymentPopup() {
-            const popup = document.getElementById('paymentPopup');
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
-
-        function closePaymentPopup() {
-            const popup = document.getElementById('paymentPopup');
-            popup.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('paymentPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePaymentPopup();
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePaymentPopup();
-            }
-        });
     </script>
 </body>
 </html>
